@@ -4,6 +4,7 @@
   "monorepo": true,
   "sourceRoot": "apps/nest/src",
   "compilerOptions": {
+    "builder": "swc",
     "typeCheck": true,
     "deleteOutDir": true
   },
@@ -11,7 +12,19 @@
     "test-app": {
       "type": "application",
       "root": "apps/nest",
-      "sourceRoot": "apps/nest/src"
+      "sourceRoot": "apps/nest/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/nest/tsconfig.json"
+      }
+    },
+    "nest-utils": {
+      "type": "library",
+      "root": "packages/nest-utils",
+      "entryFile": "index",
+      "sourceRoot": "packages/nest-utils/src",
+      "compilerOptions": {
+        "tsConfigPath": "packages/nest-utils/tsconfig.json"
+      }
     }
   }
 }

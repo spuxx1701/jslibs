@@ -1,24 +1,33 @@
 /// <reference types="vitest" />
 import baseConfig from '../../vite.config';
 import { mergeConfig, defineConfig } from 'vite';
+import { resolve } from 'path';
 import { VitePluginNode } from 'vite-plugin-node';
+import { peerDependencies } from './package.json';
 
 export default mergeConfig(
   baseConfig,
   defineConfig({
-    server: {
-      port: 3000,
-    },
     plugins: [
       ...baseConfig.plugins!,
-      // https://www.npmjs.com/package/vite-plugin-node#get-started
       VitePluginNode({
         adapter: 'nest',
         tsCompiler: 'swc',
         appPath: 'src/main.ts',
         exportName: 'app',
-        initAppOnBoot: true,
       }),
     ],
+    build: {
+      lib: {
+        entry: {
+          main: resolve(__dirname, 'src/main.ts'),
+        },
+        name: '@spuxx/nest-utils',
+        formats: ['cjs', 'es'],
+      },
+      rollupOptions: {
+        external: [...Object.keys(peerDependencies)],
+      },
+    },
   }),
 );

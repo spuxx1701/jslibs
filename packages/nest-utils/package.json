@@ -1,0 +1,50 @@
+{
+  "name": "@spuxx/nest-utils",
+  "version": "0.0.0",
+  "description": "A package containing various utilities for NestJS applications.",
+  "license": "MIT",
+  "author": {
+    "name": "spuxx",
+    "email": "hi@spuxx.dev",
+    "url": "https://spuxx.dev"
+  },
+  "keywords": [
+    "spuxx"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/spuxx1701/jslibs"
+  },
+  "homepage": "https://github.com/spuxx1701/jslibs/blob/main/packages/nest-utils/README.md",
+  "bugs": {
+    "url": "https://github.com/spuxx1701/jslibs/issues"
+  },
+  "type": "commonjs",
+  "main": "dist/main.js",
+  "module": "dist/main.js",
+  "types": "dist/main.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/main.d.ts",
+      "import": "./dist/main.js"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE",
+    "package.json"
+  ],
+  "scripts": {
+    "build": "nest build",
+    "types": "tsc --noEmit"
+  },
+  "peerDependencies": {
+    "@nestjs/common": "^8.0.0 || ^9.0.0 || ^10.0.0",
+    "@nestjs/core": "^8.0.0 || ^9.0.0 || ^10.0.0",
+    "reflect-metadata": "^0.1.13 || ^0.2.0"
+  },
+  "dependencies": {
+    "@spuxx/js-utils": "workspace:@spuxx/js-utils@*"
+  }
+}

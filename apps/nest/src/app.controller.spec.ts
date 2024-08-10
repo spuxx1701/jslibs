@@ -12,8 +12,6 @@ describe('AppController', () => {
     }).compile();
 
     controller = app.get<AppController>(AppController);
-    const service = app.get<AppService>(AppService);
-    console.log(service);
   });
 
   describe('root', () => {

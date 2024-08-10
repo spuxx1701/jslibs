@@ -5,7 +5,6 @@ import swc from 'unplugin-swc';
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  publicDir: 'app/public',
   plugins: [
     dts({
       include: ['src/**/*'],

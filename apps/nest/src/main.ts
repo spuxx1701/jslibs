@@ -4,8 +4,12 @@ import { Logger } from '@nestjs/common';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
-  await app.listen(3000);
-  const url = await app.getUrl();
-  Logger.log(`Application is running on: ${url}`, 'Bootstrap');
+  Logger.log(`Application is running on: http://localhost:3000`, 'Bootstrap');
+  // Required, see: https://www.npmjs.com/package/vite-plugin-node#get-started
+  if (import.meta.env.PROD) {
+    await app.listen(3000);
+  }
+  return app;
 }
-bootstrap();
+
+export const app = bootstrap();

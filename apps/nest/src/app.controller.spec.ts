@@ -1,12 +1,14 @@
 import { Test, TestingModule } from '@nestjs/testing';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
+import { NestUtilsModule } from '@spuxx/nest-utils';
 
 describe('AppController', () => {
   let controller: AppController;
 
   beforeEach(async () => {
     const app: TestingModule = await Test.createTestingModule({
+      imports: [NestUtilsModule],
       controllers: [AppController],
       providers: [AppService],
     }).compile();

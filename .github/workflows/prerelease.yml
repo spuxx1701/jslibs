@@ -9,7 +9,7 @@ jobs:
     uses: spuxx1701/ci-cd/.github/workflows/pnpm_run_checks.yml@v4.0.0
 
   run_unit_tests:
-    name: Run unit tests
+    name: Run tests (vitest)
     uses: spuxx1701/ci-cd/.github/workflows/pnpm_run_tests_vitest.yml@v4.0.0
     with:
       COVERAGE_FILENAME: reports/vitest/coverage/cobertura-coverage.xml

@@ -10,7 +10,7 @@ jobs:
 
   run_unit_tests:
     name: Run unit tests
-    uses: spuxx1701/ci-cd/.github/workflows/pnpm_run_unit_tests.yml@v4.0.0
+    uses: spuxx1701/ci-cd/.github/workflows/pnpm_run_tests_vitest.yml@v4.0.0
     with:
       COVERAGE_FILENAME: reports/vitest/coverage/cobertura-coverage.xml
       COVERAGE_FAIL_BELOW_MIN: 100

@@ -22,7 +22,12 @@
   "packageManager": "pnpm@9.6.0",
   "private": "true",
   "scripts": {
-    "dev": "concurrently \"cd apps/nest && pnpm dev\" \"cd apps/react && pnpm dev\"",
+    "dev": "concurrently \"pnpm dev:js-utils\" \"pnpm dev:browser-utils\" \"pnpm dev:nest-utils\" \"pnpm dev:app:react\" \"pnpm dev:app:nest\"",
+    "dev:js-utils": "cd packages/js-utils && pnpm dev",
+    "dev:browser-utils": "cd packages/browser-utils && pnpm dev",
+    "dev:nest-utils": "cd packages/nest-utils && pnpm dev",
+    "dev:app:react": "cd apps/react && pnpm dev",
+    "dev:app:nest": "cd apps/nest && pnpm dev",
     "publish:test": "pnpm -r publish --dry-run --no-git-checks",
     "test": "pnpm test:vitest",
     "test:vitest": "vitest run --coverage",

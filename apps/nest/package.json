@@ -15,7 +15,7 @@
     "@nestjs/platform-express": "^10.0.0",
     "reflect-metadata": "^0.2.0",
     "rxjs": "^7.8.1",
-    "@spuxx/js-utils": "workspace:@spuxx/nest-utils@*"
+    "@spuxx/nest-utils": "workspace:@spuxx/nest-utils@*"
   },
   "devDependencies": {
     "source-map-support": "^0.5.21",

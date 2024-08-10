@@ -19,14 +19,15 @@
   "bugs": {
     "url": "https://github.com/spuxx1701/jslibs/issues"
   },
-  "type": "commonjs",
+  "type": "module",
   "main": "dist/main.js",
-  "module": "dist/main.js",
   "types": "dist/main.d.ts",
   "exports": {
     ".": {
       "types": "./dist/main.d.ts",
-      "import": "./dist/main.js"
+      "require": "./dist/main.cjs",
+      "import": "./dist/main.js",
+      "default": "./dist/main.js"
     }
   },
   "files": [
@@ -36,7 +37,8 @@
     "package.json"
   ],
   "scripts": {
-    "build": "nest build",
+    "dev": "vite build --watch",
+    "build": "vite build",
     "types": "tsc --noEmit"
   },
   "peerDependencies": {

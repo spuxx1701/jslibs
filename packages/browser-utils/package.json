@@ -36,6 +36,7 @@
     "package.json"
   ],
   "scripts": {
+    "dev": "vite build --watch",
     "build": "vite build",
     "types": "tsc --noEmit"
   },

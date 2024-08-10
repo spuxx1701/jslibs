@@ -23,7 +23,7 @@ export default mergeConfig(
           main: resolve(__dirname, 'src/main.ts'),
         },
         name: '@spuxx/nest-utils',
-        formats: ['cjs', 'es'],
+        formats: ['es', 'cjs'],
       },
       rollupOptions: {
         external: [...Object.keys(peerDependencies)],

@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './src/App.tsx';
+// @ts-expect-error TypeScript config is f***ed in this app for some reason
 import de from './translations/de.yaml';
 import { Intl, Logger } from '@spuxx/js-utils';
 

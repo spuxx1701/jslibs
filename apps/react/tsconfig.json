@@ -1,0 +1,7 @@
+{
+  "extends": "../../tsconfig.bundler.json",
+  "include": ["./src"],
+  "compilerOptions": {
+    "jsx": "react-jsx"
+  }
+}

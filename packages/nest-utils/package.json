@@ -1,7 +1,7 @@
 {
-  "name": "@spuxx/js-utils",
-  "version": "0.2.0",
-  "description": "A package containing various utilities for JavaScript applications.",
+  "name": "@spuxx/nest-utils",
+  "version": "0.0.0",
+  "description": "A package containing various utilities for NestJS applications.",
   "license": "MIT",
   "author": {
     "name": "spuxx",
@@ -15,18 +15,19 @@
     "type": "git",
     "url": "https://github.com/spuxx1701/jslibs"
   },
-  "homepage": "https://github.com/spuxx1701/jslibs/blob/main/packages/js-utils/README.md",
+  "homepage": "https://github.com/spuxx1701/jslibs/blob/main/packages/nest-utils/README.md",
   "bugs": {
     "url": "https://github.com/spuxx1701/jslibs/issues"
   },
   "type": "module",
   "main": "dist/main.js",
-  "module": "dist/main.js",
   "types": "dist/main.d.ts",
   "exports": {
     ".": {
       "types": "./dist/main.d.ts",
-      "import": "./dist/main.js"
+      "require": "./dist/main.cjs",
+      "import": "./dist/main.js",
+      "default": "./dist/main.js"
     }
   },
   "files": [
@@ -41,11 +42,11 @@
     "types": "tsc --noEmit"
   },
   "peerDependencies": {
-    "@modyfi/vite-plugin-yaml": "^1.1.0"
+    "@nestjs/common": "^8.0.0 || ^9.0.0 || ^10.0.0",
+    "@nestjs/core": "^8.0.0 || ^9.0.0 || ^10.0.0",
+    "reflect-metadata": "^0.1.13 || ^0.2.0"
   },
-  "peerDependenciesMeta": {
-    "@modyfi/vite-plugin-yaml": {
-      "optional": true
-    }
+  "dependencies": {
+    "@spuxx/js-utils": "workspace:@spuxx/js-utils@*"
   }
 }

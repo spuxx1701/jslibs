@@ -1,28 +1,22 @@
 {
   "compilerOptions": {
-    "target": "ESNext",
-    "useDefineForClassFields": true,
-    "lib": ["ES2020", "DOM", "DOM.Iterable"],
-    "module": "ESNext",
+    /* Compilation */
     "skipLibCheck": true,
-    /* Bundler mode */
-    "moduleResolution": "bundler",
-    "allowImportingTsExtensions": true,
+    "useDefineForClassFields": true,
+    "removeComments": true,
+    /* Resolution */
     "resolveJsonModule": true,
-    "isolatedModules": true,
-    "noEmit": true,
-    "jsx": "react-jsx",
+    "types": ["vite/client", "vitest/globals", "@modyfi/vite-plugin-yaml/modules"],
+    "baseUrl": ".",
+    "paths": {
+      "@spuxx/js-utils": ["packages/js-utils/dist/main"],
+      "@spuxx/browser-utils": ["packages/browser-utils/dist/main"],
+      "@spuxx/nest-utils": ["packages/nest-utils/dist/main"]
+    },
     /* Linting */
     "strict": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
-    "noFallthroughCasesInSwitch": true,
-    "baseUrl": ".",
-    "types": ["vite/client", "@modyfi/vite-plugin-yaml/modules"],
-    "paths": {
-      "@spuxx/js-utils": ["./packages/js-utils/src/main.ts"],
-      "@spuxx/browser-utils": ["./packages/browser-utils/src/main.ts"]
-    }
-  },
-  "include": ["libs", "test-apps"]
+    "noFallthroughCasesInSwitch": true
+  }
 }

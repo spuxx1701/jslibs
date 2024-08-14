@@ -5,4 +5,7 @@
 export * from './services/mixin';
 export * from './services/logger';
 export * from './services/intl';
+
 export * from './utils/misc.utils';
+
+export * from './types/public/helper-types';

@@ -9,6 +9,8 @@
     "declaration": true,
     "incremental": true,
     "strictNullChecks": false,
-    "strictBindCallApply": false
+    "strictBindCallApply": false,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true
   }
 }

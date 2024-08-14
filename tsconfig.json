@@ -8,11 +8,6 @@
     "resolveJsonModule": true,
     "types": ["vite/client", "vitest/globals", "@modyfi/vite-plugin-yaml/modules"],
     "baseUrl": ".",
-    "paths": {
-      "@spuxx/js-utils": ["packages/js-utils/dist/main"],
-      "@spuxx/browser-utils": ["packages/browser-utils/dist/main"],
-      "@spuxx/nest-utils": ["packages/nest-utils/dist/main"]
-    },
     /* Linting */
     "strict": true,
     "noUnusedLocals": true,

@@ -25,14 +25,10 @@ module.exports = {
       },
       {
         selector: 'default',
-        format: ['camelCase'],
-      },
-      {
-        selector: 'variable',
-        modifiers: ['const'],
         format: ['camelCase', 'UPPER_CASE'],
+        leadingUnderscore: 'allow',
       },
-      { selector: 'property', format: ['camelCase'], leadingUnderscore: 'allow' },
+      { selector: 'property', format: ['camelCase', 'UPPER_CASE'], leadingUnderscore: 'allow' },
       { selector: 'property', modifiers: ['requiresQuotes'], format: null },
       { selector: 'method', format: ['camelCase'], leadingUnderscore: 'allow' },
       { selector: 'function', format: ['camelCase', 'PascalCase'] },

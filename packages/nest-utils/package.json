@@ -21,6 +21,7 @@
   },
   "type": "module",
   "main": "dist/main.js",
+  "module": "dist/main.js",
   "types": "dist/main.d.ts",
   "exports": {
     ".": {
@@ -43,8 +44,19 @@
   },
   "peerDependencies": {
     "@nestjs/common": "^8.0.0 || ^9.0.0 || ^10.0.0",
+    "@nestjs/config": "^3.0.0",
     "@nestjs/core": "^8.0.0 || ^9.0.0 || ^10.0.0",
-    "reflect-metadata": "^0.1.13 || ^0.2.0"
+    "@nestjs/testing": "^8.0.0 || ^9.0.0 || ^10.0.0",
+    "class-transformer": "^0.5.0",
+    "class-validator": "^0.14.0",
+    "reflect-metadata": "^0.1.13 || ^0.2.0",
+    "supertest": "^7.0.0",
+    "express-openid-connect": "^2.17.1"
+  },
+  "peerDependenciesMeta": {
+    "express-openid-connect": {
+      "optional": true
+    }
   },
   "dependencies": {
     "@spuxx/js-utils": "workspace:@spuxx/js-utils@*"

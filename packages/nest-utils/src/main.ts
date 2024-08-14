@@ -1,4 +1,4 @@
-export * from './nest-utils.module';
+export * from './env';
 export * from './nest-utils.service';
 
 // As long as NestJS does not support TypeScript's newer resolution algorithms like 'Node16',

@@ -1,11 +1,9 @@
 import { Injectable } from '@nestjs/common';
-import { NestUtilsService } from '@spuxx/nest-utils';
+import { EnvModule } from './env/env.module';
 
 @Injectable()
 export class AppService {
-  constructor(private readonly utils: NestUtilsService) {}
-
   getHello(): string {
-    return this.utils.getHello();
+    return `Hello! The application is running since ${EnvModule.get('START_TIME')}.`;
   }
 }

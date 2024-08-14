@@ -1,10 +1,12 @@
 import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
-import { NestUtilsModule } from '@spuxx/nest-utils';
+import { EnvModule } from './env/env.module';
 
 @Module({
-  imports: [NestUtilsModule],
+  imports: [
+    EnvModule,
+  ],
   controllers: [AppController],
   providers: [AppService],
 })

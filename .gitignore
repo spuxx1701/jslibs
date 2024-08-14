@@ -28,6 +28,7 @@ pnpm-publish-summary.json
 # Build files
 **/dist/
 *.tgz
+tsconfig.tsbuildinfo
 
 # Local files
 *.local

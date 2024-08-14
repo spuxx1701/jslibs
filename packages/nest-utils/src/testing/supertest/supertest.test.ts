@@ -16,7 +16,9 @@ describe('Supertest', () => {
       const container = await TestContainer.create({ controllers: [MyController], enableEndToEnd: true });
       app = container.app;
       const supertest = new Supertest(app);
-      await supertest.get('/hello').expect(200).expect('Hello World!');
+      const response = await supertest.get('/hello');
+      expect(response.status).toBe(200);
+      expect(response.text).toBe('Hello World!');
     });
   });
 });

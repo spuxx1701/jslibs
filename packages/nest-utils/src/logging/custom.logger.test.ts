@@ -35,4 +35,17 @@ describe('CustomLogger', () => {
       expect(logger.printMessages).toHaveBeenCalledTimes(6);
     });
   });
+
+  describe('setLogLevel', () => {
+    it('should allow changing the log level during runtime', () => {
+      const logger = new TestAppLogger({
+        logLevel: ApplicationLogLevel.Default,
+      });
+      logger.verbose("You can't see me");
+      expect(logger.printMessages).toHaveBeenCalledTimes(0);
+      logger.setLogLevel(ApplicationLogLevel.Verbose);
+      logger.verbose('You can see me');
+      expect(logger.printMessages).toHaveBeenCalledTimes(1);
+    });
+  });
 });

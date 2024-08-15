@@ -21,14 +21,25 @@ export type ApplicationLogLevel = (typeof ApplicationLogLevel)[keyof typeof Appl
 export class CustomLogger extends ConsoleLogger {
   constructor(options?: { logLevel?: ApplicationLogLevel; context?: string }) {
     super();
-    const { logLevel, context } = { logLevel: 'default', ...options };
+    const { logLevel, context }: { logLevel: ApplicationLogLevel; context?: string } = {
+      logLevel: 'default',
+      ...options,
+    };
+    this.setLogLevel(logLevel);
+    if (context) {
+      this.setContext(context);
+    }
+  }
+
+  /**
+   * Sets the logger's log level.
+   * @param logLevel THe log level to set.
+   */
+  setLogLevel(logLevel: ApplicationLogLevel) {
     if (logLevel === ApplicationLogLevel.Verbose) {
       this.setLogLevels(['debug', 'verbose', 'log', 'warn', 'error', 'fatal']);
     } else {
       this.setLogLevels(['log', 'warn', 'error', 'fatal']);
-    }
-    if (context) {
-      this.setContext(context);
     }
   }
 }

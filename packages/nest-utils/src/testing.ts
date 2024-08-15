@@ -4,3 +4,4 @@
 // ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 export * from './testing/container';
 export * from './testing/supertest';
+export * from './testing/logging';

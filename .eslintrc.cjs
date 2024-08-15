@@ -28,7 +28,7 @@ module.exports = {
         format: ['camelCase', 'PascalCase', 'UPPER_CASE'],
         leadingUnderscore: 'allow',
       },
-      { selector: 'property', format: ['camelCase', 'UPPER_CASE'], leadingUnderscore: 'allow' },
+      { selector: 'property', format: ['camelCase', 'PascalCase', 'UPPER_CASE'], leadingUnderscore: 'allow' },
       { selector: 'property', modifiers: ['requiresQuotes'], format: null },
       { selector: 'method', format: ['camelCase'], leadingUnderscore: 'allow' },
       { selector: 'function', format: ['camelCase', 'PascalCase'] },

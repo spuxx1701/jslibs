@@ -1,0 +1,38 @@
+import { TestAppLogger } from '../testing/logging';
+import { ApplicationLogLevel, CustomLogger } from './custom.logger';
+
+describe('CustomLogger', () => {
+  it('should be ok', () => {
+    const logger = new CustomLogger();
+    expect(logger).toBeDefined();
+    expect(logger).toBeInstanceOf(CustomLogger);
+  });
+
+  describe('ApplicationLogLevel', () => {
+    it('should log the expected amount of messages with default logging enabled', () => {
+      const logger = new TestAppLogger({
+        logLevel: ApplicationLogLevel.Default,
+      });
+      logger.debug('hello world');
+      logger.verbose('hello world');
+      logger.log('hello world');
+      logger.warn('hello world');
+      logger.error('hello world');
+      logger.fatal('hello world');
+      expect(logger.printMessages).toHaveBeenCalledTimes(4);
+    });
+
+    it('should log the expected amount of messages with verbose logging enabled', () => {
+      const logger = new TestAppLogger({
+        logLevel: ApplicationLogLevel.Verbose,
+      });
+      logger.debug('hello world');
+      logger.verbose('hello world');
+      logger.log('hello world');
+      logger.warn('hello world');
+      logger.error('hello world');
+      logger.fatal('hello world');
+      expect(logger.printMessages).toHaveBeenCalledTimes(6);
+    });
+  });
+});

@@ -3,6 +3,7 @@
 // Otherwise, they will not be included into the bundle.
 // ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 export * from './env';
+export * from './logging';
 export * from './transformers';
 
 // As long as NestJS does not support TypeScript's newer resolution algorithms like 'Node16',

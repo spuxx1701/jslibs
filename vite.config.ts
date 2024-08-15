@@ -22,7 +22,12 @@ export default defineConfig({
           decorators: true,
           dynamicImport: true,
         },
+        transform: {
+          legacyDecorator: true,
+          decoratorMetadata: true,
+        },
       },
+      sourceMaps: true,
     }),
   ],
   test: {

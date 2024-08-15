@@ -1,11 +1,13 @@
 import { Logger, Module } from '@nestjs/common';
 import { plainToInstance } from 'class-transformer';
 import { validateSync } from 'class-validator';
+import { config } from 'dotenv';
 
 export function EnvModuleMixin<TEnv extends object>(env: new (...args: unknown[]) => TEnv) {
   @Module({})
   class EnvModule {
     static get env(): TEnv {
+      config();
       return plainToInstance(env, process.env, {
         enableImplicitConversion: true,
       });

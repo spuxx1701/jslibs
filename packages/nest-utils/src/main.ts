@@ -3,6 +3,7 @@
 // Otherwise, they will not be included into the bundle.
 // ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 export * from './env';
+export * from './auth';
 export * from './logging';
 export * from './transformers';
 

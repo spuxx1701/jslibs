@@ -1,8 +1,20 @@
-import { Test, TestingModule } from '@nestjs/testing';
-import { TestContainerOptions } from './types';
 import { INestApplication } from '@nestjs/common';
-import { createEndToEndNestApplication } from './private/end-to-end';
+import { Test, TestingModule } from '@nestjs/testing';
+import { type OmitFunctionMembers } from '@spuxx/js-utils';
+import { NextFunction, Request, Response } from 'express';
+import { AuthOptions, SessionResource } from '../../auth';
+import { AuthModule } from '../../auth/auth.module';
 import { Supertest } from '../supertest';
+import { createEndToEndNestApplication } from './private/end-to-end';
+import { MockOidcModule } from './private/mock-oidc';
+import { TestContainerOptions } from './types';
+
+vitest.mock('express-openid-connect', () => {
+  return {
+    auth: vitest.fn(() => (_req: Request, _res: Response, next: NextFunction) => next()),
+    requiresAuth: vitest.fn(() => (_req: Request, _res: Response, next: NextFunction) => next()),
+  };
+});
 
 /**
  * `TestContainer` provides an abstraction of `Nest.createTestContainer()`, offering
@@ -41,8 +53,13 @@ export class TestContainer {
    * if `enableEndToEnd` is set to `true` in the `TestContainerOptions`.
    */
   supertest?: Supertest;
+  /**
+   * The session that will be used to authenticate requests when end-to-end testing. This will
+   * only be defined if `authOptions` is provided in the `TestContainerOptions`.
+   */
+  readonly session?: Partial<SessionResource>;
 
-  private constructor(init: TestContainer) {
+  private constructor(init: OmitFunctionMembers<TestContainer>) {
     Object.assign(this, init);
   }
 
@@ -59,7 +76,18 @@ export class TestContainer {
    * // ... Your test implementation here
    */
   static async create(options: TestContainerOptions) {
-    const { imports, controllers, providers, logger, enableEndToEnd } = options;
+    const { imports, controllers, providers, logger, authOptions, enableEndToEnd } = {
+      imports: [],
+      controllers: [],
+      providers: [],
+      authOptions: {},
+      ...options,
+    };
+
+    // Auto-add conditional components
+    if (enableEndToEnd) {
+      imports.push(AuthModule.forRoot(authOptions as AuthOptions), MockOidcModule);
+    }
 
     // Create the precompiled version of the module
     let builder = Test.createTestingModule({
@@ -79,11 +107,21 @@ export class TestContainer {
     // Enable end-to-end testing if requested
     let app: INestApplication | undefined;
     let supertest: Supertest | undefined;
+    let session: Partial<SessionResource> | undefined;
     if (enableEndToEnd) {
       app = await createEndToEndNestApplication(module);
-      supertest = new Supertest(app);
+      session = { ...options.session } ?? {};
+      AuthModule.bootstrap(app, authOptions as AuthOptions);
+      supertest = new Supertest(app, session);
     }
     // Return the test container
     return new TestContainer({ module, app, supertest });
+  }
+
+  /**
+   * Sets the session that is being used to authenticate requests.
+   */
+  setSession(session: Partial<SessionResource>) {
+    Object.assign(this.session, session);
   }
 }

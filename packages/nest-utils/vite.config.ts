@@ -1,5 +1,5 @@
 /// <reference types="vitest" />
-import baseConfig from '../../vite.config';
+import baseConfig from '../../vite.config.nest';
 import { mergeConfig, defineConfig } from 'vite';
 import { resolve } from 'path';
 import { peerDependencies } from './package.json';

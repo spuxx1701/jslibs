@@ -24,6 +24,7 @@ describe('HttpLoggingInterceptor', () => {
       enableEndToEnd: true,
     });
     supertest = container.supertest;
+    // Clear any logger calls from e.g. application startup
     vitest.clearAllMocks();
   });
 

@@ -4,9 +4,7 @@ import { AppService } from './app.service';
 import { EnvModule } from './env/env.module';
 
 @Module({
-  imports: [
-    EnvModule,
-  ],
+  imports: [EnvModule],
   controllers: [AppController],
   providers: [AppService],
 })

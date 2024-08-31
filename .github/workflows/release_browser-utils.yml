@@ -8,7 +8,7 @@ on:
 
 jobs:
   release:
-    uses: ./release.yml
+    uses: ./.github/workflows/release.yml
     with:
       PATH: packages/browser-utils
     secrets:

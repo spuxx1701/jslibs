@@ -6,7 +6,18 @@
 ![nest-utils](https://github.com/spuxx1701/jslibs/actions/workflows/release_nest_utils.yml/badge.svg)
 ![License](https://img.shields.io/github/license/spuxx1701/jslibs)
 
-## Description
+<!-- vscode-markdown-toc -->
+
+- 1. [Description](#Description)
+- 2. [Releases](#Releases)
+
+<!-- vscode-markdown-toc-config
+	numbering=true
+	autoSave=true
+	/vscode-markdown-toc-config -->
+<!-- /vscode-markdown-toc -->
+
+## 1. <a name='Description'></a>Description
 
 A metarepository containing various package I maintain for my typical JavaScript/TypeScript stack.
 
@@ -15,7 +26,7 @@ Find out more about each individual package here:
 - [`@spuxx/js-utils`](/packages/js-utils/README.md)
 - [`@spuxx/browser-utils`](/packages/browser-utils/README.md)
 
-## Releases
+## 2. <a name='Releases'></a>Releases
 
 Releases are manifest-driven and performed through [`release-please`](https://duckduckgo.com/?q=release-manifest.json&t=ffab&ia=web). Read more about it here:
 

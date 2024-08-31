@@ -7,7 +7,7 @@ on:
     - "*-v*"
 
 jobs:
-  run_cutilshecks:
+  run_checks:
     name: Run code checks
     uses: spuxx1701/ci-cd/.github/workflows/pnpm_run_checks.yml@v4.0.0
 

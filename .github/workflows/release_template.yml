@@ -1,10 +1,15 @@
-name: release
+name: Release Template
 
 on:
-  workflow_dispatch:
-  push:
-    tags:
-    - "*-v*"
+  workflow_call:
+    inputs:
+      PATH:
+        required: true
+        type: string
+        description: "Path to the package to be released"
+    secrets:
+      NPM_TOKEN:
+        required: true
 
 jobs:
   run_checks:
@@ -19,10 +24,12 @@ jobs:
       COVERAGE_FAIL_BELOW_MIN: 100
 
   build_and_publish:
-    name: Build and publish artifact(s)
-    uses: spuxx1701/ci-cd/.github/workflows/pnpm_build_and_publish_monorepo.yml@v4.0.0
+    name: Build and publish artifact
+    uses: spuxx1701/ci-cd/.github/workflows/pnpm_build_and_publish.yml@v4.0.0
     needs:
     - run_checks
     - run_unit_tests
+    with:
+      PATH: ${{ inputs.PATH }}
     secrets:
       NPM_TOKEN: ${{ secrets.NPM_TOKEN }}

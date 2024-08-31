@@ -18,6 +18,5 @@
     { "type": "build", "section": "Build System", "hidden": true },
     { "type": "ci", "section": "Continuous Integration", "hidden": true }
   ],
-  "prerelease": true,
-  "versioning": "prerelease"
+  "prerelease": true
 }

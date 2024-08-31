@@ -1,4 +1,4 @@
-name: Release js-utils
+name: "@spuxx/js-utils"
 
 on:
   workflow_dispatch:

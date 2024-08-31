@@ -1,4 +1,4 @@
-name: Release browser-utils
+name: "@spuxx/browser-utils"
 
 on:
   workflow_dispatch:

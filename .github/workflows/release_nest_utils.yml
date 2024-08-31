@@ -1,4 +1,4 @@
-name: Release nest-utils
+name: "@spuxx/nest-utils"
 
 on:
   workflow_dispatch:

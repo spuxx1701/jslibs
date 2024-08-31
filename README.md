@@ -25,6 +25,7 @@ Find out more about each individual package here:
 
 - [`@spuxx/js-utils`](/packages/js-utils/README.md)
 - [`@spuxx/browser-utils`](/packages/browser-utils/README.md)
+- [`@spuxx/nest-utils`](/packages/nest-utils/README.md)
 
 ## <a name='Releases'></a>Releases
 

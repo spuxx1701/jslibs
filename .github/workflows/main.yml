@@ -22,17 +22,17 @@ jobs:
       COVERAGE_FAIL_BELOW_MIN: 100
 
   create_prerelease_pr:
-    name: Run release-please prerelease
+    name: Run release-please (prerelease)
     uses: spuxx1701/ci-cd/.github/workflows/pnpm_release-please.yml@v4.0.0
     needs:
     - run_checks
     - run_unit_tests
     with:
-      ARGS: "--prerelease"
+      ARGS: "--versioning-strategy=prerelease"
     secrets:
       TOKEN: ${{ secrets.RELEASE_PLEASE_TOKEN }}
 
-  create_release_pr:
+  run_release_please:
     name: Run release-please
     uses: spuxx1701/ci-cd/.github/workflows/pnpm_release-please.yml@v4.0.0
     needs:

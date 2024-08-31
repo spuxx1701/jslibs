@@ -26,6 +26,7 @@ jobs:
     name: Run release-please
     uses: spuxx1701/ci-cd/.github/workflows/pnpm_release-please.yml@v4.0.0
     needs:
-    - create_prerelease_pr
+    - run_checks
+    - run_unit_tests
     secrets:
       TOKEN: ${{ secrets.RELEASE_PLEASE_TOKEN }}

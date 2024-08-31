@@ -8,19 +8,19 @@
 
 <!-- vscode-markdown-toc -->
 
-- 1. [Description](#Description)
-- 2. [Links](#Links)
+- [Description](#Description)
+- [Links](#Links)
 
 <!-- vscode-markdown-toc-config
-  numbering=true
-  autoSave=true
-  /vscode-markdown-toc-config -->
+	numbering=false
+	autoSave=true
+	/vscode-markdown-toc-config -->
 <!-- /vscode-markdown-toc -->
 
-## Description
+## <a name='Description'></a>Description
 
 `@spuxx/js-utils` contains a selection of core JavaScript utilities that I keep reusing across my web projects.
 
-## Links
+## <a name='Links'></a>Links
 
 - [Source](https://github.com/spuxx1701/jslibs)

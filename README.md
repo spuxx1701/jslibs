@@ -1,7 +1,9 @@
 # jslibs
 
-![Release pipeline](https://github.com/spuxx1701/jslibs/actions/workflows/release.yml/badge.svg)
 ![Main pipeline](https://github.com/spuxx1701/jslibs/actions/workflows/main.yml/badge.svg)
+![js-utils](https://github.com/spuxx1701/jslibs/actions/workflows/release/js-utils.yml/badge.svg)
+![browser-utils](https://github.com/spuxx1701/jslibs/actions/workflows/release/browser-utils.yml/badge.svg)
+![nest-utils](https://github.com/spuxx1701/jslibs/actions/workflows/release/nest-utils.yml/badge.svg)
 ![License](https://img.shields.io/github/license/spuxx1701/jslibs)
 
 ## Description

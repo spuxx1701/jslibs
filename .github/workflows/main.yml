@@ -21,7 +21,7 @@ jobs:
       COVERAGE_FILENAME: reports/vitest/coverage/cobertura-coverage.xml
       COVERAGE_FAIL_BELOW_MIN: 100
 
-  run_release_please_prerelease:
+  create_prerelease_pr:
     name: Run release-please prerelease
     uses: spuxx1701/ci-cd/.github/workflows/pnpm_release-please.yml@v4.0.0
     needs:
@@ -32,19 +32,10 @@ jobs:
     secrets:
       TOKEN: ${{ secrets.RELEASE_PLEASE_TOKEN }}
 
-  run_release_please:
+  create_release_pr:
     name: Run release-please
     uses: spuxx1701/ci-cd/.github/workflows/pnpm_release-please.yml@v4.0.0
     needs:
-    - run_checks
-    - run_unit_tests
+    - create_prerelease_pr
     secrets:
       TOKEN: ${{ secrets.RELEASE_PLEASE_TOKEN }}
-
-# Run pnpx release-please \
-#   pnpx release-please \
-#   --repo-url=spuxx1701/jslibs \
-#   --token=*** \
-#   --config-file=.release-please/config.json \
-#   --manifest-file=.release-please/manifest.json --prerelease \
-#   release-pr

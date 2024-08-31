@@ -1,15 +1,15 @@
-name: Release js-utils
+name: Release nest-utils
 
 on:
   workflow_dispatch:
   push:
     tags:
-    - "js-utils-*"
+    - "nest-utils-*"
 
 jobs:
   release:
-    uses: ../release_template.yml
+    uses: ./release.yml
     with:
-      PATH: packages/js-utils
+      PATH: packages/nest-utils
     secrets:
       NPM_TOKEN: ${{ secrets.NPM_TOKEN }}

@@ -99,7 +99,7 @@ export class TestContainer {
     let session: Partial<SessionResource> | undefined;
     if (enableEndToEnd) {
       app = await createEndToEndNestApplication(module);
-      session = { ...options.session } ?? {};
+      session = { ...options.session };
       await AuthModule.bootstrap(app, authOptions as AuthOptions);
       supertest = new Supertest(app, session);
     }

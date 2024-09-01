@@ -1,20 +1,12 @@
 import { INestApplication } from '@nestjs/common';
 import { Test, TestingModule } from '@nestjs/testing';
 import { type OmitFunctionMembers } from '@spuxx/js-utils';
-import { NextFunction, Request, Response } from 'express';
 import { AuthOptions, SessionResource } from '../../auth';
 import { AuthModule } from '../../auth/auth.module';
 import { Supertest } from '../supertest';
 import { createEndToEndNestApplication } from './private/end-to-end';
-import { MockOidcModule } from './private/mock-oidc';
+import { mockExpressOidcPackage, MockOidcModule } from './private/mock-oidc';
 import { TestContainerOptions } from './types';
-
-vitest.mock('express-openid-connect', () => {
-  return {
-    auth: vitest.fn(() => (_req: Request, _res: Response, next: NextFunction) => next()),
-    requiresAuth: vitest.fn(() => (_req: Request, _res: Response, next: NextFunction) => next()),
-  };
-});
 
 /**
  * `TestContainer` provides an abstraction of `Nest.createTestContainer()`, offering
@@ -84,6 +76,8 @@ export class TestContainer {
       ...options,
     };
 
+    mockExpressOidcPackage();
+
     // Auto-add conditional components
     if (enableEndToEnd) {
       imports.push(AuthModule.forRoot(authOptions as AuthOptions), MockOidcModule);
@@ -111,7 +105,7 @@ export class TestContainer {
     if (enableEndToEnd) {
       app = await createEndToEndNestApplication(module);
       session = { ...options.session } ?? {};
-      AuthModule.bootstrap(app, authOptions as AuthOptions);
+      await AuthModule.bootstrap(app, authOptions as AuthOptions);
       supertest = new Supertest(app, session);
     }
     // Return the test container

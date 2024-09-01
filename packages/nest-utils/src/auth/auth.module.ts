@@ -1,6 +1,5 @@
 import { DynamicModule, INestApplication, Logger, Module } from '@nestjs/common';
 import { defaultAuthOptions, type AuthOptions } from '../main';
-import { auth } from 'express-openid-connect';
 import { AuthController } from './controllers/auth.controller';
 import { AuthService } from './providers/auth.service';
 import { deepMerge } from '@spuxx/js-utils';
@@ -51,6 +50,7 @@ export class AuthModule {
       Logger.warn('Authentication is disabled. All routes will be accessible.', AuthModule.name);
       return;
     }
+    const { auth } = await import('express-openid-connect');
     app.use(auth(oidc));
     Logger.log(`Authentication is enabled and will be handled by issuer at '${oidc.issuerBaseURL}'.`, AuthModule.name);
   }

@@ -45,11 +45,6 @@ export class TestContainer {
    * if `enableEndToEnd` is set to `true` in the `TestContainerOptions`.
    */
   supertest?: Supertest;
-  /**
-   * The session that will be used to authenticate requests when end-to-end testing. This will
-   * only be defined if `authOptions` is provided in the `TestContainerOptions`.
-   */
-  readonly session?: Partial<SessionResource>;
 
   private constructor(init: OmitFunctionMembers<TestContainer>) {
     Object.assign(this, init);
@@ -110,12 +105,5 @@ export class TestContainer {
     }
     // Return the test container
     return new TestContainer({ module, app, supertest });
-  }
-
-  /**
-   * Sets the session that is being used to authenticate requests.
-   */
-  setSession(session: Partial<SessionResource>) {
-    Object.assign(this.session, session);
   }
 }

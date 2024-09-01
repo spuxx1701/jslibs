@@ -1,7 +1,7 @@
-import { Controller, Get, Req, UseGuards } from '@nestjs/common';
+import { Controller, ForbiddenException, Get, Req, UnauthorizedException, UseGuards } from '@nestjs/common';
 import { EnvModule } from './env/env.module';
 import type { Request } from 'express';
-import { AuthGuard, Roles } from 'packages/nest-utils/dist/main';
+import { ApiException, AuthGuard, Roles } from '@spuxx/nest-utils';
 import { AuthRole } from './auth/auth.config';
 
 @Controller()
@@ -26,6 +26,7 @@ export class AppController {
   @Get('/protected')
   @UseGuards(AuthGuard)
   @Roles(AuthRole.user)
+  @ApiException(() => [UnauthorizedException, ForbiddenException])
   getProtectedHello(@Req() request: Request) {
     return `Oh hello there, ${request.oidc.user.name}! This route is protected, but you can see it! Not bad!`;
   }

@@ -15,5 +15,18 @@ import { CustomLogger } from '../../logging/custom.logger';
  * });
  */
 export class TestAppLogger extends CustomLogger {
-  printMessages = vitest.fn();
+  /**
+   * The messages that have been logged. Clear with `clear()`.
+   */
+  messages: unknown[] = [];
+
+  printMessages = vitest.fn((messages: unknown[]) => this.messages.push(messages));
+
+  /**
+   * Clears `messages` and all calls to `printMessages`.
+   */
+  clear = () => {
+    this.printMessages.mockClear();
+    this.messages = [];
+  };
 }

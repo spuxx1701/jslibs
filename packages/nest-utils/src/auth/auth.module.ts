@@ -3,7 +3,7 @@ import { defaultAuthOptions, type AuthOptions } from '../main';
 import { auth } from 'express-openid-connect';
 import { AuthController } from './controllers/auth.controller';
 import { AuthService } from './providers/auth.service';
-import { deepMerge } from 'packages/js-utils/dist/main';
+import { deepMerge } from '@spuxx/js-utils';
 import { AuthOptionsProvider } from './providers/auth-options.provider';
 
 /**

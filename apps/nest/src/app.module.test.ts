@@ -1,4 +1,4 @@
-import { TestContainer } from 'packages/nest-utils/dist/main';
+import { TestContainer } from '@spuxx/nest-utils';
 import { AppModule } from './app.module';
 
 describe('AppModule', () => {

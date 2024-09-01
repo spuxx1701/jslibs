@@ -1,5 +1,5 @@
 import { IsIn, IsString, IsUrl } from 'class-validator';
-import { ApplicationLogLevel } from 'packages/nest-utils/dist/main';
+import { ApplicationLogLevel } from '@spuxx/nest-utils';
 
 export class Environment {
   @IsString()

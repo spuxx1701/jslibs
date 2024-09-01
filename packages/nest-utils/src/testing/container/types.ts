@@ -37,7 +37,8 @@ export interface TestContainerOptions {
   /**
    * A session to pass to the `Supertest` instance when testing end-to-end. Does nothing if
    * `enableEndToEnd` is set to `false`. You may also provide a session on each request. The
-   * session will be used to simulate authenticated and possibly authorized requests.
+   * session will be used to simulate authenticated and possibly authorized requests. Session
+   * must contain at least `sub` to be considered an authenticated session.
    */
   session?: Partial<SessionResource>;
 }

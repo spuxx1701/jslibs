@@ -1,7 +1,7 @@
 import { INestApplication } from '@nestjs/common';
 import { Test, TestingModule } from '@nestjs/testing';
 import { type OmitFunctionMembers } from '@spuxx/js-utils';
-import { AuthOptions, SessionResource } from '../../auth';
+import { AuthOptions } from '../../auth';
 import { AuthModule } from '../../auth/auth.module';
 import { Supertest } from '../supertest';
 import { createEndToEndNestApplication } from './private/end-to-end';
@@ -96,12 +96,10 @@ export class TestContainer {
     // Enable end-to-end testing if requested
     let app: INestApplication | undefined;
     let supertest: Supertest | undefined;
-    let session: Partial<SessionResource> | undefined;
     if (enableEndToEnd) {
       app = await createEndToEndNestApplication(module);
-      session = { ...options.session };
       await AuthModule.bootstrap(app, authOptions as AuthOptions);
-      supertest = new Supertest(app, session);
+      supertest = new Supertest(app, options.session);
     }
     // Return the test container
     return new TestContainer({ module, app, supertest });

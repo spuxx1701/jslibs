@@ -19,6 +19,19 @@ describe('AppController', () => {
       const response = await supertest.get('/');
       expect(response.statusCode).toBe(200);
       expect(response.body.message).toBe('Hello there!');
+      expect(response.body.session).toBe('Not logged in');
+    });
+
+    it('should indicate the current session', async () => {
+      const response = await supertest.get('/', {
+        session: {
+          sub: '123',
+          name: 'John Doe',
+          email: 'john.doe@example.com',
+        },
+      });
+      expect(response.statusCode).toBe(200);
+      expect(response.body.session).toBe('Logged in as John Doe');
     });
   });
 

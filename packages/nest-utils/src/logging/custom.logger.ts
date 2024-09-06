@@ -32,6 +32,14 @@ export class CustomLogger extends ConsoleLogger {
   }
 
   /**
+   * Returns the logger's current default context.
+   * @returns
+   */
+  getContext() {
+    return this.context;
+  }
+
+  /**
    * Sets the logger's log level.
    * @param logLevel THe log level to set.
    */

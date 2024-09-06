@@ -2,10 +2,17 @@ import { TestAppLogger } from '../testing/logging';
 import { ApplicationLogLevel, CustomLogger } from './custom.logger';
 
 describe('CustomLogger', () => {
-  it('should be ok', () => {
-    const logger = new CustomLogger();
-    expect(logger).toBeDefined();
-    expect(logger).toBeInstanceOf(CustomLogger);
+  describe('construction', () => {
+    it('should be ok', () => {
+      const logger = new CustomLogger();
+      expect(logger).toBeDefined();
+      expect(logger).toBeInstanceOf(CustomLogger);
+    });
+
+    it("should set the context if it's provided", () => {
+      const logger = new CustomLogger({ context: 'test' });
+      expect(logger.getContext()).toEqual('test');
+    });
   });
 
   describe('ApplicationLogLevel', () => {

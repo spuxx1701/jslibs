@@ -8,11 +8,11 @@ export interface AuthOptions {
    */
   disable?: boolean;
   /**
-   * The list of external URLs the service is allowed to redirect to after login or logout.
+   * The list of external hostnames the service is allowed to redirect to after login or logout.
    * Local redirects are always allowed.
    * @default []
    */
-  allowedRedirectUrls?: string[];
+  allowedRedirectHostnames?: string[];
   /**
    * The URL that should be used as the default redirect URL after login or logout.
    * @default 'auth/session'
@@ -36,7 +36,7 @@ type DefaultAuthOptions = Partial<Omit<AuthOptions, 'oidc'>> & Pick<AuthOptions,
  */
 export const defaultAuthOptions: DefaultAuthOptions = {
   disable: false,
-  allowedRedirectUrls: [],
+  allowedRedirectHostnames: [],
   defaultRedirectUrl: '/',
   oidc: {
     errorOnRequiredAuth: true,

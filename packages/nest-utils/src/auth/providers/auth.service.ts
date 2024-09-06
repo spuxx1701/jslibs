@@ -64,11 +64,11 @@ export class AuthService {
     let match: string;
     try {
       if (!returnTo) returnTo = this.options.defaultRedirectUrl;
-      const { allowedRedirectUrls } = this.options;
+      const { allowedRedirectHostnames } = this.options;
       // If `returnTo` starts with a slash, it is a local redirect and will be allowed.
       if (returnTo.startsWith('/')) return true;
       const returnToUrl = new URL(returnTo);
-      match = allowedRedirectUrls.find((url) => returnToUrl.host === new URL(url).host);
+      match = allowedRedirectHostnames.find((hostname) => returnToUrl.host === hostname);
     } catch (error) {
       Logger.error(`Failed to validate 'returnTo=${returnTo}': ${error}`);
       throw authExceptions.login.urlParsingError;

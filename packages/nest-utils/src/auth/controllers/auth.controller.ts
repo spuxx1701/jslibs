@@ -1,11 +1,12 @@
 import { ApiException } from '@nanogiants/nestjs-swagger-api-exception-decorator';
-import { Controller, Get, Query, Req, Res, ValidationPipe } from '@nestjs/common';
+import { Controller, Get, Query, Req, Res, UseGuards, ValidationPipe } from '@nestjs/common';
 import { ApiOkResponse, ApiOperation, ApiQuery, ApiResponse, ApiTags } from '@nestjs/swagger';
 import type { Request, Response } from 'express';
 import { authExceptions } from '../config/auth.exceptions';
 import { AuthService } from '../providers/auth.service';
 import { AuthLoginLogoutQuery } from './queries/login-logout.query';
 import { SessionResource } from '../resources/session.resource';
+import { AuthGuard } from '../guards/auth.guard';
 
 /**
  * The authentication controller.
@@ -46,7 +47,7 @@ export class AuthController {
   }
 
   @Get('session')
-  // @UseGuards(AuthGuard)
+  @UseGuards(AuthGuard)
   @ApiOperation({
     summary: 'Get information about the current session state.',
     description: `Will look for session tokens in the request's cookies. If tokens are found and deemed valid, the session details will be returned. Otherwise, the endpoint will return a 401.
@@ -58,7 +59,7 @@ export class AuthController {
     type: SessionResource,
   })
   @ApiException(() => Object.values(authExceptions.session))
-  session(@Req() request: Request): SessionResource {
+  getSession(@Req() request: Request): SessionResource {
     return this.service.getSession(request);
   }
 

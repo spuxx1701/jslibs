@@ -33,7 +33,7 @@ export default defineConfig({
   test: {
     globals: true,
     reporters: ['default', 'junit'],
-    outputFile: 'reports/junit/junit.xml',
+    outputFile: 'reports/vitest/junit/junit.xml',
     coverage: {
       provider: 'v8',
       all: true,

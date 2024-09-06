@@ -2,6 +2,7 @@ import { AuthGuard } from './auth.guard';
 import { Controller, Get, UseGuards } from '@nestjs/common';
 import { Supertest, TestContainer } from '../../testing';
 import { Roles } from '../decorators/roles.decorator';
+import { SessionResource } from '../resources/session.resource';
 
 const AuthRole = {
   Admin: 'admin',
@@ -97,77 +98,132 @@ describe('AuthGuard', () => {
       const response = await supertest.get('/unprotected');
       expect(response.statusCode).toBe(200);
     });
+
+    describe('Authorization', () => {
+      let supertest: Supertest;
+
+      @Controller()
+      class TestController {
+        @Get('admin')
+        @UseGuards(AuthGuard)
+        @Roles(AuthRole.Admin)
+        admin() {}
+
+        @Get('user')
+        @UseGuards(AuthGuard)
+        @Roles(AuthRole.User)
+        user() {}
+
+        @Get('all')
+        @UseGuards(AuthGuard)
+        @Roles(AuthRole.Admin, AuthRole.User)
+        all() {}
+      }
+
+      beforeEach(async () => {
+        const container = await TestContainer.create({
+          controllers: [TestController],
+          authOptions: {
+            roles: AuthRole,
+          },
+          enableEndToEnd: true,
+        });
+        supertest = container.supertest;
+      });
+
+      it('should allow an authorized request to the admin route', async () => {
+        const response = await supertest.get('/admin', {
+          session: {
+            sub: '123',
+            realm_access: {
+              roles: ['admin'],
+            },
+          },
+        });
+        expect(response.statusCode).toBe(200);
+      });
+
+      it('should deny an unauthorized request to the admin route', async () => {
+        const response = await supertest.get('/admin', {
+          session: {
+            sub: '123',
+            realm_access: {
+              roles: ['user'],
+            },
+          },
+        });
+        expect(response.statusCode).toBe(403);
+      });
+
+      it('should allow an authorized request to the user route', async () => {
+        const response = await supertest.get('/user', {
+          session: {
+            sub: '123',
+            realm_access: {
+              roles: ['user'],
+            },
+          },
+        });
+        expect(response.statusCode).toBe(200);
+      });
+
+      it('should deny an unauthorized request to the user route (no roles)', async () => {
+        const response = await supertest.get('/user', {
+          session: {
+            sub: '123',
+            realm_access: {
+              roles: [],
+            },
+          },
+        });
+        expect(response.statusCode).toBe(403);
+      });
+
+      it('should deny an unauthorized request to the user route (unrelated roles)', async () => {
+        const response = await supertest.get('/user', {
+          session: {
+            sub: '123',
+            realm_access: {
+              roles: ['completely-different-application'],
+            },
+          },
+        });
+        expect(response.statusCode).toBe(403);
+      });
+
+      it('should allow an authorized request to the all route', async () => {
+        const response = await supertest.get('/all', {
+          session: {
+            sub: '123',
+            realm_access: {
+              roles: ['user', 'admin'],
+            },
+          },
+        });
+        expect(response.statusCode).toBe(200);
+      });
+
+      it("should deny an unauthorized request to the all route (only 'user' role)", async () => {
+        const response = await supertest.get('/all', {
+          session: {
+            sub: '123',
+            realm_access: {
+              roles: ['user'],
+            },
+          },
+        });
+        expect(response.statusCode).toBe(403);
+      });
+
+      it('should be able process a roles property on the top level', async () => {
+        const response = await supertest.get('/user', {
+          session: {
+            sub: '123',
+            roles: ['user'],
+          } as unknown as SessionResource,
+        });
+        expect(response.statusCode).toBe(200);
+      });
+    });
   });
-
-  // describe('Authorization', () => {});
-
-  // describe('Decorating the controller', () => {});
-
-  // describe('Authentication', () => {
-  //   let guard: AuthGuard;
-  //   let reflector: Reflector;
-
-  //   beforeEach(async () => {
-  //     const container = await TestContainer.create({
-  //       providers: [AuthService],
-  //     });
-  //     reflector = new Reflector();
-  //     guard = new AuthGuard(reflector);
-  //   });
-
-  //   it('should throw an UnauthorizedException for unauthenticated request', () => {
-  //     const executionContext = authGuardMocks.unauthenticatedContext;
-  //     expect(() => {
-  //       guard.canActivate(executionContext);
-  //     }).toThrowError(UnauthorizedException);
-  //   });
-  // });
-
-  // describe('Authorization', () => {
-  //   let guard: AuthGuard;
-  //   let reflector: Reflector;
-
-  //   beforeEach(async () => {
-  //     const container = await TestContainer.create({
-  //       providers: [AuthService],
-  //     });
-  //     reflector = new Reflector();
-  //     guard = new AuthGuard(reflector);
-  //   });
-
-  //   it('should return true for an authenticated request when the guard does not require any specific roles', () => {
-  //     reflector.get = vi.fn().mockReturnValue(undefined);
-  //     const executionContext = authGuardMocks.authenticatedContextWithRead;
-  //     expect(guard.canActivate(executionContext)).toBe(true);
-  //   });
-
-  //   it('should return true for an authenticated request that fulfills specific role requirements', () => {
-  //     reflector.get = vi.fn().mockReturnValue([AuthRole.read, AuthRole.write]);
-  //     const executionContext = authGuardMocks.authenticatedContextWithReadWrite;
-  //     expect(guard.canActivate(executionContext)).toBe(true);
-  //   });
-
-  //   it('should throw a ForbiddenException for an unauthorized request when the guard does not require any specific roles', () => {
-  //     let executionContext = authGuardMocks.authenticatedContextWithoutRoles;
-  //     expect(() => {
-  //       guard.canActivate(executionContext);
-  //     }).toThrowError(ForbiddenException);
-  //     executionContext = authGuardMocks.authenticatedContextWithUnrelatedRole;
-  //     expect(() => {
-  //       guard.canActivate(executionContext);
-  //     }).toThrowError(ForbiddenException);
-  //   });
-
-  //   it('should throw a ForbiddenException for an unauthorized request that fails to meet specific role requirements', () => {
-  //     reflector.get = vi.fn().mockReturnValue([AuthRole.read, AuthRole.write]);
-  //     let executionContext = authGuardMocks.authenticatedContextWithRead;
-  //     expect(() => {
-  //       guard.canActivate(executionContext);
-  //     }).toThrowError(ForbiddenException);
-  //     executionContext = authGuardMocks.authenticatedContextWithUnrelatedRole;
-  //     expect(() => {
-  //       guard.canActivate(executionContext);
-  //     }).toThrowError(ForbiddenException);
-  //   });
-  // });
 });

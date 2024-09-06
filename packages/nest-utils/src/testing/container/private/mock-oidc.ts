@@ -4,7 +4,7 @@ import { SessionResource } from 'packages/nest-utils/src/auth';
 
 @Injectable()
 export class MockOidcMiddleware implements NestMiddleware {
-  use(req: Request, _res: Response, next: NextFunction) {
+  use(req: Request, res: Response, next: NextFunction) {
     const mockSession = req.header('X-Mock-Session');
     if (mockSession) {
       const session: Partial<SessionResource> | undefined = JSON.parse(mockSession);
@@ -20,6 +20,15 @@ export class MockOidcMiddleware implements NestMiddleware {
         fetchUserInfo: async () => undefined,
       };
     }
+    res.oidc = {
+      login: vitest.fn(async () => {
+        res.status(302).send();
+      }),
+      logout: vitest.fn(async () => {
+        res.status(302).send();
+      }),
+      callback: vitest.fn(),
+    };
     next();
   }
 }

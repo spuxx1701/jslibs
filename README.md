@@ -23,6 +23,8 @@ A metarepository containing various package I maintain for my typical JavaScript
 
 Find out more about each individual package here:
 
+foo
+
 - [`@spuxx/js-utils`](/packages/js-utils/README.md)
 - [`@spuxx/browser-utils`](/packages/browser-utils/README.md)
 - [`@spuxx/nest-utils`](/packages/nest-utils/README.md)

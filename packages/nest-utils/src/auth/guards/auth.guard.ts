@@ -55,38 +55,35 @@ export class AuthGuard implements CanActivate {
     const user = oidc.user;
     const userRoles: string[] | undefined = user.roles ?? user.realm_access?.roles;
     if (!userRoles || userRoles.length === 0) throw new ForbiddenException();
-    let requiredRoles: string[] | undefined;
-    try {
-      // We need to look for roles metadata on both the handler (in case of function decorators)
-      // as well as class level (in case of class decorators).
-      requiredRoles =
-        this.reflector.get<string[]>('roles', context.getHandler()) ??
-        this.reflector.get<string[]>('roles', context.getClass());
-    } catch (error) {
-      // In case we are unable to retrieve the metadata records, we assume that no specific roles are required
-      requiredRoles = [];
-    }
-    try {
-      if (!requiredRoles || requiredRoles.length === 0) {
+    // We need to look for roles metadata on both the handler (in case of function decorators)
+    // as well as class level (in case of class decorators).
+    const requiredRoles =
+      this.reflector.get<string[] | undefined>('roles', context.getHandler()) ??
+      this.reflector.get<string[] | undefined>('roles', context.getClass()) ??
+      [];
+
+    if (requiredRoles.length === 0) {
+      try {
         // If no roles were provided, we will check whether the user has any of the application's roles
         return this.matchAnyRole(userRoles);
-      } else {
-        // If roles were provided, we will check whether the user has _all_ of the provided roles
-        return this.matchRequiredRoles(requiredRoles, userRoles);
-      }
-    } catch (error) {
-      if (requiredRoles) {
-        Logger.verbose(
-          `An unauthorized request of the protected route '${request.url}' was denied. Roles '${requiredRoles.join(', ')}' were required, but the user only had '${userRoles.join(', ')}'.`,
-          AuthGuard.name,
-        );
-      } else {
+      } catch (error) {
         Logger.verbose(
           `An unauthorized request of the protected route '${request.url}' was denied because the user has not been granted access to the application.`,
           AuthGuard.name,
         );
+        throw error;
       }
-      throw error;
+    } else {
+      try {
+        // If roles were provided, we will check whether the user has _all_ of the provided roles
+        return this.matchRequiredRoles(requiredRoles, userRoles);
+      } catch (error) {
+        Logger.verbose(
+          `An unauthorized request of the protected route '${request.url}' was denied. Roles '${requiredRoles.join(', ')}' were required, but the user only had '${userRoles.join(', ')}'.`,
+          AuthGuard.name,
+        );
+        throw error;
+      }
     }
   }
 

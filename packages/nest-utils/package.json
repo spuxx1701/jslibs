@@ -52,7 +52,8 @@
     "class-validator": "0.14.0",
     "express-openid-connect": "2.17.1",
     "reflect-metadata": "0.1.13 || ^0.2.0",
-    "supertest": "7.0.0"
+    "supertest": "7.0.0",
+    "@nanogiants/nestjs-swagger-api-exception-decorator": "1.6.11"
   },
   "peerDependenciesMeta": {
     "express-openid-connect": {
@@ -60,7 +61,9 @@
     }
   },
   "dependencies": {
-    "@nanogiants/nestjs-swagger-api-exception-decorator": "1.6.11",
     "@spuxx/js-utils": "workspace:@spuxx/js-utils@*"
+  },
+  "devDependencies": {
+    "@rollup/plugin-node-resolve": "^15.2.3"
   }
 }

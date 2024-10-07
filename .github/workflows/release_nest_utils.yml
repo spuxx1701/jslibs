@@ -1,4 +1,4 @@
-name: Release Pipeline (@spuxx/nest-utils)
+name: Releases (@spuxx/nest-utils)
 
 on:
   workflow_dispatch:

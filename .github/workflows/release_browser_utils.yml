@@ -1,4 +1,4 @@
-name: Release Pipeline (@spuxx/browser-utils)
+name: Releases (@spuxx/browser-utils)
 
 on:
   workflow_dispatch:

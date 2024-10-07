@@ -1,4 +1,4 @@
-name: Release Pipeline (@spuxx/js-utils)
+name: Releases (@spuxx/js-utils)
 
 on:
   workflow_dispatch:

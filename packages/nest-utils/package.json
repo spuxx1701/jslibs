@@ -64,6 +64,6 @@
     "@spuxx/js-utils": "workspace:@spuxx/js-utils@*"
   },
   "devDependencies": {
-    "@rollup/plugin-node-resolve": "^15.2.3"
+    "@rollup/plugin-node-resolve": "15.2.3"
   }
 }

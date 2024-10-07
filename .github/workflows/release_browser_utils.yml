@@ -1,4 +1,4 @@
-name: "@spuxx/browser-utils"
+name: Release Pipeline (@spuxx/browser-utils)
 
 on:
   workflow_dispatch:
@@ -8,6 +8,7 @@ on:
 
 jobs:
   release:
+    name: Release artifact (@spuxx/browser-utils)
     uses: ./.github/workflows/release.yml
     with:
       PATH: packages/browser-utils

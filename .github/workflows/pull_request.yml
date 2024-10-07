@@ -1,4 +1,4 @@
-name: pull_request
+name: Pull Request Pipeline
 
 on:
   workflow_dispatch:

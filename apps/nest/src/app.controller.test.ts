@@ -40,7 +40,7 @@ describe('AppController', () => {
       const response = await supertest.get('/protected', {
         session: {
           sub: '123',
-          realm_access: { roles: [AuthRole.user] },
+          groups: [AuthRole.user],
         },
       });
       expect(response.statusCode).toBe(200);

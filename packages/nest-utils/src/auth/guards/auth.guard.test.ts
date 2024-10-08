@@ -86,9 +86,7 @@ describe('AuthGuard', () => {
         session: {
           sub: '123',
           name: 'John Deer',
-          realm_access: {
-            roles: ['user'],
-          },
+          groups: ['user'],
         },
       });
       expect(response.statusCode).toBe(200);
@@ -135,9 +133,7 @@ describe('AuthGuard', () => {
         const response = await supertest.get('/admin', {
           session: {
             sub: '123',
-            realm_access: {
-              roles: ['admin'],
-            },
+            groups: ['admin'],
           },
         });
         expect(response.statusCode).toBe(200);
@@ -147,9 +143,7 @@ describe('AuthGuard', () => {
         const response = await supertest.get('/admin', {
           session: {
             sub: '123',
-            realm_access: {
-              roles: ['user'],
-            },
+            groups: ['user'],
           },
         });
         expect(response.statusCode).toBe(403);
@@ -159,9 +153,7 @@ describe('AuthGuard', () => {
         const response = await supertest.get('/user', {
           session: {
             sub: '123',
-            realm_access: {
-              roles: ['user'],
-            },
+            groups: ['user'],
           },
         });
         expect(response.statusCode).toBe(200);
@@ -171,9 +163,7 @@ describe('AuthGuard', () => {
         const response = await supertest.get('/user', {
           session: {
             sub: '123',
-            realm_access: {
-              roles: [],
-            },
+            groups: [],
           },
         });
         expect(response.statusCode).toBe(403);
@@ -183,9 +173,7 @@ describe('AuthGuard', () => {
         const response = await supertest.get('/user', {
           session: {
             sub: '123',
-            realm_access: {
-              roles: ['completely-different-application'],
-            },
+            groups: ['completely-different-application'],
           },
         });
         expect(response.statusCode).toBe(403);
@@ -195,9 +183,7 @@ describe('AuthGuard', () => {
         const response = await supertest.get('/all', {
           session: {
             sub: '123',
-            realm_access: {
-              roles: ['user', 'admin'],
-            },
+            groups: ['user', 'admin'],
           },
         });
         expect(response.statusCode).toBe(200);
@@ -207,9 +193,7 @@ describe('AuthGuard', () => {
         const response = await supertest.get('/all', {
           session: {
             sub: '123',
-            realm_access: {
-              roles: ['user'],
-            },
+            groups: ['user'],
           },
         });
         expect(response.statusCode).toBe(403);

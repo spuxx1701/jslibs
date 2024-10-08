@@ -28,9 +28,7 @@ describe('AuthController', () => {
         given_name: 'John',
         last_name: 'Deer',
         locale: 'de',
-        realm_access: {
-          roles: ['user'],
-        },
+        groups: ['user'],
       };
       const response = await supertest.get('/auth/session', {
         session,
@@ -56,9 +54,7 @@ describe('AuthController', () => {
       const response = await supertest.get('/auth/session', {
         session: {
           sub: '123',
-          realm_access: {
-            roles: ['completely-different-application'],
-          },
+          groups: ['completely-different-application'],
         },
       });
       expect(response.statusCode).toBe(403);

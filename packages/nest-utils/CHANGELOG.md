@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.2](https://github.com/spuxx1701/jslibs/compare/nest-utils-v1.1.1...nest-utils-v1.1.2) (2024-10-08)
+
+
+### Bug Fixes
+
+* **deps:** Declare `rxjs` as a peer dependency ([732922c](https://github.com/spuxx1701/jslibs/commit/732922c2a736be313b396f67b65feaf67dc5a8a2))
+
 ## [1.1.1](https://github.com/spuxx1701/jslibs/compare/nest-utils-v1.1.0...nest-utils-v1.1.1) (2024-10-08)
 
 

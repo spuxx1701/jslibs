@@ -53,7 +53,7 @@ export class AuthGuard implements CanActivate {
 
     // --- Perform authorization ---
     const user = oidc.user;
-    const userRoles: string[] | undefined = user.roles ?? user.realm_access?.roles;
+    const userRoles: string[] | undefined = user.groups ?? user.realm_access?.roles;
     if (!userRoles || userRoles.length === 0) throw new ForbiddenException();
     // We need to look for roles metadata on both the handler (in case of function decorators)
     // as well as class level (in case of class decorators).

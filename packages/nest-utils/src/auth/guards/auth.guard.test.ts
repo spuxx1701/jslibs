@@ -219,7 +219,7 @@ describe('AuthGuard', () => {
         const response = await supertest.get('/user', {
           session: {
             sub: '123',
-            roles: ['user'],
+            groups: ['user'],
           } as unknown as SessionResource,
         });
         expect(response.statusCode).toBe(200);

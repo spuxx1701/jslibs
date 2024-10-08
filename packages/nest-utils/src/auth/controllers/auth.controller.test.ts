@@ -24,6 +24,7 @@ describe('AuthController', () => {
         sid: '123',
         email: 'john.deer@gmail.com',
         email_verified: true,
+        preferred_username: 'johndeer',
         name: 'John Deer',
         given_name: 'John',
         last_name: 'Deer',

@@ -19,6 +19,13 @@ export class SessionResource {
 
   @Expose()
   @ApiProperty({
+    description: "The user's username.",
+    example: 'johndeer',
+  })
+  preferred_username: string;
+
+  @Expose()
+  @ApiProperty({
     description: "The user's full name.",
     example: 'John Deer',
   })

@@ -1,11 +1,20 @@
-import { Controller, ForbiddenException, Get, Req, UnauthorizedException, UseGuards } from '@nestjs/common';
+import {
+  Controller,
+  ForbiddenException,
+  Get,
+  Req,
+  UnauthorizedException,
+  UseGuards,
+  UseInterceptors,
+} from '@nestjs/common';
 import { EnvModule } from './env/env.module';
 import type { Request } from 'express';
-import { AuthGuard, Roles } from '@spuxx/nest-utils';
+import { AuthGuard, HttpLoggingInterceptor, Roles } from '@spuxx/nest-utils';
 import { AuthRole } from './auth/auth.config';
 import { ApiException } from '@nanogiants/nestjs-swagger-api-exception-decorator';
 
 @Controller()
+@UseInterceptors(HttpLoggingInterceptor)
 export class AppController {
   @Get()
   getHello(@Req() request: Request): object {

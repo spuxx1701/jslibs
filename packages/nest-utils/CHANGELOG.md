@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.1.3](https://github.com/spuxx1701/jslibs/compare/nest-utils-v1.1.2...nest-utils-v1.1.3) (2024-10-08)
+
+
+### Bug Fixes
+
+* **auth:** Improve AuthGuard's verbose logging ([c7f6985](https://github.com/spuxx1701/jslibs/commit/c7f6985e8af711933d3238442a94d6aa1524e4f8))
+* **auth:** Update user role detection to support the common 'groups' claim ([def2ada](https://github.com/spuxx1701/jslibs/commit/def2ada1c1f7151886d796205b4d406428c49f5e))
+
 ## [1.1.2](https://github.com/spuxx1701/jslibs/compare/nest-utils-v1.1.1...nest-utils-v1.1.2) (2024-10-08)
 
 

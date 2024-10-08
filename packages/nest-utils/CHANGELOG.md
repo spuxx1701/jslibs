@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.1](https://github.com/spuxx1701/jslibs/compare/nest-utils-v1.1.0...nest-utils-v1.1.1) (2024-10-08)
+
+
+### Bug Fixes
+
+* **http:** Add missing `http` exports ([43c07b8](https://github.com/spuxx1701/jslibs/commit/43c07b86775f494bb9441726f22873b94c7bf4bf))
+
 ## [1.1.0](https://github.com/spuxx1701/jslibs/compare/nest-utils-v1.0.0...nest-utils-v1.1.0) (2024-10-07)
 
 

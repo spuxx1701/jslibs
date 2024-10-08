@@ -68,7 +68,7 @@ export class AuthGuard implements CanActivate {
         return this.matchAnyRole(userRoles);
       } catch (error) {
         Logger.verbose(
-          `An unauthorized request of the protected route '${request.url}' was denied because the user has not been granted access to the application.`,
+          `An unauthorized request of the protected route '${request.url}' was denied because the user has not been granted access to the application (found roles: ${userRoles.join(', ')}).`,
           AuthGuard.name,
         );
         throw error;

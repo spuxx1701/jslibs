@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.4](https://github.com/spuxx1701/jslibs/compare/nest-utils-v1.1.3...nest-utils-v1.1.4) (2024-10-08)
+
+
+### Bug Fixes
+
+* **auth:** Session resource now correctly references groups claim ([0177c39](https://github.com/spuxx1701/jslibs/commit/0177c39bd25d47188968455f6e5c97b9c47b1b94))
+
 ## [1.1.3](https://github.com/spuxx1701/jslibs/compare/nest-utils-v1.1.2...nest-utils-v1.1.3) (2024-10-08)
 
 

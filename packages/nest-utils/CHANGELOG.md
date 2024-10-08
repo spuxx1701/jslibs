@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.2.0](https://github.com/spuxx1701/jslibs/compare/nest-utils-v1.1.4...nest-utils-v1.2.0) (2024-10-08)
+
+
+### Features
+
+* **auth:** Session resource now includes preferred_username ([e00a8e3](https://github.com/spuxx1701/jslibs/commit/e00a8e3781e1c458678537761cc51a4a52b7e64c))
+
 ## [1.1.4](https://github.com/spuxx1701/jslibs/compare/nest-utils-v1.1.3...nest-utils-v1.1.4) (2024-10-08)
 
 

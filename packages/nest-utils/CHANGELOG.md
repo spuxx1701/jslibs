@@ -1,5 +1,25 @@
 # Changelog
 
+## [1.1.0](https://github.com/spuxx1701/jslibs/compare/nest-utils-v1.0.0...nest-utils-v1.1.0) (2024-10-07)
+
+
+### Features
+
+* `@nanogiants/nestjs-swagger-api-exception-decorator` is now bundled into `nest-utils` ([de635f0](https://github.com/spuxx1701/jslibs/commit/de635f0fb09aa205a740429fe42f8bd13c8cad1e))
+* Added `CustomLogger.getContext()` method ([4b2fb40](https://github.com/spuxx1701/jslibs/commit/4b2fb40ff4523bb34a92471de8098f09b553fc5c))
+* **auth:** Replaced `authOptions.allowedRedirectUrls` with `authOptions.allowedRedirectHostnames` to better resemble the behavior of the validation ([5aa928e](https://github.com/spuxx1701/jslibs/commit/5aa928ea392aba9f9052dd2f09cf834f860541af))
+* **testing:** TestAppLogger now stores messages for easier assertions and debugging ([3fee10e](https://github.com/spuxx1701/jslibs/commit/3fee10e26f75c7598246b9e6d5aed4be971e0d9a))
+
+
+### Bug Fixes
+
+* **auth:** Enabled protection for /auth/session route ([d48e033](https://github.com/spuxx1701/jslibs/commit/d48e0334db5d119967c91fed579a9f0fd24a9652))
+* **auth:** Fixed a bug that would cause an internal error if an authenticated user would not have any of the application's roles ([2bcfc98](https://github.com/spuxx1701/jslibs/commit/2bcfc98c43932eeab08c9a6f902f78471da7c8be))
+* **deps:** Fixed peer dependency versioning ([3f341a5](https://github.com/spuxx1701/jslibs/commit/3f341a51ab0eaa245f68bafb8a1aba12bec4a059))
+* **deps:** Turned `@nanogiants/nestjs-swagger-api-exception-decorator` into a peer dependency ([b1904b4](https://github.com/spuxx1701/jslibs/commit/b1904b427611d759736df70716b82111c608fe52))
+* **testing:** Fixed vitest being bundled and hoisted ([2a1cac5](https://github.com/spuxx1701/jslibs/commit/2a1cac5d123f4d2079b33fd51ba7cc47ec9243c2))
+* **testing:** Removed obsolete session property on TestContainer ([2af4809](https://github.com/spuxx1701/jslibs/commit/2af4809da55495bc95a922e387a7786f6068772e))
+
 ## 1.0.0 (2024-08-31)
 
 

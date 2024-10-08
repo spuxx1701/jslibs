@@ -6,6 +6,7 @@ export * from './env';
 export * from './auth';
 export * from './logging';
 export * from './transformers';
+export * from './http';
 
 // As long as NestJS does not support TypeScript's newer resolution algorithms like 'Node16',
 // we cannot have multiple entrypoints (the old 'Node' resolution algorithm does not support

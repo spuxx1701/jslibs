@@ -1,5 +1,14 @@
 # Changelog
 
+## [1.2.0](https://github.com/spuxx1701/jslibs/compare/nest-utils-v1.1.4...nest-utils-v1.2.0) (2024-10-24)
+
+
+### Features
+
+* **auth:** Implemented getSession and isAuthenticated utility functions ([711d9c3](https://github.com/spuxx1701/jslibs/commit/711d9c3d9ddd1f0083290c70ffecf14eb49d6112))
+* **auth:** Session resource now includes preferred_username ([e00a8e3](https://github.com/spuxx1701/jslibs/commit/e00a8e3781e1c458678537761cc51a4a52b7e64c))
+* **testing:** TestContainer now offers an afterCreate hook ([26d6d02](https://github.com/spuxx1701/jslibs/commit/26d6d02165873926ad0db051d5fe09fd841c84e9))
+
 ## [1.1.4](https://github.com/spuxx1701/jslibs/compare/nest-utils-v1.1.3...nest-utils-v1.1.4) (2024-10-08)
 
 

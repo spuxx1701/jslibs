@@ -43,6 +43,7 @@
     "types": "tsc --noEmit"
   },
   "peerDependencies": {
+    "@nanogiants/nestjs-swagger-api-exception-decorator": "^1.6.0",
     "@nestjs/common": "^10.0.0",
     "@nestjs/config": "^3.0.0",
     "@nestjs/core": "^10.0.0",
@@ -50,11 +51,10 @@
     "@nestjs/testing": "^10.0.0",
     "class-transformer": "^0.5.0",
     "class-validator": "^0.14.0",
-    "rxjs": "^7.8.0",
     "express-openid-connect": "^2.17.0",
     "reflect-metadata": "^0.1.13 || ^0.2.0",
-    "supertest": "^7.0.0",
-    "@nanogiants/nestjs-swagger-api-exception-decorator": "^1.6.0"
+    "rxjs": "^7.8.0",
+    "supertest": "^7.0.0"
   },
   "peerDependenciesMeta": {
     "express-openid-connect": {

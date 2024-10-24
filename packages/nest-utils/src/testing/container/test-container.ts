@@ -46,8 +46,9 @@ export class TestContainer {
    */
   supertest?: Supertest;
 
-  private constructor(init: OmitFunctionMembers<TestContainer>) {
+  private constructor(init: OmitFunctionMembers<TestContainer>, afterCreate?: (container: TestContainer) => void) {
     Object.assign(this, init);
+    if (afterCreate) afterCreate(this);
   }
 
   /**
@@ -63,7 +64,7 @@ export class TestContainer {
    * // ... Your test implementation here
    */
   static async create(options: TestContainerOptions) {
-    const { imports, controllers, providers, logger, authOptions, enableEndToEnd } = {
+    const { imports, controllers, providers, logger, authOptions, enableEndToEnd, afterCreate } = {
       imports: [],
       controllers: [],
       providers: [],
@@ -101,7 +102,8 @@ export class TestContainer {
       await AuthModule.bootstrap(app, authOptions as AuthOptions);
       supertest = new Supertest(app, options.session);
     }
+
     // Return the test container
-    return new TestContainer({ module, app, supertest });
+    return new TestContainer({ module, app, supertest }, afterCreate);
   }
 }

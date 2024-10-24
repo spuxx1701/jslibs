@@ -1,5 +1,6 @@
 import { DynamicModule, ForwardReference, LoggerService, Provider, Type } from '@nestjs/common';
 import { AuthOptions, SessionResource } from '../../auth';
+import { TestContainer } from './test-container';
 
 /**
  * Options to provide to `TestContainer`.
@@ -41,4 +42,9 @@ export interface TestContainerOptions {
    * must contain at least `sub` to be considered an authenticated session.
    */
   session?: Partial<SessionResource>;
+  /**
+   * A function that will be called after the container has been created. This is useful for
+   * performing any additional setup that may be required.
+   */
+  afterCreate?: (container: TestContainer) => void;
 }

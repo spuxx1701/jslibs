@@ -25,4 +25,13 @@ describe('TestContainer', () => {
     expect(module.get(TestService)).toBeInstanceOf(TestService);
     expect(module.get(TestModule)).toBeInstanceOf(TestModule);
   });
+
+  it('should call the afterCreate hook', async () => {
+    const afterCreate = vi.fn(() => {});
+    expect(afterCreate).toHaveBeenCalledTimes(0);
+    await TestContainer.create({
+      afterCreate,
+    });
+    expect(afterCreate).toHaveBeenCalledTimes(1);
+  });
 });

@@ -13,7 +13,7 @@ async function bootstrap() {
     logger,
   });
 
-  await AuthModule.bootstrap(app, authConfig);
+  await AuthModule.bootstrap(app as never, authConfig);
 
   await app.listen(3000);
   Logger.log(`Application is running on: http://localhost:3000`, 'Bootstrap');

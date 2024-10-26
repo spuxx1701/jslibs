@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.4.0](https://github.com/spuxx1701/jslibs/compare/nest-utils-v1.3.0...nest-utils-v1.4.0) (2024-10-26)
+
+
+### Features
+
+* **mapping:** Implemented MappingModule ([7bc49e9](https://github.com/spuxx1701/jslibs/commit/7bc49e92090930d828f2b5f347ec57fd4241af30))
+
 ## [1.3.0](https://github.com/spuxx1701/jslibs/compare/nest-utils-v1.2.0...nest-utils-v1.3.0) (2024-10-26)
 
 

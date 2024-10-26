@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.5.0](https://github.com/spuxx1701/jslibs/compare/nest-utils-v1.4.0...nest-utils-v1.5.0) (2024-10-26)
+
+
+### Features
+
+* **mapping:** MappingModule now supports sequelize ([720bcb5](https://github.com/spuxx1701/jslibs/commit/720bcb5e7f080a89b1a54c42d92a7632f7c09af1))
+
 ## [1.4.0](https://github.com/spuxx1701/jslibs/compare/nest-utils-v1.3.0...nest-utils-v1.4.0) (2024-10-26)
 
 

@@ -56,11 +56,15 @@
     "rxjs": "^7.8.0",
     "supertest": "^7.0.0",
     "@automapper/classes": "^8.8.1",
+    "@automapper/sequelize": "^8.8.1",
     "@automapper/core": "^8.8.1",
     "@automapper/nestjs": "^8.8.1"
   },
   "peerDependenciesMeta": {
     "express-openid-connect": {
+      "optional": true
+    },
+    "@automapper/sequelize": {
       "optional": true
     }
   },

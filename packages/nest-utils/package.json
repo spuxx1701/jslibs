@@ -54,7 +54,10 @@
     "express-openid-connect": "^2.17.0",
     "reflect-metadata": "^0.1.13 || ^0.2.0",
     "rxjs": "^7.8.0",
-    "supertest": "^7.0.0"
+    "supertest": "^7.0.0",
+    "@automapper/classes": "^8.8.1",
+    "@automapper/core": "^8.8.1",
+    "@automapper/nestjs": "^8.8.1"
   },
   "peerDependenciesMeta": {
     "express-openid-connect": {

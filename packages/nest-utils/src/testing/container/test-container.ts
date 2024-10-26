@@ -7,6 +7,7 @@ import { Supertest } from '../supertest';
 import { createEndToEndNestApplication } from './private/end-to-end';
 import { mockExpressOidcPackage, MockOidcModule } from './private/mock-oidc';
 import { TestContainerOptions } from './types';
+import { MappingModule } from '../../mapping/mapping.module';
 
 /**
  * `TestContainer` provides an abstraction of `Nest.createTestContainer()`, offering
@@ -73,6 +74,9 @@ export class TestContainer {
     };
 
     mockExpressOidcPackage();
+
+    // Auto-add non-conditional components
+    imports.push(MappingModule);
 
     // Auto-add conditional components
     if (enableEndToEnd) {

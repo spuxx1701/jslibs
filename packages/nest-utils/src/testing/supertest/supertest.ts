@@ -2,6 +2,7 @@
 import { INestApplication } from '@nestjs/common';
 import supertest, { Request } from 'supertest';
 import { SessionResource } from '../../auth';
+import { SupertestOptions } from './types';
 
 /**
  * `Supertest` is an abstraction of the `supertest` package that allows easily faking
@@ -28,77 +29,84 @@ export class Supertest {
   ) {}
 
   /**
-   * Creates a fake HTTP `GET` request.
+   * Emits a fake `GET` request.
    * @param url The request URL.
-   * @param options.session (optional) The session to use for the request. Session must contain
-   * at least `sub` to be considered an authenticated session.
+   * @param options (optional) Additional options.
    * @returns The request.
-   * @example
-   * const response = await supertest.get("/hello");
-   * expect(response.statusCode).toBe(200);
    */
-  get(url: string, options?: { session?: Partial<SessionResource> }): Request {
-    const httpServer = this.app.getHttpServer();
-    const request: Request = supertest(httpServer).get(url);
-    this.setSession(request, options?.session);
+  get(url: string, options?: SupertestOptions): Request {
+    const request: Request = supertest(this.server).get(url);
+    this.setupRequest(request, options);
     return request;
   }
 
   /**
-   * Sets the session for the request, simulating an authenticated or possibly authorized
-   * request.
-   * @param request The request.
-   * @param session The session.
+   * Emits a fake `POST` request.
+   * @param url The request URL.
+   * @param options (optional) Additional options.
+   * @returns The request.
    */
-  private setSession(request: Request, session?: Partial<SessionResource>) {
-    session = session ?? this.session;
+  post(url: string, options?: SupertestOptions): Request {
+    const request: Request = supertest(this.server).post(url);
+    this.setupRequest(request, options);
+    return request;
+  }
+
+  /**
+   * Emits a fake `PUT` request.
+   * @param url The request URL.
+   * @param options (optional) Additional options.
+   * @returns The request.
+   */
+  put(url: string, options?: SupertestOptions): Request {
+    const request: Request = supertest(this.server).put(url);
+    this.setupRequest(request, options);
+    return request;
+  }
+
+  /**
+   * Emits a fake `PATCH` request.
+   * @param url The request URL.
+   * @param options (optional) Additional options.
+   * @returns The request.
+   */
+  patch(url: string, options?: SupertestOptions): Request {
+    const request: Request = supertest(this.server).patch(url);
+    this.setupRequest(request, options);
+    return request;
+  }
+
+  /**
+   * Emits a fake `DELETE` request.
+   * @param url The request URL.
+   * @param options (optional) Additional options.
+   * @returns The request.
+   */
+  delete(url: string, options?: SupertestOptions): Request {
+    const request: Request = supertest(this.server).delete(url);
+    this.setupRequest(request, options);
+    return request;
+  }
+
+  /**
+   * Emits a fake `OPTIONS` request.
+   * @param url The request URL.
+   * @param options (optional) Additional options.
+   * @returns The request.
+   */
+  options(url: string, options?: SupertestOptions): Request {
+    const request: Request = supertest(this.server).options(url);
+    this.setupRequest(request, options);
+    return request;
+  }
+
+  private get server() {
+    return this.app.getHttpServer();
+  }
+
+  private setupRequest(request: Request, options?: SupertestOptions) {
+    const { session, body } = { session: this.session, ...options };
     if (session) request.set('X-Mock-Session', JSON.stringify(session));
+    if (body) request.send(body);
   }
 }
-
-// /**
-//  * Creates a fake get request.
-//  * @param app The Nest application instance.
-//  * @param url The request url.
-//  * @returns The request.
-//  * @example
-//  * import { fakeGetRequest } from 'test/helpers/app-e2e-spec.ts';
-//  * import { AuthRole } from 'src/auth/config/roles.config';
-//  *
-//  * const request = fakeGetRequest(app, '/test/simBundles', { roles: [AuthRole.frankfurtDispatcher] })
-//  * const response = request.send();
-//  */
-// export const fakeGetRequest = (app: INestApplication, url: string) => {
-//   const httpServer = app.getHttpServer();
-//   const request = supertest(httpServer).get(url);
-//   // if (options?.roles) {
-//   //   const roleIds = options.roles.map((roleKey) => {
-//   //     return AUTH_ROLES[roleKey].test.id;
-//   //   });
-//   //   request.set('groups', roleIds.join(','));
-//   // }
-// };
-
-// /**
-//  * Creates a fake post request.
-//  * @param app The Nest application instance.
-//  * @param url The request url.
-//  * @returns The request.
-//  * @example
-//  * import { fakeGetRequest } from 'test/helpers/app-e2e-spec.ts';
-//  * import { AuthRole } from 'src/auth/config/roles.config';
-//  *
-//  * const request = fakeGetRequest(app, '/test/simBundles', { roles: [AuthRole.frankfurtDispatcher] })
-//  * const response = request.send({ foo:"bar" });
-//  */
-// export const fakePostRequest = (app: INestApplication, url: string) => {
-//   const httpServer = app.getHttpServer();
-//   const request = supertest(httpServer).post(url);
-//   // if (options?.roles) {
-//   //   const roleIds = options.roles.map((roleKey) => {
-//   //     return AUTH_ROLES[roleKey].test.id;
-//   //   });
-//   //   request.set('groups', roleIds.join(','));
-//   // }
-//   return request;
-// };

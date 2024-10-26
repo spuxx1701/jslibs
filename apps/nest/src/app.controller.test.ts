@@ -26,8 +26,7 @@ describe('AppController', () => {
       const response = await supertest.get('/', {
         session: {
           sub: '123',
-          name: 'John Doe',
-          email: 'john.doe@example.com',
+          preferred_username: 'John Doe',
         },
       });
       expect(response.statusCode).toBe(200);

@@ -1,7 +1,7 @@
-import { Controller, Get } from '@nestjs/common';
+import { Controller, Get, UseGuards } from '@nestjs/common';
 import { TestContainer } from '../container';
 import { Supertest } from './supertest';
-import { SessionResource } from '../../auth';
+import { AuthGuard, Roles, SessionResource } from '../../auth';
 
 describe('Supertest', () => {
   @Controller()
@@ -10,22 +10,87 @@ describe('Supertest', () => {
     get() {
       return 'Hello World!';
     }
+
+    @Get('/requires-authentication')
+    @UseGuards(AuthGuard)
+    requiresAuthentication() {
+      return "You're authenticated!";
+    }
+
+    @Get('/requires-authorization')
+    @UseGuards(AuthGuard)
+    @Roles('admin')
+    requiresAuthorization() {
+      return "You're authorized!";
+    }
   }
 
+  let supertest: Supertest;
+
+  beforeEach(async () => {
+    const container = await TestContainer.create({
+      controllers: [MyController],
+      authOptions: {
+        roles: {
+          user: 'user',
+          admin: 'admin',
+        },
+      },
+      enableEndToEnd: true,
+    });
+    supertest = container.supertest;
+  });
+
   describe('get', () => {
-    it('should trigger the endpoint', async () => {
-      const container = await TestContainer.create({ controllers: [MyController], enableEndToEnd: true });
-      const supertest = new Supertest(container.app);
+    it('should return 200', async () => {
       const response = await supertest.get('/hello');
       expect(response.status).toBe(200);
       expect(response.text).toBe('Hello World!');
     });
+
+    it('should return 401 on the endpoint that requires authentication', async () => {
+      const response = await supertest.get('/requires-authentication');
+      expect(response.status).toBe(401);
+    });
+
+    it('should return 200 on the endpoint that requires authentication', async () => {
+      const response = await supertest.get('/requires-authentication', {
+        session: {
+          sub: '123',
+          groups: ['user'],
+        },
+      });
+      expect(response.status).toBe(200);
+    });
+
+    it('should return 401 on the endpoint that requires authorization', async () => {
+      const response = await supertest.get('/requires-authorization');
+      expect(response.status).toBe(401);
+    });
+
+    it('should return 403 on the endpoint that requires authentication', async () => {
+      const response = await supertest.get('/requires-authorization', {
+        session: {
+          sub: '123',
+          groups: ['user'],
+        },
+      });
+      expect(response.status).toBe(403);
+    });
+
+    it('should return 200 on the endpoint that requires authentication', async () => {
+      const response = await supertest.get('/requires-authorization', {
+        session: {
+          sub: '123',
+          groups: ['user', 'admin'],
+        },
+      });
+      expect(response.status).toBe(200);
+    });
   });
 
-  describe('setSession', () => {
+  describe('setupRequest', () => {
     it("should set the 'X-Mock-Session' header", async () => {
-      const container = await TestContainer.create({ enableEndToEnd: true });
-      const supertest = new Supertest(container.app);
       const session: Partial<SessionResource> = {
         sub: '123',
       };

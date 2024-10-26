@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.3.0](https://github.com/spuxx1701/jslibs/compare/nest-utils-v1.2.0...nest-utils-v1.3.0) (2024-10-26)
+
+
+### Features
+
+* **testing:** Implement more supertest methods ([b4bdaaf](https://github.com/spuxx1701/jslibs/commit/b4bdaafb002500b89a143c687c71f75078419389))
+
 ## [1.2.0](https://github.com/spuxx1701/jslibs/compare/nest-utils-v1.1.4...nest-utils-v1.2.0) (2024-10-24)
 
 

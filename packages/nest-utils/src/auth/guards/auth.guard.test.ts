@@ -208,6 +208,18 @@ describe('AuthGuard', () => {
         });
         expect(response.statusCode).toBe(200);
       });
+
+      it('should fall back to realm_access.roles if groups claim is not present', async () => {
+        const response = await supertest.get('/user', {
+          session: {
+            sub: '123',
+            realm_access: {
+              roles: ['user'],
+            },
+          } as unknown as SessionResource,
+        });
+        expect(response.statusCode).toBe(200);
+      });
     });
   });
 });

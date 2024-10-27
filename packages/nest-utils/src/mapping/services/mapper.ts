@@ -4,6 +4,9 @@ import { Injectable } from '@nestjs/common';
 import { MAP_METADATA_KEY } from '../mapping.constants';
 import { MapMetadata, PropertyMap } from '../types/mapping.private-types';
 
+/**
+ * Provides mapping functionality for objects.
+ */
 @Injectable()
 export class Mapper {
   /**
@@ -13,6 +16,22 @@ export class Mapper {
    * @param sourceClass The source class. This is where the @Map decorator is expected to be used.
    * @param targetClass The target class. This is where the properties will be mapped to.
    * @returns An instance of the target class with properties mapped from the source object.
+   * @example
+   * // Define source and target classes
+   * class Source {
+   *   ＠Map()
+   *   foo: string = 'bar';
+   * }
+   *
+   * class Target {
+   *   ＠Map()
+   *   foo: string;
+   * }
+   *
+   * // Use the mapper
+   * const source = new Source();
+   * const target = mapper.map(source, Source, Target);
+   * console.log(target.targetProperty); // Outputs: 'bar'
    */
   map<TSource extends object, TTarget extends object>(
     source: TSource,

@@ -4,4 +4,8 @@ export interface MapOptions {
    * in the source object, but can be overridden to map to a different property name.
    */
   targetKey?: string;
+  /**
+   * Whether to preserve undefined values in the source object. Defaults to false.
+   */
+  preserveUndefined?: boolean;
 }

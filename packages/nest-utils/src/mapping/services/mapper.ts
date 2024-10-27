@@ -83,6 +83,10 @@ export class Mapper {
       value = (source as any)[propertyKey];
     }
 
+    if (value === undefined && !propertyMap[propertyKey].preserveUndefined) {
+      return;
+    }
+
     // Map to target
     if (typeof (target as any).setDataValue === 'function') {
       (target as any).isNewRecord = true;

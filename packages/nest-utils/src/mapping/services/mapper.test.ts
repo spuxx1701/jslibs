@@ -16,16 +16,31 @@ describe('Mapper', () => {
     it('should properly map a simple object', () => {
       class Source {
         @Map()
-        foo: string = 'hello';
+        str: string = '';
+
+        @Map()
+        num: number = 0;
+
+        @Map()
+        bool: boolean = false;
+
+        @Map()
+        opt: string | undefined = undefined;
       }
 
       class Target {
         @Map()
-        foo: string;
+        str: string;
+
+        @Map()
+        num: number;
+
+        @Map()
+        bool: boolean;
       }
 
       const target = mapper.map(new Source(), Source, Target);
-      expect(target).toEqual({ foo: 'hello' });
+      expect(target).toEqual({ str: '', num: 0, bool: false });
     });
 
     it("should not map if the source property isn't decorated", () => {
@@ -86,6 +101,27 @@ describe('Mapper', () => {
       expect(bar).toEqual({ bar: 'hello' });
       const foo = mapper.map(new Bar(), Bar, Foo);
       expect(foo).toEqual({ foo: 'hello' });
+    });
+
+    it('should respect preserveUndefined option', () => {
+      class Source {
+        @Map()
+        default: string | undefined = undefined;
+
+        @Map({ preserveUndefined: true })
+        preserve: string | undefined = undefined;
+      }
+
+      class Target {
+        @Map()
+        default: string | undefined;
+
+        @Map()
+        preserve: string | undefined;
+      }
+
+      const target = mapper.map(new Source(), Source, Target);
+      expect(target).toEqual({ preserve: undefined });
     });
   });
 

@@ -27,7 +27,10 @@ export function Map(options: MapOptions = {}) {
   return (target: object, propertyKey: string | symbol): void => {
     Reflect.defineMetadata(
       MAP_METADATA_KEY,
-      { targetKey: options.targetKey ?? propertyKey } as MapMetadata,
+      {
+        targetKey: options.targetKey ?? propertyKey,
+        preserveUndefined: options.preserveUndefined ?? false,
+      } as MapMetadata,
       target,
       propertyKey,
     );

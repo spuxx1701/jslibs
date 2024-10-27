@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.1.1](https://github.com/spuxx1701/jslibs/compare/nest-utils-v2.1.0...nest-utils-v2.1.1) (2024-10-27)
+
+
+### Bug Fixes
+
+* **mapping:** Turned MappingModule into a global module ([afc545d](https://github.com/spuxx1701/jslibs/commit/afc545d37a5019ed8af643f359c600a8a26c8e44))
+
 ## [2.1.0](https://github.com/spuxx1701/jslibs/compare/nest-utils-v2.0.0...nest-utils-v2.1.0) (2024-10-27)
 
 

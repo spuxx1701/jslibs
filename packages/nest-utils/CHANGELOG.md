@@ -1,5 +1,21 @@
 # Changelog
 
+## [2.0.0](https://github.com/spuxx1701/jslibs/compare/nest-utils-v1.5.0...nest-utils-v2.0.0) (2024-10-27)
+
+
+### ⚠ BREAKING CHANGES
+
+* **mapping:** Replaced automapper integration with a custom implementation of MappingModule
+
+### Features
+
+* **mapping:** Replaced automapper integration with a custom implementation of MappingModule ([49cf08e](https://github.com/spuxx1701/jslibs/commit/49cf08eb0dd08ff83303e8df50def13dc8990db7))
+
+
+### Bug Fixes
+
+* **mapping:** Export mapper service ([eac1ab2](https://github.com/spuxx1701/jslibs/commit/eac1ab2fb0306bef46503004eddccb8d49c26f8c))
+
 ## [1.5.0](https://github.com/spuxx1701/jslibs/compare/nest-utils-v1.4.0...nest-utils-v1.5.0) (2024-10-26)
 
 

@@ -1,5 +1,17 @@
 # Changelog
 
+## [2.1.0](https://github.com/spuxx1701/jslibs/compare/nest-utils-v2.0.0...nest-utils-v2.1.0) (2024-10-27)
+
+
+### Features
+
+* **mapping:** Mapping now implements the preserveUndefined option ([14ba050](https://github.com/spuxx1701/jslibs/commit/14ba05070fc9e17c0dd350fd5984955dd0dde176))
+
+
+### Bug Fixes
+
+* **mapping:** Export @Map() decorator ([7f16918](https://github.com/spuxx1701/jslibs/commit/7f169187e81791bf8312f13e9ba328d7bd86058e))
+
 ## [2.0.0](https://github.com/spuxx1701/jslibs/compare/nest-utils-v1.5.0...nest-utils-v2.0.0) (2024-10-27)
 
 

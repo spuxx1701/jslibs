@@ -51,7 +51,7 @@ export class Mapper {
     const propertyMap: PropertyMap = {};
     let keys: string[];
     if (typeof (source as any).dataValues === 'object') {
-      keys = Object.keys(source);
+      keys = Object.keys((source as any).dataValues);
     } else {
       keys = Object.keys(source);
     }

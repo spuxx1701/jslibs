@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.1.2](https://github.com/spuxx1701/jslibs/compare/nest-utils-v2.1.1...nest-utils-v2.1.2) (2024-10-27)
+
+
+### Bug Fixes
+
+* **mapping:** Fixed an issue that would prevent metadata to be retrieved from sequelize models correctly ([6d8106e](https://github.com/spuxx1701/jslibs/commit/6d8106ec652836c497e06b86bc687aa022dbd399))
+
 ## [2.1.1](https://github.com/spuxx1701/jslibs/compare/nest-utils-v2.1.0...nest-utils-v2.1.1) (2024-10-27)
 
 

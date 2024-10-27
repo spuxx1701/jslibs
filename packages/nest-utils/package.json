@@ -1,6 +1,6 @@
 {
   "name": "@spuxx/nest-utils",
-  "version": "2.1.1",
+  "version": "2.1.2",
   "description": "A package containing various utilities for NestJS applications.",
   "license": "MIT",
   "author": {

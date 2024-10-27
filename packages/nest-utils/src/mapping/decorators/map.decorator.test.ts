@@ -14,8 +14,8 @@ describe('Map', () => {
       color: string;
     }
     const nameMetadata = Reflect.getMetadata(MAP_METADATA_KEY, Cat.prototype, 'name');
-    expect(nameMetadata).toEqual({ targetKey: 'catName' } as MapMetadata);
+    expect(nameMetadata).toEqual({ targetKey: 'catName', preserveUndefined: false } as MapMetadata);
     const colorMetadata = Reflect.getMetadata(MAP_METADATA_KEY, Cat.prototype, 'color');
-    expect(colorMetadata).toEqual({ targetKey: 'color' } as MapMetadata);
+    expect(colorMetadata).toEqual({ targetKey: 'color', preserveUndefined: false } as MapMetadata);
   });
 });

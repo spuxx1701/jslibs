@@ -49,7 +49,13 @@ export class Mapper {
 
     // Get all properties in the source object and look for the @Map decorator.
     const propertyMap: PropertyMap = {};
-    for (const key in source) {
+    let keys: string[];
+    if (typeof (source as any).dataValues === 'object') {
+      keys = Object.keys(source);
+    } else {
+      keys = Object.keys(source);
+    }
+    for (const key of keys) {
       const metadata: MapMetadata | undefined = Reflect.getMetadata(MAP_METADATA_KEY, sourceClass.prototype, key);
       if (metadata) {
         propertyMap[key] = metadata;

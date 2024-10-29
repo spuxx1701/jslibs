@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.3.0](https://github.com/spuxx1701/jslibs/compare/nest-utils-v2.2.0...nest-utils-v2.3.0) (2024-10-29)
+
+
+### Features
+
+* **mapping:** `@Map()` is now able to map nested properties fully automatically ([bb18d8c](https://github.com/spuxx1701/jslibs/commit/bb18d8cf9c766dccfec9ad197e2cca61f4fc119e))
+
 ## [2.2.0](https://github.com/spuxx1701/jslibs/compare/nest-utils-v2.1.3...nest-utils-v2.2.0) (2024-10-29)
 
 

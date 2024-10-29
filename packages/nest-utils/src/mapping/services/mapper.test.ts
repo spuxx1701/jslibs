@@ -180,9 +180,7 @@ describe('Mapper', () => {
       name: string;
 
       @HasOne(() => Cat)
-      @Map({
-        nested: true,
-      })
+      @Map()
       cat: Cat;
     }
 

@@ -30,7 +30,6 @@ export function Map(options: MapOptions = {}) {
       {
         targetKey: options.targetKey ?? propertyKey,
         preserveUndefined: options.preserveUndefined ?? false,
-        ...options,
       } as MapMetadata,
       target,
       propertyKey,

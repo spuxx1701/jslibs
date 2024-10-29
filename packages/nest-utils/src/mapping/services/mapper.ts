@@ -82,10 +82,12 @@ export class Mapper {
     if (!targetMetadata) return;
 
     let value: any;
-    const { nested } = sourceMetadata;
-    if (nested && this.getValue(source, propertyKey)) {
+    const sourceType = this.getType(source, propertyKey);
+    const isNestedProp = sourceType.prototype.toString().includes('object');
+    if (isNestedProp && this.getValue(source, propertyKey)) {
       // In case the property is a nested property, map it recursively
-      value = this.map<object, object>(this.getValue(source, propertyKey), nested.source, nested.target);
+      const targetType = this.getType(target, sourceMetadata.targetKey);
+      value = this.map<object, object>(this.getValue(source, propertyKey), sourceType, targetType);
     } else {
       // Else, map it directly
       value = this.getValue(source, propertyKey);
@@ -114,5 +116,10 @@ export class Mapper {
     } else {
       (target as any)[key] = value;
     }
+  }
+
+  private getType(target: object, key: string) {
+    const type = Reflect.getMetadata('design:type', target, key);
+    return type;
   }
 }

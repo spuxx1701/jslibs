@@ -130,12 +130,7 @@ describe('Mapper', () => {
         foo: string = 'bar';
       }
       class Parent {
-        @Map({
-          nested: {
-            source: Child,
-            target: Child,
-          },
-        })
+        @Map()
         child: Child = new Child();
       }
 
@@ -186,10 +181,7 @@ describe('Mapper', () => {
 
       @HasOne(() => Cat)
       @Map({
-        nested: {
-          source: Cat,
-          target: CatResource,
-        },
+        nested: true,
       })
       cat: Cat;
     }

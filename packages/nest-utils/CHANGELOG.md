@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.2.0](https://github.com/spuxx1701/jslibs/compare/nest-utils-v2.1.3...nest-utils-v2.2.0) (2024-10-29)
+
+
+### Features
+
+* **mapping:** `@Map()` decorator now supports mapping nested objects ([650535f](https://github.com/spuxx1701/jslibs/commit/650535fed06215350dd6ab412e2fd84cacd74b42))
+
 ## [2.1.3](https://github.com/spuxx1701/jslibs/compare/nest-utils-v2.1.2...nest-utils-v2.1.3) (2024-10-27)
 
 

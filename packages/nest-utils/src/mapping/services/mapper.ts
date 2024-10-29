@@ -81,24 +81,38 @@ export class Mapper {
     const targetMetadata = Reflect.getMetadata(MAP_METADATA_KEY, targetClass.prototype, sourceMetadata.targetKey);
     if (!targetMetadata) return;
 
-    // Get the source value
+    let value: any;
+    const { nested } = sourceMetadata;
+    if (nested && this.getValue(source, propertyKey)) {
+      // In case the property is a nested property, map it recursively
+      value = this.map<object, object>(this.getValue(source, propertyKey), nested.source, nested.target);
+    } else {
+      // Else, map it directly
+      value = this.getValue(source, propertyKey);
+      if (value === undefined && !propertyMap[propertyKey].preserveUndefined) {
+        return;
+      }
+    }
+
+    this.setValue(target, sourceMetadata.targetKey, value);
+  }
+
+  private getValue(source: object, key: string): any {
     let value: any;
     if (typeof (source as any).getDataValue === 'function') {
-      value = (source as any).getDataValue(propertyKey);
+      value = (source as any).getDataValue(key);
     } else {
-      value = (source as any)[propertyKey];
+      value = (source as any)[key];
     }
+    return value;
+  }
 
-    if (value === undefined && !propertyMap[propertyKey].preserveUndefined) {
-      return;
-    }
-
-    // Map to target
+  private setValue(target: object, key: string, value: any): void {
     if (typeof (target as any).setDataValue === 'function') {
       (target as any).isNewRecord = true;
-      (target as any).setDataValue(sourceMetadata.targetKey, value);
+      (target as any).setDataValue(key, value);
     } else {
-      (target as any)[sourceMetadata.targetKey] = value;
+      (target as any)[key] = value;
     }
   }
 }

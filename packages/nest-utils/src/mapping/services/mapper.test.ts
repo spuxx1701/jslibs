@@ -1,7 +1,7 @@
 import { TestContainer } from '../../testing';
 import { Map } from '../decorators/map.decorator';
 import { Mapper } from './mapper';
-import { Column, Model, Sequelize, Table } from 'sequelize-typescript';
+import { Column, ForeignKey, HasOne, Model, Sequelize, Table } from 'sequelize-typescript';
 
 describe('Mapper', () => {
   let mapper: Mapper;
@@ -123,6 +123,31 @@ describe('Mapper', () => {
       const target = mapper.map(new Source(), Source, Target);
       expect(target).toEqual({ preserve: undefined });
     });
+
+    it('should map a nested object', () => {
+      class Child {
+        @Map()
+        foo: string = 'bar';
+      }
+      class Parent {
+        @Map({
+          nested: {
+            source: Child,
+            target: Child,
+          },
+        })
+        child: Child = new Child();
+      }
+
+      const target = mapper.map(new Parent(), Parent, Parent);
+      expect(target).toBeInstanceOf(Parent);
+      expect(target.child).toBeInstanceOf(Child);
+      expect(target).toEqual({
+        child: {
+          foo: 'bar',
+        },
+      });
+    });
   });
 
   describe('sequelize support', () => {
@@ -135,6 +160,10 @@ describe('Mapper', () => {
       @Column
       @Map({ targetKey: 'color' })
       furColor: string;
+
+      @ForeignKey(() => Owner)
+      @Column
+      ownerId: string;
     }
 
     class CatResource {
@@ -149,11 +178,39 @@ describe('Mapper', () => {
       }
     }
 
+    @Table
+    class Owner extends Model {
+      @Column
+      @Map()
+      name: string;
+
+      @HasOne(() => Cat)
+      @Map({
+        nested: {
+          source: Cat,
+          target: CatResource,
+        },
+      })
+      cat: Cat;
+    }
+
+    class OwnerResource {
+      @Map()
+      name: string;
+
+      @Map()
+      cat: CatResource;
+
+      constructor(init?: OwnerResource) {
+        Object.assign(this, init);
+      }
+    }
+
     beforeEach(() => {
       new Sequelize({
         dialect: 'sqlite',
         database: ':memory:',
-        models: [Cat],
+        models: [Owner, Cat],
         sync: { force: true },
       });
     });
@@ -167,9 +224,22 @@ describe('Mapper', () => {
     it('should map to a sequelize model as target', () => {
       const catResource = new CatResource({ name: 'Mittens', color: 'black' });
       const cat = mapper.map(catResource, CatResource, Cat);
-      expect(cat.getDataValue('name')).toEqual('Mittens');
-      expect(cat.getDataValue('furColor')).toEqual('black');
+      expect(cat.get('name')).toEqual('Mittens');
+      expect(cat.get('furColor')).toEqual('black');
       expect(cat).toBeInstanceOf(Model);
+    });
+
+    it('should map from a sequelize model with a relation as source', () => {
+      const owner = Owner.build(
+        { name: 'John', cat: { name: 'Mittens', furColor: 'black' } },
+        {
+          include: [Cat],
+        },
+      );
+      const ownerResource = mapper.map(owner, Owner, OwnerResource);
+      expect(ownerResource).toEqual({ name: 'John', cat: { name: 'Mittens', color: 'black' } });
+      expect(ownerResource).toBeInstanceOf(OwnerResource);
+      expect(ownerResource.cat).toBeInstanceOf(CatResource);
     });
   });
 });

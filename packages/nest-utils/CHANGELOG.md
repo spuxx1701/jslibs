@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.3.1](https://github.com/spuxx1701/jslibs/compare/nest-utils-v2.3.0...nest-utils-v2.3.1) (2024-10-29)
+
+
+### Bug Fixes
+
+* **mapping:** Fixed an issue that would cause `@Mapper()` to break on `Date` properties ([6507169](https://github.com/spuxx1701/jslibs/commit/6507169c0478fd95222c25abf09dc1c5f11d47f0))
+
 ## [2.3.0](https://github.com/spuxx1701/jslibs/compare/nest-utils-v2.2.0...nest-utils-v2.3.0) (2024-10-29)
 
 

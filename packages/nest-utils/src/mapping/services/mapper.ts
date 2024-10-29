@@ -83,7 +83,12 @@ export class Mapper {
 
     let value: any;
     const sourceType = this.getType(source, propertyKey);
-    const isNestedProp = sourceType.prototype.toString().includes('object');
+    let isNestedProp = false;
+    try {
+      isNestedProp = sourceType.prototype.toString().includes('object');
+    } catch (error) {
+      // Do nothing, isNestedProp will remain false
+    }
     if (isNestedProp && this.getValue(source, propertyKey)) {
       // In case the property is a nested property, map it recursively
       const targetType = this.getType(target, sourceMetadata.targetKey);

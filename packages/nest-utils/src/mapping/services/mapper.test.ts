@@ -25,6 +25,9 @@ describe('Mapper', () => {
         bool: boolean = false;
 
         @Map()
+        date: Date = new Date('2024-10-29T00:00:00');
+
+        @Map()
         opt: string | undefined = undefined;
       }
 
@@ -36,11 +39,14 @@ describe('Mapper', () => {
         num: number;
 
         @Map()
+        date: Date;
+
+        @Map()
         bool: boolean;
       }
 
       const target = mapper.map(new Source(), Source, Target);
-      expect(target).toEqual({ str: '', num: 0, bool: false });
+      expect(target).toEqual({ str: '', num: 0, bool: false, date: new Date('2024-10-29T00:00:00') });
     });
 
     it("should not map if the source property isn't decorated", () => {

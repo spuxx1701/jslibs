@@ -13,7 +13,7 @@ describe('getSession', () => {
       groups: ['user', 'admin'],
       locale: 'en',
       given_name: 'John',
-      last_name: 'Doe',
+      family_name: 'Doe',
       name: 'John Doe',
       preferred_username: 'jd',
     };

@@ -27,7 +27,7 @@ describe('AuthController', () => {
         preferred_username: 'johndeer',
         name: 'John Deer',
         given_name: 'John',
-        last_name: 'Deer',
+        family_name: 'Deer',
         locale: 'de',
         groups: ['user'],
       };

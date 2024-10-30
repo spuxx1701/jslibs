@@ -43,7 +43,7 @@ export class SessionResource {
     description: "The user's last name.",
     example: 'Deer',
   })
-  last_name: string;
+  family_name: string;
 
   @Expose()
   @ApiProperty({

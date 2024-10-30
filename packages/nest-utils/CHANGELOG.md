@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.3.2](https://github.com/spuxx1701/jslibs/compare/nest-utils-v2.3.1...nest-utils-v2.3.2) (2024-10-30)
+
+
+### Bug Fixes
+
+* **auth:** Fixed an issue with `SessionResource` being wrongly typed that would prevent family_name from being accessible ([b76cb8e](https://github.com/spuxx1701/jslibs/commit/b76cb8e4c0bdb9a1405e2852dc15ae6a562b8102))
+
 ## [2.3.1](https://github.com/spuxx1701/jslibs/compare/nest-utils-v2.3.0...nest-utils-v2.3.1) (2024-10-29)
 
 

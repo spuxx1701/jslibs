@@ -9,11 +9,9 @@ import {
   type HttpClientOptions,
 } from './types';
 
-type TransformedReturnType<T extends EndpointDefinition> = T['transformer'] extends (
-  response: any,
-) => infer R
-  ? R
-  : Awaited<ReturnType<T['function']>>;
+type TransformedReturnType<T extends EndpointDefinition> = T['transformer'] extends undefined
+  ? Awaited<ReturnType<T['function']>>
+  : Awaited<ReturnType<NonNullable<T['transformer']>>>;
 
 type HttpClient<T extends Endpoints> = {
   [K in keyof T]: (...args: Parameters<T[K]['function']>) => Promise<TransformedReturnType<T[K]>>;

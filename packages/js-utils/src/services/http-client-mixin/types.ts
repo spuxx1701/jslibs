@@ -36,6 +36,8 @@ export interface EndpointDefinition<
   function: TFunction;
   /**
    * A function that will be called to transform the response from the server.
+   * The transformer will be called implicitly after the original promise has
+   * resolved.
    */
   transformer?: (response: Awaited<ReturnType<TFunction>>) => TTransformedResult;
   /**

@@ -22,11 +22,13 @@ import { ConfigOptions } from './types';
  * // You may provide a default configuration during setup.
  * Config.setup<MyConfig>({ defaultConfig: { apiUrl: 'http://localhost:3000', logLevel: 'debug' } });
  *
- * // You may also provide Vite's `import.meta.env` object to the setup process to enable the service to access Vite's environment variables.
+ * // You may also provide Vite's `import.meta.env` object to the setup process to enable the service
+ * // to access Vite's environment variables.
  * Config.setup<MyConfig>({ importMetaEnv: import.meta.env });
  *
  * // You may also provide a list of required keys that will be checked at the end of the setup process.
- * // If a required key remains undefined or an empty value after the setup process has finished, an error will be thrown.
+ * // If a required key remains undefined or an empty value after the setup process has finished,
+ * // an error will be thrown.
  * Config.setup<MyConfig>({ requiredKeys: ["apiUrl"] });
  *
  * // You may also provide a custom key for the injected config. By default, 'INJECTED_CONFIG' is used.
@@ -84,9 +86,8 @@ export class Config extends ServiceMixin<Config>() {
       const value = Config.getConfig<TConfig>()[requiredKey];
       if (isEmptyOrWhitespace(value)) {
         throw new Error(
-          `Required key '${String(
-            requiredKey,
-          )}' is not defined in the config. Make sure to define its value in either the default, Vite or injected config.`,
+          `Required key '${String(requiredKey)}' is not defined in the config. \
+Make sure to define its value in either the default, Vite or injected config.`,
         );
       }
     }

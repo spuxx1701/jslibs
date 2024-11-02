@@ -19,22 +19,27 @@ export class AuthController {
   @Get('login')
   @ApiOperation({
     summary: 'Log into the application.',
-    description: `This endpoint will redirect the caller to the IDP's login page. This will trigger the OIDC Authorization Code flow (with PKCE).
-    After successful login, the IDP will then redirect the caller to the application's /auth/callback endpoint to hand over the code.
-      Finally, the application will redirect to the default or the provided URL.
+    description: `This endpoint will redirect the caller to the IDP's login page. This will trigger
+    the OIDC Authorization Code flow (with PKCE). After successful login, the IDP will then redirect
+    the caller to the application's /auth/callback endpoint to hand over the code.
+    Finally, the application will redirect to the default or the provided URL.
 
     ℹ Note that this endpoint returns a redirect. Calling the endpoint in SwaggerUI has no effect.`,
   })
   @ApiQuery({
     name: 'returnTo',
-    description: `You may provide a (URI-encoded) URL that the application will redirect to after a successful login. By default, you'll be redirected to /auth/session. Redirect URLs match the allowed CORS origins or specific application endpoints. If the default route should not be used, the route must be absolute.`,
+    description: `You may provide a (URI-encoded) URL that the application will redirect to after a
+    successful login. By default, you'll be redirected to /auth/session. Redirect URLs match the
+    allowed CORS origins or specific application endpoints. If the default route should not be used,
+    the route must be absolute.`,
     type: String,
     required: false,
   })
   @ApiResponse({
     description: `Redirects to the IDP's login page.
 
-    ℹ After a successful login, the session tokens will be provided in two cookies. You need to include these cookies into any further requests.`,
+    ℹ After a successful login, the session tokens will be provided in two cookies. You need to
+    include these cookies into any further requests.`,
     status: 302,
   })
   @ApiException(() => Object.values(authExceptions.login))
@@ -50,9 +55,10 @@ export class AuthController {
   @UseGuards(AuthGuard)
   @ApiOperation({
     summary: 'Get information about the current session state.',
-    description: `Will look for session tokens in the request's cookies. If tokens are found and deemed valid, the session details will be returned. Otherwise, the endpoint will return a 401.
+    description: `Will look for session tokens in the request's cookies. If tokens are found and
+    deemed valid, the session details will be returned. Otherwise, the endpoint will return a 401.
 
-      🔒 Application access`,
+    🔒 Application access`,
   })
   @ApiOkResponse({
     description: 'The session resource.',
@@ -66,15 +72,17 @@ export class AuthController {
   @Get('logout')
   @ApiOperation({
     summary: 'Log out of the application.',
-    description: `Will sign you out of the application by invalidating both the session cookie as well as validating the token on the IDP.
-      Finally, the application will redirect to the default or the provided URL.
+    description: `Will sign you out of the application by invalidating both the session cookie as
+    well as validating the token on the IDP.
+    Finally, the application will redirect to the default or the provided URL.
 
-      ℹ Note that this endpoint returns a redirect. Calling the endpoint in SwaggerUI has no effect.`,
+    ℹ Note that this endpoint returns a redirect. Calling the endpoint in SwaggerUI has no effect.`,
   })
   @ApiQuery({
     name: 'returnTo',
-    description:
-      "You may provide an (URI-encoded) URL that the application will redirect to after a successful logout. By default, you'll be redirected to /auth/session. Redirect URLs match the allowed CORS origins or specific application endpoints.",
+    description: `You may provide an (URI-encoded) URL that the application will redirect to after a successful
+      logout. By default, you'll be redirected to /auth/session. Redirect URLs match the allowed
+      CORS origins or specific application endpoints.`,
     type: String,
     required: false,
   })

@@ -73,7 +73,10 @@ export class AuthService {
       Logger.error(`Failed to validate 'returnTo=${returnTo}': ${error}`);
       throw authExceptions.login.urlParsingError;
     }
-    Logger.verbose(`'returnTo=${returnTo}' failed the validation during login or logout.`, AuthService.name);
+    Logger.verbose(
+      `'returnTo=${returnTo}' failed the validation during login or logout.`,
+      AuthService.name,
+    );
     if (match) return true;
     else throw authExceptions.login.forbiddenReturnTo;
   }

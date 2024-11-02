@@ -47,7 +47,10 @@ export class AuthGuard implements CanActivate {
     const request: Request = context.switchToHttp().getRequest();
     const { oidc } = request;
     if (!oidc || !oidc.isAuthenticated() || !oidc.user) {
-      Logger.verbose(`An unauthenticated request of the protected route '${request.url}' was denied.`, AuthGuard.name);
+      Logger.verbose(
+        `An unauthenticated request of the protected route '${request.url}' was denied.`,
+        AuthGuard.name,
+      );
       throw new UnauthorizedException();
     }
 
@@ -68,7 +71,8 @@ export class AuthGuard implements CanActivate {
         return this.matchAnyRole(userRoles);
       } catch (error) {
         Logger.verbose(
-          `An unauthorized request of the protected route '${request.url}' was denied because the user has not been granted access to the application (found roles: ${userRoles.join(', ')}).`,
+          `An unauthorized request of the protected route '${request.url}' was denied because the \
+user has not been granted access to the application (found roles: ${userRoles.join(', ')}).`,
           AuthGuard.name,
         );
         throw error;
@@ -79,7 +83,8 @@ export class AuthGuard implements CanActivate {
         return this.matchRequiredRoles(requiredRoles, userRoles);
       } catch (error) {
         Logger.verbose(
-          `An unauthorized request of the protected route '${request.url}' was denied. Roles '${requiredRoles.join(', ')}' were required, but the user only had '${userRoles.join(', ')}'.`,
+          `An unauthorized request of the protected route '${request.url}' was denied. \
+Roles '${requiredRoles.join(', ')}' were required, but the user only had '${userRoles.join(', ')}'.`,
           AuthGuard.name,
         );
         throw error;

@@ -9,7 +9,13 @@ import {
 } from '@nestjs/common';
 import { EnvModule } from './env/env.module';
 import type { Request } from 'express';
-import { AuthGuard, getSession, HttpLoggingInterceptor, isAuthenticated, Roles } from '@spuxx/nest-utils';
+import {
+  AuthGuard,
+  getSession,
+  HttpLoggingInterceptor,
+  isAuthenticated,
+  Roles,
+} from '@spuxx/nest-utils';
 import { AuthRole } from './auth/auth.config';
 import { ApiException } from '@nanogiants/nestjs-swagger-api-exception-decorator';
 
@@ -21,7 +27,9 @@ export class AppController {
     const response = {
       message: 'Hello there!',
       time: new Date().toLocaleTimeString(),
-      session: isAuthenticated(request) ? `Logged in as ${getSession(request).preferred_username}` : 'Not logged in',
+      session: isAuthenticated(request)
+        ? `Logged in as ${getSession(request).preferred_username}`
+        : 'Not logged in',
       routes: {
         auth: {
           login: `${EnvModule.get('APP_BASE_URL')}/auth/login`,

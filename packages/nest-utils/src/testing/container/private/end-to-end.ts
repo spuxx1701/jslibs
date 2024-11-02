@@ -7,7 +7,9 @@ import { TestingModule } from '@nestjs/testing';
  * @param module The testing module.
  * @returns The application.
  */
-export const createEndToEndNestApplication = async (module: TestingModule): Promise<INestApplication> => {
+export const createEndToEndNestApplication = async (
+  module: TestingModule,
+): Promise<INestApplication> => {
   const app = module.createNestApplication();
   await app.init();
   return app;

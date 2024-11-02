@@ -27,7 +27,9 @@ export class HttpLoggingInterceptor implements NestInterceptor {
   intercept(context: ExecutionContext, next: CallHandler): Observable<object> {
     const request = context.getArgByIndex(0);
     const dateIn = new Date();
-    Logger.verbose(`Incoming request: ` + `${String(request.method).toUpperCase()} ${request.url}.`);
+    Logger.verbose(
+      `Incoming request: ` + `${String(request.method).toUpperCase()} ${request.url}.`,
+    );
     return next.handle().pipe(
       tap(() => {
         const dateOut = new Date();

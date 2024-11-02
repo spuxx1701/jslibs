@@ -53,7 +53,10 @@ export class AuthModule {
     }
     const { auth } = await import('express-openid-connect');
     app.use(auth(oidc));
-    Logger.log(`Authentication is enabled and will be handled by issuer at '${oidc.issuerBaseURL}'.`, AuthModule.name);
+    Logger.log(
+      `Authentication is enabled and will be handled by issuer at '${oidc.issuerBaseURL}'.`,
+      AuthModule.name,
+    );
   }
 
   static forRoot(options: AuthOptions): DynamicModule {
@@ -72,8 +75,12 @@ export class AuthModule {
   }
 
   static mergeOptionsWithDefaultValues(options: AuthOptions) {
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    const mergedOptions = deepMerge(defaultAuthOptions as any, options as any) as unknown as AuthOptions;
+    const mergedOptions = deepMerge(
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      defaultAuthOptions as any,
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      options as any,
+    ) as unknown as AuthOptions;
     return mergedOptions;
   }
 }

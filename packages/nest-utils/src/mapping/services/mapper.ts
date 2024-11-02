@@ -56,7 +56,11 @@ export class Mapper {
       keys = Object.keys(source);
     }
     for (const key of keys) {
-      const metadata: MapMetadata | undefined = Reflect.getMetadata(MAP_METADATA_KEY, sourceClass.prototype, key);
+      const metadata: MapMetadata | undefined = Reflect.getMetadata(
+        MAP_METADATA_KEY,
+        sourceClass.prototype,
+        key,
+      );
       if (metadata) {
         propertyMap[key] = metadata;
       }
@@ -78,7 +82,11 @@ export class Mapper {
   ) {
     const sourceMetadata = propertyMap[propertyKey];
     // Check whether target property exists and is decorated
-    const targetMetadata = Reflect.getMetadata(MAP_METADATA_KEY, targetClass.prototype, sourceMetadata.targetKey);
+    const targetMetadata = Reflect.getMetadata(
+      MAP_METADATA_KEY,
+      targetClass.prototype,
+      sourceMetadata.targetKey,
+    );
     if (!targetMetadata) return;
 
     let value: any;

@@ -55,7 +55,10 @@ test("should fall bck to the fallback locale if the browser locale isn't support
   Intl.destroy();
   Intl.setup(intlOptions);
   expect(warnSpy).toHaveBeenCalledTimes(1);
-  expect(warnSpy).toHaveBeenCalledWith("Locale 'fr' is not supported. Falling back to 'de'.", 'Intl');
+  expect(warnSpy).toHaveBeenCalledWith(
+    "Locale 'fr' is not supported. Falling back to 'de'.",
+    'Intl',
+  );
   expect(intl('hello-world')).toBe('Hallo Welt!');
 });
 
@@ -71,7 +74,10 @@ test("should return the prefixed key if the value doesn't exist and warn", () =>
   const warnSpy = vi.spyOn(Logger, 'warn');
   expect(intl('non.existant-key')).toBe('miss-loc::non.existant-key');
   expect(warnSpy).toHaveBeenCalledTimes(1);
-  expect(warnSpy).toHaveBeenCalledWith("Cannot translate 'non.existant-key' for locale 'en'.", 'Intl');
+  expect(warnSpy).toHaveBeenCalledWith(
+    "Cannot translate 'non.existant-key' for locale 'en'.",
+    'Intl',
+  );
 });
 
 test('should throw an error if the fallback locale is not part of the supported locales', () => {

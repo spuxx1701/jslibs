@@ -46,7 +46,12 @@ describe('Mapper', () => {
       }
 
       const target = mapper.map(new Source(), Source, Target);
-      expect(target).toEqual({ str: '', num: 0, bool: false, date: new Date('2024-10-29T00:00:00') });
+      expect(target).toEqual({
+        str: '',
+        num: 0,
+        bool: false,
+        date: new Date('2024-10-29T00:00:00'),
+      });
     });
 
     it("should not map if the source property isn't decorated", () => {

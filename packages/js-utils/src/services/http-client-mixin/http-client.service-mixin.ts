@@ -72,7 +72,10 @@ export function HttpClientMixin<TEndpoints extends Endpoints>(
       try {
         // Call the endpoint function with the provided arguments
         response = await endpointDef.function(...args);
-        if (response.constructor.name === 'HttpResponse') {
+        if (
+          response.constructor.name === 'HttpResponse' ||
+          response.constructor.name === 'Response'
+        ) {
           // In case of fetch, we need to do further processing
           response = await Client.handleFetchResponse(response);
         }

@@ -40,6 +40,7 @@ export default defineConfig({
       all: true,
       include: ['packages/**/src/**/*.ts', 'apps/**/src/**/*.ts'],
       exclude: [
+        'apps/react/**',
         '**/src/main.ts',
         '**/*types.ts',
         '**/*.d.ts',

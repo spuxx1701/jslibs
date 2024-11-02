@@ -1,6 +1,10 @@
-import { vi, beforeEach } from 'vitest';
+import { vi } from 'vitest';
+import { chuckNorrisJokesHandlers } from './msw/handlers/chuck-norris-jokes.handlers';
+import { createMockServer } from './msw/create-mock-server';
 
-beforeEach(() => {
+createMockServer([...chuckNorrisJokesHandlers]);
+
+afterEach(() => {
   vi.unstubAllEnvs();
   vi.unstubAllGlobals();
 });

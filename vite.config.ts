@@ -32,6 +32,7 @@ export default defineConfig({
   ],
   test: {
     globals: true,
+    setupFiles: [`${__dirname}/tests/vitest/vitest.setup.ts`],
     reporters: ['default', 'junit'],
     outputFile: 'reports/vitest/junit/junit.xml',
     coverage: {

@@ -39,7 +39,16 @@ export default function SessionPanel(): React.ReactElement {
       {session ? (
         <>
           <p>{intl('session.authenticated')}</p>
-          <pre>{JSON.stringify(session, null, 2)}</pre>
+          <pre
+            style={{
+              borderRadius: '5px',
+              border: '1px solid black',
+              padding: '0.5rem',
+              width: 'fit-content',
+            }}
+          >
+            {JSON.stringify(session, null, 2)}
+          </pre>
           <button onClick={handleLogout}>{intl('session.logout')}</button>
         </>
       ) : (

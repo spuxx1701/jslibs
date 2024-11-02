@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.1.0](https://github.com/spuxx1701/jslibs/compare/js-utils-v1.0.0...js-utils-v1.1.0) (2024-11-02)
+
+
+### Features
+
+* **http:** Implemented `HttpClientMixin`, offering an accessible API to create simple HttpClients abstractions with support for both fetch and axios ([4157766](https://github.com/spuxx1701/jslibs/commit/4157766c50100969a19f1d64c83346bd7cebe87a))
+
+
+### Bug Fixes
+
+* **http:** Fix `HttpClientMixin` exports ([6c2ea5f](https://github.com/spuxx1701/jslibs/commit/6c2ea5fafdb0737228723feedc8994fefd2c5e02))
+
 ## 1.0.0 (2024-08-31)
 
 

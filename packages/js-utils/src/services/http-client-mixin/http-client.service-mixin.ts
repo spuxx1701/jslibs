@@ -136,6 +136,7 @@ export function HttpClientMixin<TEndpoints extends Endpoints>(
       }
 
       // Execute all error handlers sequentially
+      let errorHasBeenHandled = false;
       const { status } = httpError;
       for (const handler of allErrorHandlers) {
         // Check status filter
@@ -143,8 +144,13 @@ export function HttpClientMixin<TEndpoints extends Endpoints>(
           continue;
         }
         await handler.function(httpError);
+        errorHasBeenHandled = true;
         if (handler.continue) continue;
         else break;
+      }
+
+      if (!errorHasBeenHandled) {
+        throw error;
       }
     }
   }

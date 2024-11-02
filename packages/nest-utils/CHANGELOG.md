@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.3.3](https://github.com/spuxx1701/jslibs/compare/nest-utils-v2.3.2...nest-utils-v2.3.3) (2024-10-30)
+
+
+### Bug Fixes
+
+* **auth:** Mark `AuthModule` as a global module ([11f92af](https://github.com/spuxx1701/jslibs/commit/11f92af11f95192bf917a7a9449b59d699dda57a))
+
 ## [2.3.2](https://github.com/spuxx1701/jslibs/compare/nest-utils-v2.3.1...nest-utils-v2.3.2) (2024-10-30)
 
 

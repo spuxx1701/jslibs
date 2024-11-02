@@ -1,5 +1,15 @@
 # Changelog
 
+## [1.1.1](https://github.com/spuxx1701/jslibs/compare/js-utils-v1.1.0...js-utils-v1.1.1) (2024-11-02)
+
+
+### Bug Fixes
+
+* **http:** Fixed a bug in `HttpClient` that would cause fetch responses not to be handled properly sometimes ([98c69de](https://github.com/spuxx1701/jslibs/commit/98c69de057373cf908b74e162012c730327ce7ce))
+* **http:** Fixed a bug in `HttpClient` that would cause unhandled errors not to be thrown ([a5d22a8](https://github.com/spuxx1701/jslibs/commit/a5d22a8d6168f0b9acfdc9f6b4f9a431fead8a94))
+* **http:** Fixed a bug that would cause a wrong endpoint return type in case a transformer is used ([50abbe8](https://github.com/spuxx1701/jslibs/commit/50abbe828f0d724a1aea74f0aff1c396b2e0429b))
+* **http:** Fixed an issue that would cause `invokeEndpoint` to break in case of an unexpected response type ([0e3f7f8](https://github.com/spuxx1701/jslibs/commit/0e3f7f8b56fc1b2557b950648d2051b2df049616))
+
 ## [1.1.0](https://github.com/spuxx1701/jslibs/compare/js-utils-v1.0.0...js-utils-v1.1.0) (2024-11-02)
 
 

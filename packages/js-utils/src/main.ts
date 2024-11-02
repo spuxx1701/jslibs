@@ -5,6 +5,7 @@
 export * from './services/mixin';
 export * from './services/logger';
 export * from './services/intl';
+export * from './services/http-client-mixin';
 
 export * from './utils/misc.utils';
 

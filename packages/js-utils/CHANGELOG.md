@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.2](https://github.com/spuxx1701/jslibs/compare/js-utils-v1.1.1...js-utils-v1.1.2) (2024-11-03)
+
+
+### Bug Fixes
+
+* **http:** Prevent transformer from being called after an error ([a953ab5](https://github.com/spuxx1701/jslibs/commit/a953ab502d99354f9f0b9bd8a2a6402c437eb072))
+
 ## [1.1.1](https://github.com/spuxx1701/jslibs/compare/js-utils-v1.1.0...js-utils-v1.1.1) (2024-11-02)
 
 

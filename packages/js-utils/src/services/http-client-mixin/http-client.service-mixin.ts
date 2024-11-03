@@ -79,6 +79,7 @@ export function HttpClientMixin<TEndpoints extends Endpoints>(
         }
       } catch (error: unknown) {
         await Client.handleError(endpointDef, error);
+        return;
       }
 
       if (typeof endpointDef.transformer === 'function') {

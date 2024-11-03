@@ -1,6 +1,6 @@
 import { defineEndpoint } from '@spuxx/js-utils';
 import type { Session } from './session.types';
-import { Config } from 'packages/browser-utils/dist/main';
+import { Config } from '@spuxx/browser-utils';
 import { AppConfig } from '../../config/app.config';
 import { Api } from '../api.service';
 

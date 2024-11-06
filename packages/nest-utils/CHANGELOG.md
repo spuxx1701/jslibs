@@ -1,5 +1,19 @@
 # Changelog
 
+## [2.4.0](https://github.com/spuxx1701/jslibs/compare/nest-utils-v2.3.3...nest-utils-v2.4.0) (2024-11-06)
+
+
+### Features
+
+* **http:** Implemented '@IncludeQueryParam` decorator ([b7ebc57](https://github.com/spuxx1701/jslibs/commit/b7ebc57841b6cb27f5902497ce121fe846d23288))
+* **transformers:** Implemented `@TransformArrayString()` decorator and `transformArrayString()` function ([8e77f0c](https://github.com/spuxx1701/jslibs/commit/8e77f0cd00d2f85cd13f0cdc2de35981455fdd22))
+* **transformers:** Refactored `@TransformBooleanString` decorator and exposed `transformBooleanString()` function ([a11da65](https://github.com/spuxx1701/jslibs/commit/a11da65b63ea13078f55c2c169d46f26bb62bf40))
+
+
+### Bug Fixes
+
+* **auth:** Explicitly import and export `AuthGuard` ([46d43b2](https://github.com/spuxx1701/jslibs/commit/46d43b2508d0e805f5572c77ed4f66b85524f789))
+
 ## [2.3.3](https://github.com/spuxx1701/jslibs/compare/nest-utils-v2.3.2...nest-utils-v2.3.3) (2024-10-30)
 
 

@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.2.0](https://github.com/spuxx1701/jslibs/compare/js-utils-v1.1.2...js-utils-v1.2.0) (2024-11-06)
+
+
+### Features
+
+* **utils:** Add isEmptyArray function ([5ae1597](https://github.com/spuxx1701/jslibs/commit/5ae1597542d50dfd2a27312f69a5cbe4052a30aa))
+
 ## [1.1.2](https://github.com/spuxx1701/jslibs/compare/js-utils-v1.1.1...js-utils-v1.1.2) (2024-11-03)
 
 

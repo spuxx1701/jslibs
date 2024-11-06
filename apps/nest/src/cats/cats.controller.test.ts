@@ -1,16 +1,21 @@
-import { MappingModule, Supertest, TestContainer } from '@spuxx/nest-utils';
-import { CatsModule } from './cats.module';
+import { Supertest, TestContainer } from '@spuxx/nest-utils';
 import { cats } from './cats.data';
+import { AppModule } from '../app.module';
 
 describe('CatsController', () => {
   let supertest: Supertest;
 
   beforeEach(async () => {
+    vi.stubEnv('AUTH_CLIENT_SECRET', 'foo');
     const container = await TestContainer.create({
-      imports: [CatsModule, MappingModule],
+      imports: [AppModule],
       enableEndToEnd: true,
     });
     supertest = container.supertest;
+  });
+
+  afterEach(() => {
+    vi.unstubAllEnvs();
   });
 
   describe('findMany', () => {
@@ -29,8 +34,8 @@ describe('CatsController', () => {
     });
 
     it('should fail due to an invalid include value', async () => {
-      const response = await supertest.get('/cats?include=invalid');
-      expect(response.status).toBe(400);
+      const response = await supertest.get('/cats?include=foo');
+      expect(response.statusCode).toBe(400);
     });
   });
 });

@@ -28,7 +28,7 @@ describe('IncludeQueryParam', () => {
       include: [],
     });
     await expect(pipe.transform({}, transformMetadata)).resolves.toEqual({
-      include: [],
+      include: undefined,
     });
   });
 

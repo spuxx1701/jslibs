@@ -1,15 +1,6 @@
 import { Map } from '@spuxx/nest-utils';
-import { Breed } from './cats.types';
-
-export class Owner {
-  @Map()
-  name: string;
-  @Map()
-  age: number;
-  @Map()
-  cats?: Cat[];
-}
-
+import { Breed } from '../cats.types';
+import { Owner } from './owner.model';
 export class Cat {
   @Map()
   name: string;

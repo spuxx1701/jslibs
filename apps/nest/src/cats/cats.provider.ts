@@ -1,7 +1,8 @@
 import { Injectable } from '@nestjs/common';
-import { Cat, Owner } from './cats.models';
 import { cats, owners } from './cats.data';
 import { CatsFindManyQuery } from './cats.queries';
+import { Cat } from './models/cat.model';
+import { Owner } from './models/owner.model';
 
 @Injectable()
 export class CatsProvider {

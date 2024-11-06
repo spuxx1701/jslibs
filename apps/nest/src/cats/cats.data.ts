@@ -1,4 +1,5 @@
-import { Cat, Owner } from './cats.models';
+import { Cat } from './models/cat.model';
+import { Owner } from './models/owner.model';
 
 export const owners: Owner[] = [
   {

@@ -1,18 +1,7 @@
 import { ApiProperty } from '@nestjs/swagger';
 import { Map } from '@spuxx/nest-utils';
-import { catPropertyDocs, ownerPropertyDocs } from './cats.property-docs';
-
-export class OwnerReadResource {
-  @Map()
-  @ApiProperty(ownerPropertyDocs.name)
-  name: string;
-  @Map()
-  @ApiProperty(ownerPropertyDocs.age)
-  age: string;
-  @Map()
-  @ApiProperty(ownerPropertyDocs.cats)
-  cats: CatReadResource[];
-}
+import { catPropertyDocs } from './cat.property-docs';
+import { OwnerReadResource } from './owner.read.resource';
 
 export class CatReadResource {
   @Map()

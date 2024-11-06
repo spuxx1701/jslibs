@@ -6,8 +6,8 @@ import { Transform } from 'class-transformer';
  * ＠TransformBooleanString()
  * myBoolean: boolean; // 'true' and 'TRUE' becomes true, everything else becomes false
  */
-export function TransformBooleanString() {
-  return Transform(transformBooleanString);
+export function TransformBooleanString(): PropertyDecorator {
+  return Transform(({ value }: { value: unknown }) => transformBooleanString(value));
 }
 
 /**
@@ -15,6 +15,6 @@ export function TransformBooleanString() {
  * 'true' and 'TRUE' becomes true, everything else becomes false.
  * @param value The value to transform.
  */
-export function transformBooleanString({ value }: { value: unknown }): boolean {
+export function transformBooleanString(value: unknown): boolean {
   return value.toString().toLowerCase() === 'true';
 }

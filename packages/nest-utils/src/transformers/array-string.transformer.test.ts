@@ -22,10 +22,18 @@ describe('TransformArrayString', () => {
     expect(test.values).toEqual(['foo', 'bar']);
   });
 
-  it('should return an empty array for all non-string values', () => {
+  it("should not transform ['foo', 'bar']", () => {
+    const test = plainToInstance(Test, { values: ['foo', 'bar'] });
+    expect(test.values).toEqual(['foo', 'bar']);
+  });
+
+  it('should return an empty array for invalid values', () => {
     expect(plainToInstance(Test, { values: true }).values).toEqual([]);
     expect(plainToInstance(Test, { values: 0 }).values).toEqual([]);
+    expect(plainToInstance(Test, { values: '' }).values).toEqual([]);
+    expect(plainToInstance(Test, { values: '  ' }).values).toEqual([]);
     expect(plainToInstance(Test, { values: [] }).values).toEqual([]);
+    expect(plainToInstance(Test, { values: ['foo', 1] }).values).toEqual([]);
     expect(plainToInstance(Test, { values: {} }).values).toEqual([]);
     expect(plainToInstance(Test, { values: null }).values).toEqual([]);
   });

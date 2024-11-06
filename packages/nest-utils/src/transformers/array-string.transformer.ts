@@ -1,4 +1,5 @@
 import { Transform } from 'class-transformer';
+import { isEmptyOrWhitespace } from 'packages/js-utils/dist/main';
 
 /**
  * Decorator that transforms comma-separated strings to an array of strings.
@@ -6,8 +7,8 @@ import { Transform } from 'class-transformer';
  * ＠TransformArrayString()
  * myArray: string[];
  */
-export function TransformArrayString() {
-  return Transform(transformArrayString);
+export function TransformArrayString(): PropertyDecorator {
+  return Transform(({ value }: { value: unknown }) => transformArrayString(value));
 }
 
 /**
@@ -15,9 +16,16 @@ export function TransformArrayString() {
  * if the input is not a string.
  * @param value The value to transform.
  */
-export function transformArrayString({ value }: { value: unknown }): string[] {
-  if (typeof value === 'string') {
-    return value.split(',');
+export function transformArrayString(value: unknown): string[] {
+  if (typeof value === 'string' && !Array.isArray(value)) {
+    return isEmptyOrWhitespace(value) ? [] : value.split(',');
+  } else if (Array.isArray(value)) {
+    for (const element of value) {
+      if (typeof element !== 'string') {
+        return [];
+      }
+    }
+    return value;
   } else {
     return [];
   }

@@ -26,20 +26,18 @@ import { ApiPropertyOptional } from '@nestjs/swagger';
  * }
  */
 export function IncludeQueryParam(...allowedRelationships: string[]) {
-  return <T, Y>(target: T, propertyName: string, descriptor?: TypedPropertyDescriptor<Y>) => {
-    (TransformArrayString() as MethodDecorator)(target, propertyName, descriptor);
-    (
-      ApiPropertyOptional({
-        name: 'include',
-        type: String,
-        isArray: true,
-        description: `A list of relationships to be fetched and included eagerly.
+  return (target: object, propertyName: string) => {
+    TransformArrayString()(target, propertyName);
+    ApiPropertyOptional({
+      name: 'include',
+      type: String,
+      isArray: true,
+      description: `A list of relationships to be fetched and included eagerly.
         See <a href="https://jsonapi.org/format/#fetching-includes" target="_blank">JSON:API specification</a>
         for details.
       
        Allowed values: ${allowedRelationships.join(', ')}`,
-      }) as MethodDecorator
-    )(target, propertyName, descriptor);
+    })(target, propertyName);
     registerDecorator({
       target: target.constructor,
       propertyName: propertyName,

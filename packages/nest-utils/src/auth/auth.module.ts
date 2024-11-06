@@ -1,5 +1,5 @@
 import { DynamicModule, Global, INestApplication, Logger, Module } from '@nestjs/common';
-import { defaultAuthOptions, type AuthOptions } from '../main';
+import { AuthGuard, defaultAuthOptions, type AuthOptions } from '../main';
 import { AuthController } from './controllers/auth.controller';
 import { AuthService } from './providers/auth.service';
 import { deepMerge } from '@spuxx/js-utils';
@@ -65,12 +65,13 @@ export class AuthModule {
       controllers: [AuthController],
       providers: [
         AuthService,
+        AuthGuard,
         {
           provide: AuthOptionsProvider,
           useValue: new AuthOptionsProvider(this.mergeOptionsWithDefaultValues(options)),
         },
       ],
-      exports: [AuthService, AuthOptionsProvider],
+      exports: [AuthService, AuthGuard, AuthOptionsProvider],
     };
   }
 

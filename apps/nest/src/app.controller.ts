@@ -36,6 +36,10 @@ export class AppController {
           logout: `${EnvModule.get('APP_BASE_URL')}/auth/logout`,
           session: `${EnvModule.get('APP_BASE_URL')}/auth/session`,
         },
+        docs: {
+          'swagger-ui': `${EnvModule.get('APP_BASE_URL')}/docs`,
+          'open-api-json': `${EnvModule.get('APP_BASE_URL')}/docs-json`,
+        },
       },
     };
     return response;

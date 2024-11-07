@@ -15,6 +15,7 @@ export function TransformBooleanString(): PropertyDecorator {
  * 'true' and 'TRUE' becomes true, everything else becomes false.
  * @param value The value to transform.
  */
-export function transformBooleanString(value: unknown): boolean {
+export function transformBooleanString(value: unknown): boolean | void {
+  if (value === undefined || value === null) return;
   return value.toString().toLowerCase() === 'true';
 }

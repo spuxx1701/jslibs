@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.4.1](https://github.com/spuxx1701/jslibs/compare/nest-utils-v2.4.0...nest-utils-v2.4.1) (2024-11-07)
+
+
+### Bug Fixes
+
+* **transformers:** Fixed an issue with `transformBooleanString()` where undefined or nullish values would become `false` ([eaee6ee](https://github.com/spuxx1701/jslibs/commit/eaee6ee68f5e226e6eeaccb1d4e1ae05b683b3ce))
+
 ## [2.4.0](https://github.com/spuxx1701/jslibs/compare/nest-utils-v2.3.3...nest-utils-v2.4.0) (2024-11-06)
 
 

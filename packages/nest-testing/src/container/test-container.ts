@@ -45,7 +45,10 @@ export class TestContainer {
    */
   supertest?: Supertest;
 
-  private constructor(init: OmitFunctionMembers<TestContainer>, afterCreate?: (container: TestContainer) => void) {
+  private constructor(
+    init: OmitFunctionMembers<TestContainer>,
+    afterCreate?: (container: TestContainer) => void,
+  ) {
     Object.assign(this, init);
     if (afterCreate) afterCreate(this);
   }

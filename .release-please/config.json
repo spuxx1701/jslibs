@@ -2,7 +2,8 @@
   "packages": {
     "packages/js-utils": {},
     "packages/browser-utils": {},
-    "packages/nest-utils": {}
+    "packages/nest-utils": {},
+    "packages/nest-testing": {}
   },
   "changelog-sections": [
     { "type": "feat", "section": "Features" },

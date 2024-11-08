@@ -1,4 +1,4 @@
-import { Supertest, TestContainer } from '@spuxx/nest-utils';
+import { Supertest, TestContainer } from '@spuxx/nest-testing';
 import { cats } from './cats.data';
 import { AppModule } from '../app.module';
 

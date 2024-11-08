@@ -1,5 +1,5 @@
 import { AppController } from './app.controller';
-import { TestContainer, Supertest } from '@spuxx/nest-utils';
+import { TestContainer, Supertest } from '@spuxx/nest-testing';
 import { authConfig, AuthRole } from './auth/auth.config';
 
 describe('AppController', () => {

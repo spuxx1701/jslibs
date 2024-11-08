@@ -1,6 +1,6 @@
 import { AuthGuard } from './auth.guard';
 import { Controller, Get, UseGuards } from '@nestjs/common';
-import { Supertest, TestContainer } from '../../testing';
+import { Supertest, TestContainer } from '@spuxx/nest-testing';
 import { Roles } from '../decorators/roles.decorator';
 import { SessionResource } from '../resources/session.resource';
 

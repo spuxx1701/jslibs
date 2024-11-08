@@ -1,5 +1,5 @@
 import { IsBooleanString, IsDate, IsNumber, IsString } from 'class-validator';
-import { TestContainer } from '../testing/container';
+import { TestContainer } from '@spuxx/nest-testing';
 import { EnvModuleMixin } from './env.module-mixin';
 
 describe('registration', () => {

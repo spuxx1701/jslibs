@@ -1,4 +1,4 @@
-import { TestContainer } from '../../testing';
+import { TestContainer } from '@spuxx/nest-testing';
 import { AuthOptions, defaultAuthOptions } from '../config/auth.options';
 import { AuthService } from './auth.service';
 

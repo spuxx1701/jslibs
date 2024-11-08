@@ -1,4 +1,4 @@
-import { Supertest, TestContainer } from '../../testing';
+import { Supertest, TestContainer } from '@spuxx/nest-testing';
 import { SessionResource } from '../resources/session.resource';
 
 describe('AuthController', () => {

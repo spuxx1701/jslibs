@@ -1,5 +1,6 @@
-import { Controller, Injectable, Module } from '@nestjs/common';
+import { AuthService } from 'packages/nest-utils/dist/main';
 import { TestContainer } from './test-container';
+import { Controller, Injectable, Module } from '@nestjs/common';
 
 describe('TestContainer', () => {
   it('should create a test container with the given dependencies', async () => {
@@ -16,14 +17,17 @@ describe('TestContainer', () => {
       controllers: [TestController],
       providers: [TestService],
       imports: [TestModule],
+      enableEndToEnd: true,
     });
-    const { module } = container;
+    const { module, app } = container;
 
     expect(container).toBeInstanceOf(TestContainer);
     expect(module).toBeDefined();
-    expect(module.get(TestController)).toBeInstanceOf(TestController);
-    expect(module.get(TestService)).toBeInstanceOf(TestService);
-    expect(module.get(TestModule)).toBeInstanceOf(TestModule);
+    expect(app).toBeDefined();
+    expect(app.get(TestController)).toBeInstanceOf(TestController);
+    expect(app.get(TestService)).toBeInstanceOf(TestService);
+    expect(app.get(TestModule)).toBeInstanceOf(TestModule);
+    expect(app.get(AuthService)).toBeInstanceOf(AuthService);
   });
 
   it('should call the afterCreate hook', async () => {

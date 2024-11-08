@@ -25,13 +25,16 @@ import { AuthOptionsProvider } from '../providers/auth-options.provider';
  */
 @Injectable()
 export class AuthGuard implements CanActivate {
-  constructor(
-    private reflector: Reflector,
-    private readonly optionsProvider: AuthOptionsProvider,
-  ) {}
+  // reflector = new Reflector();
+
+  constructor(private readonly optionsProvider: AuthOptionsProvider) {}
 
   get options() {
     return this.optionsProvider.options;
+  }
+
+  get reflector() {
+    return new Reflector();
   }
 
   /**

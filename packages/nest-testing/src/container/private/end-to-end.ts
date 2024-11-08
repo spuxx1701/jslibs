@@ -1,4 +1,5 @@
 import { INestApplication } from '@nestjs/common';
+import { BaseExceptionFilter } from '@nestjs/core';
 import { TestingModule } from '@nestjs/testing';
 
 /**
@@ -11,6 +12,7 @@ export const createEndToEndNestApplication = async (
   module: TestingModule,
 ): Promise<INestApplication> => {
   const app = module.createNestApplication();
+  app.useGlobalFilters(new BaseExceptionFilter());
   await app.init();
   return app;
 };

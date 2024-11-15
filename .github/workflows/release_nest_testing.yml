@@ -1,0 +1,16 @@
+name: Releases (@spuxx/nest-testing)
+
+on:
+  workflow_dispatch:
+  push:
+    tags:
+    - "nest-testing-*"
+
+jobs:
+  release:
+    name: Release artifact (@spuxx/nest-testing)
+    uses: ./.github/workflows/release.yml
+    with:
+      PATH: packages/nest-testing
+    secrets:
+      NPM_TOKEN: ${{ secrets.NPM_TOKEN }}

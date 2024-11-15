@@ -177,6 +177,24 @@ importers:
         specifier: 1.7.7
         version: 1.7.7
 
+  packages/nest-testing:
+    dependencies:
+      '@nestjs/common':
+        specifier: ^10.4.0
+        version: 10.4.6(class-transformer@0.5.1)(class-validator@0.14.1)(reflect-metadata@0.2.2)(rxjs@7.8.1)
+      '@nestjs/testing':
+        specifier: ^10.4.0
+        version: 10.4.7(@nestjs/common@10.4.6(class-transformer@0.5.1)(class-validator@0.14.1)(reflect-metadata@0.2.2)(rxjs@7.8.1))(@nestjs/core@10.4.6)(@nestjs/platform-express@10.4.4)
+      '@spuxx/js-utils':
+        specifier: workspace:@spuxx/js-utils@*
+        version: link:../js-utils
+      '@spuxx/nest-utils':
+        specifier: workspace:@spuxx/nest-utils@*
+        version: link:../nest-utils
+      supertest:
+        specifier: ^7.0.0
+        version: 7.0.0
+
   packages/nest-utils:
     dependencies:
       '@nanogiants/nestjs-swagger-api-exception-decorator':
@@ -3583,10 +3601,6 @@ packages:
   punycode@2.3.1:
     resolution: {integrity: sha512-vYt7UD1U9Wg6138shLtLOvdAu+8DsC/ilFtEVHcH+wydcSpNE20AfSOduf6MkRFahL5FY7X1oU7nKVZFtfq8Fg==}
     engines: {node: '>=6'}
-
-  qs@6.11.0:
-    resolution: {integrity: sha512-MvjoMCJwEarSbUYk5O+nmoSzSutSsTwF85zcHPQ9OrlFoZOYIjaqBAJIqIXjptyD5vThxGq52Xu/MaJzRkIk4Q==}
-    engines: {node: '>=0.6'}
 
   qs@6.13.0:
     resolution: {integrity: sha512-+38qI9SOr8tfZ4QmJNplMUxqjbe7LKvvZgWdExBOmd+egZTtjLB67Gu0HRX3u/XOq7UU2Nx6nsjvS16Z9uwfpg==}
@@ -8352,10 +8366,6 @@ snapshots:
 
   punycode@2.3.1: {}
 
-  qs@6.11.0:
-    dependencies:
-      side-channel: 1.0.6
-
   qs@6.13.0:
     dependencies:
       side-channel: 1.0.6
@@ -8562,7 +8572,7 @@ snapshots:
 
   rxjs@7.8.1:
     dependencies:
-      tslib: 2.6.3
+      tslib: 2.7.0
 
   safe-buffer@5.1.2: {}
 
@@ -8869,7 +8879,7 @@ snapshots:
       formidable: 3.5.1
       methods: 1.1.2
       mime: 2.6.0
-      qs: 6.11.0
+      qs: 6.13.0
     transitivePeerDependencies:
       - supports-color
 

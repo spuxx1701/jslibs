@@ -2,7 +2,7 @@ import { Logger } from '@nestjs/common';
 import { NestFactory } from '@nestjs/core';
 import { SwaggerModule, DocumentBuilder } from '@nestjs/swagger';
 import { CustomLogger, AuthModule } from '@spuxx/nest-utils';
-
+import { auth } from 'express-openid-connect';
 import { AppModule } from './app.module';
 import { authConfig } from './auth/auth.config';
 import { EnvModule } from './env/env.module';
@@ -15,7 +15,7 @@ async function bootstrap() {
     logger,
   });
 
-  await AuthModule.bootstrap(app as never, authConfig);
+  await AuthModule.bootstrap(app as never, auth, authConfig);
 
   const config = new DocumentBuilder()
     .setTitle('apps/nest')

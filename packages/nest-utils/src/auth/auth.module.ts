@@ -4,14 +4,17 @@ import { AuthController } from './controllers/auth.controller';
 import { AuthService } from './providers/auth.service';
 import { deepMerge } from '@spuxx/js-utils';
 import { AuthOptionsProvider } from './providers/auth-options.provider';
+import { type ConfigParams } from 'express-openid-connect';
+import { RequestHandler } from 'express';
 
 /**
  * The authentication module. This module is responsible for handling authentication and
- * authorization. It is based on the `express-openid-connect?` library and is intended
+ * authorization. It is based on the `express-openid-connect` library and is intended
  * for use with an OIDC provider.
  * @example
  * // main.ts
  * import { AuthModule, AuthOptions } from '@nestjs-oidc/core';
+ * import { auth } from "express-openid-connect";
  * const authConfig: AuthOptions = {
  *   // This is the minimum set of options you need to provide
  *   roles: {
@@ -27,7 +30,7 @@ import { AuthOptionsProvider } from './providers/auth-options.provider';
  *     secret: 'session-secret',
  *   }
  * }
- * await AuthModule.bootstrap(app, authConfig);
+ * await AuthModule.bootstrap(app, auth, authConfig);
  *
  * // app.module.ts
  * import { AuthModule } from '@nestjs-oidc/core';
@@ -41,16 +44,20 @@ export class AuthModule {
   /**
    * Bootstraps authentication. This must be called during application bootstrapping.
    * @param app The Nest application instance.
+   * @param auth The `auth` middleware function provided by `express-openid-connect`.
    * @param options The authentication options.
    */
-  static async bootstrap(app: INestApplication, options: AuthOptions) {
+  static async bootstrap(
+    app: INestApplication,
+    auth: (params?: ConfigParams) => RequestHandler,
+    options: AuthOptions,
+  ) {
     const mergedOptions = this.mergeOptionsWithDefaultValues(options);
     const { disable, oidc } = mergedOptions;
     if (disable) {
       Logger.warn('Authentication is disabled. All routes will be accessible.', AuthModule.name);
       return;
     }
-    const { auth } = await import('express-openid-connect');
     app.use(auth(oidc));
     Logger.log(
       `Authentication is enabled and will be handled by issuer at '${oidc.issuerBaseURL}'.`,

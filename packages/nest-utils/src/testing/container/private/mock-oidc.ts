@@ -39,12 +39,3 @@ export class MockOidcModule implements NestModule {
     consumer.apply(MockOidcMiddleware).forRoutes('*');
   }
 }
-
-export function mockExpressOidcPackage() {
-  vitest.doMock('express-openid-connect', () => {
-    return {
-      auth: vitest.fn(() => (_req: Request, _res: Response, next: NextFunction) => next()),
-      requiresAuth: vitest.fn(() => (_req: Request, _res: Response, next: NextFunction) => next()),
-    };
-  });
-}

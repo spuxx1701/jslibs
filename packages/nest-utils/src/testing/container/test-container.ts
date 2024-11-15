@@ -5,9 +5,10 @@ import { AuthOptions } from '../../auth';
 import { AuthModule } from '../../auth/auth.module';
 import { Supertest } from '../supertest';
 import { createEndToEndNestApplication } from './private/end-to-end';
-import { mockExpressOidcPackage, MockOidcModule } from './private/mock-oidc';
+import { MockOidcModule } from './private/mock-oidc';
 import { TestContainerOptions } from './types';
 import { MappingModule } from '../../mapping/mapping.module';
+import { NextFunction } from 'express';
 
 /**
  * `TestContainer` provides an abstraction of `Nest.createTestContainer()`, offering
@@ -76,8 +77,6 @@ export class TestContainer {
       ...options,
     };
 
-    mockExpressOidcPackage();
-
     // Auto-add non-conditional components
     imports.push(MappingModule);
 
@@ -106,7 +105,8 @@ export class TestContainer {
     let supertest: Supertest | undefined;
     if (enableEndToEnd) {
       app = await createEndToEndNestApplication(module);
-      await AuthModule.bootstrap(app, authOptions as AuthOptions);
+      const auth = () => (_req: Request, _res: Response, next: NextFunction) => next();
+      await AuthModule.bootstrap(app, auth as never, authOptions as AuthOptions);
       supertest = new Supertest(app, options.session);
     }
 

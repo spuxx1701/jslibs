@@ -1,4 +1,4 @@
-import { DynamicModule, Global, INestApplication, Logger, Module } from '@nestjs/common';
+import { DynamicModule, INestApplication, Logger, Module } from '@nestjs/common';
 import { AuthGuard, defaultAuthOptions, type AuthOptions } from '../main';
 import { AuthController } from './controllers/auth.controller';
 import { AuthService } from './providers/auth.service';
@@ -36,7 +36,6 @@ import { AuthOptionsProvider } from './providers/auth-options.provider';
  * })
  * export class AppModule {}
  */
-@Global()
 @Module({})
 export class AuthModule {
   /**
@@ -61,6 +60,7 @@ export class AuthModule {
 
   static forRoot(options: AuthOptions): DynamicModule {
     return {
+      global: true,
       module: AuthModule,
       controllers: [AuthController],
       providers: [

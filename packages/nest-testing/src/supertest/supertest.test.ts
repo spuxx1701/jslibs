@@ -1,7 +1,7 @@
 import { Controller, Get, UseGuards } from '@nestjs/common';
 import { TestContainer } from '../container';
 import { Supertest } from './supertest';
-import { AuthGuard, Roles, SessionResource } from '@spuxx/nest-utils';
+import { AuthGuard, AuthModule, Roles, SessionResource } from '@spuxx/nest-utils';
 
 describe('Supertest', () => {
   @Controller()
@@ -29,13 +29,16 @@ describe('Supertest', () => {
 
   beforeEach(async () => {
     const container = await TestContainer.create({
+      imports: [
+        AuthModule.forRoot({
+          oidc: {},
+          roles: {
+            user: 'user',
+            admin: 'admin',
+          },
+        }),
+      ],
       controllers: [MyController],
-      authOptions: {
-        roles: {
-          user: 'user',
-          admin: 'admin',
-        },
-      },
       enableEndToEnd: true,
     });
     supertest = container.supertest;

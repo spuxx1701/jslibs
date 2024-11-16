@@ -6,11 +6,16 @@ export default mergeConfig(
   defineConfig({
     ssr: {
       target: 'node',
-      noExternal: ['dotenv'],
     },
     build: {
       ssr: true,
-      sourcemap: true,
+      sourcemap: false,
+      rollupOptions: {
+        output: {
+          preserveModules: true,
+          preserveModulesRoot: './src',
+        },
+      },
     },
   }),
 );

@@ -9,11 +9,10 @@ import {
 } from '@nestjs/common';
 import { ApiOperation, ApiTags } from '@nestjs/swagger';
 import { CatsProvider } from './cats.provider';
-import { Mapper } from 'packages/nest-utils/dist/main';
+import { Mapper } from '@spuxx/nest-utils';
 import { CatsFindManyQuery } from './cats.queries';
 import { CatReadResource } from './resources/cat.read.resource';
 import { Cat } from './models/cat.model';
-
 import { Catch, ExceptionFilter, ArgumentsHost, HttpException, HttpStatus } from '@nestjs/common';
 import { Response } from 'express';
 import { ApiException } from '@nanogiants/nestjs-swagger-api-exception-decorator';

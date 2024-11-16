@@ -1,8 +1,9 @@
 import { AuthGuard } from './auth.guard';
 import { Controller, Get, UseGuards } from '@nestjs/common';
-import { Supertest, TestContainer } from '../../testing';
+import { Supertest, TestContainer } from '@spuxx/nest-testing';
 import { Roles } from '../decorators/roles.decorator';
 import { SessionResource } from '../resources/session.resource';
+import { AuthModule } from '../auth.module';
 
 const AuthRole = {
   Admin: 'admin',
@@ -11,10 +12,6 @@ const AuthRole = {
 type AuthRole = (typeof AuthRole)[keyof typeof AuthRole];
 
 describe('AuthGuard', () => {
-  afterEach(() => {
-    vitest.clearAllMocks();
-  });
-
   describe('Authentication disabled', () => {
     let supertest: Supertest;
 
@@ -32,10 +29,8 @@ describe('AuthGuard', () => {
 
     beforeEach(async () => {
       const container = await TestContainer.create({
+        imports: [AuthModule.forRoot({ disable: true })],
         controllers: [TestController],
-        authOptions: {
-          disable: true,
-        },
         enableEndToEnd: true,
       });
       supertest = container.supertest;
@@ -67,10 +62,12 @@ describe('AuthGuard', () => {
 
     beforeEach(async () => {
       const container = await TestContainer.create({
+        imports: [
+          AuthModule.forRoot({
+            roles: AuthRole,
+          }),
+        ],
         controllers: [TestController],
-        authOptions: {
-          roles: AuthRole,
-        },
         enableEndToEnd: true,
       });
       supertest = container.supertest;
@@ -120,10 +117,12 @@ describe('AuthGuard', () => {
 
       beforeEach(async () => {
         const container = await TestContainer.create({
+          imports: [
+            AuthModule.forRoot({
+              roles: AuthRole,
+            }),
+          ],
           controllers: [TestController],
-          authOptions: {
-            roles: AuthRole,
-          },
           enableEndToEnd: true,
         });
         supertest = container.supertest;

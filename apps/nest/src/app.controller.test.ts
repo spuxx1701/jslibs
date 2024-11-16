@@ -1,5 +1,6 @@
 import { AppController } from './app.controller';
-import { TestContainer, Supertest } from '@spuxx/nest-utils';
+import { TestContainer, Supertest } from '@spuxx/nest-testing';
+import { AuthModule } from '@spuxx/nest-utils';
 import { authConfig, AuthRole } from './auth/auth.config';
 
 describe('AppController', () => {
@@ -7,8 +8,8 @@ describe('AppController', () => {
 
   beforeEach(async () => {
     const container = await TestContainer.create({
+      imports: [AuthModule.forRoot(authConfig)],
       controllers: [AppController],
-      authOptions: authConfig,
       enableEndToEnd: true,
     });
     supertest = container.supertest;

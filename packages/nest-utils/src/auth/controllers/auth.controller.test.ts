@@ -1,17 +1,20 @@
-import { Supertest, TestContainer } from '../../testing';
+import { Supertest, TestContainer } from '@spuxx/nest-testing';
 import { SessionResource } from '../resources/session.resource';
+import { AuthModule } from '../auth.module';
 
 describe('AuthController', () => {
   let supertest: Supertest;
 
   beforeEach(async () => {
     const container = await TestContainer.create({
-      authOptions: {
-        roles: {
-          user: 'user',
-        },
-        allowedRedirectHostnames: ['good.com'],
-      },
+      imports: [
+        AuthModule.forRoot({
+          roles: {
+            user: 'user',
+          },
+          allowedRedirectHostnames: ['good.com'],
+        }),
+      ],
       enableEndToEnd: true,
     });
     supertest = container.supertest;

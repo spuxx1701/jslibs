@@ -1,5 +1,5 @@
 import { Transform } from 'class-transformer';
-import { isEmptyOrWhitespace } from 'packages/js-utils/dist/main';
+import { isEmptyOrWhitespace } from '@spuxx/js-utils';
 
 /**
  * Decorator that transforms comma-separated strings to an array of strings.

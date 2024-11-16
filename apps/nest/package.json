@@ -16,11 +16,12 @@
     "@spuxx/nest-utils": "workspace:@spuxx/nest-utils@*",
     "class-transformer": "0.5.1",
     "class-validator": "0.14.1",
-    "reflect-metadata": "0.2.0",
+    "reflect-metadata": "0.2.2",
     "rxjs": "7.8.1",
     "@nanogiants/nestjs-swagger-api-exception-decorator": "1.6.11"
   },
   "devDependencies": {
+    "@spuxx/nest-testing": "workspace:@spuxx/nest-testing@*",
     "chokidar": "4.0.1",
     "nodemon": "3.1.4",
     "rimraf": "6.0.1",

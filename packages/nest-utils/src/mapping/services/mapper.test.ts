@@ -1,13 +1,14 @@
-import { TestContainer } from '../../testing';
+import { TestContainer } from '@spuxx/nest-testing';
 import { Map } from '../decorators/map.decorator';
 import { Mapper } from './mapper';
 import { Column, ForeignKey, HasOne, Model, Sequelize, Table } from 'sequelize-typescript';
+import { MappingModule } from '../mapping.module';
 
 describe('Mapper', () => {
   let mapper: Mapper;
   beforeEach(async () => {
     const container = await TestContainer.create({
-      // MappingModule is imported automatically by TestContainer
+      imports: [MappingModule],
     });
     mapper = container.module.get(Mapper);
   });

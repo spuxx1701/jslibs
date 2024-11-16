@@ -1,5 +1,5 @@
 import { DynamicModule, ForwardReference, LoggerService, Provider, Type } from '@nestjs/common';
-import { AuthOptions, SessionResource } from '@spuxx/nest-utils';
+import { SessionResource } from '@spuxx/nest-utils';
 import { TestContainer } from './test-container';
 
 /**
@@ -22,14 +22,6 @@ export interface TestContainerOptions {
    * Logger service to use.
    */
   logger?: LoggerService;
-  /**
-   * A limited set of authentication options. When provided, the container will bootstrap and
-   * register `AuthModule` with the given set of options while mocking `express-openid-connect`.
-   *
-   * ⚠️ Do not manually import `AuthModule` when calling `TestContainer.create()` or the container
-   * will break.
-   */
-  authOptions?: Omit<AuthOptions, 'oidc'>;
   /**
    * Whether to enable end-to-end testing. If set to `true`
    * @default false

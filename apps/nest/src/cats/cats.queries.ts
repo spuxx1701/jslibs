@@ -1,4 +1,4 @@
-import { IncludeQueryParam } from 'packages/nest-utils/dist/main';
+import { IncludeQueryParam } from '@spuxx/nest-utils';
 
 export class CatsFindManyQuery {
   @IncludeQueryParam('owner')

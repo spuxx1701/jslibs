@@ -1,6 +1,6 @@
 import { Controller, Get, UseInterceptors } from '@nestjs/common';
 import { HttpLoggingInterceptor } from './http-logging.interceptor';
-import { Supertest, TestAppLogger, TestContainer } from '../../testing';
+import { Supertest, TestAppLogger, TestContainer } from '@spuxx/nest-testing';
 import { ApplicationLogLevel } from '../../logging';
 
 describe('HttpLoggingInterceptor', () => {

@@ -8,7 +8,7 @@ import {
 } from '@nestjs/common';
 import { Reflector } from '@nestjs/core';
 import { Request } from 'express';
-import { AuthOptionsProvider } from '../providers/auth-options.provider';
+import { AuthService } from '../providers/auth.service';
 
 /**
  * Use this guard on a route to protect the route and only allow authenticated users
@@ -27,12 +27,8 @@ import { AuthOptionsProvider } from '../providers/auth-options.provider';
 export class AuthGuard implements CanActivate {
   constructor(
     private reflector: Reflector,
-    private readonly optionsProvider: AuthOptionsProvider,
+    private readonly service: AuthService,
   ) {}
-
-  get options() {
-    return this.optionsProvider.options;
-  }
 
   /**
    * Is triggered when the guarded function is being executed. If it returns false,
@@ -119,5 +115,9 @@ Roles '${requiredRoles.join(', ')}' were required, but the user only had '${user
       if (!userRoles.includes(requiredRole)) throw new ForbiddenException();
     }
     return true;
+  }
+
+  get options() {
+    return this.service.options;
   }
 }

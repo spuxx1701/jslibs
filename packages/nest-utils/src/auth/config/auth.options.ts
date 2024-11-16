@@ -26,7 +26,7 @@ export interface AuthOptions {
    * Configuration parameters passed to `express-openid-connect`. For documentation, see:
    * https://auth0.github.io/express-openid-connect/interfaces/ConfigParams.html
    */
-  oidc: ExpressOidcConfig;
+  oidc?: ExpressOidcConfig;
 }
 
 type DefaultAuthOptions = Partial<Omit<AuthOptions, 'oidc'>> & Pick<AuthOptions, 'oidc'>;

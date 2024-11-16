@@ -1,9 +1,8 @@
 import { DynamicModule, INestApplication, Logger, Module } from '@nestjs/common';
-import { AuthGuard, defaultAuthOptions, type AuthOptions } from '../main';
+import { AUTH_OPTIONS_KEY, AuthGuard, defaultAuthOptions, type AuthOptions } from '../main';
 import { AuthController } from './controllers/auth.controller';
 import { AuthService } from './providers/auth.service';
 import { deepMerge } from '@spuxx/js-utils';
-import { AuthOptionsProvider } from './providers/auth-options.provider';
 import { type ConfigParams } from 'express-openid-connect';
 import { RequestHandler } from 'express';
 
@@ -71,14 +70,14 @@ export class AuthModule {
       module: AuthModule,
       controllers: [AuthController],
       providers: [
+        {
+          provide: AUTH_OPTIONS_KEY,
+          useValue: this.mergeOptionsWithDefaultValues(options),
+        },
         AuthService,
         AuthGuard,
-        {
-          provide: AuthOptionsProvider,
-          useValue: new AuthOptionsProvider(this.mergeOptionsWithDefaultValues(options)),
-        },
       ],
-      exports: [AuthService, AuthGuard, AuthOptionsProvider],
+      exports: [AuthService, AuthGuard],
     };
   }
 

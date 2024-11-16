@@ -1,20 +1,17 @@
-import { Injectable, Logger } from '@nestjs/common';
+import { Inject, Injectable, Logger } from '@nestjs/common';
 import { authExceptions } from '../config/auth.exceptions';
 import type { Request, Response } from 'express';
 import { SessionResource } from '../resources/session.resource';
 import { plainToInstance } from 'class-transformer';
-import { AuthOptionsProvider } from './auth-options.provider';
+import { type AuthOptions } from '../config/auth.options';
+import { AUTH_OPTIONS_KEY } from '../../constants';
 
 /**
  * The authentication service.
  */
 @Injectable()
 export class AuthService {
-  constructor(private readonly optionsProvider: AuthOptionsProvider) {}
-
-  get options() {
-    return this.optionsProvider.options;
-  }
+  constructor(@Inject(AUTH_OPTIONS_KEY) readonly options: AuthOptions) {}
 
   /**
    * Handles incoming login requests. Will redirect to the IDP's login page.

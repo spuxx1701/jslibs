@@ -3,7 +3,8 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "dev": "rimraf dist && concurrently \"vite build --mode development --watch\" \"node scripts/wait-for-build.mjs && nodemon dist/main.mjs\"",
+    "dev": "nest start --watch",
+    "debug": "nest start --watch --debug",
     "preview": "node dist/main.mjs",
     "build": "vite build",
     "types": "tsc --noEmit"
@@ -22,9 +23,6 @@
   },
   "devDependencies": {
     "@spuxx/nest-testing": "workspace:@spuxx/nest-testing@*",
-    "chokidar": "4.0.1",
-    "nodemon": "3.1.4",
-    "rimraf": "6.0.1",
     "source-map-support": "0.5.21",
     "ts-loader": "9.5.1",
     "ts-node": "10.9.2"

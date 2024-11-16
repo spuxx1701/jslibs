@@ -1,10 +1,10 @@
 import { INestApplication } from '@nestjs/common';
 import { Test, TestingModule } from '@nestjs/testing';
 import { type OmitFunctionMembers } from '@spuxx/js-utils';
-import { AuthOptions, AuthModule, MappingModule } from '@spuxx/nest-utils';
+import { AuthModule, AuthOptions, MappingModule } from '@spuxx/nest-utils';
 import { Supertest } from '../supertest';
 import { createEndToEndNestApplication } from './private/end-to-end';
-import { MockOidcModule } from './private/mock-oidc';
+import { MockOidcModule } from './private/auth';
 import { TestContainerOptions } from './types';
 import { NextFunction } from 'express';
 
@@ -67,21 +67,15 @@ export class TestContainer {
    * // ... Your test implementation here
    */
   static async create(options: TestContainerOptions) {
-    const { imports, controllers, providers, logger, authOptions, enableEndToEnd, afterCreate } = {
+    const { imports, controllers, providers, logger, enableEndToEnd, afterCreate } = {
       imports: [],
       controllers: [],
       providers: [],
-      authOptions: {},
       ...options,
     };
 
     // Auto-add non-conditional components
-    imports.push(MappingModule);
-
-    // Auto-add conditional components
-    if (enableEndToEnd) {
-      imports.push(AuthModule.forRoot(authOptions as AuthOptions), MockOidcModule);
-    }
+    imports.push(MappingModule, MockOidcModule);
 
     // Create the precompiled version of the module
     let builder = Test.createTestingModule({
@@ -103,9 +97,16 @@ export class TestContainer {
     let supertest: Supertest | undefined;
     if (enableEndToEnd) {
       app = await createEndToEndNestApplication(module);
-      const auth = () => (_req: Request, _res: Response, next: NextFunction) => next();
-      await AuthModule.bootstrap(app, auth as never, authOptions as AuthOptions);
       supertest = new Supertest(app, options.session);
+
+      // Attempt to bootstrap `AuthModule` if provided
+      try {
+        const authOptions = app.get<AuthOptions>('AUTH_OPTIONS');
+        const auth = () => (_req: Request, _res: Response, next: NextFunction) => next();
+        await AuthModule.bootstrap(app, auth as never, authOptions);
+      } catch (error) {
+        // It's entirely possible that `AuthModule` has not been provided
+      }
     }
 
     // Return the test container

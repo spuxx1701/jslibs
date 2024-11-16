@@ -1,5 +1,23 @@
 # Changelog
 
+## [3.0.0](https://github.com/spuxx1701/jslibs/compare/nest-utils-v2.4.1...nest-utils-v3.0.0) (2024-11-16)
+
+
+### ⚠ BREAKING CHANGES
+
+* **testing:** Migrate testing to separate package
+* **auth:** Decouple `AuthModule` from express-openid-connect by forcing consumers to import the `auth` middleware themselves and hand it over to this package
+
+### Features
+
+* **auth:** Decouple `AuthModule` from express-openid-connect by forcing consumers to import the `auth` middleware themselves and hand it over to this package ([90ea1de](https://github.com/spuxx1701/jslibs/commit/90ea1deeba4dda3714249865dbeaa92ce70831e7))
+* **testing:** Migrate testing to separate package ([f0f3c13](https://github.com/spuxx1701/jslibs/commit/f0f3c1366f2b1811b5209c6e9e9ea79e28a4df9b))
+
+
+### Bug Fixes
+
+* **auth:** Mark AuthModule as global module properly ([e01d870](https://github.com/spuxx1701/jslibs/commit/e01d87088175633d653b4823e79eb564ac7c464a))
+
 ## [2.4.1](https://github.com/spuxx1701/jslibs/compare/nest-utils-v2.4.0...nest-utils-v2.4.1) (2024-11-07)
 
 

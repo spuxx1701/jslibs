@@ -1,2 +1,9 @@
 app:
   title: 'spuxx/jslibs'
+
+session:
+  title: Sitzung
+  authenticated: Du bist angemeldet.
+  notAuthenticated: Du bist nicht angemeldet.
+  login: Anmelden
+  logout: Abmelden

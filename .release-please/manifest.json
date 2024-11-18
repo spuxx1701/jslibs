@@ -1,5 +1,6 @@
 {
-  "packages/js-utils": "1.0.0",
+  "packages/js-utils": "1.2.0",
   "packages/browser-utils": "1.2.0",
-  "packages/nest-utils": "1.0.0"
+  "packages/nest-utils": "3.0.0",
+  "packages/nest-testing": "1.0.0"
 }

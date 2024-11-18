@@ -1,17 +1,20 @@
-import { Supertest, TestContainer } from '../../testing';
+import { Supertest, TestContainer } from '@spuxx/nest-testing';
 import { SessionResource } from '../resources/session.resource';
+import { AuthModule } from '../auth.module';
 
 describe('AuthController', () => {
   let supertest: Supertest;
 
   beforeEach(async () => {
     const container = await TestContainer.create({
-      authOptions: {
-        roles: {
-          user: 'user',
-        },
-        allowedRedirectHostnames: ['good.com'],
-      },
+      imports: [
+        AuthModule.forRoot({
+          roles: {
+            user: 'user',
+          },
+          allowedRedirectHostnames: ['good.com'],
+        }),
+      ],
       enableEndToEnd: true,
     });
     supertest = container.supertest;
@@ -24,13 +27,12 @@ describe('AuthController', () => {
         sid: '123',
         email: 'john.deer@gmail.com',
         email_verified: true,
+        preferred_username: 'johndeer',
         name: 'John Deer',
         given_name: 'John',
-        last_name: 'Deer',
+        family_name: 'Deer',
         locale: 'de',
-        realm_access: {
-          roles: ['user'],
-        },
+        groups: ['user'],
       };
       const response = await supertest.get('/auth/session', {
         session,
@@ -56,9 +58,7 @@ describe('AuthController', () => {
       const response = await supertest.get('/auth/session', {
         session: {
           sub: '123',
-          realm_access: {
-            roles: ['completely-different-application'],
-          },
+          groups: ['completely-different-application'],
         },
       });
       expect(response.statusCode).toBe(403);

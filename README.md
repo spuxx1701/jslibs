@@ -4,6 +4,7 @@
 ![js-utils](https://github.com/spuxx1701/jslibs/actions/workflows/release_js_utils.yml/badge.svg)
 ![browser-utils](https://github.com/spuxx1701/jslibs/actions/workflows/release_browser_utils.yml/badge.svg)
 ![nest-utils](https://github.com/spuxx1701/jslibs/actions/workflows/release_nest_utils.yml/badge.svg)
+![nest-testing](https://github.com/spuxx1701/jslibs/actions/workflows/release_nest_testing.yml/badge.svg)
 ![License](https://img.shields.io/github/license/spuxx1701/jslibs)
 
 <!-- vscode-markdown-toc -->
@@ -26,6 +27,7 @@ Find out more about each individual package here:
 - [`@spuxx/js-utils`](/packages/js-utils/README.md)
 - [`@spuxx/browser-utils`](/packages/browser-utils/README.md)
 - [`@spuxx/nest-utils`](/packages/nest-utils/README.md)
+- [`@spuxx/nest-testing`](/packages/nest-testing/README.md)
 
 ## <a name='Releases'></a>Releases
 

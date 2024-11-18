@@ -1,4 +1,4 @@
-import { TestAppLogger } from '../testing/logging';
+import { TestAppLogger } from '@spuxx/nest-testing';
 import { ApplicationLogLevel, CustomLogger } from './custom.logger';
 
 describe('CustomLogger', () => {

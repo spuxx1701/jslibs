@@ -1,5 +1,5 @@
 import { describe, test, expect } from 'vitest';
-import { deepMerge, isEmptyOrWhitespace, sleep } from './misc.utils';
+import { deepMerge, isEmptyArray, isEmptyOrWhitespace, sleep } from './misc.utils';
 
 describe('sleep', () => {
   test('should resolve after the given amount of milliseconds', async () => {
@@ -26,6 +26,18 @@ describe('isEmptyOrWhitespace', () => {
     expect(isEmptyOrWhitespace({})).toBe(false);
     expect(isEmptyOrWhitespace([])).toBe(false);
     expect(isEmptyOrWhitespace(false)).toBe(false);
+  });
+});
+
+describe('isEmptyArray', () => {
+  test('should return true for empty array', () => {
+    expect(isEmptyArray(undefined)).toBe(true);
+    expect(isEmptyArray(null)).toBe(true);
+    expect(isEmptyArray([])).toBe(true);
+    expect(isEmptyArray(['foo'])).toBe(false);
+    expect(isEmptyArray(['foo', 'bar'])).toBe(false);
+    expect(isEmptyArray([0])).toBe(false);
+    expect(isEmptyArray([undefined])).toBe(false);
   });
 });
 

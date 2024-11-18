@@ -1,5 +1,6 @@
 import { AppController } from './app.controller';
-import { TestContainer, Supertest } from '@spuxx/nest-utils';
+import { TestContainer, Supertest } from '@spuxx/nest-testing';
+import { AuthModule } from '@spuxx/nest-utils';
 import { authConfig, AuthRole } from './auth/auth.config';
 
 describe('AppController', () => {
@@ -7,8 +8,8 @@ describe('AppController', () => {
 
   beforeEach(async () => {
     const container = await TestContainer.create({
+      imports: [AuthModule.forRoot(authConfig)],
       controllers: [AppController],
-      authOptions: authConfig,
       enableEndToEnd: true,
     });
     supertest = container.supertest;
@@ -26,8 +27,7 @@ describe('AppController', () => {
       const response = await supertest.get('/', {
         session: {
           sub: '123',
-          name: 'John Doe',
-          email: 'john.doe@example.com',
+          preferred_username: 'John Doe',
         },
       });
       expect(response.statusCode).toBe(200);
@@ -40,7 +40,7 @@ describe('AppController', () => {
       const response = await supertest.get('/protected', {
         session: {
           sub: '123',
-          realm_access: { roles: [AuthRole.user] },
+          groups: [AuthRole.user],
         },
       });
       expect(response.statusCode).toBe(200);

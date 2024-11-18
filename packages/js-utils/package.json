@@ -1,6 +1,6 @@
 {
   "name": "@spuxx/js-utils",
-  "version": "1.0.0",
+  "version": "1.2.0",
   "description": "A package containing various utilities for JavaScript applications.",
   "license": "MIT",
   "author": {
@@ -47,5 +47,9 @@
     "@modyfi/vite-plugin-yaml": {
       "optional": true
     }
+  },
+  "devDependencies": {
+    "@types/axios": "^0.14.4",
+    "axios": "1.7.7"
   }
 }

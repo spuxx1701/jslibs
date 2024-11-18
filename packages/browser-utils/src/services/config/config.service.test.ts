@@ -41,7 +41,8 @@ test('should throw an error in case a required key is not defined after setup', 
   expect(() => {
     Config.setup<MyConfig>({ defaultConfig: { FOO: 'foz' }, requiredKeys: ['BAR'] });
   }).toThrow(
-    "Required key 'BAR' is not defined in the config. Make sure to define its value in either the default, Vite or injected config.",
+    "Required key 'BAR' is not defined in the config. \
+Make sure to define its value in either the default, Vite or injected config.",
   );
 });
 

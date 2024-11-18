@@ -1,8 +1,9 @@
 import { AuthGuard } from './auth.guard';
 import { Controller, Get, UseGuards } from '@nestjs/common';
-import { Supertest, TestContainer } from '../../testing';
+import { Supertest, TestContainer } from '@spuxx/nest-testing';
 import { Roles } from '../decorators/roles.decorator';
 import { SessionResource } from '../resources/session.resource';
+import { AuthModule } from '../auth.module';
 
 const AuthRole = {
   Admin: 'admin',
@@ -11,10 +12,6 @@ const AuthRole = {
 type AuthRole = (typeof AuthRole)[keyof typeof AuthRole];
 
 describe('AuthGuard', () => {
-  afterEach(() => {
-    vitest.clearAllMocks();
-  });
-
   describe('Authentication disabled', () => {
     let supertest: Supertest;
 
@@ -32,10 +29,8 @@ describe('AuthGuard', () => {
 
     beforeEach(async () => {
       const container = await TestContainer.create({
+        imports: [AuthModule.forRoot({ disable: true })],
         controllers: [TestController],
-        authOptions: {
-          disable: true,
-        },
         enableEndToEnd: true,
       });
       supertest = container.supertest;
@@ -67,10 +62,12 @@ describe('AuthGuard', () => {
 
     beforeEach(async () => {
       const container = await TestContainer.create({
+        imports: [
+          AuthModule.forRoot({
+            roles: AuthRole,
+          }),
+        ],
         controllers: [TestController],
-        authOptions: {
-          roles: AuthRole,
-        },
         enableEndToEnd: true,
       });
       supertest = container.supertest;
@@ -86,9 +83,7 @@ describe('AuthGuard', () => {
         session: {
           sub: '123',
           name: 'John Deer',
-          realm_access: {
-            roles: ['user'],
-          },
+          groups: ['user'],
         },
       });
       expect(response.statusCode).toBe(200);
@@ -122,10 +117,12 @@ describe('AuthGuard', () => {
 
       beforeEach(async () => {
         const container = await TestContainer.create({
+          imports: [
+            AuthModule.forRoot({
+              roles: AuthRole,
+            }),
+          ],
           controllers: [TestController],
-          authOptions: {
-            roles: AuthRole,
-          },
           enableEndToEnd: true,
         });
         supertest = container.supertest;
@@ -135,9 +132,7 @@ describe('AuthGuard', () => {
         const response = await supertest.get('/admin', {
           session: {
             sub: '123',
-            realm_access: {
-              roles: ['admin'],
-            },
+            groups: ['admin'],
           },
         });
         expect(response.statusCode).toBe(200);
@@ -147,9 +142,7 @@ describe('AuthGuard', () => {
         const response = await supertest.get('/admin', {
           session: {
             sub: '123',
-            realm_access: {
-              roles: ['user'],
-            },
+            groups: ['user'],
           },
         });
         expect(response.statusCode).toBe(403);
@@ -159,9 +152,7 @@ describe('AuthGuard', () => {
         const response = await supertest.get('/user', {
           session: {
             sub: '123',
-            realm_access: {
-              roles: ['user'],
-            },
+            groups: ['user'],
           },
         });
         expect(response.statusCode).toBe(200);
@@ -171,9 +162,7 @@ describe('AuthGuard', () => {
         const response = await supertest.get('/user', {
           session: {
             sub: '123',
-            realm_access: {
-              roles: [],
-            },
+            groups: [],
           },
         });
         expect(response.statusCode).toBe(403);
@@ -183,9 +172,7 @@ describe('AuthGuard', () => {
         const response = await supertest.get('/user', {
           session: {
             sub: '123',
-            realm_access: {
-              roles: ['completely-different-application'],
-            },
+            groups: ['completely-different-application'],
           },
         });
         expect(response.statusCode).toBe(403);
@@ -195,9 +182,7 @@ describe('AuthGuard', () => {
         const response = await supertest.get('/all', {
           session: {
             sub: '123',
-            realm_access: {
-              roles: ['user', 'admin'],
-            },
+            groups: ['user', 'admin'],
           },
         });
         expect(response.statusCode).toBe(200);
@@ -207,9 +192,7 @@ describe('AuthGuard', () => {
         const response = await supertest.get('/all', {
           session: {
             sub: '123',
-            realm_access: {
-              roles: ['user'],
-            },
+            groups: ['user'],
           },
         });
         expect(response.statusCode).toBe(403);
@@ -219,7 +202,19 @@ describe('AuthGuard', () => {
         const response = await supertest.get('/user', {
           session: {
             sub: '123',
-            roles: ['user'],
+            groups: ['user'],
+          } as unknown as SessionResource,
+        });
+        expect(response.statusCode).toBe(200);
+      });
+
+      it('should fall back to realm_access.roles if groups claim is not present', async () => {
+        const response = await supertest.get('/user', {
+          session: {
+            sub: '123',
+            realm_access: {
+              roles: ['user'],
+            },
           } as unknown as SessionResource,
         });
         expect(response.statusCode).toBe(200);

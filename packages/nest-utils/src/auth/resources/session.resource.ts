@@ -2,15 +2,6 @@
 import { ApiProperty } from '@nestjs/swagger';
 import { Expose } from 'class-transformer';
 
-export class RealmAccess {
-  @Expose()
-  @ApiProperty({
-    description: "The user's realm roles.",
-    example: ['admin', 'user'],
-  })
-  roles: string[];
-}
-
 export class SessionResource {
   @Expose()
   @ApiProperty({
@@ -25,6 +16,13 @@ export class SessionResource {
     example: '1234567890',
   })
   sid: string;
+
+  @Expose()
+  @ApiProperty({
+    description: "The user's username.",
+    example: 'johndeer',
+  })
+  preferred_username: string;
 
   @Expose()
   @ApiProperty({
@@ -45,7 +43,7 @@ export class SessionResource {
     description: "The user's last name.",
     example: 'Deer',
   })
-  last_name: string;
+  family_name: string;
 
   @Expose()
   @ApiProperty({
@@ -70,11 +68,12 @@ export class SessionResource {
 
   @Expose()
   @ApiProperty({
-    description: 'The permissions the user has on the realm.',
+    description: 'The (client) roles the user has been assigned.',
     example: {
       roles: ['admin', 'user'],
     },
-    type: RealmAccess,
+    type: String,
+    isArray: true,
   })
-  realm_access: RealmAccess;
+  groups: string[];
 }

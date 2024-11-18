@@ -32,13 +32,22 @@ export default defineConfig({
   ],
   test: {
     globals: true,
+    setupFiles: [`${__dirname}/tests/vitest/vitest.setup.ts`],
     reporters: ['default', 'junit'],
     outputFile: 'reports/vitest/junit/junit.xml',
     coverage: {
       provider: 'v8',
       all: true,
       include: ['packages/**/src/**/*.ts', 'apps/**/src/**/*.ts'],
-      exclude: ['**/src/main.ts', '**/*types.ts', '**/*.d.ts', '**/*test.ts', '**/index.ts', '**/private/**'],
+      exclude: [
+        'apps/react/**',
+        '**/src/main.ts',
+        '**/*types.ts',
+        '**/*.d.ts',
+        '**/*test.ts',
+        '**/index.ts',
+        '**/private/**',
+      ],
       reportsDirectory: 'reports/vitest/coverage',
       reporter: ['text', 'cobertura'],
     },

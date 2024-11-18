@@ -1,4 +1,4 @@
-name: "@spuxx/js-utils"
+name: Releases (@spuxx/js-utils)
 
 on:
   workflow_dispatch:
@@ -8,6 +8,7 @@ on:
 
 jobs:
   release:
+    name: Release artifact (@spuxx/js-utils)
     uses: ./.github/workflows/release.yml
     with:
       PATH: packages/js-utils

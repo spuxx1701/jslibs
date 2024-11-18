@@ -12,6 +12,7 @@ module.exports = {
   plugins: ['prettier', '@typescript-eslint'],
   rules: {
     // Miscellanous
+    'max-len': ['error', { code: 120 }],
     'no-console': ['error'],
     'no-debugger': ['error'],
   },

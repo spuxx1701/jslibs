@@ -40,7 +40,8 @@ export class Intl extends ServiceMixin<Intl>() {
     const supportedLocales = dictionaries.map((dictionary) => dictionary.locale);
     if (!supportedLocales.includes(fallbackLocale)) {
       throw new Error(
-        'You must provide a fallback locale and the fallback locale must be supported by the given list of dictionaries.',
+        'You must provide a fallback locale and the fallback locale must be supported by the \
+given list of dictionaries.',
       );
     }
     const browserLocale = navigator.language.split('-')[0];
@@ -50,11 +51,16 @@ export class Intl extends ServiceMixin<Intl>() {
   static setLocale(locale: string) {
     const supportedLocales = this.dictionaries.map((dictionary) => dictionary.locale);
     if (!supportedLocales.includes(locale)) {
-      Logger.warn(`Locale '${locale}' is not supported. Falling back to '${this.fallbackLocale}'.`, 'Intl');
+      Logger.warn(
+        `Locale '${locale}' is not supported. Falling back to '${this.fallbackLocale}'.`,
+        'Intl',
+      );
       locale = this.fallbackLocale;
     }
     this.instance._currentLocale = locale;
-    this.instance._currentDictionary = this.dictionaries.find((dictionary) => dictionary.locale === locale);
+    this.instance._currentDictionary = this.dictionaries.find(
+      (dictionary) => dictionary.locale === locale,
+    );
   }
 
   static get fallbackLocale() {
@@ -100,7 +106,11 @@ export class Intl extends ServiceMixin<Intl>() {
    * // foo: 'Hello {bar}' -> 'Hello baz'
    */
   static translate(key: string, vars?: Record<string, string>) {
-    let translation = this.instance.getDictionaryValue(key, this.currentLocale, this.currentDictionary);
+    let translation = this.instance.getDictionaryValue(
+      key,
+      this.currentLocale,
+      this.currentDictionary,
+    );
     if (vars) {
       for (const key in vars) {
         translation = translation.replace(`{${key}}`, vars[key]);

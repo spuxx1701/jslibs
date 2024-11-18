@@ -8,7 +8,7 @@ import {
 } from '@nestjs/common';
 import { Reflector } from '@nestjs/core';
 import { Request } from 'express';
-import { AuthOptionsProvider } from '../providers/auth-options.provider';
+import { AuthService } from '../providers/auth.service';
 
 /**
  * Use this guard on a route to protect the route and only allow authenticated users
@@ -27,12 +27,8 @@ import { AuthOptionsProvider } from '../providers/auth-options.provider';
 export class AuthGuard implements CanActivate {
   constructor(
     private reflector: Reflector,
-    private readonly optionsProvider: AuthOptionsProvider,
+    private readonly service: AuthService,
   ) {}
-
-  get options() {
-    return this.optionsProvider.options;
-  }
 
   /**
    * Is triggered when the guarded function is being executed. If it returns false,
@@ -47,13 +43,16 @@ export class AuthGuard implements CanActivate {
     const request: Request = context.switchToHttp().getRequest();
     const { oidc } = request;
     if (!oidc || !oidc.isAuthenticated() || !oidc.user) {
-      Logger.verbose(`An unauthenticated request of the protected route '${request.url}' was denied.`, AuthGuard.name);
+      Logger.verbose(
+        `An unauthenticated request of the protected route '${request.url}' was denied.`,
+        AuthGuard.name,
+      );
       throw new UnauthorizedException();
     }
 
     // --- Perform authorization ---
     const user = oidc.user;
-    const userRoles: string[] | undefined = user.roles ?? user.realm_access?.roles;
+    const userRoles: string[] | undefined = user.groups ?? user.realm_access?.roles;
     if (!userRoles || userRoles.length === 0) throw new ForbiddenException();
     // We need to look for roles metadata on both the handler (in case of function decorators)
     // as well as class level (in case of class decorators).
@@ -68,7 +67,8 @@ export class AuthGuard implements CanActivate {
         return this.matchAnyRole(userRoles);
       } catch (error) {
         Logger.verbose(
-          `An unauthorized request of the protected route '${request.url}' was denied because the user has not been granted access to the application.`,
+          `An unauthorized request of the protected route '${request.url}' was denied because the \
+user has not been granted access to the application (found roles: ${userRoles.join(', ')}).`,
           AuthGuard.name,
         );
         throw error;
@@ -79,7 +79,8 @@ export class AuthGuard implements CanActivate {
         return this.matchRequiredRoles(requiredRoles, userRoles);
       } catch (error) {
         Logger.verbose(
-          `An unauthorized request of the protected route '${request.url}' was denied. Roles '${requiredRoles.join(', ')}' were required, but the user only had '${userRoles.join(', ')}'.`,
+          `An unauthorized request of the protected route '${request.url}' was denied. \
+Roles '${requiredRoles.join(', ')}' were required, but the user only had '${userRoles.join(', ')}'.`,
           AuthGuard.name,
         );
         throw error;
@@ -114,5 +115,9 @@ export class AuthGuard implements CanActivate {
       if (!userRoles.includes(requiredRole)) throw new ForbiddenException();
     }
     return true;
+  }
+
+  get options() {
+    return this.service.options;
   }
 }

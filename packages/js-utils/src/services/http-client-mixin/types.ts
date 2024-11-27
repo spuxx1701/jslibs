@@ -1,4 +1,4 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
+// deno-lint-ignore-file no-explicit-any
 
 /**
  * Defines how the client should handle errors.
@@ -21,7 +21,7 @@ export type ErrorHandler = {
   continue?: boolean;
 };
 
-export type EndpointFunction = (...args: any[]) => Promise<any>;
+export type EndpointFunction = (...args: any[]) => Promise<any> | any;
 
 /**
  * The definition of an endpoint to be used by `HttpClient`.
@@ -39,7 +39,9 @@ export interface EndpointDefinition<
    * The transformer will be called implicitly after the original promise has
    * resolved.
    */
-  transformer?: (response: Awaited<ReturnType<TFunction>>) => TTransformedResult;
+  transformer?: (
+    response: Awaited<ReturnType<TFunction>>,
+  ) => TTransformedResult;
   /**
    * The set of error handlers for this endpoint. These local error handlers will be called
    * before the global error handlers.

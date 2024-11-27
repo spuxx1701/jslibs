@@ -1,5 +1,5 @@
 import { expect, test } from 'vitest';
-import { ServiceMixin } from './service-mixin';
+import { ServiceMixin } from './index.ts';
 
 test('should properly inherit, create and destroy', () => {
   class MyService extends ServiceMixin<MyService>() {

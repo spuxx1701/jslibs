@@ -1,5 +1,5 @@
 /* eslint-disable no-console */
-import { ServiceMixin } from '../mixin/service-mixin';
+import { ServiceMixin } from '../mixin/service-mixin.ts';
 
 export type LogLevel = 'debug' | 'info' | 'warn' | 'error';
 
@@ -106,12 +106,16 @@ export class Logger extends ServiceMixin<Logger>() {
   }
 
   private createMessageString(message: LogMessage): string {
-    return `${message.context ? `[${message.context}]  ` : ''}[${message.date.toISOString()}]  [${message.level}]  ${
-      message.text
-    }`;
+    return `${
+      message.context ? `[${message.context}]  ` : ''
+    }[${message.date.toISOString()}]  [${message.level}]  ${message.text}`;
   }
 
-  private createAndPushMessage(text: string, level: LogLevel, context?: string): LogMessage {
+  private createAndPushMessage(
+    text: string,
+    level: LogLevel,
+    context?: string,
+  ): LogMessage {
     const fullMessage: LogMessage = {
       text,
       level,
@@ -127,4 +131,4 @@ const debug = Logger.debug.bind(Logger);
 const info = Logger.info.bind(Logger);
 const warn = Logger.warn.bind(Logger);
 const error = Logger.error.bind(Logger);
-export { debug, info, warn, error };
+export { debug, error, info, warn };

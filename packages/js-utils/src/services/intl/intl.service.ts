@@ -1,5 +1,5 @@
-import { ServiceMixin } from '../mixin';
-import { Logger } from '../logger';
+import { ServiceMixin } from '../mixin/index.ts';
+import { Logger } from '../logger/index.ts';
 
 export interface Dictionary {
   locale: string;
@@ -37,7 +37,9 @@ export class Intl extends ServiceMixin<Intl>() {
     const { dictionaries, fallbackLocale } = options;
     this.instance._dictionaries = dictionaries;
     this.instance._fallbackLocale = fallbackLocale;
-    const supportedLocales = dictionaries.map((dictionary) => dictionary.locale);
+    const supportedLocales = dictionaries.map((dictionary) =>
+      dictionary.locale
+    );
     if (!supportedLocales.includes(fallbackLocale)) {
       throw new Error(
         'You must provide a fallback locale and the fallback locale must be supported by the \
@@ -49,7 +51,9 @@ given list of dictionaries.',
   }
 
   static setLocale(locale: string) {
-    const supportedLocales = this.dictionaries.map((dictionary) => dictionary.locale);
+    const supportedLocales = this.dictionaries.map((dictionary) =>
+      dictionary.locale
+    );
     if (!supportedLocales.includes(locale)) {
       Logger.warn(
         `Locale '${locale}' is not supported. Falling back to '${this.fallbackLocale}'.`,
@@ -127,9 +131,16 @@ given list of dictionaries.',
     return 'miss-loc::';
   }
 
-  private getDictionaryValue(key: string, locale: string, dictionary: Dictionary) {
+  private getDictionaryValue(
+    key: string,
+    locale: string,
+    dictionary: Dictionary,
+  ) {
     const partialKeys = key.split('.');
-    let value: Record<string, unknown> = dictionary.values as Record<string, unknown>;
+    let value: Record<string, unknown> = dictionary.values as Record<
+      string,
+      unknown
+    >;
     for (let i = 0; i < partialKeys.length; i++) {
       const partialKey = partialKeys[i];
       value = value[partialKey] as never;
@@ -142,7 +153,9 @@ given list of dictionaries.',
       }
     }
     Logger.warn(`Cannot translate '${key}' for locale '${locale}'.`, 'Intl');
-    return `${(this.constructor as typeof Intl).missingLocalizationPrefix}${key}`;
+    return `${
+      (this.constructor as typeof Intl).missingLocalizationPrefix
+    }${key}`;
   }
 }
 

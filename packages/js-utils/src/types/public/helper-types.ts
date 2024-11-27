@@ -1,4 +1,4 @@
-/* eslint-disable @typescript-eslint/ban-types */
+// deno-lint-ignore-file ban-types
 /**
  * A type that extracts the optional properties from another type.
  */

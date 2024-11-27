@@ -1,5 +1,5 @@
 import { ServiceMixin } from '@spuxx/js-utils';
-import { UserAgentOptions } from './types';
+import { UserAgentOptions } from './types.ts';
 
 /**
  * `UserAgent` provides functionality related to the user-agent.
@@ -32,7 +32,10 @@ export class UserAgent extends ServiceMixin<UserAgent>() {
    * Whether the current viewport is considered a desktop.
    */
   static get isDesktop() {
-    const viewportWidth = Math.max(document.documentElement.clientWidth, window.innerWidth);
+    const viewportWidth = Math.max(
+      document.documentElement.clientWidth,
+      window.innerWidth,
+    );
     const { desktopBreakpoint } = UserAgent.options;
     return viewportWidth >= desktopBreakpoint;
   }

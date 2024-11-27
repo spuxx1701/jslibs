@@ -1,5 +1,10 @@
-import { describe, test, expect } from 'vitest';
-import { deepMerge, isEmptyArray, isEmptyOrWhitespace, sleep } from './misc.utils';
+import { describe, expect, test } from 'vitest';
+import {
+  deepMerge,
+  isEmptyArray,
+  isEmptyOrWhitespace,
+  sleep,
+} from './misc.utils.ts';
 
 describe('sleep', () => {
   test('should resolve after the given amount of milliseconds', async () => {

@@ -1,1 +1,1 @@
-export * from './intl.service';
+export * from './intl.service.ts';

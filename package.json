@@ -29,6 +29,9 @@
     "prettier-check": "prettier --check .",
     "format": "prettier --write ."
   },
+  "dependencies": {
+    "@deno/vite-plugin": "^1.0.0"
+  },
   "devDependencies": {
     "@modyfi/vite-plugin-yaml": "1.1.0",
     "@nestjs/cli": "10.4.2",

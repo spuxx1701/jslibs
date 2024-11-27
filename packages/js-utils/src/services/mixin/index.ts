@@ -1,1 +1,1 @@
-export * from './service-mixin';
+export * from './service-mixin.ts';

@@ -1,2 +1,2 @@
-export * from './types';
-export * from './user-agent.service';
+export * from './types.ts';
+export * from './user-agent.service.ts';

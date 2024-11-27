@@ -1,20 +1,23 @@
+import { describe, expect, it, vi } from 'vitest';
 import axios, { type AxiosResponse } from 'axios';
-import { defineEndpoint, HttpClientMixin } from './http-client.service-mixin';
-import { HttpClientOptions, HttpError } from './types';
-import { sleep } from '../../main';
+import { defineEndpoint, HttpClientMixin } from './index.ts';
+import { HttpClientOptions, HttpError } from './types.ts';
+import { sleep } from '../../main.ts';
 
 describe('HttpClientMixin', () => {
   describe('endpoint definition', () => {
-    it('should assign all given endpoints', async () => {
+    it('should assign all given endpoints', () => {
       const endpoints = {
         getRandomJoke: defineEndpoint({
-          function: async (): Promise<Response> => {
+          function: (): Promise<Response> => {
             return fetch('https://api.chucknorris.io/jokes/random');
           },
         }),
         getRandomFromCategory: defineEndpoint({
-          function: async (category: string): Promise<Response> => {
-            return fetch(`https://api.chucknorris.io/jokes/random?category=${category}`);
+          function: (category: string): Promise<Response> => {
+            return fetch(
+              `https://api.chucknorris.io/jokes/random?category=${category}`,
+            );
           },
         }),
       };
@@ -33,7 +36,7 @@ describe('HttpClientMixin', () => {
     it('should pass down arguments', async () => {
       const endpoints = {
         findById: defineEndpoint({
-          function: async (id: string, include: string[]) => {
+          function: (id: string, include: string[]) => {
             expect(id).toBe('123');
             expect(include).toEqual(['foo', 'bar']);
           },
@@ -49,7 +52,7 @@ describe('HttpClientMixin', () => {
     it('should trigger the error handler', async () => {
       const endpoints = {
         throw: defineEndpoint({
-          function: async (): Promise<Response> => {
+          function: (): Promise<Response> => {
             throw new Error('Oops!');
           },
           errorHandlers: [
@@ -71,7 +74,7 @@ describe('HttpClientMixin', () => {
       const thirdHandler = vi.fn(() => {});
       const endpoints = {
         getJoke: defineEndpoint({
-          function: async (): Promise<Response> => {
+          function: (): Promise<Response> => {
             return fetch('https://api.chucknorris.io/jokes/500');
           },
           errorHandlers: [
@@ -108,7 +111,7 @@ describe('HttpClientMixin', () => {
       });
       const endpoints = {
         getJoke: defineEndpoint({
-          function: async (): Promise<Response> => {
+          function: (): Promise<Response> => {
             return fetch('https://api.chucknorris.io/jokes/500');
           },
           errorHandlers: [
@@ -133,16 +136,18 @@ describe('HttpClientMixin', () => {
       expect(globalHandler).toHaveBeenCalled();
       expect(localHandlerCallTime).toBeDefined();
       expect(globalHandlerCallTime).toBeDefined();
-      expect(localHandlerCallTime!.getTime()).toBeLessThan(globalHandlerCallTime!.getTime());
+      expect(localHandlerCallTime!.getTime()).toBeLessThan(
+        globalHandlerCallTime!.getTime(),
+      );
     });
 
     it('should throw an error if transformation fails', () => {
       const endpoints = {
         getJoke: defineEndpoint({
-          function: async (): Promise<Response> => {
+          function: (): Promise<Response> => {
             return fetch('https://api.chucknorris.io/jokes/200');
           },
-          transformer: async () => {
+          transformer: () => {
             throw new Error('Oops!');
           },
         }),
@@ -157,8 +162,8 @@ describe('HttpClientMixin', () => {
       const errorHandler = vi.fn(() => {});
       const endpoints = {
         getJoke: defineEndpoint({
-          function: async (): Promise<Response> => {
-            return await fetch('https://api.chucknorris.io/jokes/200');
+          function: (): Promise<Response> => {
+            return fetch('https://api.chucknorris.io/jokes/200');
           },
           errorHandlers: [
             {
@@ -180,7 +185,7 @@ describe('HttpClientMixin', () => {
       const errorHandler = vi.fn(() => {});
       const endpoints = {
         getJoke: defineEndpoint({
-          function: async (): Promise<Response> => {
+          function: (): Promise<Response> => {
             return fetch('https://api.chucknorris.io/jokes/200');
           },
           transformer: async (response: Response): Promise<string> => {
@@ -198,7 +203,7 @@ describe('HttpClientMixin', () => {
       const errorHandler = vi.fn(() => {});
       const endpoints = {
         getJoke: defineEndpoint({
-          function: async (): Promise<Response> => {
+          function: (): Promise<Response> => {
             return fetch('https://api.chucknorris.io/jokes/500');
           },
           errorHandlers: [
@@ -225,7 +230,7 @@ describe('HttpClientMixin', () => {
       const errorHandler = vi.fn(() => {});
       const endpoints = {
         getJoke: defineEndpoint({
-          function: async (): Promise<Response> => {
+          function: (): Promise<Response> => {
             return fetch('https://api.chucknorris.io/jokes/400');
           },
           errorHandlers: [
@@ -258,7 +263,7 @@ describe('HttpClientMixin', () => {
       const handlerAll = vi.fn(() => {});
       const endpoints = {
         getJoke: defineEndpoint({
-          function: async (): Promise<Response> => {
+          function: (): Promise<Response> => {
             return fetch('https://api.chucknorris.io/jokes/403');
           },
           errorHandlers: [
@@ -289,7 +294,7 @@ describe('HttpClientMixin', () => {
       const errorHandler = vi.fn(() => {});
       const endpoints = {
         getJoke: defineEndpoint({
-          function: async (): Promise<AxiosResponse> => {
+          function: (): Promise<AxiosResponse> => {
             return axios.get('https://api.chucknorris.io/jokes/200');
           },
           errorHandlers: [
@@ -313,7 +318,7 @@ describe('HttpClientMixin', () => {
       const errorHandler = vi.fn(() => {});
       const endpoints = {
         getJoke: defineEndpoint({
-          function: async (): Promise<AxiosResponse> => {
+          function: (): Promise<AxiosResponse> => {
             return axios.get('https://api.chucknorris.io/jokes/200');
           },
           transformer: (response: AxiosResponse): string => {
@@ -331,7 +336,7 @@ describe('HttpClientMixin', () => {
       const errorHandler = vi.fn(() => {});
       const endpoints = {
         getJoke: defineEndpoint({
-          function: async (): Promise<AxiosResponse> => {
+          function: (): Promise<AxiosResponse> => {
             return axios.get('https://api.chucknorris.io/jokes/500');
           },
           errorHandlers: [
@@ -347,7 +352,7 @@ describe('HttpClientMixin', () => {
       const [error] = errorHandler.mock.lastCall as unknown as [HttpError];
       expect(error).toEqual(
         new HttpError({
-          name: 'FetchError',
+          name: 'AxiosError',
           status: 500,
           message: 'Internal Server Error',
         }),
@@ -358,7 +363,7 @@ describe('HttpClientMixin', () => {
       const errorHandler = vi.fn(() => {});
       const endpoints = {
         getJoke: defineEndpoint({
-          function: async (): Promise<AxiosResponse> => {
+          function: (): Promise<AxiosResponse> => {
             return axios.get('https://api.chucknorris.io/jokes/400');
           },
           errorHandlers: [
@@ -374,7 +379,7 @@ describe('HttpClientMixin', () => {
       const [error] = errorHandler.mock.lastCall as unknown as [HttpError];
       expect(error).toEqual(
         new HttpError({
-          name: 'FetchError',
+          name: 'AxiosError',
           status: 400,
           message: 'Bad Request',
           body: {
@@ -391,7 +396,7 @@ describe('HttpClientMixin', () => {
       const handlerAll = vi.fn(() => {});
       const endpoints = {
         getJoke: defineEndpoint({
-          function: async (): Promise<Response> => {
+          function: (): Promise<Response> => {
             return axios.get('https://api.chucknorris.io/jokes/403');
           },
           errorHandlers: [

@@ -1,23 +1,27 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { type AxiosError } from 'axios';
-import { ServiceMixin } from '../mixin';
+import { ServiceMixin } from '../mixin/index.ts';
 import {
-  EndpointFunction,
-  HttpError,
   type EndpointDefinition,
+  EndpointFunction,
   type Endpoints,
   type HttpClientOptions,
-} from './types';
+  HttpError,
+} from './types.ts';
 
-type TransformedReturnType<T extends EndpointDefinition> = T['transformer'] extends undefined
-  ? Awaited<ReturnType<T['function']>>
-  : Awaited<ReturnType<NonNullable<T['transformer']>>>;
+type TransformedReturnType<T extends EndpointDefinition> =
+  T['transformer'] extends undefined ? Awaited<ReturnType<T['function']>>
+    : Awaited<ReturnType<NonNullable<T['transformer']>>>;
 
-type HttpClient<T extends Endpoints> = {
-  [K in keyof T]: (...args: Parameters<T[K]['function']>) => Promise<TransformedReturnType<T[K]>>;
-} & {
-  new (...args: any[]): object;
-};
+type HttpClient<T extends Endpoints> =
+  & {
+    [K in keyof T]: (
+      ...args: Parameters<T[K]['function']>
+    ) => Promise<TransformedReturnType<T[K]>>;
+  }
+  & {
+    new (...args: any[]): object;
+  };
 
 /**
  * A helper function to create an endpoint definition in a type-safe way.
@@ -65,7 +69,10 @@ export function HttpClientMixin<TEndpoints extends Endpoints>(
   class Client extends ServiceMixin<Client>() {
     private options = options;
 
-    static async invokeEndpoint(endpointDef: EndpointDefinition, ...args: any[]): Promise<any> {
+    static async invokeEndpoint(
+      endpointDef: EndpointDefinition,
+      ...args: any[]
+    ): Promise<any> {
       let response: any;
       try {
         // Call the endpoint function with the provided arguments
@@ -89,12 +96,14 @@ export function HttpClientMixin<TEndpoints extends Endpoints>(
       }
     }
 
-    private static async handleFetchResponse(response: Response): Promise<Response> {
+    private static async handleFetchResponse(
+      response: Response,
+    ): Promise<Response> {
       if (!response.ok) {
         let body: object | string = '';
         try {
           body = await response.json();
-        } catch (error) {
+        } catch (_error) {
           body = await response.text();
         }
         throw new HttpError({
@@ -107,7 +116,10 @@ export function HttpClientMixin<TEndpoints extends Endpoints>(
       return response;
     }
 
-    private static async handleError(endpointDef: EndpointDefinition, error: unknown) {
+    private static async handleError(
+      endpointDef: EndpointDefinition,
+      error: unknown,
+    ) {
       // Combine endpoint-specific and global error handlers
       const endpointErrorHandlers = endpointDef.errorHandlers || [];
       const allErrorHandlers = [

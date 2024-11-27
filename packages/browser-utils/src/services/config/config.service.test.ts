@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/naming-convention */
-import { Config } from '.';
-import { test, expect, vi, beforeEach, afterEach } from 'vitest';
+import { Config } from './index.ts';
+import { afterEach, beforeEach, expect, test, vi } from 'vitest';
 
 beforeEach(() => {
   // Provide a 'window' object so that the Config service can access it.
@@ -39,7 +39,10 @@ test('should throw an error in case a required key is not defined after setup', 
     BAR?: string;
   }
   expect(() => {
-    Config.setup<MyConfig>({ defaultConfig: { FOO: 'foz' }, requiredKeys: ['BAR'] });
+    Config.setup<MyConfig>({
+      defaultConfig: { FOO: 'foz' },
+      requiredKeys: ['BAR'],
+    });
   }).toThrow(
     "Required key 'BAR' is not defined in the config. \
 Make sure to define its value in either the default, Vite or injected config.",

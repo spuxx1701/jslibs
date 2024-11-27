@@ -1,7 +1,7 @@
 /* eslint-disable no-console */
-import { MockInstance, expect, test, vi } from 'vitest';
+import { expect, MockInstance, test, vi } from 'vitest';
 import { afterEach, beforeEach } from 'vitest';
-import { Logger } from './logger.service';
+import { Logger } from './index.ts';
 
 let debugSpy: MockInstance;
 let infoSpy: MockInstance;

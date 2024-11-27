@@ -1,5 +1,5 @@
-import { test, expect, vi, beforeEach } from 'vitest';
-import { UserAgent } from '.';
+import { beforeEach, expect, test, vi } from 'vitest';
+import { UserAgent } from './index.ts';
 
 beforeEach(() => {
   // UserAgent uses the bigger value of either document.documentElement.clientWidth and window.innerWidth.

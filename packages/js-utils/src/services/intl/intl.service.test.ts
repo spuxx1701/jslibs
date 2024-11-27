@@ -1,6 +1,6 @@
 import { afterEach, beforeEach, expect, test, vi } from 'vitest';
-import { Intl, intl } from '.';
-import { Logger } from '../logger';
+import { Intl, intl } from './index.ts';
+import { Logger } from '../logger/index.ts';
 
 const intlOptions = {
   dictionaries: [
@@ -67,7 +67,9 @@ test('should translate a nested key', () => {
 });
 
 test('should translate with variables', () => {
-  expect(intl('hello-foo-and-bar', { foo: 'Foo', bar: 'Bar' })).toBe('Hello Foo and Bar!');
+  expect(intl('hello-foo-and-bar', { foo: 'Foo', bar: 'Bar' })).toBe(
+    'Hello Foo and Bar!',
+  );
 });
 
 test("should return the prefixed key if the value doesn't exist and warn", () => {

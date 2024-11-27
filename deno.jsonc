@@ -1,0 +1,54 @@
+{
+  "workspace": [
+    "packages/js-utils"
+    // "packages/browser-utils"
+  ],
+  "tasks": {
+    "test": "deno task test:vitest",
+    "test:vitest": "vitest run --coverage"
+  },
+  "lint": {
+    "exclude": [
+      ".release-please",
+      "dist",
+      "node_modules",
+      "reports"
+    ],
+    "rules": {
+      "tags": [
+        "recommended"
+      ],
+      "exclude": [
+        "no-explicit-any"
+      ]
+    }
+  },
+  "fmt": {
+    "exclude": [
+      ".release-please",
+      "dist",
+      "node_modules",
+      "reports"
+    ],
+    "singleQuote": true
+  },
+  "imports": {
+    "@deno/dnt": "jsr:@deno/dnt@0.41.3",
+    "@vitejs/plugin-react": "npm:@vitejs/plugin-react@4.3.1",
+    "@deno/vite-plugin": "npm:@deno/vite-plugin@1.0.0"
+    // "@deno/dnt": "jsr:@deno/dnt@^0.41.3",
+    // "release-please": "npm:release-please@16.12.0",
+    // "concurrently": "npm:concurrently@9.0.1",
+    // "msw": "npm:msw@2.6.0",
+    // "vite": "npm:vite@5.4.8",
+    // "vitest": "npm:vitest@2.0.5",
+    // "@vitest/coverage-v8": "npm:vite@2.0.5"
+  },
+  "compilerOptions": {
+    "types": [
+      "vite/client",
+      "vitest/globals",
+      "@modyfi/vite-plugin-yaml/modules"
+    ]
+  }
+}

@@ -12,6 +12,7 @@ lerna-debug.log*
 
 # Reports
 reports/
+coverage/
 pnpm-publish-summary.json
 
 # Editor directories and files
@@ -29,7 +30,9 @@ pnpm-publish-summary.json
 **/dist/
 *.tgz
 tsconfig.tsbuildinfo
+.npm/
 
 # Local files
 *.local
 .env
+*timestamp*

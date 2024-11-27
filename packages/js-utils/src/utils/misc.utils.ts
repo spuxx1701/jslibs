@@ -5,7 +5,7 @@
  * @example
  * await sleep(1000);
  */
-export async function sleep(ms: number) {
+export function sleep(ms: number): Promise<void> {
   return new Promise((resolve) => setTimeout(resolve, ms));
 }
 
@@ -62,7 +62,9 @@ type RecursiveObject = {
  * const merged = deepMerge(obj1, obj2);
  * console.log(merged); // { a: 1, b: { c: 2, d: 3 }, e: 4 }
  */
-export function deepMerge(...sources: Array<RecursiveObject | string>): RecursiveObject {
+export function deepMerge(
+  ...sources: Array<RecursiveObject | string>
+): RecursiveObject {
   const target: RecursiveObject = {};
 
   if (!sources.length) return target;

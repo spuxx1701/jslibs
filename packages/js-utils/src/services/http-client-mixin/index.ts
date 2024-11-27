@@ -1,2 +1,2 @@
-export * from './http-client.service-mixin';
-export * from './types';
+export * from './http-client.service-mixin.ts';
+export * from './types.ts';

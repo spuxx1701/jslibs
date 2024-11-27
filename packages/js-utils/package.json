@@ -35,11 +35,6 @@
     "LICENSE",
     "package.json"
   ],
-  "scripts": {
-    "dev": "vite build --watch",
-    "build": "vite build",
-    "types": "tsc --noEmit"
-  },
   "peerDependencies": {
     "@modyfi/vite-plugin-yaml": "1.1.0"
   },

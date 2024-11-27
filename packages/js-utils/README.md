@@ -19,7 +19,8 @@
 
 ## <a name='Description'></a>Description
 
-`@spuxx/js-utils` contains a selection of core JavaScript utilities that I keep reusing across my web projects.
+`@spuxx/js-utils` contains a selection of core JavaScript utilities that I keep
+reusing across my web projects.
 
 ## <a name='Links'></a>Links
 

@@ -18,6 +18,11 @@ describe('LocalStorageMixin', () => {
     },
   }) {}
 
+  afterEach(() => {
+    localStorage.clear();
+    LocalStorage.load();
+  });
+
   it("should return the default value if the key doesn't exist", () => {
     expect(LocalStorage.get('str')).toBe('foo');
     expect(LocalStorage.get('num')).toBeUndefined();

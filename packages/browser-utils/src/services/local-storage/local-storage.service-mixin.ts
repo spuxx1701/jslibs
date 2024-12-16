@@ -9,23 +9,17 @@ import { LocalStorageOptions } from './types';
 export function LocalStorageMixin<TLocalStorage extends object>(
   options: LocalStorageOptions<TLocalStorage>,
 ) {
-  class LocalStorage extends ServiceMixin<LocalStorage>() {
-    private _defaultValues: TLocalStorage = { ...options.defaultValues };
-    private _data: TLocalStorage = LocalStorage.readData();
+  return class LocalStorage extends ServiceMixin<LocalStorage>() {
+    _defaultValues: TLocalStorage = { ...options.defaultValues };
+    _data: TLocalStorage = LocalStorage.readFromLocalStorage();
 
-    private static set data(data: TLocalStorage) {
-      this.instance._data = data;
-    }
-
-    private static get data() {
-      return this.instance._data;
-    }
-
-    private static get defaultValues() {
-      return this.instance._defaultValues;
-    }
-
-    private static readData(): TLocalStorage {
+    /**
+     * Reads the data from `localStorage` without caching the data and returns it.
+     * This function is mostly for internal use. Consumers will likely want to use
+     * `load()` instead.
+     * @returns The The data from `localStorage`.
+     */
+    static readFromLocalStorage(): TLocalStorage {
       try {
         const raw = localStorage.getItem(options.key);
         const data: TLocalStorage = JSON.parse(raw ?? '{}');
@@ -44,15 +38,18 @@ export function LocalStorageMixin<TLocalStorage extends object>(
      * @returns The data from `localStorage`.
      */
     static load(): TLocalStorage {
-      this.data = this.readData();
-      return this.data;
+      this.instance._data = this.readFromLocalStorage();
+      return this.instance._data;
     }
 
     /**
      * Saves the data to `localStorage`.
      */
     static save(): void {
-      localStorage.setItem(options.key, JSON.stringify({ ...this.defaultValues, ...this.data }));
+      localStorage.setItem(
+        options.key,
+        JSON.stringify({ ...this.instance._defaultValues, ...this.instance._data }),
+      );
     }
 
     /**
@@ -61,8 +58,8 @@ export function LocalStorageMixin<TLocalStorage extends object>(
      * @returns The value for the given key.
      */
     static get<TKey extends keyof TLocalStorage>(key: TKey): TLocalStorage[TKey] {
-      let value = this.data[key];
-      if (value === undefined) value = this.defaultValues[key];
+      let value = this.instance._data[key];
+      if (value === undefined) value = this.instance._defaultValues[key];
       return value;
     }
 
@@ -72,9 +69,8 @@ export function LocalStorageMixin<TLocalStorage extends object>(
      * @returns The value for the given key.
      */
     static set<TKey extends keyof TLocalStorage>(key: TKey, value: TLocalStorage[TKey]): void {
-      this.data[key] = value;
+      this.instance._data[key] = value;
       this.save();
     }
-  }
-  return LocalStorage;
+  };
 }

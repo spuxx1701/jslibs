@@ -1,5 +1,12 @@
 # Changelog
 
+## [3.1.0](https://github.com/spuxx1701/jslibs/compare/nest-utils-v3.0.0...nest-utils-v3.1.0) (2024-12-16)
+
+
+### Features
+
+* Implemented new service mixin `LocalStorageMixin` ([66f6b1d](https://github.com/spuxx1701/jslibs/commit/66f6b1d4097f3b0d5a326aa7a4a815c5707b2923))
+
 ## [3.0.0](https://github.com/spuxx1701/jslibs/compare/nest-utils-v2.4.1...nest-utils-v3.0.0) (2024-11-16)
 
 

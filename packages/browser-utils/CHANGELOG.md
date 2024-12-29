@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.3.0](https://github.com/spuxx1701/jslibs/compare/browser-utils-v1.2.0...browser-utils-v1.3.0) (2024-12-16)
+
+
+### Features
+
+* Implemented new service mixin `LocalStorageMixin` ([66f6b1d](https://github.com/spuxx1701/jslibs/commit/66f6b1d4097f3b0d5a326aa7a4a815c5707b2923))
+
 ## [1.2.0](https://github.com/spuxx1701/jslibs/compare/browser-utils-v1.1.0...browser-utils-v1.2.0) (2024-08-31)
 
 

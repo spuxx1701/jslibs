@@ -1,0 +1,14 @@
+.spx-divider {
+  border: none;
+  height: 2px;
+  margin: 1rem 0;
+  background-color: var(--spx-color-on-surface);
+}
+
+.spx-divider[data-vertical] {
+  display: flex;
+  height: 100%;
+  align-self: stretch;
+  width: 1px;
+  margin: 0 0.75rem;
+}

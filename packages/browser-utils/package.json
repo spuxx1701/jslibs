@@ -27,6 +27,12 @@
     ".": {
       "types": "./dist/main.d.ts",
       "import": "./dist/main.js"
+    },
+    "./styles": {
+      "import": "./dist/styles.css"
+    },
+    "./themes": {
+      "import": "./dist/themes.css"
     }
   },
   "files": [

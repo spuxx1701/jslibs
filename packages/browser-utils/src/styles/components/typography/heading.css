@@ -1,0 +1,3 @@
+.spx-heading:has(+ .spx-divider) {
+  margin-bottom: 0;
+}

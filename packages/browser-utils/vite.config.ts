@@ -7,9 +7,12 @@ export default mergeConfig(
   baseConfig,
   defineConfig({
     build: {
+      cssCodeSplit: true,
       lib: {
         entry: {
           main: resolve(__dirname, 'src/main.ts'),
+          styles: resolve(__dirname, 'src/styles.css'),
+          themes: resolve(__dirname, 'src/themes.css'),
         },
         name: '@spuxx/browser-utils',
         formats: ['es'],

@@ -1,0 +1,62 @@
+{
+  "name": "@spuxx/solid",
+  "version": "0.0.0",
+  "description": "A package containing various utilities for my Solid applications.",
+  "license": "MIT",
+  "author": {
+    "name": "spuxx",
+    "email": "hi@spuxx.dev",
+    "url": "https://spuxx.dev"
+  },
+  "keywords": [
+    "spuxx"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/spuxx1701/jslibs"
+  },
+  "homepage": "https://github.com/spuxx1701/jslibs/blob/main/packages/solid/README.md",
+  "bugs": {
+    "url": "https://github.com/spuxx1701/jslibs/issues"
+  },
+  "type": "module",
+  "main": "dist/main.js",
+  "module": "dist/main.js",
+  "types": "dist/main.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/main.d.ts",
+      "import": "./dist/main.js"
+    },
+    "./styles": {
+      "import": "./dist/main.css"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE",
+    "package.json"
+  ],
+  "scripts": {
+    "dev": "concurrently \"cd ../browser-utils && npm run dev\" \"vite build --watch\"",
+    "build": "vite build",
+    "types": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@iconify-icon/solid": "2.3.0",
+    "@spuxx/browser-utils": "workspace:@spuxx/browser-utils@*",
+    "csstype": "3.1.3",
+    "solid-js": "1.9.3",
+    "typescript": "5.7.2",
+    "vite": "6.0.0",
+    "vite-plugin-solid": "2.11.0",
+    "vite-tsconfig-paths": "5.1.2"
+  },
+  "peerDependencies": {
+    "@iconify-icon/solid": "2.3.0",
+    "@spuxx/js-utils": "workspace:@spuxx/js-utils@*",
+    "@spuxx/browser-utils": "workspace:@spuxx/browser-utils@*",
+    "solid-js": "1.9.0"
+  }
+}

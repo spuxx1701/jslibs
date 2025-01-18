@@ -1,0 +1,24 @@
+/* @tailwind base; */
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --spx-color-rainbow: linear-gradient(
+    45deg,
+    #ff0000,
+    #ff7300,
+    #fffb00,
+    #48ff00,
+    #00ffd5,
+    #002bff,
+    #7a00ff,
+    #ff00c8,
+    #ff0000
+  );
+  --spx-color-on-rainbow: var(--spx-color-on-background);
+}
+
+.spx-color-rainbow {
+  background: var(--spx-color-rainbow);
+  color: var(--spx-color-on-rainbow);
+}

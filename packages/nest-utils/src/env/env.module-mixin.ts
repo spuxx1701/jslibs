@@ -34,15 +34,23 @@ import { config } from 'dotenv';
 export function EnvModuleMixin<TEnv extends object>(env: new (...args: unknown[]) => TEnv) {
   @Module({})
   class EnvModule {
-    static get env(): TEnv {
-      config();
-      return plainToInstance(env, process.env, {
-        enableImplicitConversion: true,
-      });
-    }
+    static readonly env: TEnv;
 
     constructor() {
+      EnvModule.load();
       EnvModule.validate();
+    }
+
+    /**
+     * (Re-)loads the environment variables. This comes at a performance cost and should only be used
+     * when necessary.
+     */
+    static load(): void {
+      config();
+      // @ts-expect-error This is the only spot where we're allowed to write to this.env.
+      this.env = plainToInstance(env, process.env, {
+        enableImplicitConversion: true,
+      });
     }
 
     /**
@@ -68,7 +76,7 @@ export function EnvModuleMixin<TEnv extends object>(env: new (...args: unknown[]
      * @returns The value of the environment variable.
      */
     static get<TKey extends keyof TEnv>(key: TKey): TEnv[TKey] {
-      return EnvModule.env[key];
+      return this.env[key];
     }
   }
 

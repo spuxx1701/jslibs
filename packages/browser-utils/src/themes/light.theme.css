@@ -1,0 +1,25 @@
+html[theme='light'],
+html[theme='light'] *,
+*[theme='light'] {
+  --spx-color-background: #18181b;
+  --spx-color-on-background: #f5f5f5;
+  --spx-color-surface: #27272a;
+  --spx-color-on-surface: var(--spx-color-on-background);
+  --spx-color-primary: #0f766e;
+  --spx-color-on-primary: var(--spx-color-on-background);
+  --spx-color-secondary: var(--spx-color-surface);
+  --spx-color-on-secondary: var(--spx-color-on-background);
+  --spx-color-accent: linear-gradient(to right, var(--spx-color-primary), #a21caf);
+  --spx-color-on-accent: var(--spx-color-on-background);
+
+  --spx-border-radius: 4px;
+
+  --spx-color-info: #166534;
+  --spx-color-on-info: var(--color-on-background);
+  --spx-color-success: #166534;
+  --spx-color-on-success: var(--color-on-background);
+  --spx-color-warning: #ca8a04;
+  --spx-color-on-warning: var(--color-on-background);
+  --spx-color-error: #b91c1c;
+  --spx-color-on-error: var(--color-on-background);
+}

@@ -3,10 +3,7 @@ import { BadRequestException, UnauthorizedException } from '@nestjs/common';
 export const authExceptions = {
   login: {
     badRequest: new BadRequestException(),
-    forbiddenReturnTo: new BadRequestException(
-      "The value of 'returnTo' is not allowed. Redirect URLs must match the allowed CORS origins \
-or specific application endpoints. The URL must be absolute!",
-    ),
+    forbiddenReturnTo: new BadRequestException("The value of 'returnTo' is not allowed."),
     urlParsingError: new BadRequestException('An error occurred while parsing the redirect URL.'),
   },
   session: {
@@ -14,9 +11,6 @@ or specific application endpoints. The URL must be absolute!",
   },
   logout: {
     badRequest: new BadRequestException(),
-    forbiddenReturnTo: new BadRequestException(
-      "The value of 'returnTo' is not allowed. Redirect URLs must match the allowed CORS origins \
-or specific application endpoints.",
-    ),
+    forbiddenReturnTo: new BadRequestException("The value of 'returnTo' is not allowed."),
   },
 };

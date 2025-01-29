@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.3.0](https://github.com/spuxx1701/jslibs/compare/js-utils-v1.2.0...js-utils-v1.3.0) (2024-12-29)
+
+
+### Features
+
+* **http:** Implemented new `transformFetchJson()` util function ([cae5dc2](https://github.com/spuxx1701/jslibs/commit/cae5dc2eb53f2b567ac4a02f807821b19511bfd2))
+
 ## [1.2.0](https://github.com/spuxx1701/jslibs/compare/js-utils-v1.1.2...js-utils-v1.2.0) (2024-11-06)
 
 

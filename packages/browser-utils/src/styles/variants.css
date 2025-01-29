@@ -1,0 +1,21 @@
+.spx[variant='contained'] {
+  border-width: 0px;
+  border-radius: var(--spx-border-radius);
+}
+
+.spx[variant='outlined'] {
+  border-width: 1px;
+  border-style: solid;
+  border-radius: var(--spx-border-radius);
+}
+
+.spx[variant='underlined'] {
+  border-width: 0px 0px 1px 0px;
+  border-style: none none solid none;
+  border-radius: var(--spx-border-radius);
+}
+
+.spx[variant='transparent'] {
+  border-width: 0px;
+  border-radius: 0px;
+}

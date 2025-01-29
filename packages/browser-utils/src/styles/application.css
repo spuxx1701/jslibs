@@ -1,0 +1,32 @@
+html.spx-app {
+  background: var(--spx-color-background);
+  color: var(--spx-color-on-background);
+  height: 100svh;
+  width: 100svw;
+  overflow-y: hidden;
+  overflow-x: hidden;
+  font-family: ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+    'Segoe UI Symbol', 'Noto Color Emoji';
+
+  > body {
+    margin: 0;
+
+    main {
+      width: var(--spx-main-content-width);
+      max-width: 100%;
+      margin: 0 auto;
+      box-sizing: border-box;
+      padding: 1rem;
+    }
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  html.spx-app {
+    > body {
+      main {
+        padding: 0.25rem;
+      }
+    }
+  }
+}

@@ -31,6 +31,7 @@ export default defineConfig({
     }),
   ],
   test: {
+    environment: 'jsdom',
     globals: true,
     setupFiles: [`${__dirname}/tests/vitest/vitest.setup.ts`],
     reporters: ['default', 'junit'],

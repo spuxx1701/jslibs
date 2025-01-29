@@ -24,3 +24,32 @@
 ## <a name='Links'></a>Links
 
 - [Source](https://github.com/spuxx1701/jslibs)
+
+## Themes
+
+### Built-in Themes
+
+The library comes with two built-in themes, `default` and `light`.
+Both themes are based on [Tailwind's color palette](https://tailwindcss.com/docs/customizing-colors)
+(also see [tailwindcolor.com](https://tailwindcolor.com/)).
+
+- [Default theme](packages/browser-utils/themes/default.theme.css)
+- [Light theme](packages/browser-utils/themes/light.theme.css)
+
+You may override each of those themes by creating a CSS file and overwriting any of the variables:
+
+```css
+html,
+html *,
+* {
+  /* Overwrite default theme variables */
+}
+
+html[theme='light'],
+html[theme='light'] *,
+*[theme='light'] {
+  /* Overwrite light theme variables */
+}
+```
+
+### Custom Themes

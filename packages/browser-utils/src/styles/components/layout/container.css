@@ -1,0 +1,20 @@
+.spx-container {
+  padding: 1rem;
+
+  > *:first-child {
+    margin-top: 0;
+  }
+
+  > *:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.spx-container[no-padding='true'] {
+  padding: 0;
+}
+
+.spx-container[variant='outline'] {
+  background: none;
+  border: 1px solid inherit;
+}

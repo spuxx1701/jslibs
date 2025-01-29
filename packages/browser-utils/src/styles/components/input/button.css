@@ -1,0 +1,13 @@
+.spx-button {
+  padding: 0.5rem;
+  background: none;
+  border: none;
+  border-radius: var(--spx-border-radius);
+  background: var(--spx-color-secondary);
+  color: var(--spx-color-on-secondary);
+  height: var(--spx-control-height-default);
+}
+
+.spx-button[data-rounded] {
+  border-radius: 50%;
+}

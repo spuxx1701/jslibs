@@ -3,4 +3,6 @@
 // Otherwise, they will not be included into the bundle.
 // ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 export * from './services/config';
+export * from './services/local-storage';
 export * from './services/user-agent';
+export * from './types/public';

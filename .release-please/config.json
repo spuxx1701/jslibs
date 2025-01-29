@@ -3,7 +3,8 @@
     "packages/js-utils": {},
     "packages/browser-utils": {},
     "packages/nest-utils": {},
-    "packages/nest-testing": {}
+    "packages/nest-testing": {},
+    "packages/solid": {}
   },
   "changelog-sections": [
     { "type": "feat", "section": "Features" },

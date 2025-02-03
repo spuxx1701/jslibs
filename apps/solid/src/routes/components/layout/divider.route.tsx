@@ -2,44 +2,40 @@ import { Divider, Heading, Container } from '@spuxx/solid';
 
 export const DividerRoute = () => {
   return (
-    <Container tag="article" no-padding>
+    <Container tag="article">
       <Heading level={1}>Divider</Heading>
-      <Divider color="accent" />
-
-      <Container tag="section" color="surface" class="my-2">
+      <Divider color="gradient" />
+      <Container class="my-4">
         <Heading level={2}>Colors</Heading>
-        <label>
-          Default
-          <Divider />
-        </label>
-        <label>
-          Accent
-          <Divider color="accent" />
-        </label>
-        <label>
-          Primary
-          <Divider color="primary" />
-        </label>
-        <label>
-          Custom
-          <Divider color="rainbow" />
-        </label>
+        <Divider />
+        text-subtle (default)
+        <Divider />
+        primary
+        <Divider color="primary" />
+        gradient
+        <Divider color="gradient" />
       </Container>
 
-      <Container tag="section" color="surface" class="my-2">
+      <Container class="my-4">
+        <Heading level={2}>Variants</Heading>
+        <Divider color="gradient" />
+        straight (default)
+        <Divider />
+        sleek
+        <Divider variant="sleek" />
+      </Container>
+
+      <Container class="my-4">
         <Heading level={2}>Vertical</Heading>
-        <div class="flex h-6 items-center flex-row w-full border border-solid border-gray-500 p-2">
-          Hello
-          <Divider vertical />
-          World
-          <Divider color="accent" vertical />
+        <Divider color="gradient" />
+        <div class="flex flex-row h-8 w-full items-center">
           Foo
-          <Divider color="primary" vertical />
+          <Divider vertical />
           Bar
-          <Divider color="background" vertical />
-          Foz
-          <Divider color="rainbow" vertical />
-          Baz
+          <Divider vertical color="primary" />
+          Hello
+          <Divider vertical color="gradient" />
+          World
         </div>
       </Container>
     </Container>

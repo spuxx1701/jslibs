@@ -1,4 +1,4 @@
-import { ContainerVariant } from '@spuxx/browser-utils';
+import { BaseColor } from '@spuxx/browser-utils';
 import { ComponentProps } from '@spuxx/solid';
 import { ParentProps } from 'solid-js';
 
@@ -9,10 +9,15 @@ export interface ContainerProps extends ComponentProps<HTMLElement>, ParentProps
    */
   tag?: 'div' | 'span' | 'section' | 'article';
   /**
-   * The variant of the container.
-   * @default 'contained'
+   * The color of the container.
+   * @default 'surface'
    */
-  variant?: ContainerVariant;
+  color?: BaseColor;
+  /**
+   * The variant of the container. No variant will be applied by default.
+   * @default undefined
+   */
+  variant?: 'contained' | 'outlined' | 'colored';
   /**
    * If `true`, the default padding will be removed.
    * @default false

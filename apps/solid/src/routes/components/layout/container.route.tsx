@@ -4,30 +4,36 @@ export const ContainerRoute = () => {
   return (
     <Container tag="article">
       <Heading level={1}>Container</Heading>
-      <Divider color="accent" />
+      <Divider color="gradient" />
       <Container class="my-4">
         <Heading level={2}>Variants & Colors</Heading>
-        <Divider color="accent" />
+        <Divider color="gradient" />
         <Container class="my-4">
-          <p>Transparent (default)</p>
-        </Container>
-        <Container class="my-4" variant="outlined">
-          <p>Outlined</p>
-        </Container>
-        <Container class="my-4" variant="outlined" color="primary">
-          <p>Outlined, primary color</p>
+          <p>no variant (default)</p>
         </Container>
         <Container class="my-4" variant="contained">
-          <p>Contained</p>
+          <p>contained</p>
         </Container>
         <Container class="my-4" variant="contained" color="primary">
-          <p>Contained, primary color</p>
+          <p>contained, primary color</p>
+        </Container>
+        <Container class="my-4" variant="outlined">
+          <p>outlined</p>
+        </Container>
+        <Container class="my-4" variant="outlined" color="primary">
+          <p>outlined, primary color</p>
+        </Container>
+        <Container class="my-4" variant="colored">
+          <p>colored</p>
+        </Container>
+        <Container class="my-4" variant="colored" color="primary">
+          <p>colored, primary color</p>
         </Container>
       </Container>
 
       <Container class="my-4">
         <Heading level={2}>Dynamic Tags</Heading>
-        <Divider color="accent" />
+        <Divider color="gradient" />
         <Container class="my-4">
           <p>div (default)</p>
         </Container>
@@ -36,6 +42,14 @@ export const ContainerRoute = () => {
         </Container>
         <Container class="my-4" tag="section">
           <p>section</p>
+        </Container>
+      </Container>
+
+      <Container class="my-4">
+        <Heading level={2}>Misc</Heading>
+        <Divider color="gradient" />
+        <Container class="my-4" noPadding variant="contained">
+          <p>No padding</p>
         </Container>
       </Container>
     </Container>

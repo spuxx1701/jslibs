@@ -18,6 +18,20 @@ describe('registration', () => {
     expect(module).toBeDefined();
     expect(EnvModule.get('SOME_STRING')).toBe('foo');
   });
+
+  it('should cache environment variables until load() is called again', async () => {
+    vi.stubEnv('SOME_STRING', 'foo');
+    const container = await TestContainer.create({
+      imports: [EnvModule],
+    });
+    const module = container.module.get<EnvModule>(EnvModule);
+    expect(module).toBeDefined();
+    expect(EnvModule.get('SOME_STRING')).toBe('foo');
+    vi.stubEnv('SOME_STRING', 'bar');
+    expect(EnvModule.get('SOME_STRING')).toBe('foo');
+    EnvModule.load();
+    expect(EnvModule.get('SOME_STRING')).toBe('bar');
+  });
 });
 
 describe('validation', () => {

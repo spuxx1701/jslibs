@@ -1,0 +1,136 @@
+/* Variant: colored/no variant */
+
+.spx[spx-variant='colored'].spx[spx-color='background'] {
+  color: var(--spx-color-background);
+}
+
+.spx[spx-variant='colored'].spx[spx-color='surface'] {
+  color: var(--spx-color-surface);
+}
+
+.spx[spx-variant='colored'].spx[spx-color='primary'] {
+  color: var(--spx-color-primary);
+}
+
+.spx[spx-variant='colored'].spx[spx-color='secondary'] {
+  color: var(--spx-color-secondary);
+}
+
+.spx[spx-variant='colored'].spx[spx-color='info'] {
+  color: var(--spx-color-info);
+}
+
+.spx[spx-variant='colored'].spx[spx-color='success'] {
+  color: var(--spx-color-success);
+}
+
+.spx[spx-variant='colored'].spx[spx-color='warning'] {
+  color: var(--sp-color-warning);
+}
+
+.spx[spx-variant='colored'].spx[spx-color='error'] {
+  color: var(--spx-color-error);
+}
+
+.spx[spx-variant='colored'].spx[spx-color='gradient'] {
+  background: var(--spx-color-gradient);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Variant: contained */
+.spx[spx-variant='contained'].spx[spx-color='background'] {
+  background: var(--spx-color-background);
+  color: var(--spx-color-on-background);
+}
+
+.spx[spx-variant='contained'].spx[spx-color='surface'] {
+  background: var(--spx-color-surface);
+  color: var(--spx-color-on-surface);
+}
+
+.spx[spx-variant='contained'].spx[spx-color='primary'] {
+  background: var(--spx-color-primary);
+  color: var(--spx-color-on-primary);
+}
+
+.spx[spx-variant='contained'].spx[spx-color='secondary'] {
+  background: var(--spx-color-secondary);
+  color: var(--spx-color-on-secondary);
+}
+
+.spx[spx-variant='contained'].spx[spx-color='info'] {
+  background: var(--spx-color-info);
+  color: var(--spx-color-on-info);
+}
+
+.spx[spx-variant='contained'].spx[spx-color='success'] {
+  background: var(--spx-color-success);
+  color: var(--spx-color-on-success);
+}
+
+.spx[spx-variant='contained'].spx[spx-color='warning'] {
+  background: var(--sp-color-warning);
+  color: var(--spx-color-on-warning);
+}
+
+.spx[spx-variant='contained'].spx[spx-color='error'] {
+  background: var(--spx-color-error);
+  color: var(--spx-color-on-error);
+}
+
+.spx[spx-variant='contained'].spx[spx-color='gradient'] {
+  background: var(--spx-color-gradient);
+  color: var(--spx-color-on-gradient);
+}
+
+/* Variant: outlined */
+.spx[spx-variant='outlined'].spx[spx-color='background'] {
+  border-color: var(--spx-color-background);
+  color: var(--spx-color-background);
+}
+
+.spx[spx-variant='outlined'].spx[spx-color='surface'] {
+  border-color: var(--spx-color-surface);
+  color: var(--spx-color-surface);
+}
+
+.spx[spx-variant='outlined'].spx[spx-color='primary'] {
+  border-color: var(--spx-color-primary);
+  color: var(--spx-color-primary);
+}
+
+.spx[spx-variant='outlined'].spx[spx-color='info'] {
+  border-color: var(--spx-color-info);
+  color: var(--spx-color-info);
+}
+
+.spx[spx-variant='outlined'].spx[spx-color='success'] {
+  border-color: var(--spx-color-success);
+  color: var(--spx-color-success);
+}
+
+.spx[spx-variant='outlined'].spx[spx-color='warning'] {
+  border-color: var(--sp-color-warning);
+  color: var(--sp-color-warning);
+}
+
+.spx[spx-variant='outlined'].spx[spx-color='error'] {
+  border-color: var(--spx-color-error);
+  color: var(--spx-color-error);
+}
+
+.spx[spx-variant='outlined'].spx[spx-color='secondary'] {
+  border-color: var(--spx-color-secondary);
+  color: var(--spx-color-secondary);
+}
+
+.spx[spx-variant='outlined'].spx[spx-color='gradient'] {
+  background: var(--spx-color-gradient);
+  border-color: var(--spx-color-gradient);
+  border-image: var(--spx-color-gradient) 1;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}

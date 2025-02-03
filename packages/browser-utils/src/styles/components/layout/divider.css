@@ -2,13 +2,65 @@
   border: none;
   height: 2px;
   margin: 1rem 0;
-  background-color: var(--spx-color-on-surface);
+  background-color: var(--spx-color-text-subtle);
 }
 
-.spx-divider[data-vertical] {
+.spx-divider[spx-vertical] {
   display: flex;
   height: 100%;
   align-self: stretch;
   width: 1px;
   margin: 0 0.75rem;
+}
+
+.spx-divider[spx-variant='sleek'] {
+  border-radius: 50%;
+}
+
+.spx-divider[spx-color='background'] {
+  background: var(--spx-color-background);
+}
+
+.spx-divider[spx-color='surface'] {
+  background: var(--spx-color-surface);
+}
+
+.spx-divider[spx-color='primary'] {
+  background: var(--spx-color-primary);
+}
+
+.spx-divider[spx-color='secondary'] {
+  background: var(--spx-color-secondary);
+}
+
+.spx-divider[spx-color='gradient'] {
+  background: var(--spx-color-gradient);
+}
+
+.spx-divider[spx-color='info'] {
+  background: var(--spx-color-info);
+}
+
+.spx-divider[spx-color='success'] {
+  background: var(--spx-color-success);
+}
+
+.spx-divider[spx-color='warning'] {
+  background: var(--sp-color-warning);
+}
+
+.spx-divider[spx-color='error'] {
+  background: var(--spx-color-error);
+}
+
+.spx-divider[spx-color='text-default'] {
+  background: var(--spx-color-text-default);
+}
+
+.spx-divider[spx-color='text-subtle'] {
+  background: var(--spx-color-text-subtle);
+}
+
+.spx-divider[spx-color='text-highlighted'] {
+  background: var(--spx-color-text-highlighted);
 }

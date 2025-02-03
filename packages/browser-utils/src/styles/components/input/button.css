@@ -1,13 +1,49 @@
 .spx-button {
-  padding: 0.5rem;
+  padding: 0.25rem 0.75rem;
   background: none;
   border: none;
   border-radius: var(--spx-border-radius);
   background: var(--spx-color-secondary);
   color: var(--spx-color-on-secondary);
   height: var(--spx-control-height-default);
+  font-size: medium;
+
+  > * {
+    position: relative;
+    vertical-align: text-top;
+  }
+
+  > *:first-child:not(:only-child) {
+    margin-right: 0.25rem;
+  }
+
+  iconify-icon {
+    font-size: large;
+  }
 }
 
-.spx-button[data-rounded] {
-  border-radius: 50%;
+.spx-button:not(:disabled) {
+  cursor: pointer;
+}
+
+.spx-button:not(:disabled):hover {
+  filter: var(--spx-filter-control-hover);
+  backdrop-filter: var(--spx-filter-control-hover);
+}
+
+.spx-button[spx-variant='contained']:not(:disabled):hover {
+  filter: var(--spx-filter-control-hover-contained);
+}
+
+.spx-button:disabled {
+  filter: var(--spx-filter-control-disabled);
+}
+
+.spx-button:not(:has(.spx-button-content)) {
+  padding: 0px;
+  aspect-ratio: 1/1;
+}
+
+.spx-button[spx-rounded] {
+  border-radius: calc(var(--spx-control-height-default) / 2) !important;
 }

@@ -1,4 +1,10 @@
 :root {
   --spx-control-height-default: 36px;
   --spx-main-content-width: 1440px;
+
+  --spx-control-width-small: 10rem;
+  --spx-control-width-medium: 20rem;
+  --spx-control-width-large: 30rem;
+  --spx-control-width-auto: auto;
+  --spx-control-width-full: 100%%;
 }

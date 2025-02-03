@@ -10,11 +10,14 @@
   }
 }
 
-.spx-container[no-padding='true'] {
+.spx-container[spx-no-padding='true'] {
   padding: 0;
 }
 
-.spx-container[variant='outline'] {
-  background: none;
-  border: 1px solid inherit;
+.spx-container[spx-variant='contained'] {
+  border-color: var(--spx-color-surface);
+}
+
+.spx-container[spx-variant='outlined'] {
+  color: inherit;
 }

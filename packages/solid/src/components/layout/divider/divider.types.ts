@@ -1,16 +1,21 @@
+import { BaseColor, ContentColor } from '@spuxx/browser-utils';
 import { ComponentProps } from '@spuxx/solid';
 
 export interface DividerProps extends ComponentProps<HTMLHRElement> {
+  /**
+   * The color of the divider.
+   * @default 'text-subtle'
+   */
+  color?: BaseColor | ContentColor;
+
+  /**
+   * The variant of the divider.
+   * @default 'line'
+   */
+  variant?: 'straight' | 'sleek';
   /**
    * Whether the divider is vertical.
    * @default false
    */
   vertical?: boolean;
-
-  /**
-   * The thickness of the divider.
-   * @default 2px (horizontal)
-   * @default 1px (vertical)
-   */
-  thickness?: string;
 }

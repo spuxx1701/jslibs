@@ -1,10 +1,10 @@
 /**
- * The color of an element.
+ * The base color of an element.
  */
-export const Color = {
+export const BaseColor = {
   background: 'background',
   surface: 'surface',
-  accent: 'accent',
+  gradient: 'gradient',
   primary: 'primary',
   secondary: 'secondary',
   info: 'info',
@@ -14,20 +14,20 @@ export const Color = {
 } as const;
 
 /**
- * The color of an element.
+ * The base color of an element.
  */
-export type Color = (typeof Color)[keyof typeof Color];
+export type BaseColor = (typeof BaseColor)[keyof typeof BaseColor];
 
 /**
- * The variant of a container-type component (like containers or buttons).
+ * The content color of an element.
  */
-export const ContainerVariant = {
-  contained: 'contained',
-  outlined: 'outlined',
-  transparent: 'transparent',
+export const ContentColor = {
+  default: 'text-default',
+  subtle: 'text-subtle',
+  highlighted: 'text-highlighted',
 } as const;
 
 /**
- * Commonly available variants for container-type components (like containers or buttons).
+ * The content color of an element.
  */
-export type ContainerVariant = (typeof ContainerVariant)[keyof typeof ContainerVariant];
+export type ContentColor = (typeof ContentColor)[keyof typeof ContentColor];

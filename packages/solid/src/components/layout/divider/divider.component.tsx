@@ -1,33 +1,23 @@
-import { Component, JSX } from 'solid-js';
+import { Component } from 'solid-js';
 import { DividerProps } from './divider.types';
-import { applyCommonAttributes, classNames } from '@spuxx/solid';
+import { classNames } from '@spuxx/solid';
 
+/**
+ * A divider component. Can be used to separate content. Supports vertical orientation.
+ * Color defaults to `surface`, but can be customized with the `color` prop.
+ * @param props
+ * @returns
+ */
 export const Divider: Component<DividerProps> = (props) => {
-  const thickness = (props.thickness ?? props.vertical) ? '1' : 2;
-
-  const getStyle = (): JSX.CSSProperties => {
-    if (props.vertical) {
-      return {
-        height: '100%',
-        width: `${thickness}px`,
-        ...(props.style as JSX.CSSProperties),
-      };
-    } else {
-      return {
-        height: `${thickness}px`,
-        width: '100%',
-        ...(props.style as JSX.CSSProperties),
-      };
-    }
-  };
+  const { color = 'text-subtle', vertical = undefined, variant = 'straight' } = props;
 
   return (
     <hr
-      {...props}
-      style={getStyle()}
-      {...applyCommonAttributes(props)}
-      data-vertical={props.vertical}
-      class={classNames('spx-divider')}
+      {...props.attrs}
+      spx-color={color}
+      spx-variant={variant}
+      spx-vertical={vertical}
+      {...classNames('spx-divider', props.class)}
     />
   );
 };

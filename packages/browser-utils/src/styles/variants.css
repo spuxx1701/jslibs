@@ -1,21 +1,25 @@
-.spx[variant='contained'] {
-  border-width: 0px;
+.spx[spx-variant='contained'] {
+  border: none;
   border-radius: var(--spx-border-radius);
 }
 
-.spx[variant='outlined'] {
+.spx[spx-variant='outlined'] {
+  background: none;
   border-width: 1px;
   border-style: solid;
   border-radius: var(--spx-border-radius);
 }
 
-.spx[variant='underlined'] {
-  border-width: 0px 0px 1px 0px;
-  border-style: none none solid none;
-  border-radius: var(--spx-border-radius);
+.spx[spx-variant='colored'] {
+  background: none;
+  border: none;
 }
 
-.spx[variant='transparent'] {
-  border-width: 0px;
-  border-radius: 0px;
+.spx[spx-variant='underlined'] {
+  border-width: 0px 0px 1px 0px;
+  border-style: none none solid none;
+  border-top-left-radius: var(--spx-border-radius);
+  border-top-right-radius: var(--spx-border-radius);
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
 }

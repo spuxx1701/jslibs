@@ -43,4 +43,9 @@ export interface ButtonProps extends ComponentProps<HTMLButtonElement>, ParentPr
    * @default undefined
    */
   loader?: boolean;
+  /**
+   * A callback that will be called when the button is clicked.
+   * @param event The click event.
+   */
+  onClick?: (event: MouseEvent) => void;
 }

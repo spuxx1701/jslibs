@@ -17,6 +17,9 @@ export const ContainerRoute = () => {
         <Container class="my-4" variant="contained" color="primary">
           <p>contained, primary color</p>
         </Container>
+        <Container class="my-4" variant="contained" color="gradient">
+          <p>contained, gradient</p>
+        </Container>
         <Container class="my-4" variant="outlined">
           <p>outlined</p>
         </Container>

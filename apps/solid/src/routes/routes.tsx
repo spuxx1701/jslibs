@@ -3,6 +3,7 @@ import { IndexRoute } from './index.route';
 import { ButtonRoute } from './components/input/button.route';
 import { ContainerRoute } from './components/layout/container.route';
 import { DividerRoute } from './components/layout/divider.route';
+import { DialogRoute } from './dialog.route';
 
 export const routes: RouteProps[] = [
   {
@@ -20,5 +21,9 @@ export const routes: RouteProps[] = [
   {
     path: '/components/layout/divider',
     component: () => DividerRoute,
+  },
+  {
+    path: '/dialog',
+    component: () => DialogRoute,
   },
 ];

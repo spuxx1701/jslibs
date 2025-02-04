@@ -16,6 +16,7 @@ export const Button: Component<ButtonProps> = (props) => {
       spx-color={color}
       spx-rounded={rounded}
       disabled={disabled}
+      onClick={props.onClick}
       {...classNames('spx-button', props.class)}
     >
       {/* Loader */}

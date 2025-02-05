@@ -13,7 +13,6 @@ export const DialogRoute: Component = () => {
   return (
     <Container tag="article">
       <ModalPortal />
-
       <Heading level={1}>Dialog</Heading>
       <Divider color="gradient" />
       <Container tag="section" class="my-4">
@@ -24,7 +23,10 @@ export const DialogRoute: Component = () => {
             ModalDialog.show(ConfirmModal, {
               title: 'Hello World!',
               color: 'gradient',
-              content: 'This is a confirm dialog.',
+              content: `Cum consequatur occaecati dolorem quo ducimus harum est placeat.
+              Quam perspiciatis exercitationem animi ut.
+              Dolorem eum rerum labore. Sit est facere ratione.
+              Maxime incidunt et blanditiis.`,
               confirmLabel: 'Confirm',
               confirmIcon: 'mdi:check',
               // confirmColor: 'gradient',

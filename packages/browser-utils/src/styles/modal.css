@@ -2,6 +2,7 @@
   position: absolute;
   top: 0;
   left: 0;
+  z-index: var(--spx-z-modal-overlay);
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.5);
@@ -11,9 +12,10 @@
   position: absolute;
   top: 50%;
   left: 50%;
+  z-index: var(--spx-z-modal);
   transform: translate(-50%, -50%);
-  background-color: var(--spx-color-dialog);
-  color: var(--spx-color-on-dialog);
+  background-color: var(--spx-color-modal);
+  color: var(--spx-color-on-modal);
   border-radius: var(--spx-border-radius);
   width: fit-content;
   max-width: 80svw;
@@ -68,6 +70,8 @@
 .spx-modal-body {
   margin: 1rem 0;
   padding: 0rem 1.5rem;
+  max-height: 50svh;
+  overflow: auto;
 }
 
 .spx-modal-footer {

@@ -33,9 +33,9 @@ html *,
   --spx-color-error: #b91c1c;
   --spx-color-on-error: var(--spx-color-text-default);
 
-  /* Dialog */
-  --spx-color-dialog: var(--spx-color-surface);
-  --spx-color-on-dialog: var(--spx-color-on-surface);
+  /* Modal Dialog */
+  --spx-color-modal: var(--spx-color-surface);
+  --spx-color-on-modal: var(--spx-color-on-surface);
 
   /* Filters */
   --spx-filter-control-hover: brightness(1.25);

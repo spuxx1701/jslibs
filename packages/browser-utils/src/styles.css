@@ -1,5 +1,7 @@
 @import './styles/variables.css';
 @import './styles/application.css';
 @import './styles/components.css';
+@import './styles/modal.css';
 @import './styles/variants.css';
 @import './styles/colors.css';
+@import './styles/animations.css';

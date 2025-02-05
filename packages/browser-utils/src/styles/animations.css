@@ -1,0 +1,15 @@
+@keyframes enter {
+  0% {
+    opacity: 0;
+    scale: 0.95;
+    transform: translate(-50%, calc(-50% + 8px)) scale(0.95);
+  }
+}
+
+@keyframes exit {
+  to {
+    opacity: 0;
+    scale: 0.95;
+    transform: translate(-50%, calc(-50% + 8px)) scale(0.95);
+  }
+}

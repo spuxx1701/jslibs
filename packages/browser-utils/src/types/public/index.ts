@@ -31,3 +31,18 @@ export const ContentColor = {
  * The content color of an element.
  */
 export type ContentColor = (typeof ContentColor)[keyof typeof ContentColor];
+
+/**
+ * The size of a modal dialog.
+ */
+export const ModalSize = {
+  small: 'small',
+  medium: 'medium',
+  large: 'large',
+  auto: 'auto',
+  max: 'max',
+};
+/**
+ * The size of a modal dialog.
+ */
+export type ModalSize = (typeof ModalSize)[keyof typeof ModalSize];

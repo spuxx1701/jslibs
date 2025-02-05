@@ -15,5 +15,16 @@ module.exports = {
     'max-len': ['error', { code: 120 }],
     'no-console': ['error'],
     'no-debugger': ['error'],
+    'no-unused-vars': 'off',
+    '@typescript-eslint/no-unused-vars': [
+      'error',
+      {
+        args: 'all',
+        argsIgnorePattern: '^_',
+        destructuredArrayIgnorePattern: '^_',
+        varsIgnorePattern: '^_',
+        ignoreRestSiblings: true,
+      },
+    ],
   },
 };

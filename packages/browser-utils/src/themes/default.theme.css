@@ -17,11 +17,11 @@ html *,
   --spx-color-surface: #3f3f46;
   --spx-color-on-surface: var(--spx-color-text-default);
   --spx-color-primary: #0d9488;
-  --spx-color-on-primary: var(--spx-color-text-default);
+  --spx-color-on-primary: var(--spx-color-text-highlighted);
   --spx-color-secondary: #3f3f46;
   --spx-color-on-secondary: var(--spx-color-text-default);
   --spx-color-gradient: linear-gradient(45deg, var(--spx-color-primary), #a21caf);
-  --spx-color-on-gradient: var(--spx-color-text-default);
+  --spx-color-on-gradient: var(--spx-color-text-highlighted);
 
   /* Status Colors */
   --spx-color-info: #166534;
@@ -32,6 +32,10 @@ html *,
   --spx-color-on-warning: var(--spx-color-text-default);
   --spx-color-error: #b91c1c;
   --spx-color-on-error: var(--spx-color-text-default);
+
+  /* Dialog */
+  --spx-color-dialog: var(--spx-color-surface);
+  --spx-color-on-dialog: var(--spx-color-on-surface);
 
   /* Filters */
   --spx-filter-control-hover: brightness(1.25);

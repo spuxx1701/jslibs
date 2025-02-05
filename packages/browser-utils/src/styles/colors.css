@@ -25,7 +25,7 @@
 }
 
 .spx[spx-variant='colored'].spx[spx-color='warning'] {
-  color: var(--sp-color-warning);
+  color: var(--spx-color-warning);
 }
 
 .spx[spx-variant='colored'].spx[spx-color='error'] {
@@ -71,7 +71,7 @@
 }
 
 .spx[spx-variant='contained'].spx[spx-color='warning'] {
-  background: var(--sp-color-warning);
+  background: var(--spx-color-warning);
   color: var(--spx-color-on-warning);
 }
 
@@ -112,8 +112,8 @@
 }
 
 .spx[spx-variant='outlined'].spx[spx-color='warning'] {
-  border-color: var(--sp-color-warning);
-  color: var(--sp-color-warning);
+  border-color: var(--spx-color-warning);
+  color: var(--spx-color-warning);
 }
 
 .spx[spx-variant='outlined'].spx[spx-color='error'] {

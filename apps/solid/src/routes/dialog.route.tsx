@@ -3,16 +3,16 @@ import {
   Container,
   Divider,
   Heading,
-  Dialog,
-  ConfirmDialog,
-  DialogContainer,
+  ModalDialog,
+  ConfirmModal,
+  ModalPortal,
 } from '@spuxx/solid';
 import { Component } from 'solid-js';
 
 export const DialogRoute: Component = () => {
   return (
     <Container tag="article">
-      <DialogContainer />
+      <ModalPortal />
 
       <Heading level={1}>Dialog</Heading>
       <Divider color="gradient" />
@@ -21,7 +21,17 @@ export const DialogRoute: Component = () => {
         <Divider color="gradient" />
         <Button
           onClick={() => {
-            Dialog.show(ConfirmDialog, {});
+            ModalDialog.show(ConfirmModal, {
+              title: 'Hello World!',
+              color: 'gradient',
+              content: 'This is a confirm dialog.',
+              confirmLabel: 'Confirm',
+              confirmIcon: 'mdi:check',
+              // confirmColor: 'gradient',
+              cancelLabel: 'Cancel',
+              // cancelColor: 'gradient',
+              size: 'medium',
+            });
           }}
         >
           Open Confirm Dialog

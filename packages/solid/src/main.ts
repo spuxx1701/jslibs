@@ -9,6 +9,6 @@ export * from './components/layout/container';
 export * from './components/layout/divider';
 export * from './components/typography/heading';
 
-export * from './dialog';
+export * from './modal';
 
 export * from './utils/component.utils';

@@ -10,7 +10,7 @@ import { ConfirmModal } from '@spuxx/solid';
  * ```tsx
  * // Provide ModalPortal somewhere in your application
  * import { Modal, ModalPortal, ConfirmModal } from '@spuxx/solid';
- * <MoalPortal />
+ * <ModalPortal />
  *
  * // Show a modal dialog
  * Modal.show(ConfirmModal, { title: 'Hello World!' });

@@ -1,6 +1,6 @@
 import { ModalComponent, ModalOptions } from '../modal.types';
 import { ModalHeader } from '../template/modal-header.component';
-import { Modal } from '../template/modal.component';
+import { ModalTemplate } from '../template/modal-template.component';
 import { ModalBody } from '../template/modal-body.component';
 import { ModalFooter } from '../template/modal-footer.component';
 import { Button } from '../../components/input/button';
@@ -63,7 +63,7 @@ export const ConfirmModal: ModalComponent<ConfirmModalOptions> = (options) => {
   const { confirmColor = 'primary', cancelColor = 'primary' } = options;
 
   return (
-    <Modal {...options}>
+    <ModalTemplate {...options}>
       <ModalHeader
         icon={options.icon}
         title={options.title}
@@ -86,6 +86,6 @@ export const ConfirmModal: ModalComponent<ConfirmModalOptions> = (options) => {
           <b>{options.confirmLabel}</b>
         </Button>
       </ModalFooter>
-    </Modal>
+    </ModalTemplate>
   );
 };

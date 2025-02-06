@@ -2,20 +2,21 @@ import { ServiceMixin } from '@spuxx/js-utils';
 import { ComponentProps } from 'solid-js';
 import { ModalComponent, ModalOptions } from './modal.types';
 import { render } from 'solid-js/web';
+import { ConfirmModal } from '@spuxx/solid';
 
 /**
- * The `ModalDialog` service provides global access to modal dialogs.
+ * The `Modal` service provides global access to modal dialogs.
  * @example
  * ```tsx
  * // Provide ModalPortal somewhere in your application
- * import { ModalDialog, ModalPortal, ConfirmModal } from '@spuxx/solid';
+ * import { Modal, ModalPortal, ConfirmModal } from '@spuxx/solid';
  * <MoalPortal />
  *
  * // Show a modal dialog
- * ModalDialog.show(ConfirmModal, { title: 'Hello World!' });
+ * Modal.show(ConfirmModal, { title: 'Hello World!' });
  * ```
  */
-export class ModalDialog extends ServiceMixin<ModalDialog>() {
+export class Modal extends ServiceMixin<Modal>() {
   protected portal: Node | undefined;
   protected dispose = () => {};
 

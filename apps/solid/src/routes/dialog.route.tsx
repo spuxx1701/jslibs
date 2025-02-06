@@ -3,7 +3,7 @@ import {
   Container,
   Divider,
   Heading,
-  ModalDialog,
+  Modal,
   ConfirmModal,
   ModalPortal,
 } from '@spuxx/solid';
@@ -20,9 +20,9 @@ export const DialogRoute: Component = () => {
         <Divider color="gradient" />
         <Button
           onClick={() => {
-            ModalDialog.show(ConfirmModal, {
+            Modal.show(ConfirmModal, {
               title: 'Hello World!',
-              color: 'gradient',
+              // color: 'gradient',
               content: `Cum consequatur occaecati dolorem quo ducimus harum est placeat.
               Quam perspiciatis exercitationem animi ut.
               Dolorem eum rerum labore. Sit est facere ratione.

@@ -1,5 +1,5 @@
 import { Component, ParentProps } from 'solid-js';
-import { ModalDialog } from '../modal-dialog.service';
+import { Modal } from '../modal-dialog.service';
 import { ModalOptions } from '../modal.types';
 import { Content, Overlay, Portal, Root } from '@corvu/dialog';
 
@@ -10,7 +10,7 @@ interface Props extends ModalOptions, ParentProps {}
  * @param options {@link ModalOptions}
  * @example
  * ```tsx
- * import { Modal, ModalHeader, ModalBody, ModalFooter, Button } from '@spuxx/solid';
+ * import { ModalTemplate, ModalHeader, ModalBody, ModalFooter, Button } from '@spuxx/solid';
  * export const MyModal = (options) => {
  *   return (
  *     <Modal {...options}>
@@ -24,11 +24,11 @@ interface Props extends ModalOptions, ParentProps {}
  * }
  * ```
  */
-export const Modal: Component<Props> = (options) => {
+export const ModalTemplate: Component<Props> = (options) => {
   const { size = 'auto', preventClose = false, onClose } = options;
 
   const handleContentPresentChange = (value: boolean) => {
-    if (!value) ModalDialog.close();
+    if (!value) Modal.close();
     if (typeof onClose === 'function') onClose();
   };
 
@@ -42,7 +42,7 @@ export const Modal: Component<Props> = (options) => {
       closeOnOutsidePointer={!preventClose}
       onContentPresentChange={handleContentPresentChange}
     >
-      <Portal mount={ModalDialog.portal} forceMount={true}>
+      <Portal mount={Modal.portal} forceMount={true}>
         <Overlay class="spx-modal-overlay" />
         <Content class="spx-modal" data-size={size}>
           {options.children}

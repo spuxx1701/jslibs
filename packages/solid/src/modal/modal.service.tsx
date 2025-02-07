@@ -1,7 +1,12 @@
 import { ServiceMixin } from '@spuxx/js-utils';
-import { Component, ComponentProps } from 'solid-js';
 import { ModalComponent, ModalOptions } from './modal.types';
-import { render } from 'solid-js/web';
+import { createSignal } from 'solid-js';
+
+interface ModalState {
+  open: boolean;
+  component: ModalComponent<never> | null;
+  options?: ModalOptions;
+}
 
 /**
  * The `Modal` service provides global access to modal dialogs.
@@ -16,8 +21,7 @@ import { render } from 'solid-js/web';
  * ```
  */
 export class Modal extends ServiceMixin<Modal>() {
-  protected portal: Node | undefined;
-  protected dispose = () => {};
+  state = createSignal<ModalState>({ open: false, component: null });
 
   /**
    * Shows the modal dialog of the given type and with the given options.
@@ -25,34 +29,30 @@ export class Modal extends ServiceMixin<Modal>() {
    * @param options The options to pass to the modal.
    */
   static show<TOptions extends ModalOptions>(modal: ModalComponent<TOptions>, options: TOptions) {
-    if (!this.portal) {
-      throw new Error(
-        'No modal portal node has been registered. Please register a portal node first.',
-      );
-    }
-    this.instance.dispose = render(() => modal(options), this.portal);
+    this.setState({ open: true, component: modal, options });
   }
 
   /**
    * Closes the modal dialog that is currently open, if there is one.
    */
-  static close() {
-    this.instance.dispose();
+  static async close() {
+    this.setState({ ...this.state, open: false });
   }
 
   /**
-   * Returns the portal node that is used to render the modal.
+   * Returns the current state of the modal. The state is read-only.
    */
-  static get portal(): Node | undefined {
-    return this.instance.portal;
+  static get state(): ModalState {
+    const [state] = this.instance.state;
+    return state();
   }
 
   /**
-   * Registers the given node as the portal node that is used to render the modal.
-   * Only one portal node can be registered at a time.
-   * @param node The node to register as the portal node.
+   * Sets the current state of the modal. You should avoid manipulating the modal state directly
+   * and instead use `Modal.show()` and `Modal.close()`.
    */
-  static setPortal(node: Node) {
-    this.instance.portal = node;
+  static setState(newState: ModalState): void {
+    const [_state, setModalState] = this.instance.state;
+    setModalState(newState);
   }
 }

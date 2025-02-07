@@ -27,22 +27,32 @@ interface Props extends ModalOptions, ParentProps {}
 export const ModalTemplate: Component<Props> = (options) => {
   const { size = 'auto', preventClose = false, onClose } = options;
 
-  const handleContentPresentChange = (value: boolean) => {
-    if (!value) Modal.close();
+  const handleOpenChange = (value: boolean) => {
+    if (value) return;
+    Modal.close();
     if (typeof onClose === 'function') onClose();
+  };
+
+  const handleContentPresentChange = (value: boolean) => {
+    if (value) return;
+    Modal.setState({
+      open: false,
+      component: null,
+    });
   };
 
   return (
     <Root
-      initialOpen={true}
+      open={Modal.state.open}
       modal={true}
       trapFocus={true}
       preventScroll={true}
       closeOnEscapeKeyDown={!preventClose}
       closeOnOutsidePointer={!preventClose}
+      onOpenChange={handleOpenChange}
       onContentPresentChange={handleContentPresentChange}
     >
-      <Portal mount={Modal.portal} forceMount={true}>
+      <Portal forceMount={true}>
         <Overlay class="spx-modal-overlay" />
         <Content class="spx-modal" data-size={size}>
           {options.children}

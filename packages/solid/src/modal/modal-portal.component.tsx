@@ -1,5 +1,6 @@
-import { Component, createEffect } from 'solid-js';
+import { Component, Show } from 'solid-js';
 import { Modal } from './modal.service';
+import { Dynamic } from 'solid-js/web';
 
 /**
  * Place this component anywhere in your application to make it the portal node for modals.
@@ -11,13 +12,9 @@ import { Modal } from './modal.service';
  * ```
  */
 export const ModalPortal: Component = () => {
-  let portal: HTMLDivElement | undefined;
-
-  createEffect(() => {
-    if (portal) {
-      Modal.setPortal(portal);
-    }
-  });
-
-  return <div ref={portal} class="spx-modal-portal" />;
+  return (
+    <Show when={Modal.state.component}>
+      <Dynamic component={Modal.state.component as Component} {...Modal.state.options} />
+    </Show>
+  );
 };

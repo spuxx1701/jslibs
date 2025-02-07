@@ -1,5 +1,5 @@
 import { Component, ParentProps } from 'solid-js';
-import { Modal } from '../modal-dialog.service';
+import { Modal } from '../modal.service';
 import { ModalOptions } from '../modal.types';
 import { Content, Overlay, Portal, Root } from '@corvu/dialog';
 

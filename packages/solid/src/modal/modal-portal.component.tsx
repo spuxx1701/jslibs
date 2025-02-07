@@ -1,5 +1,5 @@
 import { Component, createEffect } from 'solid-js';
-import { Modal } from './modal-dialog.service';
+import { Modal } from './modal.service';
 
 /**
  * Place this component anywhere in your application to make it the portal node for modals.

@@ -1,8 +1,7 @@
 import { ServiceMixin } from '@spuxx/js-utils';
-import { ComponentProps } from 'solid-js';
+import { Component, ComponentProps } from 'solid-js';
 import { ModalComponent, ModalOptions } from './modal.types';
 import { render } from 'solid-js/web';
-import { ConfirmModal } from '@spuxx/solid';
 
 /**
  * The `Modal` service provides global access to modal dialogs.
@@ -25,16 +24,13 @@ export class Modal extends ServiceMixin<Modal>() {
    * @param key The key of the modal to open.
    * @param options The options to pass to the modal.
    */
-  static show<TModal extends ModalComponent<ModalOptions>, TOptions extends ModalOptions>(
-    modal: TModal,
-    options?: TOptions,
-  ) {
+  static show<TOptions extends ModalOptions>(modal: ModalComponent<TOptions>, options: TOptions) {
     if (!this.portal) {
       throw new Error(
         'No modal portal node has been registered. Please register a portal node first.',
       );
     }
-    this.instance.dispose = render(() => modal(options ?? {}), this.portal);
+    this.instance.dispose = render(() => modal(options), this.portal);
   }
 
   /**

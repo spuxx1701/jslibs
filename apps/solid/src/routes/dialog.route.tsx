@@ -27,9 +27,11 @@ export const DialogRoute: Component = () => {
               Quam perspiciatis exercitationem animi ut.
               Dolorem eum rerum labore. Sit est facere ratione.
               Maxime incidunt et blanditiis.`,
+              onConfirm: () => Modal.close(),
               confirmLabel: 'Confirm',
               confirmIcon: 'mdi:check',
               // confirmColor: 'gradient',
+              onClose: () => Modal.close(),
               cancelLabel: 'Cancel',
               // cancelColor: 'gradient',
               size: 'medium',

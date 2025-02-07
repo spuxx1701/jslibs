@@ -5,6 +5,7 @@ import { ModalBody } from '../template/modal-body.component';
 import { ModalFooter } from '../template/modal-footer.component';
 import { Button } from '../../components/input/button';
 import { BaseColor, ContentColor } from '@spuxx/browser-utils';
+import { Modal } from '../modal.service';
 
 export interface ConfirmModalOptions extends ModalOptions {
   /**
@@ -44,7 +45,12 @@ export interface ConfirmModalOptions extends ModalOptions {
    */
   confirmColor?: BaseColor | ContentColor;
   /**
-   * The label of the cancel button. Clicking the button will call `onClose()`.
+   * A callback function that will be called when the cancel button is clicked.
+   * By default, it will simply call `Modal.close()` unless overriden.
+   */
+  onCancel?: () => void;
+  /**
+   * The label of the cancel button.
    */
   cancelLabel: string;
   /**
@@ -60,7 +66,11 @@ export interface ConfirmModalOptions extends ModalOptions {
 }
 
 export const ConfirmModal: ModalComponent<ConfirmModalOptions> = (options) => {
-  const { confirmColor = 'primary', cancelColor = 'primary' } = options;
+  const {
+    confirmColor = 'primary',
+    cancelColor = 'primary',
+    onCancel = () => Modal.close(),
+  } = options;
 
   return (
     <ModalTemplate {...options}>
@@ -73,7 +83,12 @@ export const ConfirmModal: ModalComponent<ConfirmModalOptions> = (options) => {
       <ModalBody>{options.content}</ModalBody>
       <ModalFooter>
         {options.cancelLabel && (
-          <Button icon={options.cancelIcon} color={cancelColor} variant="colored">
+          <Button
+            icon={options.cancelIcon}
+            onClick={onCancel}
+            color={cancelColor}
+            variant="colored"
+          >
             {options.cancelLabel}
           </Button>
         )}

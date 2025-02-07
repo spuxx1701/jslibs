@@ -50,7 +50,7 @@
   },
   "dependencies": {
     "@spuxx/js-utils": "1.3.0",
-    "@spuxx/nest-utils": "workspace:@spuxx/nest-utils@*"
+    "@spuxx/nest-utils": "3.1.0"
   },
   "devDependencies": {}
 }

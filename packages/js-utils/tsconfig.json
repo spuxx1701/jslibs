@@ -1,8 +1,7 @@
 {
-  "extends": "../../tsconfig.bundler.json",
   "include": ["./src"],
   "compilerOptions": {
-    /* Bundler mode */
+    "module": "ESNext",
     "moduleResolution": "bundler",
     "allowImportingTsExtensions": true,
     "resolveJsonModule": true,

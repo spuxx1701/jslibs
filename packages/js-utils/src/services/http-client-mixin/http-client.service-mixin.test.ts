@@ -1,3 +1,4 @@
+import { describe, expect, it, vi } from 'vitest';
 import axios, { type AxiosResponse } from 'axios';
 import { defineEndpoint, HttpClientMixin } from './http-client.service-mixin';
 import { HttpClientOptions, HttpError } from './types';

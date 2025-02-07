@@ -120,7 +120,7 @@ export function HttpClientMixin<TEndpoints extends Endpoints>(
       if (error instanceof HttpError) {
         httpError = error;
       } else if ((error as AxiosError).name === 'AxiosError') {
-        const axiosError = error as AxiosError;
+        const axiosError = error as AxiosError<object>;
         httpError = new HttpError({
           name: 'AxiosError',
           status: axiosError.response?.status ?? axiosError.status,

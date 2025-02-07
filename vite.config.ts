@@ -33,6 +33,7 @@ export default defineConfig({
   test: {
     environment: 'jsdom',
     globals: true,
+    silent: true,
     setupFiles: [`${__dirname}/tests/vitest/vitest.setup.ts`],
     reporters: ['default', 'junit'],
     outputFile: 'reports/vitest/junit/junit.xml',

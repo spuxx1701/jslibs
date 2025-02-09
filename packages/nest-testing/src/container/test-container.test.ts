@@ -7,6 +7,7 @@ import {
   defaultAuthOptions,
   Mapper,
 } from '@spuxx/nest-utils';
+import { describe, expect, it, vi } from 'vitest';
 
 describe('TestContainer', () => {
   @Controller()

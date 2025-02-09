@@ -1,6 +1,7 @@
 import { Injectable, MiddlewareConsumer, Module, NestMiddleware, NestModule } from '@nestjs/common';
 import { Request, Response, NextFunction } from 'express';
 import { SessionResource } from '@spuxx/nest-utils';
+import { vitest } from 'vitest';
 
 @Injectable()
 export class MockOidcMiddleware implements NestMiddleware {

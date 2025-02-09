@@ -1,4 +1,5 @@
 import { CustomLogger } from '@spuxx/nest-utils';
+import { vitest } from 'vitest';
 
 /**
  * A custom logger for testing purposes. Replaces `printMessages` with a mocked function

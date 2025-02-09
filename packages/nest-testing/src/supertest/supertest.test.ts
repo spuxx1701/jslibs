@@ -2,6 +2,7 @@ import { Controller, Get, UseGuards } from '@nestjs/common';
 import { TestContainer } from '../container';
 import { Supertest } from './supertest';
 import { AuthGuard, AuthModule, Roles, SessionResource } from '@spuxx/nest-utils';
+import { beforeEach, describe, expect, it } from 'vitest';
 
 describe('Supertest', () => {
   @Controller()

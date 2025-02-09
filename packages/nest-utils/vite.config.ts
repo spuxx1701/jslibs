@@ -62,8 +62,8 @@ export default defineConfig({
       provider: 'v8',
       all: true,
       include: ['**/*.ts'],
-      reportsDirectory: 'reports/coverage',
-      reporter: ['text', 'cobertura'],
+      reportsDirectory: 'reports/vitest/coverage',
+      reporter: ['text', 'json'],
     },
   },
 });

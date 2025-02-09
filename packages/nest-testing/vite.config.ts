@@ -62,8 +62,8 @@ export default defineConfig({
       all: true,
       include: ['src/**/*.ts'],
       exclude: ['src/main.ts', '**/index.ts'],
-      reportsDirectory: 'reports/coverage',
-      reporter: ['text', 'cobertura'],
+      reportsDirectory: 'reports/vitest/coverage',
+      reporter: ['text', 'json'],
     },
   },
 });

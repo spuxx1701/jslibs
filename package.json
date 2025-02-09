@@ -24,7 +24,8 @@
     "app:nest": "cd apps/nest && pnpm dev",
     "publish:test": "pnpm -r publish --dry-run --no-git-checks",
     "test": "pnpm -r test",
-    "test:vitest": "pnpm -r test:vitest",
+    "test:vitest": "pnpm -r test:vitest && pnpm merge-coverage:vitest",
+    "merge-coverage:vitest": "node scripts/merge-coverage-vitest.js",
     "check": "pnpm types && pnpm run lint && pnpm run prettier-check",
     "types": "pnpm -r types",
     "lint": "eslint . --ext ts,tsx",
@@ -40,6 +41,7 @@
     "eslint": "8.57.0",
     "eslint-config-prettier": "9.1.0",
     "eslint-plugin-prettier": "5.2.1",
+    "nyc": "17.1.0",
     "prettier": "3.3.3",
     "release-please": "16.12.0",
     "vitest": "3.0.5"

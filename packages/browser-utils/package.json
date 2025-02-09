@@ -1,6 +1,6 @@
 {
   "name": "@spuxx/browser-utils",
-  "version": "1.3.0",
+  "version": "1.4.0",
   "description": "A package containing various browser-related utilities for web applications.",
   "license": "MIT",
   "author": {

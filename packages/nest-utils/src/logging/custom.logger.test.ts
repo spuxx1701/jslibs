@@ -1,3 +1,4 @@
+import { describe, it, expect } from 'vitest';
 import { TestAppLogger } from '@spuxx/nest-testing';
 import { ApplicationLogLevel, CustomLogger } from './custom.logger';
 

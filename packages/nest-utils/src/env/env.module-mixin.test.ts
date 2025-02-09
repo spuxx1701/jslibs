@@ -1,3 +1,4 @@
+import { describe, it, expect, vi } from 'vitest';
 import { IsBooleanString, IsDate, IsNumber, IsString } from 'class-validator';
 import { TestContainer } from '@spuxx/nest-testing';
 import { EnvModuleMixin } from './env.module-mixin';

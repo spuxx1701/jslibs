@@ -1,3 +1,4 @@
+import { describe, it, expect } from 'vitest';
 import { Request } from 'express';
 import { RequestContext } from 'express-openid-connect';
 import { getSession, isAuthenticated } from './auth.utils';

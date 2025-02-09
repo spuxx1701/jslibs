@@ -1,4 +1,12 @@
 {
-  "extends": "../../tsconfig.nest.json",
-  "include": ["./src/**/*"]
+  "include": ["./src"],
+  "compilerOptions": {
+    "module": "ESNext",
+    "moduleResolution": "node",
+    "skipLibCheck": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "declaration": true,
+    "allowSyntheticDefaultImports": true
+  }
 }

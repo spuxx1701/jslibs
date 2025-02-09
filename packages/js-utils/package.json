@@ -39,7 +39,8 @@
     "dev": "vite build --watch",
     "build": "vite build",
     "types": "tsc --noEmit",
-    "test": "vitest run --coverage"
+    "test": "pnpm run test:vitest",
+    "test:vitest": "vitest run --coverage"
   },
   "peerDependencies": {
     "@modyfi/vite-plugin-yaml": "^1.1.0"

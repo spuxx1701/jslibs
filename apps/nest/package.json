@@ -9,7 +9,8 @@
     "preview": "node dist/main.mjs",
     "build": "nest build",
     "types": "tsc --noEmit",
-    "test": "vitest run --coverage"
+    "test": "pnpm run test:vitest",
+    "test:vitest": "vitest run --coverage"
   },
   "dependencies": {
     "@nanogiants/nestjs-swagger-api-exception-decorator": "1.6.11",

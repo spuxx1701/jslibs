@@ -24,6 +24,7 @@
     "app:nest": "cd apps/nest && pnpm dev",
     "publish:test": "pnpm -r publish --dry-run --no-git-checks",
     "test": "pnpm -r test",
+    "test:vitest": "pnpm -r test:vitest",
     "check": "pnpm types && pnpm run lint && pnpm run prettier-check",
     "types": "pnpm -r types",
     "lint": "eslint . --ext ts,tsx",

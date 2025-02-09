@@ -86,6 +86,7 @@ describe('TestContainer', () => {
     class RecursiveModule {}
 
     const bootstrapSpy = vi.spyOn(AuthModule, 'bootstrap');
+    bootstrapSpy.mockClear();
     expect(bootstrapSpy).not.toHaveBeenCalled();
     const container = await TestContainer.create({
       imports: [RecursiveModule],

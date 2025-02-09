@@ -1,21 +1,43 @@
 /// <reference types="vitest" />
-import baseConfig from '../../vite.config.nest';
-import { mergeConfig, defineConfig } from 'vite';
-import { builtinModules } from 'module';
+import { defineConfig } from 'vite';
+import tsconfigPaths from 'vite-tsconfig-paths';
+import swc from 'unplugin-swc';
 
-export default mergeConfig(
-  baseConfig,
-  defineConfig({
-    build: {
-      target: 'node',
-      outDir: 'dist',
-      ssr: true,
-      rollupOptions: {
-        input: {
-          main: './src/main.ts',
+export default defineConfig({
+  plugins: [
+    tsconfigPaths(),
+    // esbuild doesn't support a couple of features that nestjs requires, so instead
+    // we use swc. For example, see: https://github.com/nestjs/nest/issues/9228
+    swc.vite({
+      jsc: {
+        parser: {
+          syntax: 'typescript',
+          decorators: true,
+          dynamicImport: true,
         },
-        external: [...builtinModules],
+        transform: {
+          legacyDecorator: true,
+          decoratorMetadata: true,
+        },
+      },
+      sourceMaps: true,
+    }),
+  ],
+  ssr: {
+    target: 'node',
+    noExternal: ['dotenv'],
+  },
+  build: {
+    target: 'node',
+    outDir: 'dist',
+    ssr: true,
+    rollupOptions: {
+      treeshake: {
+        preset: 'smallest',
+      },
+      input: {
+        main: './src/main.ts',
       },
     },
-  }),
-);
+  },
+});

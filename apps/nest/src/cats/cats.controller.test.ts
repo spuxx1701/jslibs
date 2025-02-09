@@ -1,3 +1,4 @@
+import { beforeEach, afterEach, describe, expect, it, vi } from 'vitest';
 import { Supertest, TestContainer } from '@spuxx/nest-testing';
 import { cats } from './cats.data';
 import { AppModule } from '../app.module';

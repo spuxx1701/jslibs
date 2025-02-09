@@ -213,13 +213,12 @@ describe('HttpClientMixin', () => {
       await HttpClient.getJoke();
       expect(errorHandler).toHaveBeenCalled();
       const [error] = errorHandler.mock.lastCall as unknown as [HttpError];
-      expect(error).toEqual(
-        new HttpError({
-          name: 'FetchError',
-          status: 500,
-          message: 'Internal Server Error',
-        }),
-      );
+      expect(error).toBeInstanceOf(HttpError);
+      expect(error).toMatchObject({
+        name: 'FetchError',
+        status: 500,
+        message: 'Internal Server Error',
+      });
     });
 
     it('should include the error payload (fetch)', async () => {
@@ -346,13 +345,12 @@ describe('HttpClientMixin', () => {
       await HttpClient.getJoke();
       expect(errorHandler).toHaveBeenCalled();
       const [error] = errorHandler.mock.lastCall as unknown as [HttpError];
-      expect(error).toEqual(
-        new HttpError({
-          name: 'FetchError',
-          status: 500,
-          message: 'Internal Server Error',
-        }),
-      );
+      expect(error).toBeInstanceOf(HttpError);
+      expect(error).toMatchObject({
+        name: 'AxiosError',
+        status: 500,
+        message: 'Internal Server Error',
+      });
     });
 
     it('should include the error payload (axios)', async () => {
@@ -373,17 +371,16 @@ describe('HttpClientMixin', () => {
       await HttpClient.getJoke();
       expect(errorHandler).toHaveBeenCalled();
       const [error] = errorHandler.mock.lastCall as unknown as [HttpError];
-      expect(error).toEqual(
-        new HttpError({
-          name: 'FetchError',
-          status: 400,
-          message: 'Bad Request',
-          body: {
-            statusCode: 400,
-            message: ['400 is not a valid id'],
-          },
-        }),
-      );
+      expect(error).toBeInstanceOf(HttpError);
+      expect(error).toMatchObject({
+        name: 'AxiosError',
+        status: 400,
+        message: 'Bad Request',
+        body: {
+          statusCode: 400,
+          message: ['400 is not a valid id'],
+        },
+      });
     });
 
     it('should only trigger the error handler that matches the status filter (axios)', async () => {

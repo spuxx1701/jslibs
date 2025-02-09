@@ -20,7 +20,7 @@ export default defineConfig({
         main: resolve(__dirname, 'src/main.ts'),
       },
       name: '@spuxx/js-utils',
-      formats: ['es', 'cjs'],
+      formats: ['es'],
     },
   },
   test: {

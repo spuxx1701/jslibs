@@ -1,10 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import App from './src/App.tsx';
+import App from './src/App';
 import de from './translations/de.yaml';
 import { Intl, Logger } from '@spuxx/js-utils';
 import { Config } from '@spuxx/browser-utils';
-import { appConfig, AppConfig } from './src/config/app.config.ts';
+import { appConfig, AppConfig } from './src/config/app.config';
 
 // Set up `Config`
 Config.setup<AppConfig>({

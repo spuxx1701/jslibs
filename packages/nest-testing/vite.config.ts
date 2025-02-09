@@ -18,7 +18,6 @@ export default defineConfig({
     tsconfigPaths(),
     // esbuild doesn't support a couple of features that nestjs requires, so instead
     // we use swc. For example, see: https://github.com/nestjs/nest/issues/9228
-    // @ts-expect-error ignore
     swc.vite({
       module: { type: 'es6' },
       jsc: {

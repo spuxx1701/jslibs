@@ -40,4 +40,18 @@ export default defineConfig({
       },
     },
   },
+  test: {
+    environment: 'node',
+    silent: true,
+    reporters: ['default', 'junit'],
+    outputFile: 'reports/junit/junit.xml',
+    coverage: {
+      provider: 'v8',
+      all: true,
+      include: ['src/**/*.ts'],
+      exclude: ['src/main.ts', '**/index.ts'],
+      reportsDirectory: 'reports/coverage',
+      reporter: ['text', 'cobertura'],
+    },
+  },
 });

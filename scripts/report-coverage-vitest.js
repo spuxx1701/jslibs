@@ -45,7 +45,7 @@ async function copyCoverageFiles(coverageFiles, targetDir) {
   }
 }
 
-async function mergeCoverage() {
+async function reportCoverage() {
   try {
     const outputDir = path.join(process.cwd(), 'reports', 'vitest', 'coverage');
     await fs.mkdir(outputDir, { recursive: true });
@@ -56,17 +56,6 @@ async function mergeCoverage() {
       console.error('No coverage files found!');
       process.exit(1);
     }
-
-    // const result = spawnSync('nyc', [
-    //   'merge',
-    //   outputDir,
-    //   path.join(outputDir, 'coverage-final.json'),
-    // ]);
-
-    // if (result.error || result.status !== 0) {
-    //   console.error('Error merging coverage:', result.error || result.stderr.toString());
-    //   process.exit(1);
-    // }
 
     const reportResult = spawnSync('nyc', [
       'report',
@@ -85,7 +74,7 @@ async function mergeCoverage() {
       process.exit(1);
     }
 
-    console.log('Coverage reports merged successfully!');
+    console.log('Coverage report generated successfully!');
     console.log(`Output: ${path.join(outputDir, 'cobertura-coverage.xml')}`);
   } catch (error) {
     console.error('Error:', error);
@@ -93,4 +82,4 @@ async function mergeCoverage() {
   }
 }
 
-mergeCoverage();
+reportCoverage();

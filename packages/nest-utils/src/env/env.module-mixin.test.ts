@@ -13,7 +13,7 @@ describe('registration', () => {
   it('should properly load the environment variables and module', async () => {
     vi.stubEnv('SOME_STRING', 'foo');
     const container = await TestContainer.create({
-      imports: [EnvModule],
+      imports: [EnvModule.register()],
     });
     const module = container.module.get<EnvModule>(EnvModule);
     expect(module).toBeDefined();
@@ -23,7 +23,7 @@ describe('registration', () => {
   it('should cache environment variables until load() is called again', async () => {
     vi.stubEnv('SOME_STRING', 'foo');
     const container = await TestContainer.create({
-      imports: [EnvModule],
+      imports: [EnvModule.register()],
     });
     const module = container.module.get<EnvModule>(EnvModule);
     expect(module).toBeDefined();
@@ -36,33 +36,33 @@ describe('registration', () => {
 });
 
 describe('validation', () => {
-  it('should throw an error due to a missing environment variable', () => {
+  it('should throw an error due to a missing environment variable', async () => {
     vi.unstubAllEnvs();
     class Env {
       @IsString()
       SOME_STRING: string;
     }
     class EnvModule extends EnvModuleMixin<Env>(Env) {}
-    expect(
+    expect(() =>
       TestContainer.create({
-        imports: [EnvModule],
+        imports: [EnvModule.register()],
       }),
-    ).rejects.toThrowError(`An instance of Env has failed the validation:
+    ).toThrowError(`An instance of Env has failed the validation:
  - property SOME_STRING has failed the following constraints: isString`);
   });
 
-  it('should throw an error due to a type mismatch', () => {
+  it('should throw an error due to a type mismatch', async () => {
     vi.stubEnv('SOME_BOOLEAN', 'foo');
     class Env {
       @IsBooleanString()
       SOME_BOOLEAN: 'true' | 'false';
     }
     class EnvModule extends EnvModuleMixin<Env>(Env) {}
-    expect(
+    expect(() =>
       TestContainer.create({
-        imports: [EnvModule],
+        imports: [EnvModule.register()],
       }),
-    ).rejects.toThrowError(`An instance of Env has failed the validation:
+    ).toThrowError(`An instance of Env has failed the validation:
  - property SOME_BOOLEAN has failed the following constraints: isBooleanString`);
   });
 
@@ -77,7 +77,7 @@ describe('validation', () => {
     }
     class EnvModule extends EnvModuleMixin<Env>(Env) {}
     await TestContainer.create({
-      imports: [EnvModule],
+      imports: [EnvModule.register()],
     });
     expect(EnvModule.get('SOME_DATE')).toEqual(new Date('2024-08-13T17:34:00Z'));
     expect(EnvModule.get('SOME_NUMBER')).toBe(123);

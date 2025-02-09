@@ -6,7 +6,7 @@ import { authConfig } from './auth/auth.config';
 import { CatsModule } from './cats/cats.module';
 
 @Module({
-  imports: [EnvModule, AuthModule.forRoot(authConfig), MappingModule, CatsModule],
+  imports: [EnvModule.register(), AuthModule.forRoot(authConfig), MappingModule, CatsModule],
   controllers: [AppController],
 })
 export class AppModule {}

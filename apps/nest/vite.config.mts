@@ -43,6 +43,7 @@ export default defineConfig({
   test: {
     environment: 'node',
     silent: true,
+    setupFiles: './tests/vitest.setup.ts',
     reporters: ['default', 'junit'],
     outputFile: 'reports/junit/junit.xml',
     coverage: {

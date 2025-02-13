@@ -1,6 +1,6 @@
 {
   "name": "@spuxx/nest-testing",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "A package containing testing-related utilities for NestJS applications.",
   "license": "MIT",
   "author": {

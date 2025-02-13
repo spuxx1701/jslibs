@@ -1,5 +1,18 @@
 # Changelog
 
+## [3.2.0](https://github.com/spuxx1701/jslibs/compare/nest-utils-v3.1.0...nest-utils-v3.2.0) (2025-02-09)
+
+
+### Features
+
+* **env:** Environment variables are now being cached, improving performance ([6b92a2d](https://github.com/spuxx1701/jslibs/commit/6b92a2dbd509b75b618a2c881614da5970bb24c3))
+* Migrate monorepo to a more isolated structure and force re-releases ([64e48f4](https://github.com/spuxx1701/jslibs/commit/64e48f41cf207a367e19d8750f44ace18615428c))
+
+
+### Bug Fixes
+
+* **env:** Fix an issue with EnvModule's load() and validate() functions not triggering properly ([6180ec5](https://github.com/spuxx1701/jslibs/commit/6180ec5457419cb264ca5a6626042506bd8aa561))
+
 ## [3.1.0](https://github.com/spuxx1701/jslibs/compare/nest-utils-v3.0.0...nest-utils-v3.1.0) (2024-12-16)
 
 

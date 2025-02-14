@@ -26,7 +26,7 @@
 
 ## <a name='Description'></a>Description
 
-`@spuxx/js-utils` contains a selection of common utilities for use in JavaScript and TypeScript projects. The package is esm-only, fully typed and treeshakable.
+`@spuxx/js-utils` contains a selection of common utilities for use in JavaScript and TypeScript projects. The package is esm-only, fully typed and tree-shakable.
 
 ## <a name='UtilityFunctions'></a>Utility Functions
 

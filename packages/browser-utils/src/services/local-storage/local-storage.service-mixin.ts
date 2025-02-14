@@ -5,6 +5,18 @@ import { LocalStorageOptions } from './types';
  * A mixin that provides a standardized and type-safe abstraction of the browser's
  * `localStorage` API.
  * For more information, see: https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage
+ * @example
+ * export interface ILocalStorage {
+ *   foo: string;
+ * }
+ * export class LocalStorage extends LocalStorageMixin<ILocalStorage>({
+ *   key: 'my-application',
+ *   defaultValues: { foo: 'bar' },
+ * }) {}
+ * // Write to local storage
+ * LocalStorage.set('foo', 'baz');
+ * // Read from local storage
+ * const foo = LocalStorage.get('foo');
  */
 export function LocalStorageMixin<TLocalStorage extends object>(
   options: LocalStorageOptions<TLocalStorage>,

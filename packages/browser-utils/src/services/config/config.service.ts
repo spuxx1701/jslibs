@@ -3,7 +3,7 @@ import { ConfigOptions } from './types';
 
 /**
  * `Config` is a service that provides access to the application's configuration.
- * It supports providig a default configuration during setup as well as retrieving
+ * It supports providing a default configuration during setup as well as retrieving
  * configuration values from `VITE_` environment variables and configuration values
  * injected into the global `window` object. It can also check whether the configuration
  * contains all required key-value-pairs at the end of the setup process.

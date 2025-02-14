@@ -9,6 +9,7 @@
 <!-- vscode-markdown-toc -->
 
 - [Description](#Description)
+- [Installation](#Installation)
 - [Utility Functions](#UtilityFunctions)
 - [Utility Types](#UtilityTypes)
 - [Singleton Services](#SingletonServices)
@@ -28,7 +29,7 @@
 
 `@spuxx/js-utils` contains a selection of common utilities for use in JavaScript and TypeScript projects. The package is esm-only, fully typed and tree-shakable.
 
-## Installation
+## <a name='Installation'></a>Installation
 
 Depending on your package manager, run:
 

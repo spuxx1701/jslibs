@@ -28,6 +28,13 @@
 
 `@spuxx/js-utils` contains a selection of common utilities for use in JavaScript and TypeScript projects. The package is esm-only, fully typed and tree-shakable.
 
+## Installation
+
+Depending on your package manager, run:
+
+- `npm install @spuxx/js-utils` (npm)
+- `pnpm install @spuxx/js-utils` (pnpm)
+
 ## <a name='UtilityFunctions'></a>Utility Functions
 
 The package includes a collection of [useful JavaScript functions](/packages/js-utils/src/utils/).

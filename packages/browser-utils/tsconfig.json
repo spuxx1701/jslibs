@@ -1,4 +1,14 @@
 {
-  "extends": "../../tsconfig.bundler.json",
-  "include": ["./src"]
+  "include": ["./src"],
+  "compilerOptions": {
+    "skipLibCheck": true,
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "allowImportingTsExtensions": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noEmit": true,
+    "types": ["vite/client"],
+    "baseUrl": "."
+  }
 }

@@ -7,6 +7,7 @@ import {
   defaultAuthOptions,
   Mapper,
 } from '@spuxx/nest-utils';
+import { describe, expect, it, vi } from 'vitest';
 
 describe('TestContainer', () => {
   @Controller()
@@ -85,6 +86,7 @@ describe('TestContainer', () => {
     class RecursiveModule {}
 
     const bootstrapSpy = vi.spyOn(AuthModule, 'bootstrap');
+    bootstrapSpy.mockClear();
     expect(bootstrapSpy).not.toHaveBeenCalled();
     const container = await TestContainer.create({
       imports: [RecursiveModule],

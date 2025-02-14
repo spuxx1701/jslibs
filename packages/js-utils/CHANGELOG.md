@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.4.0](https://github.com/spuxx1701/jslibs/compare/js-utils-v1.3.0...js-utils-v1.4.0) (2025-02-09)
+
+
+### Features
+
+* Migrate monorepo to a more isolated structure and force re-releases ([64e48f4](https://github.com/spuxx1701/jslibs/commit/64e48f41cf207a367e19d8750f44ace18615428c))
+
 ## [1.3.0](https://github.com/spuxx1701/jslibs/compare/js-utils-v1.2.0...js-utils-v1.3.0) (2024-12-29)
 
 

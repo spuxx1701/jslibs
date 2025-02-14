@@ -1,3 +1,4 @@
+import { describe, beforeEach, it, expect } from 'vitest';
 import { TestContainer } from '@spuxx/nest-testing';
 import { Map } from '../decorators/map.decorator';
 import { Mapper } from './mapper';

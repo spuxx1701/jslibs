@@ -1,3 +1,4 @@
+import { describe, it, expect } from 'vitest';
 import { MAP_METADATA_KEY } from '../mapping.constants';
 import { MapMetadata } from '../types/mapping.private-types';
 import { Map } from './map.decorator';

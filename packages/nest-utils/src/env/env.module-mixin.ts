@@ -1,4 +1,4 @@
-import { Logger, Module } from '@nestjs/common';
+import { DynamicModule, Logger, Module } from '@nestjs/common';
 import { plainToInstance } from 'class-transformer';
 import { validateSync } from 'class-validator';
 import { config } from 'dotenv';
@@ -23,7 +23,7 @@ import { config } from 'dotenv';
  *
  * // app.module.ts
  * ＠Module({
- *   imports: [EnvModule],
+ *   imports: [EnvModule.validate()],
  * })
  * export class AppModule {}
  *
@@ -36,9 +36,12 @@ export function EnvModuleMixin<TEnv extends object>(env: new (...args: unknown[]
   class EnvModule {
     static readonly env: TEnv;
 
-    constructor() {
-      EnvModule.load();
-      EnvModule.validate();
+    static register(): DynamicModule {
+      this.load();
+      this.validate();
+      return {
+        module: this,
+      };
     }
 
     /**
@@ -56,7 +59,8 @@ export function EnvModuleMixin<TEnv extends object>(env: new (...args: unknown[]
     /**
      * Validates the currently stored instance of the environment class.
      */
-    static validate(): void {
+    static validate(): EnvModule {
+      if (!this.env) EnvModule.load();
       const errors = validateSync(this.env, {
         skipMissingProperties: false,
       });
@@ -68,6 +72,7 @@ export function EnvModuleMixin<TEnv extends object>(env: new (...args: unknown[]
         );
         throw new Error(errors.toString());
       }
+      return this;
     }
 
     /**
@@ -76,6 +81,7 @@ export function EnvModuleMixin<TEnv extends object>(env: new (...args: unknown[]
      * @returns The value of the environment variable.
      */
     static get<TKey extends keyof TEnv>(key: TKey): TEnv[TKey] {
+      if (!this.env) EnvModule.load();
       return this.env[key];
     }
   }

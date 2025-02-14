@@ -1,3 +1,4 @@
+import { describe, beforeEach, it, expect } from 'vitest';
 import { Supertest, TestContainer } from '@spuxx/nest-testing';
 import { SessionResource } from '../resources/session.resource';
 import { AuthModule } from '../auth.module';

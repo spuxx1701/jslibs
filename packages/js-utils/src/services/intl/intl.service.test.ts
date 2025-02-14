@@ -72,6 +72,7 @@ test('should translate with variables', () => {
 
 test("should return the prefixed key if the value doesn't exist and warn", () => {
   const warnSpy = vi.spyOn(Logger, 'warn');
+  warnSpy.mockClear();
   expect(intl('non.existant-key')).toBe('miss-loc::non.existant-key');
   expect(warnSpy).toHaveBeenCalledTimes(1);
   expect(warnSpy).toHaveBeenCalledWith(

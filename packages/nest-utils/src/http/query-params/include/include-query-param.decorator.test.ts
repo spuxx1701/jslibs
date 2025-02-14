@@ -1,3 +1,4 @@
+import { describe, it, expect } from 'vitest';
 import { IncludeQueryParam } from './include-query-param.decorator';
 import { ArgumentMetadata, BadRequestException, ValidationPipe } from '@nestjs/common';
 describe('IncludeQueryParam', () => {

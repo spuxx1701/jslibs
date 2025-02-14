@@ -1,4 +1,5 @@
-import { TestContainer } from 'packages/nest-testing/dist/main';
+import { describe, it, expect } from 'vitest';
+import { TestContainer } from '@spuxx/nest-testing';
 import { AuthModule } from './auth.module';
 import { AUTH_OPTIONS_KEY, AuthService, defaultAuthOptions } from '../main';
 

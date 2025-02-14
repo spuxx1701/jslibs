@@ -113,7 +113,6 @@ Make sure to define its value in either the default, Vite or injected config.`,
 
   private _getInjectedConfig(): object | undefined {
     const injectedConfigKey = Config.getOptions().injectedConfigKey ?? 'INJECTED_CONFIG';
-    // @ts-expect-error We're checking if the key exists in the window object.
     const injectedConfig = window[injectedConfigKey];
     if (injectedConfig) {
       debug(`Injected config found: ${JSON.stringify(injectedConfig)}`, 'Config');

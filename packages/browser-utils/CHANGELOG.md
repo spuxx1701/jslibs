@@ -1,5 +1,20 @@
 # Changelog
 
+## [1.4.0](https://github.com/spuxx1701/jslibs/compare/browser-utils-v1.3.0...browser-utils-v1.4.0) (2025-02-09)
+
+
+### Features
+
+* Migrate monorepo to a more isolated structure and force re-releases ([64e48f4](https://github.com/spuxx1701/jslibs/commit/64e48f41cf207a367e19d8750f44ace18615428c))
+* **modal:** Refactored modal dialog and improved styling ([aa5bdd9](https://github.com/spuxx1701/jslibs/commit/aa5bdd93aac610c6cd906d4d6fdb9410474b0087))
+* **styles:** `@spuxx/browser-utils` now includes built-in styles and themes ([4040e55](https://github.com/spuxx1701/jslibs/commit/4040e55a2526512c99aabbf0e38886c72920abb3))
+* **styles:** Added color classes ([aac8136](https://github.com/spuxx1701/jslibs/commit/aac81367c350678bc4e0594f09be5ff67614c544))
+
+
+### Bug Fixes
+
+* **modal:** Fixed modal dialog layout ([9af3ffa](https://github.com/spuxx1701/jslibs/commit/9af3ffaf5eb6b729295addd0332daf1b1a994f06))
+
 ## [1.3.0](https://github.com/spuxx1701/jslibs/compare/browser-utils-v1.2.0...browser-utils-v1.3.0) (2024-12-16)
 
 

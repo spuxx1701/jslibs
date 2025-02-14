@@ -1,4 +1,3 @@
-import { Divider } from '@spuxx/solid';
 import { Component, ParentProps } from 'solid-js';
 
 interface Props extends ParentProps {}

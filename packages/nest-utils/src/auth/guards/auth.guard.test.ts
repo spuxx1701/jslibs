@@ -1,3 +1,4 @@
+import { describe, beforeEach, it, expect } from 'vitest';
 import { AuthGuard } from './auth.guard';
 import { Controller, Get, UseGuards } from '@nestjs/common';
 import { Supertest, TestContainer } from '@spuxx/nest-testing';

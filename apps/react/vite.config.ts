@@ -1,11 +1,11 @@
-import baseConfig from '../../vite.config';
-import { mergeConfig, defineConfig } from 'vite';
+import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 import ViteYaml from '@modyfi/vite-plugin-yaml';
+import tsconfigPaths from 'vite-tsconfig-paths';
 
-export default mergeConfig(
-  baseConfig,
-  defineConfig({
-    plugins: [...baseConfig.plugins!, ViteYaml(), react()],
-  }),
-);
+export default defineConfig({
+  plugins: [ViteYaml(), react(), tsconfigPaths()],
+  build: {
+    target: 'esnext',
+  },
+});

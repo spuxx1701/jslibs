@@ -1,3 +1,4 @@
+import { describe, it, expect } from 'vitest';
 import { plainToInstance } from 'class-transformer';
 import { TransformArrayString } from './array-string.transformer';
 

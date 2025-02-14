@@ -1,7 +1,15 @@
 {
-  "extends": "../../tsconfig.bundler.json",
   "include": ["./src", "main.tsx"],
   "compilerOptions": {
-    "jsx": "react-jsx"
+    "strict": true,
+    "skipLibCheck": true,
+    "target": "ESNext",
+    "module": "ESNext",
+    "moduleResolution": "node",
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "jsx": "react-jsx",
+    "types": ["vite/client", "@modyfi/vite-plugin-yaml/modules"],
+    "baseUrl": "."
   }
 }

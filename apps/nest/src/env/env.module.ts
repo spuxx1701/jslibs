@@ -1,3 +1,4 @@
+import { Module } from '@nestjs/common';
 import { EnvModuleMixin, ApplicationLogLevel } from '@spuxx/nest-utils';
 import { IsIn, IsString, IsUrl } from 'class-validator';
 
@@ -17,5 +18,9 @@ class Env {
 
   @IsString()
   AUTH_CLIENT_SECRET: string;
+
+  @IsString()
+  AUTH_COOKIE_SECRET: string;
 }
+@Module({})
 export class EnvModule extends EnvModuleMixin<Env>(Env) {}

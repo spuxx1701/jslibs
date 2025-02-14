@@ -71,4 +71,5 @@ The [`ServiceMixin`](/packages/js-utils/src/services/mixin/service-mixin.ts) fun
 
 - [About me](https://spuxx.dev/)
 - [Source](https://github.com/spuxx1701/jslibs)
+- [NPM](https://www.npmjs.com/package/@spuxx/js-utils)
 - [Buy me a coffee](https://buymeacoffee.com/spuxx) ☕️

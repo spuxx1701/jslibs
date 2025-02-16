@@ -13,11 +13,11 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/spuxx1701/jslibs"
+    "url": "https://github.com/spuxx-dev/jslibs"
   },
-  "homepage": "https://github.com/spuxx1701/jslibs/blob/main/packages/browser-utils/README.md",
+  "homepage": "https://github.com/spuxx-dev/jslibs/blob/main/packages/browser-utils/README.md",
   "bugs": {
-    "url": "https://github.com/spuxx1701/jslibs/issues"
+    "url": "https://github.com/spuxx-dev/jslibs/issues"
   },
   "type": "module",
   "main": "dist/main.js",

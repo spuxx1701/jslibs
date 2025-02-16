@@ -2,7 +2,7 @@
 
 ## Description
 
-The Storybook application for most of the libraries in the [jslibs](https://github.com/spuxx1701/jslibs) monorepo.
+The Storybook application for most of the libraries in the [jslibs](https://github.com/spuxx-dev/jslibs) monorepo.
 
 ## Usage
 

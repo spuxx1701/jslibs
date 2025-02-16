@@ -10,7 +10,7 @@
     "email": "hi@spuxx.dev",
     "url": "https://spuxx.dev"
   },
-  "homepage": "https://github.com/spuxx1701/jslibs/blob/main/README.md",
+  "homepage": "https://github.com/spuxx-dev/jslibs/blob/main/README.md",
   "packageManager": "pnpm@9.6.0",
   "scripts": {
     "dev": "concurrently \"pnpm dev:js-utils\" \"pnpm dev:browser-utils\" \"pnpm dev:nest-utils\" \"pnpm dev:nest-testing\" \"pnpm dev:app:react\" \"pnpm dev:app:nest\"",

@@ -1,10 +1,10 @@
 # @spuxx/browser-utils
 
-![Main pipeline](https://github.com/spuxx1701/jslibs/actions/workflows/main.yml/badge.svg)
-![Release pipeline](https://github.com/spuxx1701/jslibs/actions/workflows/release_browser_utils.yml/badge.svg)
+![Main pipeline](https://github.com/spuxx-dev/jslibs/actions/workflows/main.yml/badge.svg)
+![Release pipeline](https://github.com/spuxx-dev/jslibs/actions/workflows/release_browser_utils.yml/badge.svg)
 ![npm version](https://img.shields.io/npm/v/%40spuxx%2Fbrowser-utils)
 ![npm bundle size](https://img.shields.io/bundlephobia/min/%40spuxx%2Fbrowser-utils)
-![License](https://img.shields.io/github/license/spuxx1701/jslibs)
+![License](https://img.shields.io/github/license/spuxx-dev/jslibs)
 
 <!-- vscode-markdown-toc -->
 
@@ -92,6 +92,6 @@ html[theme='light'] *,
 ## <a name='Links'></a>Links
 
 - [About me](https://spuxx.dev/)
-- [Source](https://github.com/spuxx1701/jslibs)
+- [Source](https://github.com/spuxx-dev/jslibs)
 - [NPM](https://www.npmjs.com/package/@spuxx/browser-utils)
 - [Buy me a coffee](https://buymeacoffee.com/spuxx) ☕️

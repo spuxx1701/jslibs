@@ -45,6 +45,6 @@
     "nyc": "17.1.0",
     "prettier": "3.3.3",
     "release-please": "16.15.0",
-    "vitest": "3.0.5"
+    "vitest": "2.1.9"
   }
 }

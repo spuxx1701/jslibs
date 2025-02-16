@@ -9,6 +9,7 @@
 <!-- vscode-markdown-toc -->
 
 - [Description](#Description)
+- [Documentation](#Documentation)
 - [Installation](#Installation)
 - [Singleton Services](#SingletonServices)
   - [`Config`](#Config)
@@ -28,6 +29,12 @@
 ## <a name='Description'></a>Description
 
 `@spuxx/browser-utils` contains a selection of common utilities for use in browser applications. The package is esm-only, fully typed and tree-shakable.
+
+## <a name='Documentation'></a>Documentation
+
+Documentation is provided by [`Storybook`](https://storybook.js.org/) and can be found here:
+
+- [Documentation](https://spuxx-dev.github.io/jslibs/?path=/docs/browser-utils-introduction--docs)
 
 ## <a name='Installation'></a>Installation
 
@@ -92,6 +99,7 @@ html[theme='light'] *,
 ## <a name='Links'></a>Links
 
 - [About me](https://spuxx.dev/)
+- [Documentation](https://spuxx-dev.github.io/jslibs/?path=/docs/browser-utils-introduction--docs)
 - [Source](https://github.com/spuxx-dev/jslibs)
 - [NPM](https://www.npmjs.com/package/@spuxx/browser-utils)
 - [Buy me a coffee](https://buymeacoffee.com/spuxx) ☕️

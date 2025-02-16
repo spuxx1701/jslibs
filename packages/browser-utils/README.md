@@ -45,11 +45,11 @@ Depending on your package manager, run:
 
 ## <a name='SingletonServices'></a>Singleton Services
 
-The package includes a couple of singleton services. Those services follow the [Singleton](https://en.wikipedia.org/wiki/Singleton_pattern) design pattern and are built upon [ServiceMixin](/packages/js-utils/src/services/mixin/service-mixin.ts) provided by the [@spuxx/js-utils](https://www.npmjs.com/package/@spuxx/js-utils) package.
+The package includes a couple of singleton services. Those services follow the [Singleton](https://en.wikipedia.org/wiki/Singleton_pattern) design pattern and are built upon [ServiceMixin](https://github.com/spuxx-dev/jslibs/tree/main/packages/js-utils/src/services/mixin/service-mixin.ts) provided by the [@spuxx/js-utils](https://www.npmjs.com/package/@spuxx/js-utils) package.
 
 ### <a name='Config'></a>`Config`
 
-[Config](/packages/browser-utils/src/services/config/config.service.ts) provides a light-weight API to maintain client-side (and possibly environment-dependent) configuration.
+[Config](https://github.com/spuxx-dev/jslibs/tree/main/packages/browser-utils/src/services/config/config.service.ts) provides a light-weight API to maintain client-side (and possibly environment-dependent) configuration.
 
 - Type-safe functions to set up and access configuration
 - Default values
@@ -58,14 +58,14 @@ The package includes a couple of singleton services. Those services follow the [
 
 ### <a name='LocalStorageMixin'></a>`LocalStorageMixin`
 
-[LocalStorageMixin](/packages/browser-utils/src/services/local-storage/local-storage.service-mixin.ts) provides a standardized and easy-to-use API for accessing the browser's [localStorage](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage). It currently supports:
+[LocalStorageMixin](https://github.com/spuxx-dev/jslibs/tree/main/packages/browser-utils/src/services/local-storage/local-storage.service-mixin.ts) provides a standardized and easy-to-use API for accessing the browser's [localStorage](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage). It currently supports:
 
 - Type-safe functions to set up and access `localStorage`
 - Saving multiple values as a single, well-organized JSON
 
 ### <a name='UseAgent'></a>`UseAgent`
 
-[UserAgent](/packages/browser-utils/src/services/user-agent/user-agent.service.ts) provides information about the user-agent.
+[UserAgent](https://github.com/spuxx-dev/jslibs/tree/main/packages/browser-utils/src/services/user-agent/user-agent.service.ts) provides information about the user-agent.
 
 ## <a name='Themes'></a>Themes
 

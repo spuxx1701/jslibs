@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.5.0](https://github.com/spuxx-dev/jslibs/compare/browser-utils-v1.4.0...browser-utils-v1.5.0) (2025-02-16)
+
+
+### Features
+
+* **docs:** Improve documentation ([28c4c0a](https://github.com/spuxx-dev/jslibs/commit/28c4c0a4dd6f9108d4d83a16f96a22e9604a2ea2))
+
 ## [1.4.0](https://github.com/spuxx-dev/jslibs/compare/browser-utils-v1.3.0...browser-utils-v1.4.0) (2025-02-09)
 
 

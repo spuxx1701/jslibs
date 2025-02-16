@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.5.0](https://github.com/spuxx-dev/jslibs/compare/js-utils-v1.4.0...js-utils-v1.5.0) (2025-02-16)
+
+
+### Features
+
+* **docs:** Improve documentation ([4e72f66](https://github.com/spuxx-dev/jslibs/commit/4e72f66b7ee49a49860f3a3b8930eb2aa1ff012b))
+
 ## [1.4.0](https://github.com/spuxx-dev/jslibs/compare/js-utils-v1.3.0...js-utils-v1.4.0) (2025-02-09)
 
 

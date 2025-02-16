@@ -33,3 +33,4 @@ tsconfig.tsbuildinfo
 # Local files
 *.local
 .env
+*storybook.log

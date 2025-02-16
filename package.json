@@ -22,6 +22,7 @@
     "app:solid": "cd apps/solid && pnpm dev",
     "app:react": "cd apps/react && pnpm dev",
     "app:nest": "cd apps/nest && pnpm dev",
+    "build:storybook": "pnpm --filter storybook run build",
     "publish:test": "pnpm -r publish --dry-run --no-git-checks",
     "test": "pnpm -r test",
     "test:vitest": "pnpm -r test:vitest && pnpm coverage:vitest",

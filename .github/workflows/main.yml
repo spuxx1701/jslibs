@@ -25,7 +25,7 @@ jobs:
       PNPM_BUILD: true
 
   run_release_please:
-    name: Run release-please
+    name: Release Please
     uses: spuxx-dev/ci-cd/.github/workflows/pnpm_release-please.yml@v4.0.0
     needs:
     - run_checks

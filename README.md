@@ -10,6 +10,7 @@
 <!-- vscode-markdown-toc -->
 
 - [Description](#Description)
+- [Documentation](#Documentation)
 - [Releases](#Releases)
 - [Links](#Links)
 
@@ -28,7 +29,7 @@ A monorepo containing various libraries for JavaScript, TypeScript, Nest.js and 
 - [@spuxx/nest-utils](https://github.com/spuxx-dev/jslibs/tree/main/packages/nest-utils)
 - [@spuxx/nest-testing](https://github.com/spuxx-dev/jslibs/tree/main/packages/nest-testing)
 
-## Documentation
+## <a name='Documentation'></a>Documentation
 
 Documentation is provided by [Storybook](https://storybook.js.org/) and can be found here:
 

@@ -57,7 +57,7 @@
 
 ### Features
 
-- Added [`deepMerge`](/lib/utils/misc.utils.ts) utility function.
+- Added [deepMerge](/lib/utils/misc.utils.ts) utility function.
 
 ## 0.2.0 (2024-05-07)
 

@@ -14,10 +14,10 @@
 - [Utility Functions](#UtilityFunctions)
 - [Utility Types](#UtilityTypes)
 - [Singleton Services](#SingletonServices)
-  - [`ServiceMixin`](#ServiceMixin)
-  - [`HttpClientMixin`](#HttpClientMixin)
-  - [`Intl`](#Intl)
-  - [`Logger`](#Logger)
+  - [ServiceMixin](#ServiceMixin)
+  - [HttpClientMixin](#HttpClientMixin)
+  - [Intl](#Intl)
+  - [Logger](#Logger)
 - [Links](#Links)
 
 <!-- vscode-markdown-toc-config
@@ -32,7 +32,7 @@
 
 ## <a name='Documentation'></a>Documentation
 
-Documentation is provided by [`Storybook`](https://storybook.js.org/) and can be found here:
+Documentation is provided by [Storybook](https://storybook.js.org/) and can be found here:
 
 - [Documentation](https://spuxx-dev.github.io/jslibs/?path=/docs/js-utils-introduction--docs)
 
@@ -55,11 +55,11 @@ The package also includes a collection of [useful TypeScript types](/packages/js
 
 ### <a name='ServiceMixin'></a>`ServiceMixin`
 
-The [`ServiceMixin`](/packages/js-utils/src/services/mixin/service-mixin.ts) function enables you to easily create and maintain classes that follow the [Singleton](https://en.wikipedia.org/wiki/Singleton_pattern) design pattern. In addition to the mixin, the library includes a couple of specialized singleton classes built upon that same mixin. Those singletons represent easy-to-use abstractions for a couple of common use-cases.
+The [ServiceMixin](/packages/js-utils/src/services/mixin/service-mixin.ts) function enables you to easily create and maintain classes that follow the [Singleton](https://en.wikipedia.org/wiki/Singleton_pattern) design pattern. In addition to the mixin, the library includes a couple of specialized singleton classes built upon that same mixin. Those singletons represent easy-to-use abstractions for a couple of common use-cases.
 
 ### <a name='HttpClientMixin'></a>`HttpClientMixin`
 
-[`HttpClientMixin`](/packages/js-utils/src/services/http-client-mixin/http-client.service-mixin.ts) is a very simple and light-weight approach to data fetching. It currently supports:
+[HttpClientMixin](/packages/js-utils/src/services/http-client-mixin/http-client.service-mixin.ts) is a very simple and light-weight approach to data fetching. It currently supports:
 
 - Defining and implementing endpoints in an entirely type-safe way
 - Data transformation
@@ -67,7 +67,7 @@ The [`ServiceMixin`](/packages/js-utils/src/services/mixin/service-mixin.ts) fun
 
 ### <a name='Intl'></a>`Intl`
 
-[`Intl`](/packages/js-utils/src/services/intl/intl.service.ts) is a very light-weight approach to internationalization. It currently supports:
+[Intl](/packages/js-utils/src/services/intl/intl.service.ts) is a very light-weight approach to internationalization. It currently supports:
 
 - Automatic locale detection
 - Fallback locales
@@ -76,7 +76,7 @@ The [`ServiceMixin`](/packages/js-utils/src/services/mixin/service-mixin.ts) fun
 
 ### <a name='Logger'></a>`Logger`
 
-[`Logger`](/packages/js-utils/src//services/logger/logger.service.ts) is a light-weight service for creating standardized application logs. It is intended for use in environments where large-scale logging solutions are often not required (e.g. small to medium client-side browser applications). It currently supports:
+[Logger](/packages/js-utils/src//services/logger/logger.service.ts) is a light-weight service for creating standardized application logs. It is intended for use in environments where large-scale logging solutions are often not required (e.g. small to medium client-side browser applications). It currently supports:
 
 - A standardized API with stuff like timestamps, message severity or contextualization
 - Log collection

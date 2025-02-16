@@ -12,9 +12,9 @@
 - [Documentation](#Documentation)
 - [Installation](#Installation)
 - [Singleton Services](#SingletonServices)
-  - [`Config`](#Config)
-  - [`LocalStorageMixin`](#LocalStorageMixin)
-  - [`UseAgent`](#UseAgent)
+  - [Config](#Config)
+  - [LocalStorageMixin](#LocalStorageMixin)
+  - [UseAgent](#UseAgent)
 - [Themes](#Themes)
   - [Built-in Themes](#Built-inThemes)
   - [Custom Themes](#CustomThemes)
@@ -32,7 +32,7 @@
 
 ## <a name='Documentation'></a>Documentation
 
-Documentation is provided by [`Storybook`](https://storybook.js.org/) and can be found here:
+Documentation is provided by [Storybook](https://storybook.js.org/) and can be found here:
 
 - [Documentation](https://spuxx-dev.github.io/jslibs/?path=/docs/browser-utils-introduction--docs)
 
@@ -45,27 +45,27 @@ Depending on your package manager, run:
 
 ## <a name='SingletonServices'></a>Singleton Services
 
-The package includes a couple of singleton services. Those services follow the [Singleton](https://en.wikipedia.org/wiki/Singleton_pattern) design pattern and are built upon [`ServiceMixin`](/packages/js-utils/src/services/mixin/service-mixin.ts) provided by the [`@spuxx/js-utils`](https://www.npmjs.com/package/@spuxx/js-utils) package.
+The package includes a couple of singleton services. Those services follow the [Singleton](https://en.wikipedia.org/wiki/Singleton_pattern) design pattern and are built upon [ServiceMixin](/packages/js-utils/src/services/mixin/service-mixin.ts) provided by the [@spuxx/js-utils](https://www.npmjs.com/package/@spuxx/js-utils) package.
 
 ### <a name='Config'></a>`Config`
 
-[`Config`](/packages/browser-utils/src/services/config/config.service.ts) provides a light-weight API to maintain client-side (and possibly environment-dependent) configuration.
+[Config](/packages/browser-utils/src/services/config/config.service.ts) provides a light-weight API to maintain client-side (and possibly environment-dependent) configuration.
 
 - Type-safe functions to set up and access configuration
 - Default values
-- Injecting values at build time via [Vite's `import.meta.env`](https://vite.dev/guide/env-and-mode)
+- Injecting values at build time via [Vite's `import.meta.env](https://vite.dev/guide/env-and-mode)
 - Injecting values at runtime via script injection
 
 ### <a name='LocalStorageMixin'></a>`LocalStorageMixin`
 
-[`LocalStorageMixin`](/packages/browser-utils/src/services/local-storage/local-storage.service-mixin.ts) provides a standardized and easy-to-use API for accessing the browser's [`localStorage`](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage). It currently supports:
+[LocalStorageMixin](/packages/browser-utils/src/services/local-storage/local-storage.service-mixin.ts) provides a standardized and easy-to-use API for accessing the browser's [localStorage](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage). It currently supports:
 
 - Type-safe functions to set up and access `localStorage`
 - Saving multiple values as a single, well-organized JSON
 
 ### <a name='UseAgent'></a>`UseAgent`
 
-[`UserAgent`](/packages/browser-utils/src/services/user-agent/user-agent.service.ts) provides information about the user-agent.
+[UserAgent](/packages/browser-utils/src/services/user-agent/user-agent.service.ts) provides information about the user-agent.
 
 ## <a name='Themes'></a>Themes
 

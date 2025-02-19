@@ -1,3 +1,5 @@
+/// <reference types="vitest/config" />
+/// <reference types="@vitest/browser/matchers" />
 import { defineConfig } from 'vite';
 import solidPlugin from 'vite-plugin-solid';
 import dts from 'vite-plugin-dts';
@@ -27,5 +29,41 @@ export default defineConfig({
     rollupOptions: {
       external: [...Object.keys(peerDependencies)],
     },
+  },
+  test: {
+    watch: false,
+    globals: true,
+    deps: {
+      optimizer: {
+        web: {
+          // Required for @iconify-icon/solid not to break the test build
+          include: ['@iconify-icon/solid'],
+        },
+      },
+    },
+    reporters: ['default', 'junit'],
+    outputFile: 'reports/junit/junit.xml',
+    coverage: {
+      enabled: true,
+      all: true,
+      provider: 'v8',
+      include: ['src/**/*.{ts,tsx}'],
+      exclude: ['src/main.ts', '**/index.ts', '**/*types.ts', '**/*.d.ts'],
+      reportsDirectory: 'reports/vitest/coverage',
+      reporter: ['text', 'json'],
+    },
+    // browser: {
+    //   enabled: false,
+    //   provider: 'playwright',
+    //   // TODO: When we uncomment this, we run into this issue:
+    //   // https://github.com/solidjs/vite-plugin-solid/issues/170
+    //   // instances: [
+    //   // { browser: 'chromium' },
+    //   // TODO: According to vitest, only istanbul supports collecting coverage from
+    //   // multiple browser instances. Do we need to switch to istanbul?
+    //   // { browser: "firefox" },
+    //   // { browser: "webkit" },
+    //   // ],
+    // },
   },
 });

@@ -22,17 +22,13 @@ export default defineConfig({
     target: 'esnext',
     lib: {
       entry: {
-        main: './src/main.ts',
-        modal: './src/modal/index.ts',
+        main: './src/main.ts'
       },
       name: '@spuxx/solid',
       formats: ['es'],
     },
     rollupOptions: {
       external: [/^solid-js($|\/)/, ...Object.keys(peerDependencies)],
-      output: {
-        preserveModules: true,
-      }
     },
   },
   test: {

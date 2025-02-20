@@ -1,7 +1,7 @@
 import { Dynamic } from 'solid-js/web';
 import { Component } from 'solid-js';
 import { ContainerProps } from './container.types';
-import { classNames } from '@spuxx/solid';
+import { classNames } from '@main';
 
 /**
  * A container component. Very flexible and can be used for most layout purposes.

@@ -11,11 +11,12 @@ export default defineConfig({
     solidPlugin(),
     dts({
       include: ['src/**/*'],
-      exclude: ['*.{test,spec}.*'],
-      tsconfigPath: './tsconfig.json',
+      tsconfigPath: './tsconfig.build.json',
       rollupTypes: true,
     }),
-    tsconfigPaths(),
+    tsconfigPaths({
+      configNames: ['tsconfig.build.json']
+    }),
   ],
   build: {
     target: 'esnext',

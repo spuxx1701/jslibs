@@ -1,5 +1,5 @@
 import { BaseColor, ContentColor } from '@spuxx/browser-utils';
-import { ComponentProps } from '@spuxx/solid';
+import { ComponentProps } from '@main';
 
 export interface DividerProps extends ComponentProps<HTMLHRElement> {
   /**

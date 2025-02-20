@@ -1,7 +1,7 @@
 import { JSX, Show, type Component } from 'solid-js';
 import { ButtonProps } from './button.types';
 import { Icon, IconifyIcon } from '@iconify-icon/solid';
-import { classNames } from '@spuxx/solid';
+import { classNames } from '@main';
 
 export const Button: Component<ButtonProps> = (props) => {
   const { variant = 'contained', color = 'primary', rounded, loading } = props;

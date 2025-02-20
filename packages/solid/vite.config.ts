@@ -22,7 +22,7 @@ export default defineConfig({
     target: 'esnext',
     lib: {
       entry: {
-        main: './src/main.ts'
+        main: './src/main.ts',
       },
       name: '@spuxx/solid',
       formats: ['es'],

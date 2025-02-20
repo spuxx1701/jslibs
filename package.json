@@ -46,5 +46,10 @@
     "prettier": "3.3.3",
     "release-please": "16.15.0",
     "vitest": "3.0.5"
+  },
+  "pnpm": {
+    "patchedDependencies": {
+      "vite-plugin-solid@2.11.2": "patches/vite-plugin-solid@2.11.2.patch"
+    }
   }
 }

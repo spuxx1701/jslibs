@@ -1,5 +1,5 @@
 import { BaseColor } from '@spuxx/browser-utils';
-import { ComponentProps } from '@main';
+import { ComponentProps } from '@src/main';
 import { ParentProps } from 'solid-js';
 
 export interface ContainerProps extends ComponentProps<HTMLElement>, ParentProps {

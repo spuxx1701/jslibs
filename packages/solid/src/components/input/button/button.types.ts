@@ -1,7 +1,7 @@
 import { IconifyIcon } from '@iconify-icon/solid';
 import { JSX, ParentProps } from 'solid-js';
 import { BaseColor, ContentColor } from '@spuxx/browser-utils';
-import { ComponentProps } from '@main';
+import { ComponentProps } from '@src/main';
 
 export interface ButtonProps extends ComponentProps<HTMLButtonElement>, ParentProps {
   /**

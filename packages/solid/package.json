@@ -28,8 +28,9 @@
       "types": "./dist/main.d.ts",
       "import": "./dist/main.js"
     },
-    "./styles": {
-      "import": "./dist/main.css"
+    "./modal": {
+      "types": "./dist/modal.d.ts",
+      "import": "./dist/modal.js"
     }
   },
   "files": [
@@ -67,7 +68,8 @@
     "@iconify-icon/solid": "^2.3.0",
     "@spuxx/browser-utils": "workspace:@spuxx/browser-utils@*",
     "@spuxx/js-utils": "^1.3.0",
-    "solid-js": "^1.9.0"
+    "solid-js": "^1.9.0",
+    "@corvu/dialog": "^0.2.4"
   },
   "dependencies": {
     "@corvu/dialog": "0.2.4"

@@ -1,6 +1,6 @@
 import { Component } from 'solid-js';
 import { DividerProps } from './divider.types';
-import { classNames } from '@main';
+import { classNames } from '@src/main';
 
 /**
  * A divider component. Can be used to separate content. Supports vertical orientation.

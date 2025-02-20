@@ -1,6 +1,6 @@
 import { type Component } from 'solid-js';
 import { HeadingProps } from './heading.types';
-import { classNames } from '@main';
+import { classNames } from '@src/main';
 
 export const Heading: Component<HeadingProps> = (props) => {
   const { level } = props;

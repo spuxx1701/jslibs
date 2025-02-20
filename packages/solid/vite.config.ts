@@ -15,7 +15,7 @@ export default defineConfig({
       rollupTypes: true,
     }),
     tsconfigPaths({
-      configNames: ['tsconfig.build.json']
+      configNames: ['tsconfig.build.json'],
     }),
   ],
   build: {
@@ -23,12 +23,16 @@ export default defineConfig({
     lib: {
       entry: {
         main: './src/main.ts',
+        modal: './src/modal/index.ts',
       },
       name: '@spuxx/solid',
       formats: ['es'],
     },
     rollupOptions: {
-      external: [...Object.keys(peerDependencies)],
+      external: [/^solid-js($|\/)/, ...Object.keys(peerDependencies)],
+      output: {
+        preserveModules: true,
+      }
     },
   },
   test: {

@@ -1,4 +1,4 @@
-import { ComponentProps } from '@main';
+import { ComponentProps } from '@src/main';
 import { ParentProps } from 'solid-js';
 
 export interface HeadingProps extends ComponentProps<HTMLHeadingElement>, ParentProps {

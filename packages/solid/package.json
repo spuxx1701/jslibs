@@ -43,7 +43,7 @@
     "build": "vite build",
     "types": "tsc --noEmit",
     "test": "pnpm test:vitest",
-    "test:vitest": "vitest --workspace=vitest.workspace.ts --browser.headless",
+    "test:vitest": "pnpx exec playwright install && vitest --workspace=vitest.workspace.ts --browser.headless",
     "test:vitest:browser": "pnpx exec playwright install && vitest --workspace=vitest.workspace.ts"
   },
   "devDependencies": {

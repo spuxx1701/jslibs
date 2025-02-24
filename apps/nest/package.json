@@ -17,7 +17,7 @@
     "@nestjs/common": "10.4.6",
     "@nestjs/core": "10.4.6",
     "@nestjs/platform-express": "10.4.4",
-    "@nestjs/swagger": "7.4.2",
+    "@nestjs/swagger": "11.0.4",
     "@spuxx/js-utils": "workspace:@spuxx/js-utils@*",
     "@spuxx/nest-utils": "workspace:@spuxx/nest-utils@*",
     "class-transformer": "0.5.1",

@@ -31,9 +31,7 @@ A monorepo containing various libraries for JavaScript, TypeScript, Nest.js and 
 
 ## <a name='Documentation'></a>Documentation
 
-Documentation is provided by [Storybook](https://storybook.js.org/) and can be found here:
-
-- [Documentation](https://spuxx-dev.github.io/jslibs)
+Documentation can be found [here](https://spuxx-dev.github.io/jslibs).
 
 ## <a name='Releases'></a>Releases
 

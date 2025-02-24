@@ -4,9 +4,6 @@ settings:
   autoInstallPeers: true
   excludeLinksFromLockfile: false
 
-overrides:
-  '@storybook/builder-vite': ~8.4.6
-
 patchedDependencies:
   vite-plugin-solid@2.11.2:
     hash: oitsedtwwgeeca6rtim4grm4fq

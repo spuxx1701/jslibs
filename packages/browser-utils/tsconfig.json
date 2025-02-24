@@ -10,8 +10,6 @@
     "noEmit": true,
     "types": ["vite/client"],
     "baseUrl": ".",
-    "paths": {
-      "@storybook/*": ["./*"]
-    }
+    "paths": {}
   }
 }

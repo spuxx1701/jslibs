@@ -34,4 +34,3 @@ tsconfig.tsbuildinfo
 .astro
 *.local
 .env
-*storybook.log

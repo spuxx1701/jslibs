@@ -32,9 +32,7 @@
 
 ## <a name='Documentation'></a>Documentation
 
-Documentation is provided by [Storybook](https://storybook.js.org/) and can be found here:
-
-- [Documentation](https://spuxx-dev.github.io/jslibs/?path=/docs/js-utils-introduction--docs)
+Documentation can be found [here](https://spuxx-dev.github.io/jslibs).
 
 ## <a name='Installation'></a>Installation
 

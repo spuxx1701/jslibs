@@ -31,6 +31,7 @@ pnpm-publish-summary.json
 tsconfig.tsbuildinfo
 
 # Local files
+.astro
 *.local
 .env
 *storybook.log

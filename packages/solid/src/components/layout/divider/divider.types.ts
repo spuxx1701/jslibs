@@ -7,7 +7,6 @@ export interface DividerProps extends ComponentProps<HTMLHRElement> {
    * @default 'text-subtle'
    */
   color?: BaseColor | ContentColor;
-
   /**
    * The variant of the divider.
    * @default 'line'

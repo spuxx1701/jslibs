@@ -24,7 +24,7 @@ html *,
   --spx-color-on-gradient: var(--spx-color-text-highlighted);
 
   /* Status Colors */
-  --spx-color-info: #166534;
+  --spx-color-info: var(--spx-color-surface);
   --spx-color-on-info: var(--spx-color-text-default);
   --spx-color-success: #166534;
   --spx-color-on-success: var(--spx-color-text-default);

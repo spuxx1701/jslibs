@@ -22,6 +22,7 @@
     "app:solid": "cd apps/solid && pnpm dev",
     "app:react": "cd apps/react && pnpm dev",
     "app:nest": "cd apps/nest && pnpm dev",
+    "dev:storybook": "pnpm --filter storybook run dev",
     "build:storybook": "pnpm --filter storybook run build",
     "publish:test": "pnpm -r publish --dry-run --no-git-checks",
     "test": "pnpm -r test",
@@ -50,6 +51,9 @@
   "pnpm": {
     "patchedDependencies": {
       "vite-plugin-solid@2.11.2": "patches/vite-plugin-solid@2.11.2.patch"
+    },
+    "overrides": {
+      "@storybook/builder-vite": "~8.4.6"
     }
   }
 }

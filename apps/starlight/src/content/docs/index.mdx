@@ -1,0 +1,30 @@
+---
+title: '@spuxx/jslibs'
+description: '@spuxx/jslibs is a collection of JavaScript/TypeScript libraries I maintain for my personal web stack.'
+template: splash
+hero:
+  tagline: '@spuxx/jslibs is a collection of JavaScript/TypeScript packages I maintain for my personal web stack. All packages are open-source and MIT licensed.'
+  actions:
+    - text: About me
+      link: https://spuxx.dev
+      icon: rocket
+    - text: View on GitHub
+      link: https://github.com/spuxx-dev/jslibs
+      icon: seti:github
+      variant: minimal
+---
+
+import { CardGrid, Card, LinkCard } from '@astrojs/starlight/components';
+
+## Packages
+
+<CardGrid>
+  <Card title="@spuxx/js-utils" icon="seti:javascript">
+    `@spuxx/js-utils` contains a selection of common utilities for use in JavaScript and TypeScript projects.
+  	<LinkCard title="View Documentation" href="js-utils" link />
+	</Card>
+  <Card title="@spuxx/browser-utils" icon="seti:firefox">
+    `@spuxx/browser-utils` contains a selection of common utilities for use in browser applications.
+  	<LinkCard title="View Documentation" href="browser-utils" link />
+	</Card>
+</CardGrid>

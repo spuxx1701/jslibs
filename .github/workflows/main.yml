@@ -42,6 +42,9 @@ jobs:
     strategy:
       matrix:
         node-version: [22]
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     steps:
     - name: Checkout code
       uses: actions/checkout@v4
@@ -55,9 +58,13 @@ jobs:
         node-version: ${{ matrix.node-version }}
         cache: 'pnpm'
 
-    - uses: bitovi/github-actions-storybook-to-github-pages@v1.0.3
+    - name: Build and deploy
+      uses: withastro/action@v3
       with:
-        install_command: pnpm -r install
-        build_command: pnpm build:storybook
-        path: apps/storybook/dist
-        checkout: false
+        path: ./apps/starlight
+        node-version: 22
+        package-manager: pnpm@latest
+
+    - name: Deploy to GitHub Pages
+      id: deployment
+      uses: actions/deploy-pages@v4

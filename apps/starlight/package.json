@@ -10,14 +10,12 @@
     "preview": "astro preview",
     "check": "astro check"
   },
-  "dependencies": {
+  "devDependencies": {
     "@astrojs/check": "0.9.4",
-    "@astrojs/mdx": "^4.0.8",
-    "@astrojs/solid-js": "5.0.4",
+    "@astrojs/mdx": "4.0.8",
     "@astrojs/starlight": "0.32.1",
     "astro": "5.1.5",
     "sharp": "0.32.5",
-    "solid-js": "1.9.5",
     "typescript": "5.7.3"
   }
 }

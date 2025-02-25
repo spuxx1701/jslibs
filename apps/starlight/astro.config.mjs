@@ -22,8 +22,17 @@ export default defineConfig({
           items: [
             { label: 'Introduction', slug: 'js-utils' },
             {
+              label: 'Types',
+              slug: 'js-utils/types',
+            },
+            {
               label: 'Services',
-              items: [],
+              items: [
+                {
+                  label: 'ServiceMixin',
+                  slug: 'js-utils/services/mixin',
+                },
+              ],
             },
             {
               label: 'Utilities',

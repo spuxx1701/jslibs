@@ -11,13 +11,6 @@
 - [Description](#Description)
 - [Documentation](#Documentation)
 - [Installation](#Installation)
-- [Utility Functions](#UtilityFunctions)
-- [Utility Types](#UtilityTypes)
-- [Singleton Services](#SingletonServices)
-  - [ServiceMixin](#ServiceMixin)
-  - [HttpClientMixin](#HttpClientMixin)
-  - [Intl](#Intl)
-  - [Logger](#Logger)
 - [Links](#Links)
 
 <!-- vscode-markdown-toc-config
@@ -32,7 +25,7 @@
 
 ## <a name='Documentation'></a>Documentation
 
-Documentation can be found [here](https://spuxx-dev.github.io/jslibs).
+Documentation can be found [here](https://spuxx-dev.github.io/jslibs/js-utils).
 
 ## <a name='Installation'></a>Installation
 
@@ -41,49 +34,10 @@ Depending on your package manager, run:
 - `npm install @spuxx/js-utils` (npm)
 - `pnpm install @spuxx/js-utils` (pnpm)
 
-## <a name='UtilityFunctions'></a>Utility Functions
-
-The package includes a collection of [useful JavaScript functions](https://github.com/spuxx-dev/jslibs/tree/main/packages/js-utils/src/utils/).
-
-## <a name='UtilityTypes'></a>Utility Types
-
-The package also includes a collection of [useful TypeScript types](https://github.com/spuxx-dev/jslibs/tree/main/packages/js-utils/src/types/public/).
-
-## <a name='SingletonServices'></a>Singleton Services
-
-### <a name='ServiceMixin'></a>`ServiceMixin`
-
-The [ServiceMixin](https://github.com/spuxx-dev/jslibs/tree/main/packages/js-utils/src/services/mixin/service-mixin.ts) function enables you to easily create and maintain classes that follow the [Singleton](https://en.wikipedia.org/wiki/Singleton_pattern) design pattern. In addition to the mixin, the library includes a couple of specialized singleton classes built upon that same mixin. Those singletons represent easy-to-use abstractions for a couple of common use-cases.
-
-### <a name='HttpClientMixin'></a>`HttpClientMixin`
-
-[HttpClientMixin](https://github.com/spuxx-dev/jslibs/tree/main/packages/js-utils/src/services/http-client-mixin/http-client.service-mixin.ts) is a very simple and light-weight approach to data fetching. It currently supports:
-
-- Defining and implementing endpoints in an entirely type-safe way
-- Data transformation
-- Standardized error handling on the global, per-endpoint and per-request level
-
-### <a name='Intl'></a>`Intl`
-
-[Intl](https://github.com/spuxx-dev/jslibs/tree/main/packages/js-utils/src/services/intl/intl.service.ts) is a very light-weight approach to internationalization. It currently supports:
-
-- Automatic locale detection
-- Fallback locales
-- Dictionary (or translation) files
-- Variables
-
-### <a name='Logger'></a>`Logger`
-
-[Logger](https://github.com/spuxx-dev/jslibs/tree/main/packages/js-utils/src//services/logger/logger.service.ts) is a light-weight service for creating standardized application logs. It is intended for use in environments where large-scale logging solutions are often not required (e.g. small to medium client-side browser applications). It currently supports:
-
-- A standardized API with stuff like timestamps, message severity or contextualization
-- Log collection
-- Outputting to `console`
-
 ## <a name='Links'></a>Links
 
 - [About me](https://spuxx.dev/)
-- [Documentation](https://spuxx-dev.github.io/jslibs/?path=/docs/js-utils-introduction--docs)
+- [Documentation](https://spuxx-dev.github.io/jslibs/js-utils)
 - [Source](https://github.com/spuxx-dev/jslibs)
 - [NPM](https://www.npmjs.com/package/@spuxx/js-utils)
 - [Buy me a coffee](https://buymeacoffee.com/spuxx) ☕️

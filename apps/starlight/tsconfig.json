@@ -5,7 +5,9 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "@packages/*": ["../../packages/*"]
+      "@src/*": ["src/*"],
+      "@packages/*": ["../../packages/*"],
+      "@docs/*": ["../../typedoc/output/*"]
     },
     "jsx": "preserve",
     "jsxImportSource": "solid-js"

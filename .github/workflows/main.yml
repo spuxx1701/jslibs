@@ -58,6 +58,12 @@ jobs:
         node-version: ${{ matrix.node-version }}
         cache: 'pnpm'
 
+    - name: Install dependencies
+      run: pnpm install
+
+    - name: Generate docs
+      run: pnpm run docs:generate
+
     - name: Build and deploy
       uses: withastro/action@v3
       with:

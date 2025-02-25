@@ -1,13 +1,24 @@
 /* eslint-disable @typescript-eslint/ban-types */
 /**
  * A type that extracts the optional properties from another type.
+ * @typeParam T The type to extract optional properties from.
+ * @example
+ * interface MyInterface {
+ *   foo: string;
+ *   bar?: string;
+ * }
+ * type Opt = OptionalProperties<MyInterface>; // { bar?: string; }
  */
 export type OptionalProperties<T> = {
-  [K in keyof T as T[K] extends Required<T>[K] ? never : K]: T[K];
+  [K in keyof T as {} extends { [P in K]: T[K] } ? K : never]: T[K];
 };
 
 /**
  * A type that represents a class constructor.
+ * @typeParam T The class.
+ * @example
+ * class MyClass {}
+ * type MyConstructor = Constructor<MyClass>;
  */
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export type Constructor<T = any> = new (...args: any[]) => T;

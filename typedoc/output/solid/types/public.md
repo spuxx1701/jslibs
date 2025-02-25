@@ -1,5 +1,3 @@
-
-
 ## Interfaces
 
 ### ComponentProps\<TElement\>

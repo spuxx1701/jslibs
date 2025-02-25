@@ -1,5 +1,3 @@
-
-
 ## Type Aliases
 
 ### BaseColor

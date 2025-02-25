@@ -1,5 +1,3 @@
-
-
 ## Interfaces
 
 ### LocalStorageOptions\<TLocalStorage\>

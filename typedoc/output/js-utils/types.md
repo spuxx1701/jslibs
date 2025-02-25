@@ -1,5 +1,3 @@
-
-
 ## Type Aliases
 
 ### Constructor()\<T\>

@@ -1,10 +1,8 @@
-export interface IService {
-  get instance(): IService;
-}
-
 /**
- * Extending `ServiceMixin` will turn the inheriting class into a singleton object.
- *
+ * Extending `ServiceMixin` will turn the inheriting class into a singleton class.
+ * @see https://en.wikipedia.org/wiki/Singleton_pattern
+ * @typeParam TService - The type of the service.
+ * @returns A parent class that turns the inheriting class into a singleton class.
  * @example
  * class MyService extends ServiceMixin<MyService>() {
  *   // ...

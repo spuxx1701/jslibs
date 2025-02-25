@@ -30,21 +30,20 @@
     "types": "pnpm -r types",
     "lint": "eslint . --ext ts,tsx",
     "prettier-check": "prettier --check .",
-    "format": "prettier --write ."
+    "format": "prettier --write .",
+    "docs:generate": "cd typedoc && node generate.js"
   },
   "devDependencies": {
     "@nestjs/cli": "10.4.2",
     "@typescript-eslint/eslint-plugin": "7.18.0",
     "@typescript-eslint/parser": "7.18.0",
-    "@vitest/coverage-v8": "3.0.5",
     "concurrently": "9.0.1",
     "eslint": "8.57.0",
     "eslint-config-prettier": "10.0.1",
     "eslint-plugin-prettier": "5.2.3",
     "nyc": "17.1.0",
     "prettier": "3.3.3",
-    "release-please": "16.15.0",
-    "vitest": "3.0.5"
+    "release-please": "16.15.0"
   },
   "pnpm": {
     "patchedDependencies": {

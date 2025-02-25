@@ -1,0 +1,18 @@
+{
+  "$schema": "https://typedoc.org/schema.json",
+  "tsconfig": "./tsconfig.typedoc.json",
+  "skipErrorChecking": true,
+  "cleanOutputDir": false,
+  "excludeNotDocumented": false,
+  "plugin": ["typedoc-plugin-markdown", "./custom.plugin.js"],
+  "githubPages": false,
+  "hidePageHeader": true,
+  "outputFileStrategy": "modules",
+  "readme": "none",
+  "formatWithPrettier": true,
+  "prettierConfigFile": "../prettierrc.cjs",
+  "pageTitleTemplates": {
+    // Mark this for easier removal in
+    "index": "HEADER",
+  },
+}

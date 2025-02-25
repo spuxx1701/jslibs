@@ -202,6 +202,9 @@ importers:
       '@astrojs/mdx':
         specifier: 4.0.8
         version: 4.0.8(astro@5.1.5(@types/node@22.5.2)(jiti@1.21.7)(rollup@4.34.6)(terser@5.31.3)(typescript@5.7.3)(yaml@2.7.0))
+      '@astrojs/solid-js':
+        specifier: ^5.0.4
+        version: 5.0.4(@testing-library/jest-dom@6.6.3)(@types/node@22.5.2)(jiti@1.21.7)(solid-js@1.9.3)(terser@5.31.3)(yaml@2.7.0)
       '@astrojs/starlight':
         specifier: 0.32.1
         version: 0.32.1(astro@5.1.5(@types/node@22.5.2)(jiti@1.21.7)(rollup@4.34.6)(terser@5.31.3)(typescript@5.7.3)(yaml@2.7.0))
@@ -211,9 +214,15 @@ importers:
       sharp:
         specifier: 0.32.5
         version: 0.32.5
+      solid-js:
+        specifier: 1.9.3
+        version: 1.9.3
       typescript:
         specifier: 5.7.3
         version: 5.7.3
+      vite-plugin-solid:
+        specifier: ^2.11.2
+        version: 2.11.2(patch_hash=oitsedtwwgeeca6rtim4grm4fq)(@testing-library/jest-dom@6.6.3)(solid-js@1.9.3)(vite@6.1.0(@types/node@22.5.2)(jiti@1.21.7)(terser@5.31.3)(yaml@2.7.0))
 
   packages/browser-utils:
     dependencies:
@@ -538,6 +547,16 @@ packages:
 
   '@astrojs/sitemap@3.2.1':
     resolution: {integrity: sha512-uxMfO8f7pALq0ADL6Lk68UV6dNYjJ2xGUzyjjVj60JLBs5a6smtlkBYv3tQ0DzoqwS7c9n4FUx5lgv0yPo/fgA==}
+
+  '@astrojs/solid-js@5.0.4':
+    resolution: {integrity: sha512-UoSyxNoFEv/nYd945lpzpAaO9IN4c3GOmbd+eTuOeXXwpU6hcomZwbDIKdeh/hNUfDYGqpTUIkKJDP8b4pl7ww==}
+    engines: {node: ^18.17.1 || ^20.3.0 || >=22.0.0}
+    peerDependencies:
+      solid-devtools: ^0.30.1
+      solid-js: ^1.8.5
+    peerDependenciesMeta:
+      solid-devtools:
+        optional: true
 
   '@astrojs/starlight@0.32.1':
     resolution: {integrity: sha512-+GPtDzi7wkbooHnMZqGjCoV0qwkYZAFSg3FhRm8jSXXSkLJcw4rgT6vnee/LuJhbVq9kvHVcevtgK8tTxy3Xeg==}
@@ -7513,6 +7532,26 @@ snapshots:
       sitemap: 8.0.0
       stream-replace-string: 2.0.0
       zod: 3.24.2
+
+  '@astrojs/solid-js@5.0.4(@testing-library/jest-dom@6.6.3)(@types/node@22.5.2)(jiti@1.21.7)(solid-js@1.9.3)(terser@5.31.3)(yaml@2.7.0)':
+    dependencies:
+      solid-js: 1.9.3
+      vite: 6.1.0(@types/node@22.5.2)(jiti@1.21.7)(terser@5.31.3)(yaml@2.7.0)
+      vite-plugin-solid: 2.11.2(patch_hash=oitsedtwwgeeca6rtim4grm4fq)(@testing-library/jest-dom@6.6.3)(solid-js@1.9.3)(vite@6.1.0(@types/node@22.5.2)(jiti@1.21.7)(terser@5.31.3)(yaml@2.7.0))
+    transitivePeerDependencies:
+      - '@testing-library/jest-dom'
+      - '@types/node'
+      - jiti
+      - less
+      - lightningcss
+      - sass
+      - sass-embedded
+      - stylus
+      - sugarss
+      - supports-color
+      - terser
+      - tsx
+      - yaml
 
   '@astrojs/starlight@0.32.1(astro@5.1.5(@types/node@22.5.2)(jiti@1.21.7)(rollup@4.34.6)(terser@5.31.3)(typescript@5.7.3)(yaml@2.7.0))':
     dependencies:

@@ -2,8 +2,6 @@
 import { defineConfig } from 'astro/config';
 import starlight from '@astrojs/starlight';
 
-import solidJs from '@astrojs/solid-js';
-
 // https://astro.build/config
 export default defineConfig({
   base: '/jslibs/',
@@ -51,6 +49,5 @@ export default defineConfig({
         },
       ],
     }),
-    solidJs(),
   ],
 });

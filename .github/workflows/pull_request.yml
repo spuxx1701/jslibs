@@ -12,13 +12,13 @@ permissions:
 jobs:
   run_checks:
     name: Run code checks
-    uses: spuxx-dev/ci-cd/.github/workflows/pnpm_run_checks.yml@v4.0.0
+    uses: spuxx-dev/ci-cd/.github/workflows/pnpm_run_checks.yml@v4.1.0
     with:
       PREPARE: pnpm -r --filter './packages/**' build
 
   run_unit_tests:
     name: Run tests (vitest)
-    uses: spuxx-dev/ci-cd/.github/workflows/pnpm_run_tests_vitest.yml@v4.0.0
+    uses: spuxx-dev/ci-cd/.github/workflows/pnpm_run_tests_vitest.yml@v4.1.0
     with:
       PREPARE: pnpm -r --filter './packages/**' build
 

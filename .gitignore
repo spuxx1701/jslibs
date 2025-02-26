@@ -29,6 +29,7 @@ pnpm-publish-summary.json
 **/dist/
 *.tgz
 tsconfig.tsbuildinfo
+typedoc/output
 
 # Local files
 .astro

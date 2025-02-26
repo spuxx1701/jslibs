@@ -35,7 +35,7 @@
     "docs:generate": "cd typedoc && node generate.js && cd .. && prettier --write ./typedoc/output"
   },
   "devDependencies": {
-    "@nestjs/cli": "10.4.2",
+    "@nestjs/cli": "11.0.4",
     "@typescript-eslint/eslint-plugin": "7.18.0",
     "@typescript-eslint/parser": "7.18.0",
     "concurrently": "9.0.1",

@@ -11,8 +11,17 @@ interface SetupOptions {
   fallbackLocale: string;
 }
 /**
- * `Intl` is a sigleton that provides i18n-related functionalities.
- * Instead of using it directly, you may also simply use the `intl()` function.
+ * The `Intl` service provides i18n-related functionalities.
+ * @see {@link https://github.com/Modyfi/vite-plugin-yaml|vite-plugin-yaml}
+ * @example
+ * import { Intl } from '@spuxx/js-utils';
+ * import de from './translations/de.yml';
+ *
+ * Intl.setup({
+ *   dictionaries: [{ locale: 'de', values: de }],
+ *   fallbackLocale: 'de'
+ * });
+ * Intl.translate('foo');
  */
 export class Intl extends ServiceMixin<Intl>() {
   private _fallbackLocale?: string;
@@ -21,10 +30,9 @@ export class Intl extends ServiceMixin<Intl>() {
   private _currentDictionary?: Dictionary;
   /**
    * Sets up `Intl` with the given options. Needs to be called at application startup.
+   * @see {@link https://github.com/Modyfi/vite-plugin-yaml|vite-plugin-yaml}
    * @param {SetupOptions} options The options to use.
    * @example
-   * // Using '@modyfi/vite-plugin-yaml' to import yaml files like modules
-   * // See: https://github.com/Modyfi/vite-plugin-yaml
    * import { Intl } from '@spuxx/js-utils';
    * import de from './translations/de.yml';
    *
@@ -97,13 +105,12 @@ given list of dictionaries.',
    * @returns {string} The translated value.
    * @example
    * // Using the service directly:
-   * Intl.translate('foo');
+   * console.log(Intl.translate('foo'));
    * // Or using the shorthand:
-   * intl('foo');
+   * console.log(intl('foo'));
    *
    * // Using variables:
-   * Intl.translate('foo', { bar: 'baz' });
-   * // foo: 'Hello {bar}' -> 'Hello baz'
+   * console.log(Intl.translate('foo', { bar: 'baz' })); // 'Hello {bar}' -> 'Hello baz'
    */
   static translate(key: string, vars?: Record<string, string>) {
     let translation = this.instance.getDictionaryValue(

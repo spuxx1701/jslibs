@@ -22,6 +22,7 @@
     "app:solid": "cd apps/solid && pnpm dev",
     "app:react": "cd apps/react && pnpm dev",
     "app:nest": "cd apps/nest && pnpm dev",
+    "app:starlight": "cd apps/starlight && pnpm dev",
     "publish:test": "pnpm -r publish --dry-run --no-git-checks",
     "test": "pnpm -r test",
     "test:vitest": "pnpm -r test:vitest && pnpm coverage:vitest",
@@ -31,7 +32,7 @@
     "lint": "eslint . --ext ts,tsx",
     "prettier-check": "prettier --check .",
     "format": "prettier --write .",
-    "docs:generate": "cd typedoc && node generate.js"
+    "docs:generate": "cd typedoc && node generate.js && cd .. && prettier --write ./typedoc/output"
   },
   "devDependencies": {
     "@nestjs/cli": "10.4.2",

@@ -2,7 +2,7 @@
 
 ### Mapper
 
-Defined in: [services/mapper.ts:11](https://github.com/spuxx1701/jslibs/blob/1a7e07eeae1e7166b7fbfc153430c6402621f270/packages/nest-utils/src/mapping/services/mapper.ts#L11)
+Defined in: [services/mapper.ts:11](https://github.com/spuxx1701/jslibs/blob/9e75110cf9e60ac27454c04289fa45add1887a86/packages/nest-utils/src/mapping/services/mapper.ts#L11)
 
 Provides mapping functionality for objects.
 
@@ -22,7 +22,7 @@ Provides mapping functionality for objects.
 
 > **map**\<`TSource`, `TTarget`\>(`source`, `sourceClass`, `targetClass`): `TTarget`
 
-Defined in: [services/mapper.ts:36](https://github.com/spuxx1701/jslibs/blob/1a7e07eeae1e7166b7fbfc153430c6402621f270/packages/nest-utils/src/mapping/services/mapper.ts#L36)
+Defined in: [services/mapper.ts:36](https://github.com/spuxx1701/jslibs/blob/9e75110cf9e60ac27454c04289fa45add1887a86/packages/nest-utils/src/mapping/services/mapper.ts#L36)
 
 Maps properties from source to target based on the
 
@@ -91,7 +91,7 @@ console.log(target.targetProperty); // Outputs: 'bar'
 
 ### MappingModule
 
-Defined in: [mapping.module.ts:13](https://github.com/spuxx1701/jslibs/blob/1a7e07eeae1e7166b7fbfc153430c6402621f270/packages/nest-utils/src/mapping/mapping.module.ts#L13)
+Defined in: [mapping.module.ts:13](https://github.com/spuxx1701/jslibs/blob/9e75110cf9e60ac27454c04289fa45add1887a86/packages/nest-utils/src/mapping/mapping.module.ts#L13)
 
 This module provides mapping capabilities through the `@Map()` decorator and `Mapper` provider.
 As a global module, it should be imported once in the root module of your application.
@@ -110,7 +110,7 @@ As a global module, it should be imported once in the root module of your applic
 
 ### MapOptions
 
-Defined in: [types/mapping.public-types.ts:1](https://github.com/spuxx1701/jslibs/blob/1a7e07eeae1e7166b7fbfc153430c6402621f270/packages/nest-utils/src/mapping/types/mapping.public-types.ts#L1)
+Defined in: [types/mapping.public-types.ts:1](https://github.com/spuxx1701/jslibs/blob/9e75110cf9e60ac27454c04289fa45add1887a86/packages/nest-utils/src/mapping/types/mapping.public-types.ts#L1)
 
 #### Properties
 
@@ -118,7 +118,7 @@ Defined in: [types/mapping.public-types.ts:1](https://github.com/spuxx1701/jslib
 
 > `optional` **preserveUndefined**: `boolean`
 
-Defined in: [types/mapping.public-types.ts:10](https://github.com/spuxx1701/jslibs/blob/1a7e07eeae1e7166b7fbfc153430c6402621f270/packages/nest-utils/src/mapping/types/mapping.public-types.ts#L10)
+Defined in: [types/mapping.public-types.ts:10](https://github.com/spuxx1701/jslibs/blob/9e75110cf9e60ac27454c04289fa45add1887a86/packages/nest-utils/src/mapping/types/mapping.public-types.ts#L10)
 
 Whether to preserve undefined values in the source object. Defaults to false.
 
@@ -126,7 +126,7 @@ Whether to preserve undefined values in the source object. Defaults to false.
 
 > `optional` **targetKey**: `string`
 
-Defined in: [types/mapping.public-types.ts:6](https://github.com/spuxx1701/jslibs/blob/1a7e07eeae1e7166b7fbfc153430c6402621f270/packages/nest-utils/src/mapping/types/mapping.public-types.ts#L6)
+Defined in: [types/mapping.public-types.ts:6](https://github.com/spuxx1701/jslibs/blob/9e75110cf9e60ac27454c04289fa45add1887a86/packages/nest-utils/src/mapping/types/mapping.public-types.ts#L6)
 
 The key of the property in the target object. Defaults to the name of the property
 in the source object, but can be overridden to map to a different property name.
@@ -137,7 +137,7 @@ in the source object, but can be overridden to map to a different property name.
 
 > `const` **MAP_METADATA_KEY**: `"map"` = `'map'`
 
-Defined in: [mapping.constants.ts:4](https://github.com/spuxx1701/jslibs/blob/1a7e07eeae1e7166b7fbfc153430c6402621f270/packages/nest-utils/src/mapping/mapping.constants.ts#L4)
+Defined in: [mapping.constants.ts:4](https://github.com/spuxx1701/jslibs/blob/9e75110cf9e60ac27454c04289fa45add1887a86/packages/nest-utils/src/mapping/mapping.constants.ts#L4)
 
 The key used to store the map metadata.
 
@@ -147,7 +147,7 @@ The key used to store the map metadata.
 
 > **Map**(`options`): (`target`, `propertyKey`) => `void`
 
-Defined in: [decorators/map.decorator.ts:26](https://github.com/spuxx1701/jslibs/blob/1a7e07eeae1e7166b7fbfc153430c6402621f270/packages/nest-utils/src/mapping/decorators/map.decorator.ts#L26)
+Defined in: [decorators/map.decorator.ts:26](https://github.com/spuxx1701/jslibs/blob/9e75110cf9e60ac27454c04289fa45add1887a86/packages/nest-utils/src/mapping/decorators/map.decorator.ts#L26)
 
 Used to decorator class properties that should be mapped to the target object when calling
 `mapper.map()`.

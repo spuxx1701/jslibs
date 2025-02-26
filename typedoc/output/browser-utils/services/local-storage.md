@@ -2,7 +2,7 @@
 
 ### LocalStorageOptions\<TLocalStorage\>
 
-Defined in: [types.ts:1](https://github.com/spuxx1701/jslibs/blob/1a7e07eeae1e7166b7fbfc153430c6402621f270/packages/browser-utils/src/services/local-storage/types.ts#L1)
+Defined in: [types.ts:1](https://github.com/spuxx1701/jslibs/blob/9e75110cf9e60ac27454c04289fa45add1887a86/packages/browser-utils/src/services/local-storage/types.ts#L1)
 
 #### Type Parameters
 
@@ -14,13 +14,13 @@ Defined in: [types.ts:1](https://github.com/spuxx1701/jslibs/blob/1a7e07eeae1e71
 
 > **defaultValues**: `TLocalStorage`
 
-Defined in: [types.ts:3](https://github.com/spuxx1701/jslibs/blob/1a7e07eeae1e7166b7fbfc153430c6402621f270/packages/browser-utils/src/services/local-storage/types.ts#L3)
+Defined in: [types.ts:3](https://github.com/spuxx1701/jslibs/blob/9e75110cf9e60ac27454c04289fa45add1887a86/packages/browser-utils/src/services/local-storage/types.ts#L3)
 
 ##### key
 
 > **key**: `string`
 
-Defined in: [types.ts:2](https://github.com/spuxx1701/jslibs/blob/1a7e07eeae1e7166b7fbfc153430c6402621f270/packages/browser-utils/src/services/local-storage/types.ts#L2)
+Defined in: [types.ts:2](https://github.com/spuxx1701/jslibs/blob/9e75110cf9e60ac27454c04289fa45add1887a86/packages/browser-utils/src/services/local-storage/types.ts#L2)
 
 ## Functions
 
@@ -28,7 +28,7 @@ Defined in: [types.ts:2](https://github.com/spuxx1701/jslibs/blob/1a7e07eeae1e71
 
 > **LocalStorageMixin**\<`TLocalStorage`\>(`options`): _typeof_ `LocalStorage`
 
-Defined in: [local-storage.service-mixin.ts:21](https://github.com/spuxx1701/jslibs/blob/1a7e07eeae1e7166b7fbfc153430c6402621f270/packages/browser-utils/src/services/local-storage/local-storage.service-mixin.ts#L21)
+Defined in: [local-storage.service-mixin.ts:21](https://github.com/spuxx1701/jslibs/blob/9e75110cf9e60ac27454c04289fa45add1887a86/packages/browser-utils/src/services/local-storage/local-storage.service-mixin.ts#L21)
 
 A mixin that provides a standardized and type-safe abstraction of the browser's
 `localStorage` API.

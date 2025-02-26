@@ -4,7 +4,7 @@
 
 > **deepMerge**(...`sources`): `RecursiveObject`
 
-Defined in: [misc.utils.ts:69](https://github.com/spuxx1701/jslibs/blob/1a7e07eeae1e7166b7fbfc153430c6402621f270/packages/js-utils/src/utils/misc/misc.utils.ts#L69)
+Defined in: [misc.utils.ts:69](https://github.com/spuxx1701/jslibs/blob/9e75110cf9e60ac27454c04289fa45add1887a86/packages/js-utils/src/utils/misc/misc.utils.ts#L69)
 
 Recursively merges properties of source objects into the target object.
 If a property is an object, it will be merged rather than replaced.
@@ -39,7 +39,7 @@ console.log(merged); // { a: 1, b: { c: 2, d: 3 }, e: 4 }
 
 > **isEmptyArray**(`array`): `boolean`
 
-Defined in: [misc.utils.ts:47](https://github.com/spuxx1701/jslibs/blob/1a7e07eeae1e7166b7fbfc153430c6402621f270/packages/js-utils/src/utils/misc/misc.utils.ts#L47)
+Defined in: [misc.utils.ts:47](https://github.com/spuxx1701/jslibs/blob/9e75110cf9e60ac27454c04289fa45add1887a86/packages/js-utils/src/utils/misc/misc.utils.ts#L47)
 
 Returns true if the given array is null, undefined or empty.
 
@@ -72,7 +72,7 @@ isEmptyArray([1, 2, 3]); // false
 
 > **isEmptyOrWhitespace**(`value`): `boolean`
 
-Defined in: [misc.utils.ts:27](https://github.com/spuxx1701/jslibs/blob/1a7e07eeae1e7166b7fbfc153430c6402621f270/packages/js-utils/src/utils/misc/misc.utils.ts#L27)
+Defined in: [misc.utils.ts:27](https://github.com/spuxx1701/jslibs/blob/9e75110cf9e60ac27454c04289fa45add1887a86/packages/js-utils/src/utils/misc/misc.utils.ts#L27)
 
 Checks whether the given value is null, undefined or a string that contains only whitespace characters.
 
@@ -110,7 +110,7 @@ isEmptyOrWhitespace(false); // false
 
 > **sleep**(`ms`): `Promise`\<`void`\>
 
-Defined in: [misc.utils.ts:8](https://github.com/spuxx1701/jslibs/blob/1a7e07eeae1e7166b7fbfc153430c6402621f270/packages/js-utils/src/utils/misc/misc.utils.ts#L8)
+Defined in: [misc.utils.ts:8](https://github.com/spuxx1701/jslibs/blob/9e75110cf9e60ac27454c04289fa45add1887a86/packages/js-utils/src/utils/misc/misc.utils.ts#L8)
 
 Returns a promise that resolves after the given amount of milliseconds.
 

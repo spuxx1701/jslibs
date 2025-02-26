@@ -25,21 +25,11 @@ export default defineConfig({
             },
             {
               label: 'Services',
-              items: [
-                {
-                  label: 'ServiceMixin',
-                  slug: 'js-utils/services/mixin',
-                },
-              ],
+              autogenerate: { directory: 'js-utils/services' },
             },
             {
               label: 'Utilities',
-              items: [
-                {
-                  label: 'Miscellaneous',
-                  slug: 'js-utils/utils/misc',
-                },
-              ],
+              autogenerate: { directory: 'js-utils/utils' },
             },
           ],
         },

@@ -2,7 +2,7 @@
 
 ### TestContainer
 
-Defined in: [test-container.ts:32](https://github.com/spuxx1701/jslibs/blob/1a7e07eeae1e7166b7fbfc153430c6402621f270/packages/nest-testing/src/container/test-container.ts#L32)
+Defined in: [test-container.ts:32](https://github.com/spuxx1701/jslibs/blob/9e75110cf9e60ac27454c04289fa45add1887a86/packages/nest-testing/src/container/test-container.ts#L32)
 
 `TestContainer` provides an abstraction of `Nest.createTestContainer()`, offering
 a custom API for easier handling and use. For more information on testing in NestJS,
@@ -34,7 +34,7 @@ const { supertest } = container;
 
 > `optional` **app**: `INestApplication`
 
-Defined in: [test-container.ts:42](https://github.com/spuxx1701/jslibs/blob/1a7e07eeae1e7166b7fbfc153430c6402621f270/packages/nest-testing/src/container/test-container.ts#L42)
+Defined in: [test-container.ts:42](https://github.com/spuxx1701/jslibs/blob/9e75110cf9e60ac27454c04289fa45add1887a86/packages/nest-testing/src/container/test-container.ts#L42)
 
 The Nest application created by `NestFactory.create()`. This will only be defined if
 `enableEndToEnd` is set to `true` in the `TestContainerOptions`.
@@ -43,7 +43,7 @@ The Nest application created by `NestFactory.create()`. This will only be define
 
 > **module**: `TestingModule`
 
-Defined in: [test-container.ts:37](https://github.com/spuxx1701/jslibs/blob/1a7e07eeae1e7166b7fbfc153430c6402621f270/packages/nest-testing/src/container/test-container.ts#L37)
+Defined in: [test-container.ts:37](https://github.com/spuxx1701/jslibs/blob/9e75110cf9e60ac27454c04289fa45add1887a86/packages/nest-testing/src/container/test-container.ts#L37)
 
 The `TestingModule` created by `Nest.createTestingModule()`. This will always be defined,
 eve in isolated test setups.
@@ -52,7 +52,7 @@ eve in isolated test setups.
 
 > `optional` **supertest**: `Supertest`
 
-Defined in: [test-container.ts:47](https://github.com/spuxx1701/jslibs/blob/1a7e07eeae1e7166b7fbfc153430c6402621f270/packages/nest-testing/src/container/test-container.ts#L47)
+Defined in: [test-container.ts:47](https://github.com/spuxx1701/jslibs/blob/9e75110cf9e60ac27454c04289fa45add1887a86/packages/nest-testing/src/container/test-container.ts#L47)
 
 An instance of the `Supertest` class, used for end-to-end testing. This will only be defined
 if `enableEndToEnd` is set to `true` in the `TestContainerOptions`.
@@ -63,7 +63,7 @@ if `enableEndToEnd` is set to `true` in the `TestContainerOptions`.
 
 > `static` **create**(`options`): `Promise`\<[`TestContainer`](container.md#testcontainer)\>
 
-Defined in: [test-container.ts:69](https://github.com/spuxx1701/jslibs/blob/1a7e07eeae1e7166b7fbfc153430c6402621f270/packages/nest-testing/src/container/test-container.ts#L69)
+Defined in: [test-container.ts:69](https://github.com/spuxx1701/jslibs/blob/9e75110cf9e60ac27454c04289fa45add1887a86/packages/nest-testing/src/container/test-container.ts#L69)
 
 Creates a new instance of `TestContainer`, allowing both isolated and integrated
 testing of application components.
@@ -95,7 +95,7 @@ const container = await TestContainer.create({
 
 ### TestContainerOptions
 
-Defined in: [types.ts:8](https://github.com/spuxx1701/jslibs/blob/1a7e07eeae1e7166b7fbfc153430c6402621f270/packages/nest-testing/src/container/types.ts#L8)
+Defined in: [types.ts:8](https://github.com/spuxx1701/jslibs/blob/9e75110cf9e60ac27454c04289fa45add1887a86/packages/nest-testing/src/container/types.ts#L8)
 
 Options to provide to `TestContainer`.
 
@@ -105,7 +105,7 @@ Options to provide to `TestContainer`.
 
 > `optional` **afterCreate**: (`container`) => `void`
 
-Defined in: [types.ts:41](https://github.com/spuxx1701/jslibs/blob/1a7e07eeae1e7166b7fbfc153430c6402621f270/packages/nest-testing/src/container/types.ts#L41)
+Defined in: [types.ts:41](https://github.com/spuxx1701/jslibs/blob/9e75110cf9e60ac27454c04289fa45add1887a86/packages/nest-testing/src/container/types.ts#L41)
 
 A function that will be called after the container has been created. This is useful for
 performing any additional setup that may be required.
@@ -124,7 +124,7 @@ performing any additional setup that may be required.
 
 > `optional` **controllers**: `Type`\<`object`\>[]
 
-Defined in: [types.ts:16](https://github.com/spuxx1701/jslibs/blob/1a7e07eeae1e7166b7fbfc153430c6402621f270/packages/nest-testing/src/container/types.ts#L16)
+Defined in: [types.ts:16](https://github.com/spuxx1701/jslibs/blob/9e75110cf9e60ac27454c04289fa45add1887a86/packages/nest-testing/src/container/types.ts#L16)
 
 List of controllers to register.
 
@@ -132,7 +132,7 @@ List of controllers to register.
 
 > `optional` **enableEndToEnd**: `boolean`
 
-Defined in: [types.ts:29](https://github.com/spuxx1701/jslibs/blob/1a7e07eeae1e7166b7fbfc153430c6402621f270/packages/nest-testing/src/container/types.ts#L29)
+Defined in: [types.ts:29](https://github.com/spuxx1701/jslibs/blob/9e75110cf9e60ac27454c04289fa45add1887a86/packages/nest-testing/src/container/types.ts#L29)
 
 Whether to enable end-to-end testing. If set to `true`
 
@@ -146,7 +146,7 @@ false;
 
 > `optional` **imports**: `any`[]
 
-Defined in: [types.ts:12](https://github.com/spuxx1701/jslibs/blob/1a7e07eeae1e7166b7fbfc153430c6402621f270/packages/nest-testing/src/container/types.ts#L12)
+Defined in: [types.ts:12](https://github.com/spuxx1701/jslibs/blob/9e75110cf9e60ac27454c04289fa45add1887a86/packages/nest-testing/src/container/types.ts#L12)
 
 List of modules to import.
 
@@ -154,7 +154,7 @@ List of modules to import.
 
 > `optional` **logger**: `LoggerService`
 
-Defined in: [types.ts:24](https://github.com/spuxx1701/jslibs/blob/1a7e07eeae1e7166b7fbfc153430c6402621f270/packages/nest-testing/src/container/types.ts#L24)
+Defined in: [types.ts:24](https://github.com/spuxx1701/jslibs/blob/9e75110cf9e60ac27454c04289fa45add1887a86/packages/nest-testing/src/container/types.ts#L24)
 
 Logger service to use.
 
@@ -162,7 +162,7 @@ Logger service to use.
 
 > `optional` **providers**: `Provider`\<`object`\>[]
 
-Defined in: [types.ts:20](https://github.com/spuxx1701/jslibs/blob/1a7e07eeae1e7166b7fbfc153430c6402621f270/packages/nest-testing/src/container/types.ts#L20)
+Defined in: [types.ts:20](https://github.com/spuxx1701/jslibs/blob/9e75110cf9e60ac27454c04289fa45add1887a86/packages/nest-testing/src/container/types.ts#L20)
 
 List of providers to register.
 
@@ -170,7 +170,7 @@ List of providers to register.
 
 > `optional` **session**: `SessionResource`
 
-Defined in: [types.ts:36](https://github.com/spuxx1701/jslibs/blob/1a7e07eeae1e7166b7fbfc153430c6402621f270/packages/nest-testing/src/container/types.ts#L36)
+Defined in: [types.ts:36](https://github.com/spuxx1701/jslibs/blob/9e75110cf9e60ac27454c04289fa45add1887a86/packages/nest-testing/src/container/types.ts#L36)
 
 A session to pass to the `Supertest` instance when testing end-to-end. Does nothing if
 `enableEndToEnd` is set to `false`. You may also provide a session on each request. The

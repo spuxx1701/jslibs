@@ -2,7 +2,7 @@
 
 ### HttpError
 
-Defined in: [packages/js-utils/src/services/http-client-mixin/types.ts:70](https://github.com/spuxx1701/jslibs/blob/1a7e07eeae1e7166b7fbfc153430c6402621f270/packages/js-utils/src/services/http-client-mixin/types.ts#L70)
+Defined in: [packages/js-utils/src/services/http-client-mixin/types.ts:70](https://github.com/spuxx1701/jslibs/blob/9e75110cf9e60ac27454c04289fa45add1887a86/packages/js-utils/src/services/http-client-mixin/types.ts#L70)
 
 #### Extends
 
@@ -14,7 +14,7 @@ Defined in: [packages/js-utils/src/services/http-client-mixin/types.ts:70](https
 
 > **new HttpError**(`init`): [`HttpError`](http-client-mixin.md#httperror)
 
-Defined in: [packages/js-utils/src/services/http-client-mixin/types.ts:74](https://github.com/spuxx1701/jslibs/blob/1a7e07eeae1e7166b7fbfc153430c6402621f270/packages/js-utils/src/services/http-client-mixin/types.ts#L74)
+Defined in: [packages/js-utils/src/services/http-client-mixin/types.ts:74](https://github.com/spuxx1701/jslibs/blob/9e75110cf9e60ac27454c04289fa45add1887a86/packages/js-utils/src/services/http-client-mixin/types.ts#L74)
 
 ###### Parameters
 
@@ -36,7 +36,7 @@ Defined in: [packages/js-utils/src/services/http-client-mixin/types.ts:74](https
 
 > `optional` **body**: `string` \| `object`
 
-Defined in: [packages/js-utils/src/services/http-client-mixin/types.ts:72](https://github.com/spuxx1701/jslibs/blob/1a7e07eeae1e7166b7fbfc153430c6402621f270/packages/js-utils/src/services/http-client-mixin/types.ts#L72)
+Defined in: [packages/js-utils/src/services/http-client-mixin/types.ts:72](https://github.com/spuxx1701/jslibs/blob/9e75110cf9e60ac27454c04289fa45add1887a86/packages/js-utils/src/services/http-client-mixin/types.ts#L72)
 
 ##### cause?
 
@@ -82,7 +82,7 @@ Defined in: node_modules/.pnpm/typescript@5.7.3/node_modules/typescript/lib/lib.
 
 > `optional` **status**: `number`
 
-Defined in: [packages/js-utils/src/services/http-client-mixin/types.ts:71](https://github.com/spuxx1701/jslibs/blob/1a7e07eeae1e7166b7fbfc153430c6402621f270/packages/js-utils/src/services/http-client-mixin/types.ts#L71)
+Defined in: [packages/js-utils/src/services/http-client-mixin/types.ts:71](https://github.com/spuxx1701/jslibs/blob/9e75110cf9e60ac27454c04289fa45add1887a86/packages/js-utils/src/services/http-client-mixin/types.ts#L71)
 
 ##### prepareStackTrace()?
 
@@ -156,7 +156,7 @@ Create .stack property on a target object
 
 ### EndpointDefinition\<TFunction, TTransformedResult\>
 
-Defined in: [packages/js-utils/src/services/http-client-mixin/types.ts:29](https://github.com/spuxx1701/jslibs/blob/1a7e07eeae1e7166b7fbfc153430c6402621f270/packages/js-utils/src/services/http-client-mixin/types.ts#L29)
+Defined in: [packages/js-utils/src/services/http-client-mixin/types.ts:29](https://github.com/spuxx1701/jslibs/blob/9e75110cf9e60ac27454c04289fa45add1887a86/packages/js-utils/src/services/http-client-mixin/types.ts#L29)
 
 The definition of an endpoint to be used by `HttpClient`.
 
@@ -172,7 +172,7 @@ The definition of an endpoint to be used by `HttpClient`.
 
 > `optional` **errorHandlers**: [`ErrorHandler`](http-client-mixin.md#errorhandler)[]
 
-Defined in: [packages/js-utils/src/services/http-client-mixin/types.ts:47](https://github.com/spuxx1701/jslibs/blob/1a7e07eeae1e7166b7fbfc153430c6402621f270/packages/js-utils/src/services/http-client-mixin/types.ts#L47)
+Defined in: [packages/js-utils/src/services/http-client-mixin/types.ts:47](https://github.com/spuxx1701/jslibs/blob/9e75110cf9e60ac27454c04289fa45add1887a86/packages/js-utils/src/services/http-client-mixin/types.ts#L47)
 
 The set of error handlers for this endpoint. These local error handlers will be called
 before the global error handlers.
@@ -181,7 +181,7 @@ before the global error handlers.
 
 > **function**: `TFunction`
 
-Defined in: [packages/js-utils/src/services/http-client-mixin/types.ts:36](https://github.com/spuxx1701/jslibs/blob/1a7e07eeae1e7166b7fbfc153430c6402621f270/packages/js-utils/src/services/http-client-mixin/types.ts#L36)
+Defined in: [packages/js-utils/src/services/http-client-mixin/types.ts:36](https://github.com/spuxx1701/jslibs/blob/9e75110cf9e60ac27454c04289fa45add1887a86/packages/js-utils/src/services/http-client-mixin/types.ts#L36)
 
 The function that will be called when the endpoint is invoked.
 
@@ -189,7 +189,7 @@ The function that will be called when the endpoint is invoked.
 
 > `optional` **transformer**: (`response`) => `TTransformedResult`
 
-Defined in: [packages/js-utils/src/services/http-client-mixin/types.ts:42](https://github.com/spuxx1701/jslibs/blob/1a7e07eeae1e7166b7fbfc153430c6402621f270/packages/js-utils/src/services/http-client-mixin/types.ts#L42)
+Defined in: [packages/js-utils/src/services/http-client-mixin/types.ts:42](https://github.com/spuxx1701/jslibs/blob/9e75110cf9e60ac27454c04289fa45add1887a86/packages/js-utils/src/services/http-client-mixin/types.ts#L42)
 
 A function that will be called to transform the response from the server.
 The transformer will be called implicitly after the original promise has
@@ -209,7 +209,7 @@ resolved.
 
 ### HttpClientOptions\<TEndpoints\>
 
-Defined in: [packages/js-utils/src/services/http-client-mixin/types.ts:57](https://github.com/spuxx1701/jslibs/blob/1a7e07eeae1e7166b7fbfc153430c6402621f270/packages/js-utils/src/services/http-client-mixin/types.ts#L57)
+Defined in: [packages/js-utils/src/services/http-client-mixin/types.ts:57](https://github.com/spuxx1701/jslibs/blob/9e75110cf9e60ac27454c04289fa45add1887a86/packages/js-utils/src/services/http-client-mixin/types.ts#L57)
 
 The options to hand over to `HttpClient`.
 
@@ -223,7 +223,7 @@ The options to hand over to `HttpClient`.
 
 > **endpoints**: `TEndpoints`
 
-Defined in: [packages/js-utils/src/services/http-client-mixin/types.ts:61](https://github.com/spuxx1701/jslibs/blob/1a7e07eeae1e7166b7fbfc153430c6402621f270/packages/js-utils/src/services/http-client-mixin/types.ts#L61)
+Defined in: [packages/js-utils/src/services/http-client-mixin/types.ts:61](https://github.com/spuxx1701/jslibs/blob/9e75110cf9e60ac27454c04289fa45add1887a86/packages/js-utils/src/services/http-client-mixin/types.ts#L61)
 
 The set of endpoints to be used by the client.
 
@@ -231,7 +231,7 @@ The set of endpoints to be used by the client.
 
 > `optional` **globalErrorHandlers**: [`ErrorHandler`](http-client-mixin.md#errorhandler)[]
 
-Defined in: [packages/js-utils/src/services/http-client-mixin/types.ts:67](https://github.com/spuxx1701/jslibs/blob/1a7e07eeae1e7166b7fbfc153430c6402621f270/packages/js-utils/src/services/http-client-mixin/types.ts#L67)
+Defined in: [packages/js-utils/src/services/http-client-mixin/types.ts:67](https://github.com/spuxx1701/jslibs/blob/9e75110cf9e60ac27454c04289fa45add1887a86/packages/js-utils/src/services/http-client-mixin/types.ts#L67)
 
 A set of global error handlers. These will be called for every error that occurs,
 regardless of the endpoint. These global error handlers will be called after any
@@ -243,7 +243,7 @@ local error handlers.
 
 > **EndpointFunction**: (...`args`) => `Promise`\<`any`\>
 
-Defined in: [packages/js-utils/src/services/http-client-mixin/types.ts:24](https://github.com/spuxx1701/jslibs/blob/1a7e07eeae1e7166b7fbfc153430c6402621f270/packages/js-utils/src/services/http-client-mixin/types.ts#L24)
+Defined in: [packages/js-utils/src/services/http-client-mixin/types.ts:24](https://github.com/spuxx1701/jslibs/blob/9e75110cf9e60ac27454c04289fa45add1887a86/packages/js-utils/src/services/http-client-mixin/types.ts#L24)
 
 #### Parameters
 
@@ -261,7 +261,7 @@ Defined in: [packages/js-utils/src/services/http-client-mixin/types.ts:24](https
 
 > **Endpoints**: `Record`\<`string`, [`EndpointDefinition`](http-client-mixin.md#endpointdefinitiontfunction-ttransformedresult)\>
 
-Defined in: [packages/js-utils/src/services/http-client-mixin/types.ts:52](https://github.com/spuxx1701/jslibs/blob/1a7e07eeae1e7166b7fbfc153430c6402621f270/packages/js-utils/src/services/http-client-mixin/types.ts#L52)
+Defined in: [packages/js-utils/src/services/http-client-mixin/types.ts:52](https://github.com/spuxx1701/jslibs/blob/9e75110cf9e60ac27454c04289fa45add1887a86/packages/js-utils/src/services/http-client-mixin/types.ts#L52)
 
 The set of endpoints to be used by `HttpClient`.
 
@@ -271,7 +271,7 @@ The set of endpoints to be used by `HttpClient`.
 
 > **ErrorHandler**: `object`
 
-Defined in: [packages/js-utils/src/services/http-client-mixin/types.ts:6](https://github.com/spuxx1701/jslibs/blob/1a7e07eeae1e7166b7fbfc153430c6402621f270/packages/js-utils/src/services/http-client-mixin/types.ts#L6)
+Defined in: [packages/js-utils/src/services/http-client-mixin/types.ts:6](https://github.com/spuxx1701/jslibs/blob/9e75110cf9e60ac27454c04289fa45add1887a86/packages/js-utils/src/services/http-client-mixin/types.ts#L6)
 
 Defines how the client should handle errors.
 
@@ -330,7 +330,7 @@ the error handler will be called for all errors.
 
 > **defineEndpoint**\<`TFunction`, `TTransformedResult`\>(`definition`): [`EndpointDefinition`](http-client-mixin.md#endpointdefinitiontfunction-ttransformedresult)\<`TFunction`, `TTransformedResult`\>
 
-Defined in: [packages/js-utils/src/services/http-client-mixin/http-client.service-mixin.ts:26](https://github.com/spuxx1701/jslibs/blob/1a7e07eeae1e7166b7fbfc153430c6402621f270/packages/js-utils/src/services/http-client-mixin/http-client.service-mixin.ts#L26)
+Defined in: [packages/js-utils/src/services/http-client-mixin/http-client.service-mixin.ts:26](https://github.com/spuxx1701/jslibs/blob/9e75110cf9e60ac27454c04289fa45add1887a86/packages/js-utils/src/services/http-client-mixin/http-client.service-mixin.ts#L26)
 
 A helper function to create an endpoint definition in a type-safe way.
 
@@ -358,7 +358,7 @@ The endpoint definition.
 
 > **HttpClientMixin**\<`TEndpoints`\>(`options`): `HttpClient`\<`TEndpoints`\>
 
-Defined in: [packages/js-utils/src/services/http-client-mixin/http-client.service-mixin.ts:62](https://github.com/spuxx1701/jslibs/blob/1a7e07eeae1e7166b7fbfc153430c6402621f270/packages/js-utils/src/services/http-client-mixin/http-client.service-mixin.ts#L62)
+Defined in: [packages/js-utils/src/services/http-client-mixin/http-client.service-mixin.ts:62](https://github.com/spuxx1701/jslibs/blob/9e75110cf9e60ac27454c04289fa45add1887a86/packages/js-utils/src/services/http-client-mixin/http-client.service-mixin.ts#L62)
 
 A mixin that adds HTTP client functionality to a class. Can be used to create a strongly typed
 HTTP client.
@@ -411,7 +411,7 @@ console.log(joke); // Chuck Norris can divide by zero.
 
 > **transformFetchJson**\<`TResult`\>(`response`): `Promise`\<`TResult`\>
 
-Defined in: [packages/js-utils/src/services/http-client-mixin/http-client.utils.ts:13](https://github.com/spuxx1701/jslibs/blob/1a7e07eeae1e7166b7fbfc153430c6402621f270/packages/js-utils/src/services/http-client-mixin/http-client.utils.ts#L13)
+Defined in: [packages/js-utils/src/services/http-client-mixin/http-client.utils.ts:13](https://github.com/spuxx1701/jslibs/blob/9e75110cf9e60ac27454c04289fa45add1887a86/packages/js-utils/src/services/http-client-mixin/http-client.utils.ts#L13)
 
 A very simple transformer that will transform the response from a fetch call into a JSON object
 and cast it to the specified type. Intended for use with `defineEndpoint`.

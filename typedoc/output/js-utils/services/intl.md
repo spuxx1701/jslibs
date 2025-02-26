@@ -2,7 +2,7 @@
 
 ### Intl
 
-Defined in: [intl.service.ts:17](https://github.com/spuxx1701/jslibs/blob/1a7e07eeae1e7166b7fbfc153430c6402621f270/packages/js-utils/src/services/intl/intl.service.ts#L17)
+Defined in: [intl.service.ts:17](https://github.com/spuxx1701/jslibs/blob/9e75110cf9e60ac27454c04289fa45add1887a86/packages/js-utils/src/services/intl/intl.service.ts#L17)
 
 `Intl` is a sigleton that provides i18n-related functionalities.
 Instead of using it directly, you may also simply use the `intl()` function.
@@ -33,7 +33,7 @@ Instead of using it directly, you may also simply use the `intl()` function.
 
 > **get** `static` **currentDictionary**(): `any`
 
-Defined in: [intl.service.ts:87](https://github.com/spuxx1701/jslibs/blob/1a7e07eeae1e7166b7fbfc153430c6402621f270/packages/js-utils/src/services/intl/intl.service.ts#L87)
+Defined in: [intl.service.ts:87](https://github.com/spuxx1701/jslibs/blob/9e75110cf9e60ac27454c04289fa45add1887a86/packages/js-utils/src/services/intl/intl.service.ts#L87)
 
 ###### Returns
 
@@ -45,7 +45,7 @@ Defined in: [intl.service.ts:87](https://github.com/spuxx1701/jslibs/blob/1a7e07
 
 > **get** `static` **currentLocale**(): `any`
 
-Defined in: [intl.service.ts:73](https://github.com/spuxx1701/jslibs/blob/1a7e07eeae1e7166b7fbfc153430c6402621f270/packages/js-utils/src/services/intl/intl.service.ts#L73)
+Defined in: [intl.service.ts:73](https://github.com/spuxx1701/jslibs/blob/9e75110cf9e60ac27454c04289fa45add1887a86/packages/js-utils/src/services/intl/intl.service.ts#L73)
 
 ###### Returns
 
@@ -57,7 +57,7 @@ Defined in: [intl.service.ts:73](https://github.com/spuxx1701/jslibs/blob/1a7e07
 
 > **get** `static` **dictionaries**(): `any`
 
-Defined in: [intl.service.ts:80](https://github.com/spuxx1701/jslibs/blob/1a7e07eeae1e7166b7fbfc153430c6402621f270/packages/js-utils/src/services/intl/intl.service.ts#L80)
+Defined in: [intl.service.ts:80](https://github.com/spuxx1701/jslibs/blob/9e75110cf9e60ac27454c04289fa45add1887a86/packages/js-utils/src/services/intl/intl.service.ts#L80)
 
 ###### Returns
 
@@ -69,7 +69,7 @@ Defined in: [intl.service.ts:80](https://github.com/spuxx1701/jslibs/blob/1a7e07
 
 > **get** `static` **fallbackLocale**(): `any`
 
-Defined in: [intl.service.ts:66](https://github.com/spuxx1701/jslibs/blob/1a7e07eeae1e7166b7fbfc153430c6402621f270/packages/js-utils/src/services/intl/intl.service.ts#L66)
+Defined in: [intl.service.ts:66](https://github.com/spuxx1701/jslibs/blob/9e75110cf9e60ac27454c04289fa45add1887a86/packages/js-utils/src/services/intl/intl.service.ts#L66)
 
 ###### Returns
 
@@ -81,7 +81,7 @@ Defined in: [intl.service.ts:66](https://github.com/spuxx1701/jslibs/blob/1a7e07
 
 > **get** `static` **missingLocalizationPrefix**(): `string`
 
-Defined in: [intl.service.ts:126](https://github.com/spuxx1701/jslibs/blob/1a7e07eeae1e7166b7fbfc153430c6402621f270/packages/js-utils/src/services/intl/intl.service.ts#L126)
+Defined in: [intl.service.ts:126](https://github.com/spuxx1701/jslibs/blob/9e75110cf9e60ac27454c04289fa45add1887a86/packages/js-utils/src/services/intl/intl.service.ts#L126)
 
 Keys that cannot be translated due to missing localization will be returned and
 prefixed with this string.
@@ -96,7 +96,7 @@ prefixed with this string.
 
 > `static` **setLocale**(`locale`): `void`
 
-Defined in: [intl.service.ts:51](https://github.com/spuxx1701/jslibs/blob/1a7e07eeae1e7166b7fbfc153430c6402621f270/packages/js-utils/src/services/intl/intl.service.ts#L51)
+Defined in: [intl.service.ts:51](https://github.com/spuxx1701/jslibs/blob/9e75110cf9e60ac27454c04289fa45add1887a86/packages/js-utils/src/services/intl/intl.service.ts#L51)
 
 ###### Parameters
 
@@ -112,7 +112,7 @@ Defined in: [intl.service.ts:51](https://github.com/spuxx1701/jslibs/blob/1a7e07
 
 > `static` **setup**(`options`): `void`
 
-Defined in: [intl.service.ts:36](https://github.com/spuxx1701/jslibs/blob/1a7e07eeae1e7166b7fbfc153430c6402621f270/packages/js-utils/src/services/intl/intl.service.ts#L36)
+Defined in: [intl.service.ts:36](https://github.com/spuxx1701/jslibs/blob/9e75110cf9e60ac27454c04289fa45add1887a86/packages/js-utils/src/services/intl/intl.service.ts#L36)
 
 Sets up `Intl` with the given options. Needs to be called at application startup.
 
@@ -146,7 +146,7 @@ Intl.setup({
 
 > `static` **translate**(`key`, `vars`?): `any`
 
-Defined in: [intl.service.ts:108](https://github.com/spuxx1701/jslibs/blob/1a7e07eeae1e7166b7fbfc153430c6402621f270/packages/js-utils/src/services/intl/intl.service.ts#L108)
+Defined in: [intl.service.ts:108](https://github.com/spuxx1701/jslibs/blob/9e75110cf9e60ac27454c04289fa45add1887a86/packages/js-utils/src/services/intl/intl.service.ts#L108)
 
 Translates the given key.
 
@@ -185,7 +185,7 @@ Intl.translate('foo', { bar: 'baz' });
 
 ### Dictionary
 
-Defined in: [intl.service.ts:4](https://github.com/spuxx1701/jslibs/blob/1a7e07eeae1e7166b7fbfc153430c6402621f270/packages/js-utils/src/services/intl/intl.service.ts#L4)
+Defined in: [intl.service.ts:4](https://github.com/spuxx1701/jslibs/blob/9e75110cf9e60ac27454c04289fa45add1887a86/packages/js-utils/src/services/intl/intl.service.ts#L4)
 
 #### Properties
 
@@ -193,13 +193,13 @@ Defined in: [intl.service.ts:4](https://github.com/spuxx1701/jslibs/blob/1a7e07e
 
 > **locale**: `string`
 
-Defined in: [intl.service.ts:5](https://github.com/spuxx1701/jslibs/blob/1a7e07eeae1e7166b7fbfc153430c6402621f270/packages/js-utils/src/services/intl/intl.service.ts#L5)
+Defined in: [intl.service.ts:5](https://github.com/spuxx1701/jslibs/blob/9e75110cf9e60ac27454c04289fa45add1887a86/packages/js-utils/src/services/intl/intl.service.ts#L5)
 
 ##### values
 
 > **values**: `Record`\<`string`, `unknown`\>
 
-Defined in: [intl.service.ts:6](https://github.com/spuxx1701/jslibs/blob/1a7e07eeae1e7166b7fbfc153430c6402621f270/packages/js-utils/src/services/intl/intl.service.ts#L6)
+Defined in: [intl.service.ts:6](https://github.com/spuxx1701/jslibs/blob/9e75110cf9e60ac27454c04289fa45add1887a86/packages/js-utils/src/services/intl/intl.service.ts#L6)
 
 ## Variables
 
@@ -207,4 +207,4 @@ Defined in: [intl.service.ts:6](https://github.com/spuxx1701/jslibs/blob/1a7e07e
 
 > `const` **intl**: `any`
 
-Defined in: [intl.service.ts:149](https://github.com/spuxx1701/jslibs/blob/1a7e07eeae1e7166b7fbfc153430c6402621f270/packages/js-utils/src/services/intl/intl.service.ts#L149)
+Defined in: [intl.service.ts:149](https://github.com/spuxx1701/jslibs/blob/9e75110cf9e60ac27454c04289fa45add1887a86/packages/js-utils/src/services/intl/intl.service.ts#L149)

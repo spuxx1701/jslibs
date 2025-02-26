@@ -2,7 +2,7 @@
 
 ### ComponentProps\<TElement\>
 
-Defined in: [index.ts:8](https://github.com/spuxx1701/jslibs/blob/1a7e07eeae1e7166b7fbfc153430c6402621f270/packages/solid/src/types/public/index.ts#L8)
+Defined in: [index.ts:8](https://github.com/spuxx1701/jslibs/blob/9e75110cf9e60ac27454c04289fa45add1887a86/packages/solid/src/types/public/index.ts#L8)
 
 A property interface for components to extend from. Includes some basic properties used
 by almost all components.
@@ -17,7 +17,7 @@ by almost all components.
 
 > `optional` **attrs**: `Omit`\<`HTMLAttributes`\<`TElement`\>, `"style"`\>
 
-Defined in: [index.ts:22](https://github.com/spuxx1701/jslibs/blob/1a7e07eeae1e7166b7fbfc153430c6402621f270/packages/solid/src/types/public/index.ts#L22)
+Defined in: [index.ts:22](https://github.com/spuxx1701/jslibs/blob/9e75110cf9e60ac27454c04289fa45add1887a86/packages/solid/src/types/public/index.ts#L22)
 
 The component's attributes.
 
@@ -25,7 +25,7 @@ The component's attributes.
 
 > `optional` **class**: `string`
 
-Defined in: [index.ts:12](https://github.com/spuxx1701/jslibs/blob/1a7e07eeae1e7166b7fbfc153430c6402621f270/packages/solid/src/types/public/index.ts#L12)
+Defined in: [index.ts:12](https://github.com/spuxx1701/jslibs/blob/9e75110cf9e60ac27454c04289fa45add1887a86/packages/solid/src/types/public/index.ts#L12)
 
 The component's class names.
 
@@ -33,6 +33,6 @@ The component's class names.
 
 > `optional` **style**: `PropertiesHyphen`
 
-Defined in: [index.ts:17](https://github.com/spuxx1701/jslibs/blob/1a7e07eeae1e7166b7fbfc153430c6402621f270/packages/solid/src/types/public/index.ts#L17)
+Defined in: [index.ts:17](https://github.com/spuxx1701/jslibs/blob/9e75110cf9e60ac27454c04289fa45add1887a86/packages/solid/src/types/public/index.ts#L17)
 
 The component's style.

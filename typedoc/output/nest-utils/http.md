@@ -2,7 +2,7 @@
 
 ### HttpLoggingInterceptor
 
-Defined in: [http-logging.interceptor.ts:26](https://github.com/spuxx1701/jslibs/blob/1a7e07eeae1e7166b7fbfc153430c6402621f270/packages/nest-utils/src/http/logging/http-logging.interceptor.ts#L26)
+Defined in: [http-logging.interceptor.ts:26](https://github.com/spuxx1701/jslibs/blob/9e75110cf9e60ac27454c04289fa45add1887a86/packages/nest-utils/src/http/logging/http-logging.interceptor.ts#L26)
 
 `HttpLoggingInterceptor` logs incoming HTTP requests.
 
@@ -47,7 +47,7 @@ export class MyController {
 
 > **intercept**(`context`, `next`): `Observable`\<`object`\>
 
-Defined in: [http-logging.interceptor.ts:27](https://github.com/spuxx1701/jslibs/blob/1a7e07eeae1e7166b7fbfc153430c6402621f270/packages/nest-utils/src/http/logging/http-logging.interceptor.ts#L27)
+Defined in: [http-logging.interceptor.ts:27](https://github.com/spuxx1701/jslibs/blob/9e75110cf9e60ac27454c04289fa45add1887a86/packages/nest-utils/src/http/logging/http-logging.interceptor.ts#L27)
 
 ###### Parameters
 

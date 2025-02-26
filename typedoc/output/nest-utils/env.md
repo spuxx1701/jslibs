@@ -4,7 +4,7 @@
 
 > **EnvModuleMixin**\<`TEnv`\>(`env`): _typeof_ `EnvModule`
 
-Defined in: [env.module-mixin.ts:34](https://github.com/spuxx1701/jslibs/blob/1a7e07eeae1e7166b7fbfc153430c6402621f270/packages/nest-utils/src/env/env.module-mixin.ts#L34)
+Defined in: [env.module-mixin.ts:34](https://github.com/spuxx1701/jslibs/blob/9e75110cf9e60ac27454c04289fa45add1887a86/packages/nest-utils/src/env/env.module-mixin.ts#L34)
 
 A mixin for a NestJS module that provides easy access to environment variables.
 The module also handles validation of the environment variables using `class-validator`

@@ -4,7 +4,7 @@
 
 > **BaseColor**: _typeof_ [`BaseColor`](types.md#basecolor-1)\[keyof _typeof_ [`BaseColor`](types.md#basecolor-1)\]
 
-Defined in: [index.ts:4](https://github.com/spuxx1701/jslibs/blob/1a7e07eeae1e7166b7fbfc153430c6402621f270/packages/browser-utils/src/types/index.ts#L4)
+Defined in: [index.ts:4](https://github.com/spuxx1701/jslibs/blob/9e75110cf9e60ac27454c04289fa45add1887a86/packages/browser-utils/src/types/index.ts#L4)
 
 The base color of an element.
 
@@ -14,7 +14,7 @@ The base color of an element.
 
 > **ContentColor**: _typeof_ [`ContentColor`](types.md#contentcolor-1)\[keyof _typeof_ [`ContentColor`](types.md#contentcolor-1)\]
 
-Defined in: [index.ts:24](https://github.com/spuxx1701/jslibs/blob/1a7e07eeae1e7166b7fbfc153430c6402621f270/packages/browser-utils/src/types/index.ts#L24)
+Defined in: [index.ts:24](https://github.com/spuxx1701/jslibs/blob/9e75110cf9e60ac27454c04289fa45add1887a86/packages/browser-utils/src/types/index.ts#L24)
 
 The content color of an element.
 
@@ -24,7 +24,7 @@ The content color of an element.
 
 > **ModalSize**: _typeof_ [`ModalSize`](types.md#modalsize-1)\[keyof _typeof_ [`ModalSize`](types.md#modalsize-1)\]
 
-Defined in: [index.ts:38](https://github.com/spuxx1701/jslibs/blob/1a7e07eeae1e7166b7fbfc153430c6402621f270/packages/browser-utils/src/types/index.ts#L38)
+Defined in: [index.ts:38](https://github.com/spuxx1701/jslibs/blob/9e75110cf9e60ac27454c04289fa45add1887a86/packages/browser-utils/src/types/index.ts#L38)
 
 The size of a modal dialog.
 
@@ -34,7 +34,7 @@ The size of a modal dialog.
 
 > `const` **BaseColor**: `object`
 
-Defined in: [index.ts:4](https://github.com/spuxx1701/jslibs/blob/1a7e07eeae1e7166b7fbfc153430c6402621f270/packages/browser-utils/src/types/index.ts#L4)
+Defined in: [index.ts:4](https://github.com/spuxx1701/jslibs/blob/9e75110cf9e60ac27454c04289fa45add1887a86/packages/browser-utils/src/types/index.ts#L4)
 
 The base color of an element.
 
@@ -82,7 +82,7 @@ The base color of an element.
 
 > `const` **ContentColor**: `object`
 
-Defined in: [index.ts:24](https://github.com/spuxx1701/jslibs/blob/1a7e07eeae1e7166b7fbfc153430c6402621f270/packages/browser-utils/src/types/index.ts#L24)
+Defined in: [index.ts:24](https://github.com/spuxx1701/jslibs/blob/9e75110cf9e60ac27454c04289fa45add1887a86/packages/browser-utils/src/types/index.ts#L24)
 
 The content color of an element.
 
@@ -106,7 +106,7 @@ The content color of an element.
 
 > `const` **ModalSize**: `object`
 
-Defined in: [index.ts:38](https://github.com/spuxx1701/jslibs/blob/1a7e07eeae1e7166b7fbfc153430c6402621f270/packages/browser-utils/src/types/index.ts#L38)
+Defined in: [index.ts:38](https://github.com/spuxx1701/jslibs/blob/9e75110cf9e60ac27454c04289fa45add1887a86/packages/browser-utils/src/types/index.ts#L38)
 
 The size of a modal dialog.
 

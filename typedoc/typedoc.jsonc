@@ -4,6 +4,7 @@
   "skipErrorChecking": true,
   "cleanOutputDir": false,
   "excludeNotDocumented": false,
+  "excludeInternal": true,
   "plugin": ["typedoc-plugin-markdown", "./custom.plugin.js"],
   "githubPages": false,
   "hidePageHeader": true,

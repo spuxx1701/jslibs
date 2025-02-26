@@ -2,7 +2,7 @@
 
 ### Supertest
 
-Defined in: [supertest.ts:25](https://github.com/spuxx1701/jslibs/blob/1a7e07eeae1e7166b7fbfc153430c6402621f270/packages/nest-testing/src/supertest/supertest.ts#L25)
+Defined in: [supertest.ts:25](https://github.com/spuxx1701/jslibs/blob/9e75110cf9e60ac27454c04289fa45add1887a86/packages/nest-testing/src/supertest/supertest.ts#L25)
 
 `Supertest` is an abstraction of the `supertest` package that allows easily faking
 incoming HTTP requests during tests.
@@ -37,7 +37,7 @@ const supertest = container.supertest;
 
 > **new Supertest**(`app`, `session`?): [`Supertest`](supertest.md#supertest)
 
-Defined in: [supertest.ts:26](https://github.com/spuxx1701/jslibs/blob/1a7e07eeae1e7166b7fbfc153430c6402621f270/packages/nest-testing/src/supertest/supertest.ts#L26)
+Defined in: [supertest.ts:26](https://github.com/spuxx1701/jslibs/blob/9e75110cf9e60ac27454c04289fa45add1887a86/packages/nest-testing/src/supertest/supertest.ts#L26)
 
 ###### Parameters
 
@@ -59,7 +59,7 @@ Defined in: [supertest.ts:26](https://github.com/spuxx1701/jslibs/blob/1a7e07eea
 
 > **delete**(`url`, `options`?): `Request`
 
-Defined in: [supertest.ts:85](https://github.com/spuxx1701/jslibs/blob/1a7e07eeae1e7166b7fbfc153430c6402621f270/packages/nest-testing/src/supertest/supertest.ts#L85)
+Defined in: [supertest.ts:85](https://github.com/spuxx1701/jslibs/blob/9e75110cf9e60ac27454c04289fa45add1887a86/packages/nest-testing/src/supertest/supertest.ts#L85)
 
 Emits a fake `DELETE` request.
 
@@ -87,7 +87,7 @@ The request.
 
 > **get**(`url`, `options`?): `Request`
 
-Defined in: [supertest.ts:37](https://github.com/spuxx1701/jslibs/blob/1a7e07eeae1e7166b7fbfc153430c6402621f270/packages/nest-testing/src/supertest/supertest.ts#L37)
+Defined in: [supertest.ts:37](https://github.com/spuxx1701/jslibs/blob/9e75110cf9e60ac27454c04289fa45add1887a86/packages/nest-testing/src/supertest/supertest.ts#L37)
 
 Emits a fake `GET` request.
 
@@ -115,7 +115,7 @@ The request.
 
 > **options**(`url`, `options`?): `Request`
 
-Defined in: [supertest.ts:97](https://github.com/spuxx1701/jslibs/blob/1a7e07eeae1e7166b7fbfc153430c6402621f270/packages/nest-testing/src/supertest/supertest.ts#L97)
+Defined in: [supertest.ts:97](https://github.com/spuxx1701/jslibs/blob/9e75110cf9e60ac27454c04289fa45add1887a86/packages/nest-testing/src/supertest/supertest.ts#L97)
 
 Emits a fake `OPTIONS` request.
 
@@ -143,7 +143,7 @@ The request.
 
 > **patch**(`url`, `options`?): `Request`
 
-Defined in: [supertest.ts:73](https://github.com/spuxx1701/jslibs/blob/1a7e07eeae1e7166b7fbfc153430c6402621f270/packages/nest-testing/src/supertest/supertest.ts#L73)
+Defined in: [supertest.ts:73](https://github.com/spuxx1701/jslibs/blob/9e75110cf9e60ac27454c04289fa45add1887a86/packages/nest-testing/src/supertest/supertest.ts#L73)
 
 Emits a fake `PATCH` request.
 
@@ -171,7 +171,7 @@ The request.
 
 > **post**(`url`, `options`?): `Request`
 
-Defined in: [supertest.ts:49](https://github.com/spuxx1701/jslibs/blob/1a7e07eeae1e7166b7fbfc153430c6402621f270/packages/nest-testing/src/supertest/supertest.ts#L49)
+Defined in: [supertest.ts:49](https://github.com/spuxx1701/jslibs/blob/9e75110cf9e60ac27454c04289fa45add1887a86/packages/nest-testing/src/supertest/supertest.ts#L49)
 
 Emits a fake `POST` request.
 
@@ -199,7 +199,7 @@ The request.
 
 > **put**(`url`, `options`?): `Request`
 
-Defined in: [supertest.ts:61](https://github.com/spuxx1701/jslibs/blob/1a7e07eeae1e7166b7fbfc153430c6402621f270/packages/nest-testing/src/supertest/supertest.ts#L61)
+Defined in: [supertest.ts:61](https://github.com/spuxx1701/jslibs/blob/9e75110cf9e60ac27454c04289fa45add1887a86/packages/nest-testing/src/supertest/supertest.ts#L61)
 
 Emits a fake `PUT` request.
 
@@ -227,7 +227,7 @@ The request.
 
 ### SupertestOptions
 
-Defined in: [types.ts:3](https://github.com/spuxx1701/jslibs/blob/1a7e07eeae1e7166b7fbfc153430c6402621f270/packages/nest-testing/src/supertest/types.ts#L3)
+Defined in: [types.ts:3](https://github.com/spuxx1701/jslibs/blob/9e75110cf9e60ac27454c04289fa45add1887a86/packages/nest-testing/src/supertest/types.ts#L3)
 
 #### Properties
 
@@ -235,7 +235,7 @@ Defined in: [types.ts:3](https://github.com/spuxx1701/jslibs/blob/1a7e07eeae1e71
 
 > `optional` **body**: `object`
 
-Defined in: [types.ts:12](https://github.com/spuxx1701/jslibs/blob/1a7e07eeae1e7166b7fbfc153430c6402621f270/packages/nest-testing/src/supertest/types.ts#L12)
+Defined in: [types.ts:12](https://github.com/spuxx1701/jslibs/blob/9e75110cf9e60ac27454c04289fa45add1887a86/packages/nest-testing/src/supertest/types.ts#L12)
 
 The request body.
 
@@ -243,7 +243,7 @@ The request body.
 
 > `optional` **session**: `SessionResource`
 
-Defined in: [types.ts:8](https://github.com/spuxx1701/jslibs/blob/1a7e07eeae1e7166b7fbfc153430c6402621f270/packages/nest-testing/src/supertest/types.ts#L8)
+Defined in: [types.ts:8](https://github.com/spuxx1701/jslibs/blob/9e75110cf9e60ac27454c04289fa45add1887a86/packages/nest-testing/src/supertest/types.ts#L8)
 
 The session resource that should be attached to the request. May be used to simulate
 authenticated or authorized requests.

@@ -2,7 +2,7 @@
 
 ### ButtonProps
 
-Defined in: [button.types.ts:6](https://github.com/spuxx1701/jslibs/blob/1a7e07eeae1e7166b7fbfc153430c6402621f270/packages/solid/src/components/input/button/button.types.ts#L6)
+Defined in: [button.types.ts:6](https://github.com/spuxx1701/jslibs/blob/9e75110cf9e60ac27454c04289fa45add1887a86/packages/solid/src/components/input/button/button.types.ts#L6)
 
 #### Extends
 
@@ -14,7 +14,7 @@ Defined in: [button.types.ts:6](https://github.com/spuxx1701/jslibs/blob/1a7e07e
 
 > `optional` **color**: `any`
 
-Defined in: [button.types.ts:16](https://github.com/spuxx1701/jslibs/blob/1a7e07eeae1e7166b7fbfc153430c6402621f270/packages/solid/src/components/input/button/button.types.ts#L16)
+Defined in: [button.types.ts:16](https://github.com/spuxx1701/jslibs/blob/9e75110cf9e60ac27454c04289fa45add1887a86/packages/solid/src/components/input/button/button.types.ts#L16)
 
 The color of the button.
 
@@ -28,7 +28,7 @@ The color of the button.
 
 > `optional` **disabled**: `boolean`
 
-Defined in: [button.types.ts:35](https://github.com/spuxx1701/jslibs/blob/1a7e07eeae1e7166b7fbfc153430c6402621f270/packages/solid/src/components/input/button/button.types.ts#L35)
+Defined in: [button.types.ts:35](https://github.com/spuxx1701/jslibs/blob/9e75110cf9e60ac27454c04289fa45add1887a86/packages/solid/src/components/input/button/button.types.ts#L35)
 
 Whether the button is disabled.
 
@@ -42,7 +42,7 @@ false;
 
 > `optional` **icon**: `any`
 
-Defined in: [button.types.ts:21](https://github.com/spuxx1701/jslibs/blob/1a7e07eeae1e7166b7fbfc153430c6402621f270/packages/solid/src/components/input/button/button.types.ts#L21)
+Defined in: [button.types.ts:21](https://github.com/spuxx1701/jslibs/blob/9e75110cf9e60ac27454c04289fa45add1887a86/packages/solid/src/components/input/button/button.types.ts#L21)
 
 The icon that should be rendered to the left of the button's content.
 Supports both IconifyIcon and JSX.Element.
@@ -51,7 +51,7 @@ Supports both IconifyIcon and JSX.Element.
 
 > `optional` **loader**: `boolean`
 
-Defined in: [button.types.ts:45](https://github.com/spuxx1701/jslibs/blob/1a7e07eeae1e7166b7fbfc153430c6402621f270/packages/solid/src/components/input/button/button.types.ts#L45)
+Defined in: [button.types.ts:45](https://github.com/spuxx1701/jslibs/blob/9e75110cf9e60ac27454c04289fa45add1887a86/packages/solid/src/components/input/button/button.types.ts#L45)
 
 An alternative loader to be displayed instead of the default loading indicator.
 
@@ -65,7 +65,7 @@ undefined;
 
 > `optional` **loading**: `boolean`
 
-Defined in: [button.types.ts:40](https://github.com/spuxx1701/jslibs/blob/1a7e07eeae1e7166b7fbfc153430c6402621f270/packages/solid/src/components/input/button/button.types.ts#L40)
+Defined in: [button.types.ts:40](https://github.com/spuxx1701/jslibs/blob/9e75110cf9e60ac27454c04289fa45add1887a86/packages/solid/src/components/input/button/button.types.ts#L40)
 
 Whether the button is loading. This will display a loading indicator and disable the button.
 
@@ -79,7 +79,7 @@ false;
 
 > `optional` **onClick**: (`event`) => `void`
 
-Defined in: [button.types.ts:50](https://github.com/spuxx1701/jslibs/blob/1a7e07eeae1e7166b7fbfc153430c6402621f270/packages/solid/src/components/input/button/button.types.ts#L50)
+Defined in: [button.types.ts:50](https://github.com/spuxx1701/jslibs/blob/9e75110cf9e60ac27454c04289fa45add1887a86/packages/solid/src/components/input/button/button.types.ts#L50)
 
 A callback that will be called when the button is clicked.
 
@@ -99,7 +99,7 @@ The click event.
 
 > `optional` **rounded**: `boolean`
 
-Defined in: [button.types.ts:30](https://github.com/spuxx1701/jslibs/blob/1a7e07eeae1e7166b7fbfc153430c6402621f270/packages/solid/src/components/input/button/button.types.ts#L30)
+Defined in: [button.types.ts:30](https://github.com/spuxx1701/jslibs/blob/9e75110cf9e60ac27454c04289fa45add1887a86/packages/solid/src/components/input/button/button.types.ts#L30)
 
 If enabled, the icon will be rounded and no content besides the icon will be displayed.
 
@@ -113,7 +113,7 @@ false;
 
 > `optional` **title**: `string`
 
-Defined in: [button.types.ts:25](https://github.com/spuxx1701/jslibs/blob/1a7e07eeae1e7166b7fbfc153430c6402621f270/packages/solid/src/components/input/button/button.types.ts#L25)
+Defined in: [button.types.ts:25](https://github.com/spuxx1701/jslibs/blob/9e75110cf9e60ac27454c04289fa45add1887a86/packages/solid/src/components/input/button/button.types.ts#L25)
 
 The title of the button.
 
@@ -121,7 +121,7 @@ The title of the button.
 
 > `optional` **variant**: `"contained"` \| `"outlined"` \| `"colored"`
 
-Defined in: [button.types.ts:11](https://github.com/spuxx1701/jslibs/blob/1a7e07eeae1e7166b7fbfc153430c6402621f270/packages/solid/src/components/input/button/button.types.ts#L11)
+Defined in: [button.types.ts:11](https://github.com/spuxx1701/jslibs/blob/9e75110cf9e60ac27454c04289fa45add1887a86/packages/solid/src/components/input/button/button.types.ts#L11)
 
 The variant of the button.
 
@@ -137,4 +137,4 @@ The variant of the button.
 
 > `const` **Button**: `Component`\<[`ButtonProps`](button.md#buttonprops)\>
 
-Defined in: [button.component.tsx:6](https://github.com/spuxx1701/jslibs/blob/1a7e07eeae1e7166b7fbfc153430c6402621f270/packages/solid/src/components/input/button/button.component.tsx#L6)
+Defined in: [button.component.tsx:6](https://github.com/spuxx1701/jslibs/blob/9e75110cf9e60ac27454c04289fa45add1887a86/packages/solid/src/components/input/button/button.component.tsx#L6)

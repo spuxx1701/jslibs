@@ -2,7 +2,7 @@
 
 ### Config
 
-Defined in: [config.service.ts:52](https://github.com/spuxx1701/jslibs/blob/1a7e07eeae1e7166b7fbfc153430c6402621f270/packages/browser-utils/src/services/config/config.service.ts#L52)
+Defined in: [config.service.ts:52](https://github.com/spuxx1701/jslibs/blob/9e75110cf9e60ac27454c04289fa45add1887a86/packages/browser-utils/src/services/config/config.service.ts#L52)
 
 `Config` is a service that provides access to the application's configuration.
 It supports providing a default configuration during setup as well as retrieving
@@ -78,7 +78,7 @@ import './setup-config';
 
 > `static` **getConfig**\<`TConfig`\>(): `TConfig`
 
-Defined in: [config.service.ts:77](https://github.com/spuxx1701/jslibs/blob/1a7e07eeae1e7166b7fbfc153430c6402621f270/packages/browser-utils/src/services/config/config.service.ts#L77)
+Defined in: [config.service.ts:77](https://github.com/spuxx1701/jslibs/blob/9e75110cf9e60ac27454c04289fa45add1887a86/packages/browser-utils/src/services/config/config.service.ts#L77)
 
 ###### Type Parameters
 
@@ -92,7 +92,7 @@ Defined in: [config.service.ts:77](https://github.com/spuxx1701/jslibs/blob/1a7e
 
 > `static` **getOptions**\<`TConfig`\>(): [`ConfigOptions`](config.md#configoptionstconfig)\<`TConfig`\>
 
-Defined in: [config.service.ts:70](https://github.com/spuxx1701/jslibs/blob/1a7e07eeae1e7166b7fbfc153430c6402621f270/packages/browser-utils/src/services/config/config.service.ts#L70)
+Defined in: [config.service.ts:70](https://github.com/spuxx1701/jslibs/blob/9e75110cf9e60ac27454c04289fa45add1887a86/packages/browser-utils/src/services/config/config.service.ts#L70)
 
 ###### Type Parameters
 
@@ -106,7 +106,7 @@ Defined in: [config.service.ts:70](https://github.com/spuxx1701/jslibs/blob/1a7e
 
 > `static` **setup**\<`TConfig`\>(`options`?): `void`
 
-Defined in: [config.service.ts:60](https://github.com/spuxx1701/jslibs/blob/1a7e07eeae1e7166b7fbfc153430c6402621f270/packages/browser-utils/src/services/config/config.service.ts#L60)
+Defined in: [config.service.ts:60](https://github.com/spuxx1701/jslibs/blob/9e75110cf9e60ac27454c04289fa45add1887a86/packages/browser-utils/src/services/config/config.service.ts#L60)
 
 Sets up `Config` with the given options. Needs to be called at application startup.
 
@@ -130,7 +130,7 @@ Sets up `Config` with the given options. Needs to be called at application start
 
 ### ConfigOptions\<TConfig\>
 
-Defined in: [types.ts:1](https://github.com/spuxx1701/jslibs/blob/1a7e07eeae1e7166b7fbfc153430c6402621f270/packages/browser-utils/src/services/config/types.ts#L1)
+Defined in: [types.ts:1](https://github.com/spuxx1701/jslibs/blob/9e75110cf9e60ac27454c04289fa45add1887a86/packages/browser-utils/src/services/config/types.ts#L1)
 
 #### Type Parameters
 
@@ -142,7 +142,7 @@ Defined in: [types.ts:1](https://github.com/spuxx1701/jslibs/blob/1a7e07eeae1e71
 
 > `optional` **defaultConfig**: `Partial`\<`TConfig`\>
 
-Defined in: [types.ts:7](https://github.com/spuxx1701/jslibs/blob/1a7e07eeae1e7166b7fbfc153430c6402621f270/packages/browser-utils/src/services/config/types.ts#L7)
+Defined in: [types.ts:7](https://github.com/spuxx1701/jslibs/blob/9e75110cf9e60ac27454c04289fa45add1887a86/packages/browser-utils/src/services/config/types.ts#L7)
 
 (optional) You may provide a default config object. This will be merged with
 Vite's `import.meta.env` as well as any config injected into the window object.
@@ -152,7 +152,7 @@ The hierarchy during the merge is as follows: defaultConfig < Vite config < inje
 
 > `optional` **importMetaEnv**: `ImportMetaEnv`
 
-Defined in: [types.ts:23](https://github.com/spuxx1701/jslibs/blob/1a7e07eeae1e7166b7fbfc153430c6402621f270/packages/browser-utils/src/services/config/types.ts#L23)
+Defined in: [types.ts:23](https://github.com/spuxx1701/jslibs/blob/9e75110cf9e60ac27454c04289fa45add1887a86/packages/browser-utils/src/services/config/types.ts#L23)
 
 (optional) You may provide Vite's `import.meta.env` object. If you do, it will be used
 to be merged with the default config and the injected config. This is useful for testing and
@@ -162,7 +162,7 @@ during development.
 
 > `optional` **injectedConfigKey**: `string`
 
-Defined in: [types.ts:17](https://github.com/spuxx1701/jslibs/blob/1a7e07eeae1e7166b7fbfc153430c6402621f270/packages/browser-utils/src/services/config/types.ts#L17)
+Defined in: [types.ts:17](https://github.com/spuxx1701/jslibs/blob/9e75110cf9e60ac27454c04289fa45add1887a86/packages/browser-utils/src/services/config/types.ts#L17)
 
 (optional) The key under which the injected config is stored in the window object.
 Defaults to 'INJECTED_CONFIG'.
@@ -171,7 +171,7 @@ Defaults to 'INJECTED_CONFIG'.
 
 > `optional` **requiredKeys**: keyof `TConfig`[]
 
-Defined in: [types.ts:12](https://github.com/spuxx1701/jslibs/blob/1a7e07eeae1e7166b7fbfc153430c6402621f270/packages/browser-utils/src/services/config/types.ts#L12)
+Defined in: [types.ts:12](https://github.com/spuxx1701/jslibs/blob/9e75110cf9e60ac27454c04289fa45add1887a86/packages/browser-utils/src/services/config/types.ts#L12)
 
 (optional) You may provide a list of keys that are required to be defined at the end
 of the setup procedure. If any of these keys are not defined, an error will be thrown.

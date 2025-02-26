@@ -2,7 +2,7 @@
 
 ### UserAgent
 
-Defined in: [user-agent.service.ts:14](https://github.com/spuxx1701/jslibs/blob/1a7e07eeae1e7166b7fbfc153430c6402621f270/packages/browser-utils/src/services/user-agent/user-agent.service.ts#L14)
+Defined in: [user-agent.service.ts:14](https://github.com/spuxx1701/jslibs/blob/9e75110cf9e60ac27454c04289fa45add1887a86/packages/browser-utils/src/services/user-agent/user-agent.service.ts#L14)
 
 `UserAgent` provides functionality related to the user-agent.
 
@@ -42,7 +42,7 @@ UserAgent.setOptions({ desktopBreakpoint: 1200 });
 
 > **get** `static` **isDesktop**(): `boolean`
 
-Defined in: [user-agent.service.ts:34](https://github.com/spuxx1701/jslibs/blob/1a7e07eeae1e7166b7fbfc153430c6402621f270/packages/browser-utils/src/services/user-agent/user-agent.service.ts#L34)
+Defined in: [user-agent.service.ts:34](https://github.com/spuxx1701/jslibs/blob/9e75110cf9e60ac27454c04289fa45add1887a86/packages/browser-utils/src/services/user-agent/user-agent.service.ts#L34)
 
 Whether the current viewport is considered a desktop.
 
@@ -56,7 +56,7 @@ Whether the current viewport is considered a desktop.
 
 > **get** `static` **options**(): [`UserAgentOptions`](user-agent.md#useragentoptions)
 
-Defined in: [user-agent.service.ts:27](https://github.com/spuxx1701/jslibs/blob/1a7e07eeae1e7166b7fbfc153430c6402621f270/packages/browser-utils/src/services/user-agent/user-agent.service.ts#L27)
+Defined in: [user-agent.service.ts:27](https://github.com/spuxx1701/jslibs/blob/9e75110cf9e60ac27454c04289fa45add1887a86/packages/browser-utils/src/services/user-agent/user-agent.service.ts#L27)
 
 ###### Returns
 
@@ -68,7 +68,7 @@ Defined in: [user-agent.service.ts:27](https://github.com/spuxx1701/jslibs/blob/
 
 > `static` **setOptions**(`options`): `void`
 
-Defined in: [user-agent.service.ts:23](https://github.com/spuxx1701/jslibs/blob/1a7e07eeae1e7166b7fbfc153430c6402621f270/packages/browser-utils/src/services/user-agent/user-agent.service.ts#L23)
+Defined in: [user-agent.service.ts:23](https://github.com/spuxx1701/jslibs/blob/9e75110cf9e60ac27454c04289fa45add1887a86/packages/browser-utils/src/services/user-agent/user-agent.service.ts#L23)
 
 Sets the `UserAgent`s options.
 
@@ -88,7 +88,7 @@ Sets the `UserAgent`s options.
 
 ### UserAgentOptions
 
-Defined in: [types.ts:1](https://github.com/spuxx1701/jslibs/blob/1a7e07eeae1e7166b7fbfc153430c6402621f270/packages/browser-utils/src/services/user-agent/types.ts#L1)
+Defined in: [types.ts:1](https://github.com/spuxx1701/jslibs/blob/9e75110cf9e60ac27454c04289fa45add1887a86/packages/browser-utils/src/services/user-agent/types.ts#L1)
 
 #### Properties
 
@@ -96,7 +96,7 @@ Defined in: [types.ts:1](https://github.com/spuxx1701/jslibs/blob/1a7e07eeae1e71
 
 > **desktopBreakpoint**: `number`
 
-Defined in: [types.ts:6](https://github.com/spuxx1701/jslibs/blob/1a7e07eeae1e7166b7fbfc153430c6402621f270/packages/browser-utils/src/services/user-agent/types.ts#L6)
+Defined in: [types.ts:6](https://github.com/spuxx1701/jslibs/blob/9e75110cf9e60ac27454c04289fa45add1887a86/packages/browser-utils/src/services/user-agent/types.ts#L6)
 
 The minimum viewport width in pixels that will be considered a desktop device.
 Defaults to 960 pixels.

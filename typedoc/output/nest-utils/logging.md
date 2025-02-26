@@ -2,7 +2,7 @@
 
 ### CustomLogger
 
-Defined in: [custom.logger.ts:21](https://github.com/spuxx1701/jslibs/blob/1a7e07eeae1e7166b7fbfc153430c6402621f270/packages/nest-utils/src/logging/custom.logger.ts#L21)
+Defined in: [custom.logger.ts:21](https://github.com/spuxx1701/jslibs/blob/9e75110cf9e60ac27454c04289fa45add1887a86/packages/nest-utils/src/logging/custom.logger.ts#L21)
 
 The custom application logger. This logger extends the NestJS console logger, but
 simplifies the API to set the application's log levels.
@@ -26,7 +26,7 @@ const app = await NestFactory.create(AppModule, {
 
 > **new CustomLogger**(`options`?): [`CustomLogger`](logging.md#customlogger)
 
-Defined in: [custom.logger.ts:22](https://github.com/spuxx1701/jslibs/blob/1a7e07eeae1e7166b7fbfc153430c6402621f270/packages/nest-utils/src/logging/custom.logger.ts#L22)
+Defined in: [custom.logger.ts:22](https://github.com/spuxx1701/jslibs/blob/9e75110cf9e60ac27454c04289fa45add1887a86/packages/nest-utils/src/logging/custom.logger.ts#L22)
 
 ###### Parameters
 
@@ -54,7 +54,7 @@ Defined in: [custom.logger.ts:22](https://github.com/spuxx1701/jslibs/blob/1a7e0
 
 > **getContext**(): `any`
 
-Defined in: [custom.logger.ts:38](https://github.com/spuxx1701/jslibs/blob/1a7e07eeae1e7166b7fbfc153430c6402621f270/packages/nest-utils/src/logging/custom.logger.ts#L38)
+Defined in: [custom.logger.ts:38](https://github.com/spuxx1701/jslibs/blob/9e75110cf9e60ac27454c04289fa45add1887a86/packages/nest-utils/src/logging/custom.logger.ts#L38)
 
 Returns the logger's current default context.
 
@@ -66,7 +66,7 @@ Returns the logger's current default context.
 
 > **setLogLevel**(`logLevel`): `void`
 
-Defined in: [custom.logger.ts:46](https://github.com/spuxx1701/jslibs/blob/1a7e07eeae1e7166b7fbfc153430c6402621f270/packages/nest-utils/src/logging/custom.logger.ts#L46)
+Defined in: [custom.logger.ts:46](https://github.com/spuxx1701/jslibs/blob/9e75110cf9e60ac27454c04289fa45add1887a86/packages/nest-utils/src/logging/custom.logger.ts#L46)
 
 Sets the logger's log level.
 
@@ -88,7 +88,7 @@ THe log level to set.
 
 > **ApplicationLogLevel**: _typeof_ [`ApplicationLogLevel`](logging.md#applicationloglevel-1)\[keyof _typeof_ [`ApplicationLogLevel`](logging.md#applicationloglevel-1)\]
 
-Defined in: [custom.logger.ts:6](https://github.com/spuxx1701/jslibs/blob/1a7e07eeae1e7166b7fbfc153430c6402621f270/packages/nest-utils/src/logging/custom.logger.ts#L6)
+Defined in: [custom.logger.ts:6](https://github.com/spuxx1701/jslibs/blob/9e75110cf9e60ac27454c04289fa45add1887a86/packages/nest-utils/src/logging/custom.logger.ts#L6)
 
 ## Variables
 
@@ -96,7 +96,7 @@ Defined in: [custom.logger.ts:6](https://github.com/spuxx1701/jslibs/blob/1a7e07
 
 > `const` **ApplicationLogLevel**: `object`
 
-Defined in: [custom.logger.ts:6](https://github.com/spuxx1701/jslibs/blob/1a7e07eeae1e7166b7fbfc153430c6402621f270/packages/nest-utils/src/logging/custom.logger.ts#L6)
+Defined in: [custom.logger.ts:6](https://github.com/spuxx1701/jslibs/blob/9e75110cf9e60ac27454c04289fa45add1887a86/packages/nest-utils/src/logging/custom.logger.ts#L6)
 
 The application log level.
 

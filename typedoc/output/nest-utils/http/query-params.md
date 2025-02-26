@@ -4,7 +4,7 @@
 
 > **IncludeQueryParam**(...`allowedRelationships`): (`target`, `propertyName`) => `void`
 
-Defined in: [include-query-param.decorator.ts:28](https://github.com/spuxx1701/jslibs/blob/1a7e07eeae1e7166b7fbfc153430c6402621f270/packages/nest-utils/src/http/query-params/include/include-query-param.decorator.ts#L28)
+Defined in: [include-query-param.decorator.ts:28](https://github.com/spuxx1701/jslibs/blob/9e75110cf9e60ac27454c04289fa45add1887a86/packages/nest-utils/src/http/query-params/include/include-query-param.decorator.ts#L28)
 
 Decorator that provides support for the `include` query parameter specified by JSON:API.
 The decorator handles transformation, validation and documentation. A list of valid

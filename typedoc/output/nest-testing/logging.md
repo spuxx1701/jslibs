@@ -2,7 +2,7 @@
 
 ### TestAppLogger
 
-Defined in: [test.logger.ts:18](https://github.com/spuxx1701/jslibs/blob/1a7e07eeae1e7166b7fbfc153430c6402621f270/packages/nest-testing/src/logging/test.logger.ts#L18)
+Defined in: [test.logger.ts:18](https://github.com/spuxx1701/jslibs/blob/9e75110cf9e60ac27454c04289fa45add1887a86/packages/nest-testing/src/logging/test.logger.ts#L18)
 
 A custom logger for testing purposes. Replaces `printMessages` with a mocked function
 that can be spied on.
@@ -45,7 +45,7 @@ const container = await TestContainer.create({
 
 > **messages**: `unknown`[] = `[]`
 
-Defined in: [test.logger.ts:22](https://github.com/spuxx1701/jslibs/blob/1a7e07eeae1e7166b7fbfc153430c6402621f270/packages/nest-testing/src/logging/test.logger.ts#L22)
+Defined in: [test.logger.ts:22](https://github.com/spuxx1701/jslibs/blob/9e75110cf9e60ac27454c04289fa45add1887a86/packages/nest-testing/src/logging/test.logger.ts#L22)
 
 The messages that have been logged. Clear with `clear()`.
 
@@ -53,7 +53,7 @@ The messages that have been logged. Clear with `clear()`.
 
 > **printMessages**: `any`
 
-Defined in: [test.logger.ts:24](https://github.com/spuxx1701/jslibs/blob/1a7e07eeae1e7166b7fbfc153430c6402621f270/packages/nest-testing/src/logging/test.logger.ts#L24)
+Defined in: [test.logger.ts:24](https://github.com/spuxx1701/jslibs/blob/9e75110cf9e60ac27454c04289fa45add1887a86/packages/nest-testing/src/logging/test.logger.ts#L24)
 
 #### Methods
 
@@ -61,7 +61,7 @@ Defined in: [test.logger.ts:24](https://github.com/spuxx1701/jslibs/blob/1a7e07e
 
 > **clear**(): `void`
 
-Defined in: [test.logger.ts:29](https://github.com/spuxx1701/jslibs/blob/1a7e07eeae1e7166b7fbfc153430c6402621f270/packages/nest-testing/src/logging/test.logger.ts#L29)
+Defined in: [test.logger.ts:29](https://github.com/spuxx1701/jslibs/blob/9e75110cf9e60ac27454c04289fa45add1887a86/packages/nest-testing/src/logging/test.logger.ts#L29)
 
 Clears `messages` and all calls to `printMessages`.
 

@@ -2,7 +2,7 @@
 
 ### AuthGuard
 
-Defined in: [guards/auth.guard.ts:27](https://github.com/spuxx1701/jslibs/blob/1a7e07eeae1e7166b7fbfc153430c6402621f270/packages/nest-utils/src/auth/guards/auth.guard.ts#L27)
+Defined in: [guards/auth.guard.ts:27](https://github.com/spuxx1701/jslibs/blob/9e75110cf9e60ac27454c04289fa45add1887a86/packages/nest-utils/src/auth/guards/auth.guard.ts#L27)
 
 Use this guard on a route to protect the route and only allow authenticated users
 to access it. By default, it will allow all authenticated users that possess _any_
@@ -30,7 +30,7 @@ import { Roles } from 'src/auth/decorators/roles.decorator';
 
 > **new AuthGuard**(`reflector`, `service`): [`AuthGuard`](auth.md#authguard)
 
-Defined in: [guards/auth.guard.ts:28](https://github.com/spuxx1701/jslibs/blob/1a7e07eeae1e7166b7fbfc153430c6402621f270/packages/nest-utils/src/auth/guards/auth.guard.ts#L28)
+Defined in: [guards/auth.guard.ts:28](https://github.com/spuxx1701/jslibs/blob/9e75110cf9e60ac27454c04289fa45add1887a86/packages/nest-utils/src/auth/guards/auth.guard.ts#L28)
 
 ###### Parameters
 
@@ -54,7 +54,7 @@ Defined in: [guards/auth.guard.ts:28](https://github.com/spuxx1701/jslibs/blob/1
 
 > **get** **options**(): [`AuthOptions`](auth.md#authoptions)
 
-Defined in: [guards/auth.guard.ts:120](https://github.com/spuxx1701/jslibs/blob/1a7e07eeae1e7166b7fbfc153430c6402621f270/packages/nest-utils/src/auth/guards/auth.guard.ts#L120)
+Defined in: [guards/auth.guard.ts:120](https://github.com/spuxx1701/jslibs/blob/9e75110cf9e60ac27454c04289fa45add1887a86/packages/nest-utils/src/auth/guards/auth.guard.ts#L120)
 
 ###### Returns
 
@@ -66,7 +66,7 @@ Defined in: [guards/auth.guard.ts:120](https://github.com/spuxx1701/jslibs/blob/
 
 > **canActivate**(`context`): `boolean`
 
-Defined in: [guards/auth.guard.ts:39](https://github.com/spuxx1701/jslibs/blob/1a7e07eeae1e7166b7fbfc153430c6402621f270/packages/nest-utils/src/auth/guards/auth.guard.ts#L39)
+Defined in: [guards/auth.guard.ts:39](https://github.com/spuxx1701/jslibs/blob/9e75110cf9e60ac27454c04289fa45add1887a86/packages/nest-utils/src/auth/guards/auth.guard.ts#L39)
 
 Is triggered when the guarded function is being executed. If it returns false,
 the guarded function will not be entered.
@@ -89,7 +89,7 @@ Whether the guarded function may be entered.
 
 ### AuthModule
 
-Defined in: [auth.module.ts:42](https://github.com/spuxx1701/jslibs/blob/1a7e07eeae1e7166b7fbfc153430c6402621f270/packages/nest-utils/src/auth/auth.module.ts#L42)
+Defined in: [auth.module.ts:42](https://github.com/spuxx1701/jslibs/blob/9e75110cf9e60ac27454c04289fa45add1887a86/packages/nest-utils/src/auth/auth.module.ts#L42)
 
 The authentication module. This module is responsible for handling authentication and
 authorization. It is based on the `express-openid-connect` library and is intended
@@ -142,7 +142,7 @@ export class AppModule {}
 
 > `static` **bootstrap**(`app`, `auth`, `options`): `Promise`\<`void`\>
 
-Defined in: [auth.module.ts:49](https://github.com/spuxx1701/jslibs/blob/1a7e07eeae1e7166b7fbfc153430c6402621f270/packages/nest-utils/src/auth/auth.module.ts#L49)
+Defined in: [auth.module.ts:49](https://github.com/spuxx1701/jslibs/blob/9e75110cf9e60ac27454c04289fa45add1887a86/packages/nest-utils/src/auth/auth.module.ts#L49)
 
 Bootstraps authentication. This must be called during application bootstrapping.
 
@@ -174,7 +174,7 @@ The authentication options.
 
 > `static` **forRoot**(`options`): `DynamicModule`
 
-Defined in: [auth.module.ts:67](https://github.com/spuxx1701/jslibs/blob/1a7e07eeae1e7166b7fbfc153430c6402621f270/packages/nest-utils/src/auth/auth.module.ts#L67)
+Defined in: [auth.module.ts:67](https://github.com/spuxx1701/jslibs/blob/9e75110cf9e60ac27454c04289fa45add1887a86/packages/nest-utils/src/auth/auth.module.ts#L67)
 
 ###### Parameters
 
@@ -190,7 +190,7 @@ Defined in: [auth.module.ts:67](https://github.com/spuxx1701/jslibs/blob/1a7e07e
 
 > `static` **mergeOptionsWithDefaultValues**(`options`): `AuthOptions`
 
-Defined in: [auth.module.ts:84](https://github.com/spuxx1701/jslibs/blob/1a7e07eeae1e7166b7fbfc153430c6402621f270/packages/nest-utils/src/auth/auth.module.ts#L84)
+Defined in: [auth.module.ts:84](https://github.com/spuxx1701/jslibs/blob/9e75110cf9e60ac27454c04289fa45add1887a86/packages/nest-utils/src/auth/auth.module.ts#L84)
 
 ###### Parameters
 
@@ -206,7 +206,7 @@ Defined in: [auth.module.ts:84](https://github.com/spuxx1701/jslibs/blob/1a7e07e
 
 ### AuthService
 
-Defined in: [providers/auth.service.ts:13](https://github.com/spuxx1701/jslibs/blob/1a7e07eeae1e7166b7fbfc153430c6402621f270/packages/nest-utils/src/auth/providers/auth.service.ts#L13)
+Defined in: [providers/auth.service.ts:13](https://github.com/spuxx1701/jslibs/blob/9e75110cf9e60ac27454c04289fa45add1887a86/packages/nest-utils/src/auth/providers/auth.service.ts#L13)
 
 The authentication service.
 
@@ -216,7 +216,7 @@ The authentication service.
 
 > **new AuthService**(`options`): [`AuthService`](auth.md#authservice)
 
-Defined in: [providers/auth.service.ts:14](https://github.com/spuxx1701/jslibs/blob/1a7e07eeae1e7166b7fbfc153430c6402621f270/packages/nest-utils/src/auth/providers/auth.service.ts#L14)
+Defined in: [providers/auth.service.ts:14](https://github.com/spuxx1701/jslibs/blob/9e75110cf9e60ac27454c04289fa45add1887a86/packages/nest-utils/src/auth/providers/auth.service.ts#L14)
 
 ###### Parameters
 
@@ -234,7 +234,7 @@ Defined in: [providers/auth.service.ts:14](https://github.com/spuxx1701/jslibs/b
 
 > `readonly` **options**: [`AuthOptions`](auth.md#authoptions)
 
-Defined in: [providers/auth.service.ts:14](https://github.com/spuxx1701/jslibs/blob/1a7e07eeae1e7166b7fbfc153430c6402621f270/packages/nest-utils/src/auth/providers/auth.service.ts#L14)
+Defined in: [providers/auth.service.ts:14](https://github.com/spuxx1701/jslibs/blob/9e75110cf9e60ac27454c04289fa45add1887a86/packages/nest-utils/src/auth/providers/auth.service.ts#L14)
 
 #### Methods
 
@@ -242,7 +242,7 @@ Defined in: [providers/auth.service.ts:14](https://github.com/spuxx1701/jslibs/b
 
 > **getSession**(`request`): [`SessionResource`](auth.md#sessionresource)
 
-Defined in: [providers/auth.service.ts:43](https://github.com/spuxx1701/jslibs/blob/1a7e07eeae1e7166b7fbfc153430c6402621f270/packages/nest-utils/src/auth/providers/auth.service.ts#L43)
+Defined in: [providers/auth.service.ts:43](https://github.com/spuxx1701/jslibs/blob/9e75110cf9e60ac27454c04289fa45add1887a86/packages/nest-utils/src/auth/providers/auth.service.ts#L43)
 
 Extracts session details from the request object.
 
@@ -264,7 +264,7 @@ The session resource.
 
 > **handleLogin**(`response`, `options`): `Promise`\<`void`\>
 
-Defined in: [providers/auth.service.ts:21](https://github.com/spuxx1701/jslibs/blob/1a7e07eeae1e7166b7fbfc153430c6402621f270/packages/nest-utils/src/auth/providers/auth.service.ts#L21)
+Defined in: [providers/auth.service.ts:21](https://github.com/spuxx1701/jslibs/blob/9e75110cf9e60ac27454c04289fa45add1887a86/packages/nest-utils/src/auth/providers/auth.service.ts#L21)
 
 Handles incoming login requests. Will redirect to the IDP's login page.
 
@@ -292,7 +292,7 @@ The response object.
 
 > **handleLogout**(`response`, `options`): `Promise`\<`void`\>
 
-Defined in: [providers/auth.service.ts:32](https://github.com/spuxx1701/jslibs/blob/1a7e07eeae1e7166b7fbfc153430c6402621f270/packages/nest-utils/src/auth/providers/auth.service.ts#L32)
+Defined in: [providers/auth.service.ts:32](https://github.com/spuxx1701/jslibs/blob/9e75110cf9e60ac27454c04289fa45add1887a86/packages/nest-utils/src/auth/providers/auth.service.ts#L32)
 
 Handles incoming logout requests.
 
@@ -320,7 +320,7 @@ The response object.
 
 ### SessionResource
 
-Defined in: [resources/session.resource.ts:5](https://github.com/spuxx1701/jslibs/blob/1a7e07eeae1e7166b7fbfc153430c6402621f270/packages/nest-utils/src/auth/resources/session.resource.ts#L5)
+Defined in: [resources/session.resource.ts:5](https://github.com/spuxx1701/jslibs/blob/9e75110cf9e60ac27454c04289fa45add1887a86/packages/nest-utils/src/auth/resources/session.resource.ts#L5)
 
 #### Constructors
 
@@ -338,67 +338,67 @@ Defined in: [resources/session.resource.ts:5](https://github.com/spuxx1701/jslib
 
 > **email**: `string`
 
-Defined in: [resources/session.resource.ts:53](https://github.com/spuxx1701/jslibs/blob/1a7e07eeae1e7166b7fbfc153430c6402621f270/packages/nest-utils/src/auth/resources/session.resource.ts#L53)
+Defined in: [resources/session.resource.ts:53](https://github.com/spuxx1701/jslibs/blob/9e75110cf9e60ac27454c04289fa45add1887a86/packages/nest-utils/src/auth/resources/session.resource.ts#L53)
 
 ##### email_verified
 
 > **email_verified**: `boolean`
 
-Defined in: [resources/session.resource.ts:60](https://github.com/spuxx1701/jslibs/blob/1a7e07eeae1e7166b7fbfc153430c6402621f270/packages/nest-utils/src/auth/resources/session.resource.ts#L60)
+Defined in: [resources/session.resource.ts:60](https://github.com/spuxx1701/jslibs/blob/9e75110cf9e60ac27454c04289fa45add1887a86/packages/nest-utils/src/auth/resources/session.resource.ts#L60)
 
 ##### family_name
 
 > **family_name**: `string`
 
-Defined in: [resources/session.resource.ts:46](https://github.com/spuxx1701/jslibs/blob/1a7e07eeae1e7166b7fbfc153430c6402621f270/packages/nest-utils/src/auth/resources/session.resource.ts#L46)
+Defined in: [resources/session.resource.ts:46](https://github.com/spuxx1701/jslibs/blob/9e75110cf9e60ac27454c04289fa45add1887a86/packages/nest-utils/src/auth/resources/session.resource.ts#L46)
 
 ##### given_name
 
 > **given_name**: `string`
 
-Defined in: [resources/session.resource.ts:39](https://github.com/spuxx1701/jslibs/blob/1a7e07eeae1e7166b7fbfc153430c6402621f270/packages/nest-utils/src/auth/resources/session.resource.ts#L39)
+Defined in: [resources/session.resource.ts:39](https://github.com/spuxx1701/jslibs/blob/9e75110cf9e60ac27454c04289fa45add1887a86/packages/nest-utils/src/auth/resources/session.resource.ts#L39)
 
 ##### groups
 
 > **groups**: `string`[]
 
-Defined in: [resources/session.resource.ts:78](https://github.com/spuxx1701/jslibs/blob/1a7e07eeae1e7166b7fbfc153430c6402621f270/packages/nest-utils/src/auth/resources/session.resource.ts#L78)
+Defined in: [resources/session.resource.ts:78](https://github.com/spuxx1701/jslibs/blob/9e75110cf9e60ac27454c04289fa45add1887a86/packages/nest-utils/src/auth/resources/session.resource.ts#L78)
 
 ##### locale
 
 > **locale**: `string`
 
-Defined in: [resources/session.resource.ts:67](https://github.com/spuxx1701/jslibs/blob/1a7e07eeae1e7166b7fbfc153430c6402621f270/packages/nest-utils/src/auth/resources/session.resource.ts#L67)
+Defined in: [resources/session.resource.ts:67](https://github.com/spuxx1701/jslibs/blob/9e75110cf9e60ac27454c04289fa45add1887a86/packages/nest-utils/src/auth/resources/session.resource.ts#L67)
 
 ##### name
 
 > **name**: `string`
 
-Defined in: [resources/session.resource.ts:32](https://github.com/spuxx1701/jslibs/blob/1a7e07eeae1e7166b7fbfc153430c6402621f270/packages/nest-utils/src/auth/resources/session.resource.ts#L32)
+Defined in: [resources/session.resource.ts:32](https://github.com/spuxx1701/jslibs/blob/9e75110cf9e60ac27454c04289fa45add1887a86/packages/nest-utils/src/auth/resources/session.resource.ts#L32)
 
 ##### preferred_username
 
 > **preferred_username**: `string`
 
-Defined in: [resources/session.resource.ts:25](https://github.com/spuxx1701/jslibs/blob/1a7e07eeae1e7166b7fbfc153430c6402621f270/packages/nest-utils/src/auth/resources/session.resource.ts#L25)
+Defined in: [resources/session.resource.ts:25](https://github.com/spuxx1701/jslibs/blob/9e75110cf9e60ac27454c04289fa45add1887a86/packages/nest-utils/src/auth/resources/session.resource.ts#L25)
 
 ##### sid
 
 > **sid**: `string`
 
-Defined in: [resources/session.resource.ts:18](https://github.com/spuxx1701/jslibs/blob/1a7e07eeae1e7166b7fbfc153430c6402621f270/packages/nest-utils/src/auth/resources/session.resource.ts#L18)
+Defined in: [resources/session.resource.ts:18](https://github.com/spuxx1701/jslibs/blob/9e75110cf9e60ac27454c04289fa45add1887a86/packages/nest-utils/src/auth/resources/session.resource.ts#L18)
 
 ##### sub
 
 > **sub**: `string`
 
-Defined in: [resources/session.resource.ts:11](https://github.com/spuxx1701/jslibs/blob/1a7e07eeae1e7166b7fbfc153430c6402621f270/packages/nest-utils/src/auth/resources/session.resource.ts#L11)
+Defined in: [resources/session.resource.ts:11](https://github.com/spuxx1701/jslibs/blob/9e75110cf9e60ac27454c04289fa45add1887a86/packages/nest-utils/src/auth/resources/session.resource.ts#L11)
 
 ## Interfaces
 
 ### AuthOptions
 
-Defined in: [config/auth.options.ts:4](https://github.com/spuxx1701/jslibs/blob/1a7e07eeae1e7166b7fbfc153430c6402621f270/packages/nest-utils/src/auth/config/auth.options.ts#L4)
+Defined in: [config/auth.options.ts:4](https://github.com/spuxx1701/jslibs/blob/9e75110cf9e60ac27454c04289fa45add1887a86/packages/nest-utils/src/auth/config/auth.options.ts#L4)
 
 #### Properties
 
@@ -406,7 +406,7 @@ Defined in: [config/auth.options.ts:4](https://github.com/spuxx1701/jslibs/blob/
 
 > `optional` **allowedRedirectHostnames**: `string`[]
 
-Defined in: [config/auth.options.ts:15](https://github.com/spuxx1701/jslibs/blob/1a7e07eeae1e7166b7fbfc153430c6402621f270/packages/nest-utils/src/auth/config/auth.options.ts#L15)
+Defined in: [config/auth.options.ts:15](https://github.com/spuxx1701/jslibs/blob/9e75110cf9e60ac27454c04289fa45add1887a86/packages/nest-utils/src/auth/config/auth.options.ts#L15)
 
 The list of external hostnames the service is allowed to redirect to after login or logout.
 Local redirects are always allowed.
@@ -421,7 +421,7 @@ Local redirects are always allowed.
 
 > `optional` **defaultRedirectUrl**: `string`
 
-Defined in: [config/auth.options.ts:20](https://github.com/spuxx1701/jslibs/blob/1a7e07eeae1e7166b7fbfc153430c6402621f270/packages/nest-utils/src/auth/config/auth.options.ts#L20)
+Defined in: [config/auth.options.ts:20](https://github.com/spuxx1701/jslibs/blob/9e75110cf9e60ac27454c04289fa45add1887a86/packages/nest-utils/src/auth/config/auth.options.ts#L20)
 
 The URL that should be used as the default redirect URL after login or logout.
 
@@ -435,7 +435,7 @@ The URL that should be used as the default redirect URL after login or logout.
 
 > `optional` **disable**: `boolean`
 
-Defined in: [config/auth.options.ts:9](https://github.com/spuxx1701/jslibs/blob/1a7e07eeae1e7166b7fbfc153430c6402621f270/packages/nest-utils/src/auth/config/auth.options.ts#L9)
+Defined in: [config/auth.options.ts:9](https://github.com/spuxx1701/jslibs/blob/9e75110cf9e60ac27454c04289fa45add1887a86/packages/nest-utils/src/auth/config/auth.options.ts#L9)
 
 Whether authentication should be disabled.
 
@@ -449,7 +449,7 @@ false;
 
 > `optional` **oidc**: `ExpressOidcConfig`
 
-Defined in: [config/auth.options.ts:29](https://github.com/spuxx1701/jslibs/blob/1a7e07eeae1e7166b7fbfc153430c6402621f270/packages/nest-utils/src/auth/config/auth.options.ts#L29)
+Defined in: [config/auth.options.ts:29](https://github.com/spuxx1701/jslibs/blob/9e75110cf9e60ac27454c04289fa45add1887a86/packages/nest-utils/src/auth/config/auth.options.ts#L29)
 
 Configuration parameters passed to `express-openid-connect`. For documentation, see:
 https://auth0.github.io/express-openid-connect/interfaces/ConfigParams.html
@@ -458,7 +458,7 @@ https://auth0.github.io/express-openid-connect/interfaces/ConfigParams.html
 
 > `optional` **roles**: `Record`\<`string`, `string`\>
 
-Defined in: [config/auth.options.ts:24](https://github.com/spuxx1701/jslibs/blob/1a7e07eeae1e7166b7fbfc153430c6402621f270/packages/nest-utils/src/auth/config/auth.options.ts#L24)
+Defined in: [config/auth.options.ts:24](https://github.com/spuxx1701/jslibs/blob/9e75110cf9e60ac27454c04289fa45add1887a86/packages/nest-utils/src/auth/config/auth.options.ts#L24)
 
 The record of roles available in the application.
 
@@ -468,7 +468,7 @@ The record of roles available in the application.
 
 > `const` **defaultAuthOptions**: `DefaultAuthOptions`
 
-Defined in: [config/auth.options.ts:37](https://github.com/spuxx1701/jslibs/blob/1a7e07eeae1e7166b7fbfc153430c6402621f270/packages/nest-utils/src/auth/config/auth.options.ts#L37)
+Defined in: [config/auth.options.ts:37](https://github.com/spuxx1701/jslibs/blob/9e75110cf9e60ac27454c04289fa45add1887a86/packages/nest-utils/src/auth/config/auth.options.ts#L37)
 
 Default values for the authentication options.
 
@@ -478,7 +478,7 @@ Default values for the authentication options.
 
 > **getSession**(`request`): [`SessionResource`](auth.md#sessionresource)
 
-Defined in: [utils/auth.utils.ts:9](https://github.com/spuxx1701/jslibs/blob/1a7e07eeae1e7166b7fbfc153430c6402621f270/packages/nest-utils/src/auth/utils/auth.utils.ts#L9)
+Defined in: [utils/auth.utils.ts:9](https://github.com/spuxx1701/jslibs/blob/9e75110cf9e60ac27454c04289fa45add1887a86/packages/nest-utils/src/auth/utils/auth.utils.ts#L9)
 
 Attempts to extract the user session from the given request.
 
@@ -502,7 +502,7 @@ The user session or undefined if there is non.
 
 > **isAuthenticated**(`request`): `boolean`
 
-Defined in: [utils/auth.utils.ts:18](https://github.com/spuxx1701/jslibs/blob/1a7e07eeae1e7166b7fbfc153430c6402621f270/packages/nest-utils/src/auth/utils/auth.utils.ts#L18)
+Defined in: [utils/auth.utils.ts:18](https://github.com/spuxx1701/jslibs/blob/9e75110cf9e60ac27454c04289fa45add1887a86/packages/nest-utils/src/auth/utils/auth.utils.ts#L18)
 
 Checks whether the given request is authenticated.
 
@@ -526,7 +526,7 @@ Whether the request is authenticated.
 
 > **Roles**(...`roles`): `any`
 
-Defined in: [decorators/roles.decorator.ts:25](https://github.com/spuxx1701/jslibs/blob/1a7e07eeae1e7166b7fbfc153430c6402621f270/packages/nest-utils/src/auth/decorators/roles.decorator.ts#L25)
+Defined in: [decorators/roles.decorator.ts:25](https://github.com/spuxx1701/jslibs/blob/9e75110cf9e60ac27454c04289fa45add1887a86/packages/nest-utils/src/auth/decorators/roles.decorator.ts#L25)
 
 Use this decorator together with `AuthGuard` and specify required roles
 as arguments. All specified roles will be required since `AuthGuard` implicitly

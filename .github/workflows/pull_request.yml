@@ -14,13 +14,13 @@ jobs:
     name: Run code checks
     uses: spuxx-dev/ci-cd/.github/workflows/pnpm_run_checks.yml@v4.0.0
     with:
-      PNPM_BUILD: true
+      PREPARE: pnpm -r --filter './packages/**' build
 
   run_unit_tests:
     name: Run tests (vitest)
     uses: spuxx-dev/ci-cd/.github/workflows/pnpm_run_tests_vitest.yml@v4.0.0
     with:
-      PNPM_BUILD: true
+      PREPARE: pnpm -r --filter './packages/**' build
 
   dependabot:
     runs-on: ubuntu-latest

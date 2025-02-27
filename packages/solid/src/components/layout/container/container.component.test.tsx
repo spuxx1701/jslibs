@@ -24,6 +24,9 @@ describe('Container', () => {
         color={BaseColor.gradient}
         variant="contained"
         noPadding
+        attrs={{
+          id: 'container',
+        }}
       >
         Content
       </Container>
@@ -36,5 +39,6 @@ describe('Container', () => {
     expect(container).toHaveAttribute('spx-variant', 'contained');
     expect(container).toHaveAttribute('spx-color', 'gradient');
     expect(container).toHaveAttribute('spx-no-padding');
+    expect(container).toHaveAttribute('id', 'container');
   });
 });

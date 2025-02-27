@@ -1,18 +1,18 @@
 /**
  * Returns a promise that resolves after the given amount of milliseconds.
  * @param ms The amount of milliseconds.
- *
+ * @returns A promise that resolves after the given amount of milliseconds.
  * @example
  * await sleep(1000);
  */
-export async function sleep(ms: number) {
+export async function sleep(ms: number): Promise<void> {
   return new Promise((resolve) => setTimeout(resolve, ms));
 }
 
 /**
  * Checks whether the given value is null, undefined or a string that contains only whitespace characters.
  * @param value The value to check.
- *
+ * @returns Whether the given value is null, undefined or a string that contains only whitespace characters.
  * @example
  * isEmptyOrWhitespace(''); // true
  * isEmptyOrWhitespace(' '); // true
@@ -38,6 +38,11 @@ export function isEmptyOrWhitespace(value: unknown) {
  * Returns true if the given array is null, undefined or empty.
  * @param array The array to check.
  * @returns Whether the given array is null, undefined or empty.
+ * @example
+ * isEmptyArray([]); // true
+ * isEmptyArray(undefined); // true
+ * isEmptyArray(null); // true
+ * isEmptyArray([1, 2, 3]); // false
  */
 export function isEmptyArray(array: Array<unknown> | undefined | null) {
   return !array || array.length <= 0;
@@ -54,8 +59,7 @@ type RecursiveObject = {
  *
  * @param target - The target object to which properties will be merged.
  * @param sources - The source objects from which properties will be merged.
- * @returns The target object.
- *
+ * @returns The merged object.
  * @example
  * const obj1 = { a: 1, b: { c: 2 } };
  * const obj2 = { b: { d: 3 }, e: 4 };

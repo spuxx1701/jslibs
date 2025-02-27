@@ -5,4 +5,4 @@
 export * from './services/config';
 export * from './services/local-storage';
 export * from './services/user-agent';
-export * from './types/public';
+export * from './types';

@@ -1,0 +1,16 @@
+{
+  "include": [
+    "../packages/js-utils/src",
+    "../packages/browser-utils/src",
+    "../packages/nest-utils/src",
+    "../packages/nest-testing/src",
+    "../packages/solid/src"
+  ],
+  "compilerOptions": {
+    "skipLibCheck": true,
+    "target": "ESNext",
+    "baseUrl": ".",
+    "jsx": "preserve",
+    "jsxImportSource": "solid-js"
+  }
+}

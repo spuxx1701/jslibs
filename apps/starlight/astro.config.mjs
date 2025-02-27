@@ -2,8 +2,6 @@
 import { defineConfig } from 'astro/config';
 import starlight from '@astrojs/starlight';
 
-import solidJs from '@astrojs/solid-js';
-
 // https://astro.build/config
 export default defineConfig({
   base: '/jslibs/',
@@ -22,17 +20,16 @@ export default defineConfig({
           items: [
             { label: 'Introduction', slug: 'js-utils' },
             {
+              label: 'Types',
+              slug: 'js-utils/types',
+            },
+            {
               label: 'Services',
-              items: [],
+              autogenerate: { directory: 'js-utils/services' },
             },
             {
               label: 'Utilities',
-              items: [
-                {
-                  label: 'Miscellaneous',
-                  slug: 'js-utils/utils/misc',
-                },
-              ],
+              autogenerate: { directory: 'js-utils/utils' },
             },
           ],
         },
@@ -42,6 +39,5 @@ export default defineConfig({
         },
       ],
     }),
-    solidJs(),
   ],
 });

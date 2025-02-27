@@ -38,7 +38,7 @@ export const ModalHeader: Component<Props> = (props) => {
         {props.title}
       </Label>
       <Show when={!hideClose}>
-        <Close class="spx-button" spx-color="text-default" spx-rounded>
+        <Close class="spx spx-button" spx-color="text-default" spx-rounded>
           <Icon icon="mdi:close" />
         </Close>
       </Show>
